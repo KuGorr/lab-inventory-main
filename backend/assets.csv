@@ -1,0 +1,899 @@
+AIN,Item,OEM,Chipset,Item_Type,Platform,Group,Group: Location,Socket,Cores,Threads,Base_Clock,Memory Clock,Generation,Memory_Size,Memory_Type,Score,Available,Comment
+--,AMD Ryzen 5 5600H,AMD,Ryzen 5 5600H,CPU,Laptop,CLL-002,12.1,"[""FP6""]",6,12,3.3,,Zen 3,32 GB,"[""DDR4""]","16,692",TRUE,Laptop CPU
+--,Nvidia GeForce RTX 3060 Mobile,Nvidia,GeForce RTX 3060 Laptop GPU,GPU,Laptop,CLL-002,12.1,"[""PCIe""]",,,0.9,"1,750",GeForce 30 Mobile,6 GB,"[""GDDR6""]","13,225",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-003,12.1,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,Nvidia GeForce RTX 3050 Ti Mobile,Nvidia,GeForce RTX 3050 Ti Laptop GPU,GPU,Laptop,CLL-004,12.1,"[""PCIe""]",,,0.74,"1,500",GeForce 30 Mobile,4 GB,"[""GDDR6""]","9,495",TRUE,
+--,Nvidia GeForce RTX 3050 Mobile,Nvidia,GeForce RTX 3050 Laptop GPU,GPU,Laptop,CLL-005,12.1,"[""PCIe""]",,,1.07,"1,500",GeForce 30 Mobile,4 GB,"[""GDDR6""]","9,495",TRUE,
+--,Nvidia GeForce GTX 1660 Ti Max-Q,Nvidia,GeForce GTX 1660 Ti Max-Q,GPU,Laptop,CLL-010,12.2,"[""PCIe""]",,,1.14,"1,500",GeForce 16 Mobile,6 GB,"[""GDDR6""]","8,563",TRUE,
+--,Nvidia GeForce GTX 1660 Ti Max-Q,Nvidia,GeForce GTX 1660 Ti Max-Q,GPU,Laptop,CLL-012,12.2,"[""PCIe""]",,,1.14,"1,500",GeForce 16 Mobile,6 GB,"[""GDDR6""]","8,563",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-013,12.2,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,Nvidia GeForce GTX 1660 Ti Max-Q,Nvidia,GeForce GTX 1660 Ti Max-Q,GPU,Laptop,CLL-014,12.2,"[""PCIe""]",,,1.14,"1,500",GeForce 16 Mobile,6 GB,"[""GDDR6""]","8,563",TRUE,
+--,Nvidia GeForce GTX 1660 Ti Max-Q,Nvidia,GeForce GTX 1660 Ti Max-Q,GPU,Laptop,CLL-015,12.2,"[""PCIe""]",,,1.14,"1,500",GeForce 16 Mobile,6 GB,"[""GDDR6""]","8,563",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-016,12.2,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-017,13.1,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,Nvidia GeForce GTX 1650 laptop GPU,Nvidia,GeForce GTX 1650 Laptop GPU,GPU,Laptop,CLL-018,13.1,"[""PCIe""]",,,1.39,"2,001",GeForce 16 Mobile,4 GB,"[""GDDR5""]","6,968",TRUE,
+--,NVIDIA GeForce RTX 4050 Laptop GPU,Nvidia,GeForce RTX 4050 Laptop GPU,GPU,Laptop,CLL-019,13.1,"[""PCIe""]",,,1.75,"2,000",GeForce 40 Mobile,6 GB,"[""GDDR6""]","14,424",TRUE,
+--,NVIDIA GeForce RTX 2050 Mobile,Nvidia,GeForce RTX 2050 Laptop GPU,GPU,Laptop,CLL-020,13.1,"[""PCIe""]",,,1.24,"1,750",GeForce 20 Mobile,4 GB,"[""GDDR6""]","7,760",TRUE,
+--,NVIDIA GeForce RTX 4060 Mobile,Nvidia,GeForce RTX 4060 Laptop GPU,GPU,Laptop,CLL-021,13.1,"[""PCIe""]",,,1.89,"2,000",GeForce 50 Mobile,8 GB ,"[""GDDR6""]","17,492",TRUE,
+--,NVIDIA GeForce RTX 5070 Ti Mobile,Nvidia,GeForce RTX 5070 Ti Laptop GPU,GPU,Laptop,CLL-022,13.1,"[""PCIe""]",,,1.44,"1,750",GeForce 50 Mobile,12 GB,"[""GDDR7""]","24,033",TRUE,
+--,NVIDIA GeForce RTX 4070 Mobile,Nvidia,GeForce RTX 4070 Laptop GPU,GPU,Laptop,CLL-023,13.1,"[""PCIe""]",,,1.69,"2,000",GeForce 50 Mobile,8 GB ,"[""GDDR6""]","19,598",TRUE,
+--,NVIDIA GeForce RTX 5060 Mobile,Nvidia,GeForce RTX 5060 Laptop GPU,GPU,Laptop,CLL-024,13.1,"[""PCIe""]",,,1.45,"1,500",GeForce 50 Mobile,8 GB ,"[""GDDR7""]","19,127",TRUE,
+--,NVIDIA GeForce RTX 5070 Ti Mobile,Nvidia,GeForce RTX 5070 Ti Laptop GPU,GPU,Laptop,CLL-025,Krzysiek,"[""PCIe""]",,,1.44,"1,750",GeForce 50 Mobile,12 GB,"[""GDDR7""]","24,033",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-026,13.2,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,Nvidia GeForce GTX 1650 laptop GPU,Nvidia,GeForce GTX 1650 Laptop GPU,GPU,Laptop,CLL-027,13.2,"[""PCIe""]",,,1.39,"2,001",GeForce 16 Mobile,4 GB,"[""GDDR5""]","6,968",TRUE,
+--,Nvidia GeForce RTX 3070 Laptop GPU,Nvidia,GeForce RTX 3070 Laptop GPU,GPU,Laptop,CLL-028,13.2,"[""PCIe""]",,,1.11,"1,750",GeForce 30 Mobile,8 GB,"[""GDDR6""]","15,318",TRUE,
+--,NVIDIA GeForce GTX 850M,Nvidia,GeForce GTX 850M,GPU,Laptop,CLL-029,13.2,"[""PCIe""]",,,0.9,"1,000",GeForce 800M,2 GB,"[""DDR3""]","2,524",TRUE,GPC-099
+--,NVIDIA GeForce RTX 3070 Ti Mobile,Nvidia,GeForce RTX 3070 Ti Laptop GPU,GPU,Laptop,CLL-030,13.2,"[""PCIe""]",,,1.41,"1,750",GeForce 30 Mobile,8 GB ,"[""GDDR6""]","17,747",TRUE,
+--,NVIDIA GeForce 940MX,Nvidia,GeForce 940MX,GPU,Laptop,CLL-031,13.2,"[""PCIe""]",,,0.86,"1,253",GeForce 900M,2 GB,"[""GDDR5""]","1,512",TRUE,
+--,NVIDIA GeForce GTX 1060 Mobile,Nvidia,GeForce GTX 1060 Laptop GPU,GPU,Laptop,CLL-033,14.1,"[""PCIe""]",,,1.67,"2,000",GeForce 10 Mobile,6 GB,"[""GDDR5""]","8,160",TRUE,
+--,NVIDIA GeForce GTX 950M,Nvidia,GeForce GTX 950M,GPU,Laptop,CLL-034,14,"[""PCIe""]",,,1.12,900,GeForce 900M,4 GB,"[""DDR3""]","2,576",TRUE,
+--,NVIDIA GeForce 940M,Nvidia,GeForce 940M,GPU,Laptop,CLL-035,14,"[""PCIe""]",,,1.17,900,GeForce 900M,2 GB,"[""DDR3""]","1,129",TRUE,
+--,NVIDIA GeForce G102M,Nvidia,GeForce G102M,GPU,Laptop,CLL-037,14,"[""PCIe""]",,,0.45,450,GeForce 100M,512 MB,"[""--""]",167,TRUE,
+--,Intel Core i7-12700H,Intel,Core i7-12700H,CPU,Laptop,CLL-003,12.1,"[""BGA 1744""]",14,20,2.7,,Alder Lake-H,64 GB,"[""DDR5""]","25,638",TRUE,
+--,Intel Core i5-11400H,Intel,Core i5-11400H,CPU,Laptop,CLL-004,12.1,"[""BGA 1787""]",6,12,2.7,,Tiger Lake-H,128 GB,"[""DDR4""]","15,360",TRUE,
+--,Intel Core i5-11400H,Intel,Core i5-11400H,CPU,Laptop,CLL-005,12.1,"[""BGA 1787""]",6,12,2.7,,Tiger Lake-H,128 GB,"[""DDR4""]","15,360",TRUE,
+--,AMD Ryzen 5 5600H,AMD,Ryzen 5 5600H,CPU,Laptop,CLL-006,12.1,"[""FP6""]",6,12,3.3,,Zen 3,32 GB,"[""DDR4""]","16,692",TRUE,
+--,Intel Core i3-1115G4,Intel,Core i3-1115G4,CPU,Laptop,CLL-007,12.1,"[""BGA 1449""]",2,4,3,,Willow Cove-U,64 GB,"[""DDR4""]","5,916",TRUE,
+--,Mediatek MT8173C,Mediatek,MT8173C,CPU,Laptop,CLL-008,12.1,"[""--""]",4,4,2.1,,--,4 GB,"[""LPDDR3""]","1,366",TRUE,
+--,Qualcomm Snapdragon 730,Qualcomm,Snapdragon 730,CPU,Laptop,CLL-009,12.2,"[""--""]",8,8,2.1,,--,4 GB,"[""LPDDR4X""]",748,TRUE,
+--,AMD Ryzen 7 4800H,AMD,Ryzen 7 4800H,CPU,Laptop,CLL-010,12.2,"[""FP6""]",8,16,2.9,,Zen 2,32 GB,"[""DDR4""]","18,228",TRUE,
+--,Intel Core i5-540M,Intel,Core i5-540M,CPU,Laptop,CLL-011,12.2,"[""PGA 998"",""BGA 1288""]",2,4,2.53,,Arrandale,8 GB,"[""DDR3""]","1,793",TRUE,
+--,AMD Ryzen 7 4800H,AMD,Ryzen 7 4800H,CPU,Laptop,CLL-012,12.2,"[""FP6""]",8,16,4.2,,Zen 2,64 GB,"[""LPDDR4"",""DDR4""]","18,228",TRUE,
+--,AMD Ryzen 7 5800H,AMD,Ryzen 7 5800H,CPU,Laptop,CLL-013,12.2,"[""FP6""]",8,16,3.2,,Zen 3,64 GB,"[""DDR4""]","20,797",TRUE,
+--,AMD Ryzen 7 4800H,AMD,Ryzen 7 4800H,CPU,Laptop,CLL-014,12.2,"[""FP6""]",8,16,2.9,,Zen 2,32 GB,"[""DDR4""]","18,228",TRUE,
+--,AMD Ryzen 7 4800H,AMD,Ryzen 7 4800H,CPU,Laptop,CLL-015,12.2,"[""FP6""]",8,16,2.9,,Zen 2,32 GB,"[""DDR4""]","18,228",TRUE,
+--,AMD Ryzen 7 5800H,AMD,Ryzen 7 5800H,CPU,Laptop,CLL-016,12.2,"[""FP6""]",8,16,3.2,,Zen 3,64 GB,"[""DDR4""]","20,797",TRUE,
+--,AMD Ryzen 7 5800H,AMD,Ryzen 7 5800H,CPU,Laptop,CLL-017,13.1,"[""FP6""]",8,16,3.2,,Zen 3,64 GB,"[""DDR4""]","20,797",TRUE,
+--,Intel Core i5-9300HF,Intel,Core i5-9300HF,CPU,Laptop,CLL-018,13.1,"[""BGA 1440""]",4,8,2.4,,Coffee Lake,128 GB,"[""DDR4""]","7,328",TRUE,
+--,AMD Ryzen 5 7535HS,AMD,Ryzen 5 7535HS,CPU,Laptop,CLL-019,13.1,"[""FP7""]",6,12,4.55,,Zen 3+,64 GB,"[""DDR5"",""LPDDR5""]","17,943",TRUE,
+--,Intel Core i5-12450H,Intel,Core i5-12450,CPU,Laptop,CLL-020,13.1,"[""BGA 1744""]",8,12,4.4,,Alder Lake-H,64 GB,"[""DDR5"",""LPDDR5"",""DDR4"",""LPDDR4""]","16,266",TRUE,
+--,Intel Core i7-13620H,Intel,Core i7-13620H,CPU,Laptop,CLL-021,13.1,"[""BGA 1744""]",10,16,4.9,,Raptor Lake-H,96 GB,"[""DDR4"",""DDR5""]","24,142",TRUE,
+--,Intel Core Ultra 7 Processor 255HX,Intel,Core Ultra 7 Processor 255HX,CPU,Laptop,CLL-022,13.1,"[""BGA 2114""]",20,20,5.2,,Arrow Lake,256 GB,"[""DDR5""]","50,865",TRUE,
+--,Intel Core i9-13900HX,Intel,Core i9-13900HX,CPU,Laptop,CLL-023,13.1,"[""BGA 1964""]",24,32,5.4,,Raptor Lake-HX,192 GB,"[""DDR3""]","43,085",TRUE,
+--,Intel Core i7-13650HX ,Intel,Core i7-13650HX,CPU,Laptop,CLL-024,13.1,"[""BGA 1964""]",14,20,4.9,,Raptor Lake,192 GB,"[""DDR3""]","30,706",TRUE,
+--,AMD Ryzen AI 9 HX 370,AMD,Ryzen AI 9 HX 370,CPU,Laptop,CLL-025,Krzysiek,"[""FP8""]",12,24,5.1,,Zen 5,256 GB,"[""DDR5"",""LPDDR5X""]","35,222",TRUE,
+--,AMD Ryzen 7 5800H,AMD,Ryzen 7 5800H,CPU,Laptop,CLL-026,13.2,"[""FP6""]",8,16,3.2,,Zen 3,64 GB,"[""DDR4""]","20,797",TRUE,
+--,AMD Ryzen 5 4600H,AMD,Ryzen 5 4600H,CPU,Laptop,CLL-027,13.2,"[""FP6""]",6,12,4,,Zen 2,64 GB,"[""DDR4"",""LPDDR4""]","14,248",TRUE,
+--,AMD Ryzen 7 5800H,AMD,Ryzen 7 5800H,CPU,Laptop,CLL-028,13.2,"[""FP6""]",8,16,3.2,,Zen 3,64 GB,"[""DDR4""]","20,797",TRUE,
+--,Intel Core i7-4710HQ,Intel,Core i7-4710HQ,CPU,Laptop,CLL-029,13.2,"[""BGA 1364""]",4,8,3.5,,Crystal Well,32 GB,"[""DDR3L""]","5,540",TRUE,GPC-099
+--,Intel Core i7-12700H,Intel,Core i7-12700H,CPU,Laptop,CLL-030,13.2,"[""BGA 1744""]",14,20,4.7,,Alder Lake-H,64 GB,"[""DDR5"",""DDR4"",""LPDDR5"",""LPDDR4""]","25,638",TRUE,
+--,Intel Core i5-7200U ,Intel,Core i5-7200U,CPU,Laptop,CLL-031,13.2,"[""BGA 1356""]",2,4,3.1,,Kaby Lake,32 GB,"[""DDR4"",""LPDDR3"",""LPDDR3L""]","3,370",TRUE,
+--,AMD Ryzen 5 PRO 2500U,AMD,Ryzen 5 PRO 2500U,CPU,Laptop,CLL-032,13.2,"[""FP5""]",4,8,3.6,,Zen,32 GB,"[""DDR4""]","6,681",TRUE,
+--,Intel Core i7-7700HQ,Intel,Core i7-7700HQ,CPU,Laptop,CLL-033,14.1,"[""BGA 1440""]",4,8,3.8,,Kaby Lake-H,64 GB,"[""DDR4"",""LPDDR3"",""LPDDR3L""]","6,880",TRUE,
+--,Intel Core i5-6200U ,Intel,Core i5-6200U,CPU,Laptop,CLL-034,14,"[""BGA 1356""]",2,4,2.8,,Skylake,32 GB,"[""DDR4"",""LPDDR3"",""LPDDR3L""]","2,991",TRUE,
+--,Intel Core i7-6500U ,Intel,Core i7-6500U,CPU,Laptop,CLL-035,14,"[""BGA 1356""]",2,4,3.1,,Skylake,32 GB,"[""DDR4"",""LPDDR3"",""LPDDR3L""]","3,280",TRUE,
+--,Intel Core i3-7100U,Intel,Core i3-7100U,CPU,Laptop,CLL-036,14,"[""BGA 1356""]",2,4,2.4,,Kaby Lake,32 GB,"[""DDR4"",""LPDDR3"",""LPDDR3L""]","2,721",TRUE,
+--,Intel Pentium Dual-Core T4300,Intel,Pentium Dual-Core T4300,CPU,Laptop,CLL-037,14,"[""Socket P""]",2,2,0.8,,Penryn,8 GB,"[""DDR3""]",776,TRUE,
+--,Intel Core i5-1235U,Intel,Core i5-1235U,CPU,Laptop,CLL-001,12.1,"[""BGA 1744""]",10,12,1.3,,Alder Lake-U,64 GB,"[""DDR5""]","12,910",TRUE,
+CPU-073,AMD FX-8350,AMD,FX-8350,CPU,Desktop,4.1,4.1,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,088",TRUE,tray CPU-073
+CPU-202,Intel Core i7-14700KF,Intel,Core i7-14700KF,CPU,Desktop,CLA-002,13.4,"[""LGA 1700""]",20,28,3.4,,Raptor Lake,192 GB,"[""DDR4"",""DDR5""]","52,975",TRUE,
+CPU-188,Intel Core i7-9700K,Intel,Core i7-9700K,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",8,8,3.6,,Coffee Lake,128 GB,"[""DDR4""]","14,414",TRUE,
+CPU-200,Intel Core i9-14900KF,Intel,Core i9-14900KF,CPU,Desktop,CLA-004,15.2,"[""LGA 1700""]",24,32,3.2,,Raptor Lake,192 GB,"[""DDR4"",""DDR5""]","58,614",TRUE,
+CPU-169,AMD Ryzen 9 5900X,AMD,Ryzen 9 5900X,CPU,Desktop,GPC-921,6.35/176,"[""AM4""]",12,24,3.7,,Zen 3,128 GB,"[""DDR4""]","39,007",TRUE,
+CPU-027,AMD A8-6600K,AMD,A8-6600K,CPU,Desktop,CLA-010,15.2,"[""FM2""]",4,4,3.9,,Richland,8 GB,"[""DDR3""]","3,003",TRUE,
+CPU-064,AMD Ryzen 9 5950X,AMD,Ryzen 9 5950X,CPU,Desktop,CLA-011,12.4,"[""AM4""]",16,32,3.4,,Zen 3,128 GB,"[""DDR4""]","45,432",TRUE,
+CPU-150,Intel Core i5-9500,Intel,Core i5-9500,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",6,6,3,,Coffee Lake Refresh,128 GB,"[""DDR4""]","9,857",TRUE,
+CPU-005,Intel Core i5-4440,Intel,Core i5-4440,CPU,Desktop,,,"[""LGA 1150""]",4,4,3.1,,Haswell,32 GB,"[""DDR3""]","4,785",TRUE,Na szafce w GIGABYTE GA-Z97P-D3
+CPU-146,Intel Core i5-8400,Intel,Core i5-8400,CPU,Desktop,GPC-519,15.3,"[""LGA 1151""]",6,6,2.8,,Coffee Lake,128 GB,"[""DDR4""]","9,224",TRUE,"Broken, need investigation"
+CPU-181,Intel Core i3-4130T,Intel,Core i3-4130T,CPU,Desktop,CLA-019,14.3,"[""LGA 1150""]",2,4,2.9,,Haswell,32 GB,"[""DDR3""]","2,894",TRUE,
+CPU-179,AMD Ryzen 7 7800X3D,AMD,Ryzen 7 7800X3D,CPU,Desktop,CLA-020,13.3,"[""AM5""]",8,16,4.2,,Zen 4,128 GB,"[""DDR5""]","34,233",TRUE,
+CPU-015,Intel Core i7-3770,Intel,Core i7-3770,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",4,8,3.4,,Ivy Bridge,32 GB,"[""DDR3""]","6,415",TRUE,w cpu 014
+CPU-016,Intel Core i7-13700KF,Intel,Core i7-13700KF,CPU,Desktop,CLA-022,14.2,"[""LGA 1700""]",16,24,3.4,,Raptor Lake,128 GB,"[""DDR4"",""DDR5""]","46,239",TRUE,
+CPU-070,Intel Core i3-13100F,Intel,Core i3-13100F,CPU,Desktop,GPC-1275,8.3,"[""LGA 1700""]",4,8,3.4,,Raptor Lake,192 GB,"[""DDR4"",""DDR5""]","14,690",TRUE,
+CPU-154,Intel Core i9-12900K,Intel,Core i9-12900K,CPU,Desktop,CLA-024,12.4,"[""LGA 1700""]",16,24,3.2,,Alder Lake-S,128 GB,"[""DDR4""]","41,271",TRUE,
+CPU-203,Intel Core i5-14600KF,Intel,Core i5-14600KF,CPU,Desktop,CLA-025,12.4,"[""LGA 1700""]",14,20,3.5,,Raptor Lake,192 GB,"[""DDR4"",""DDR5""]","38,784",TRUE,
+CPU-226,AMD Ryzen 9 5950X,AMD,Ryzen 9 5950X,CPU,Desktop,CLA-029,14.2,"[""AM4""]",16,32,3.4,,Zen 3,128 GB,"[""DDR4""]","45,432",TRUE,
+CPU-198,AMD Ryzen 7 5800X3D,AMD,Ryzen 7 5800X3D,CPU,Desktop,CLA-006,12.3,"[""AM4""]",8,16,3.4,,Zen 3,128 GB,"[""DDR4""]","28,308",TRUE,
+CPU-050,Intel Core i7-11700F,Intel,Core i7-11700F,CPU,Desktop,CLA-2137,13.4,"[""LGA 1200""]",8,16,2.5,,Rocket Lake-S,128 GB,"[""DDR4""]","24,411",TRUE,
+CPU-038,AMD Ryzen 5 7600X,AMD,Ryzen 5 7600X,CPU,Desktop,CLA-329,14.2,"[""AM5""]",6,12,4.7,,Zen 4,128 GB,"[""DDR5""]","28,360",TRUE,
+CPU-068,AMD Ryzen 7 7700X,AMD,Ryzen 7 7700X,CPU,Desktop,GPC-692,15.3,"[""AM5""]",8,16,4.5,,Zen 4,128 GB,"[""DDR5""]","35,792",TRUE,
+GPU-003,Gigabyte RX 5700 XT GAMING OC,AMD,Radeon RX 5700 XT,GPU,Desktop,GPC-474,8.2,"[""PCIe""]",,,1.65,"1,750",Navi 10,8 GB,"[""GDDR6""]","16,293",TRUE,
+GPU-007,Sapphire PULSE RX 7900 XTX,AMD,Radeon RX 7900 XTX,GPU,Desktop,CLA-025,12.4,"[""PCIe""]",,,1.86,"2,500",Navi III,24 GB,"[""GDDR6""]","31,212",TRUE,
+GPU-013,MSI GeForce RTX 3070 Ti VENTUS 3X OC,Nvidia,GeForce RTX 3070 Ti,GPU,Desktop,GPC-1118,6.2,"[""PCIe""]",,,1.58,"1,188",GeForce 30,8 GB,"[""GDDR6X""]","23,364",TRUE,
+GPU-018,Zotac RTX 3050 Solo,Nvidia,GeForce RTX 3050,GPU,Desktop,GPC-1159,15.3,"[""PCIe""]",,,1.55,"1,750",GeForce 30,8 GB,"[""GDDR6""]","12,572",TRUE,
+GPU-025,ASRock Radeon RX 6500 XT Phantom Gaming D OC,AMD,Radeon RX 6500 XT,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,2.37,"2,248",Navi II,4 GB,"[""GDDR6""]","9,608",TRUE,
+GPU-032,ASUS Geforce GTX 960 Strix OC,Nvidia,GeForce GTX 960,GPU,Desktop,GPC-222,6.4,"[""PCIe""]",,,1.23,"1,800",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,
+GPU-035,Sapphire NITRO+ RX 6700 XT,AMD,Radeon RX 6700 XT,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,2.46,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,
+GPU-069,Gigabyte GeForce RTX 4090 GAMING OC,Nvidia,GeForce RTX 4090,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,2.235,"1,313",GeForce 40,24 GB,"[""GDDR6X""]","38,219",TRUE,
+GPU-100,MSI GeForce GTX 1060 3GT OC,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-145,6.4,"[""PCIe""]",,,1.51,"2,002",GeForce 10,3 GB,"[""GDDR5""]","9,804",TRUE,
+GPU-106,Gigabyte GTX 1060 Gaming 6 GB,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-808,10.1,"[""PCIe""]",,,1.6,"2,002",GeForce 10,6 GB,"[""GDDR5""]","10,083",TRUE,
+GPU-141,MSI RTX 4070 Ti VENTUS 3X OC,Nvidia,GeForce RTX 4070 Ti,GPU,Desktop,GPC-1136,6.3,"[""PCIe""]",,,2.31,"1,313",GeForce 40,12 GB,"[""GDDR6X""]","31,610",TRUE,
+GPU-211,MSI GeForce GTX 1080 Ti Ganeing X Trio,Nvidia,GeForce GTX 1080 Ti,GPU,Desktop,GPC-404,17.4,"[""PCIe""]",,,1.48,"1,376",GeForce 10,11 GB,"[""GDDR5X""]","18,601",TRUE,--
+GPU-218,GIGABYTE GeForce RTX 3070 GAMING OC 8G,Nvidia,GeForce RTX 3070,GPU,Desktop,CLA-0735,TV,"[""PCIe""]",,,1.81,"1,400",GeForce 30,8 GB,"[""GDDR6""]","22,216",TRUE,
+GPU-242,Intel Arc B570 Challenger 10GB OC,Intel,ARC B570,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,2.5,"2,375",Battlemage,10 GB,"[""GDDR6""]","14,182",TRUE,
+GPU-243,ASUS PRIME GeForce RTX 5070 12GB GDDR7,Nvidia,GeForce RTX 5070,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,2.32,"1,750",GeForce 50,12 GB,"[""GDDR7""]","29,011",TRUE,
+GPU-247,PowerColor Radeon RX 9070 XT Hellhound 16GB GDDR6,AMD,Radeon RX 9070 XT,GPU,Desktop,GPC-921,6.35/176,"[""PCIe""]",,,2.22,"2,438",Navi IV,16 GB,"[""GDDR6""]","26,837",TRUE,
+MBR-001,MSI Z790 Tomahawk WIFI,MSI,Z790,Motherboard,Desktop,CLA-024,12.4,"[""LGA 1700""]",,,,"7,200",,128 GB,"[""DDR4""]",,TRUE,Realtek ALC4080
+MBR-002,Gigabyte X670 Aorus Elite AX,Gigabyte,X670,Motherboard,Desktop,CLA-020,13.3,"[""AM5""]",,,,"6,666",,256 GB,"[""DDR5"",""DDR4""]",,TRUE,Realtek ALC897
+MBR-003,MSI MAG B660M MORTAR WIFI DDR4,MSI,B660,Motherboard,Desktop,CLA-023,15.2,"[""LGA 1700""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,Realtek ALC1200
+MBR-008,ASUS ROG Strix X570-F Gaming,ASUS,X570,Motherboard,Desktop,CLA-006,12.3,"[""AM4""]",,,,"5,100",,128 GB,"[""DDR4""]",,TRUE,Realtek S1220A (SupremeFX)
+MBR-014,ASUS ROG STRIX X570-F GAMING,ASUS,X570,Motherboard,Desktop,CLA-011,12.4,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,"came back from IT, working"
+MBR-018,Gigabyte B360 HD3,Gigabyte,B360,Motherboard,Desktop,BOX-019,1.4,"[""LGA 1151""]",,,,"2,666",,64 GB,"[""DDR4""]",,TRUE,Realtek ALC887
+MBR-024,Gigabyte B360 HD3,Gigabyte,B360,Motherboard,Desktop,CLA-003,13.4,"[""LGA 1151""]",,,,"2,666",,64 GB,"[""DDR4""]",,TRUE,Realtek ALC887
+MBR-026,ASUS ROG STRIX X570-F GAMING,ASUS,X570,Motherboard,Desktop,GPC-921,6.35/176,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,Realtek S1220A (SupremeFX)
+MBR-031,ASUS Prime Z690-A,ASUS,Z690,Motherboard,Desktop,CLA-022,14.2,"[""LGA 1700""]",,,,"6,000",,128 GB,"[""DDR5""]",,TRUE,Realtek ALC S1220A
+MBR-083,MSI MPG Z590 GAMING PLUS,MSI,Z590,Motherboard,Desktop,CLA-2137,13.4,"[""LGA 1200""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,Realtek ALC897
+MBR-102,ASUS Rog STRIX Z370-E GAMING,ASUS,Z370,Motherboard,Desktop,CLA-012,13.4,"[""LGA 1151""]",,,,"4,000",,64 GB,"[""DDR4""]",,TRUE,Realtek ALC1220A
+MBR-132,Biostar H61MHV3,Biostar,H61,Motherboard,Desktop,CLA-021,14.3,"[""LGA 1155""]",,,,"1,600",,16 GB,"[""DDR3""]",,TRUE,Realtek ALC662
+MBR-160,ASRock B650M PG LIGHTNING WiFi,ASRock,B650,Motherboard,Desktop,CLA-329,14.2,"[""AM5""]",,,,"7,200",,192 GB,"[""DDR5""]",,TRUE,--
+MBR-170,MSI MAG B760 TOMAHAWK WIFI,MSI,B760,Motherboard,Desktop,CLA-002,13.4,"[""LGA 1700""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,--
+MBR-171,MSI MAG B760 TOMAHAWK WIFI,MSI,B760,Motherboard,Desktop,CLA-004,15.2,"[""LGA 1700""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,--
+MBR-218,ASUS B85M-G,ASUS,B85,Motherboard,Desktop,GPC-042,7.2,"[""LGA 1150""]",,,,"1,600",,32 GB,"[""DDR3""]",,TRUE,
+MBR-215,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-283,6.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-004,ASUS Prime X299-A II,ASUS,X299,Motherboard,Desktop,GPC-1048,10.2,"[""LGA 2066""]",,,,"4,266",,256 GB,"[""DDR4""]",,TRUE,
+MBR-005,MSI MAG B660M MORTAR WIFI DDR4,MSI,B660,Motherboard,Desktop,GPC-1155,13.3,"[""LGA 1700""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-006,Gigabyte X670 Aorus Elite AX,Gigabyte,X670,Motherboard,Desktop,GPC-1158,,"[""AM5""]",,,,"6,666",,256 GB,"[""DDR5""]",,TRUE,
+MBR-007,ASUS Prime X299-Deluxe,ASUS,X299,Motherboard,Desktop,GPC-414,16.3,"[""LGA 2066""]",,,,"4,133",,128 GB,"[""DDR4""]",,TRUE,
+MBR-011,ROG Strix Z590-E GAMING WIFI,ASUS,Z590,Motherboard,Desktop,GPC-1153,10.2,"[""LGA 1200""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-013,ASUS ROG STRIX X570-F GAMING,ASUS,X570,Motherboard,Desktop,GPC-1156,14.3,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-020,Gigabyte GA-Z97-HD3,Gigabyte,Z97,Motherboard,Desktop,GPC-1127,6.2,"[""LGA 1150""]",,,,"3,100",,32 GB,"[""DDR3""]",,TRUE,
+MBR-027,Gigabyte B450 Aorus M,Gigabyte,B450,Motherboard,Desktop,GPC-643,17.3,"[""AM4""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-028,ASUS PRIME B450M-A,ASUS,B450,Motherboard,Desktop,GPC-737,15.1,"[""AM4""]",,,,,,64 GB,"[""DDR4""]",,TRUE,
+MBR-032,MSI Z87-G45 GAMING,MSI,Z87,Motherboard,Desktop,GPC-006,10.3,"[""LGA 1150""]",,,,"3,000",,32 GB,"[""DDR3""]",,TRUE,
+MBR-033,MSI Z87-G45 GAMING,MSI,Z87,Motherboard,Desktop,GPC-008,9.1,"[""LGA 1150""]",,,,"3,000",,32 GB,"[""DDR3""]",,TRUE,
+MBR-035,MSI Z97-G43,MSI,Z97,Motherboard,Desktop,GPC-027,10.3,"[""LGA 1150""]",,,,"3,000",,32 GB,"[""DDR3""]",,TRUE,
+MBR-036,ASRock 970 Extreme3 R2.0,ASRock,970,Motherboard,Desktop,GPC-045,7.2,"[""AM3+""]",,,,"2,100",,64 GB,"[""DDR3""]",,TRUE,
+MBR-037,ASUS M5A78L-M/USB3,ASUS,760G,Motherboard,Desktop,GPC-046,16.4,"[""AM3+""]",,,,"2,000",,32 GB,"[""DDR3""]",,TRUE,
+MBR-038,Gigabyte 990FXA-UD3R5,Gigabyte,990FX,Motherboard,Desktop,GPC-061,10.3,"[""AM3+""]",,,,"2,000",,32 GB,"[""DDR3""]",,TRUE,
+MBR-039,ASRock 990FX Exterme 6,ASRock,990FX,Motherboard,Desktop,GPC-066,9.1,"[""AM3+""]",,,,"2,450",,64 GB,"[""DDR3""]",,TRUE,
+MBR-040,MSI Z97 GAMING 3,MSI,Z97,Motherboard,Desktop,GPC-072,18.3,"[""LGA 1150""]",,,,"3,300",,32 GB,"[""DDR3""]",,TRUE,
+MBR-041,MSI Z97 GAMING 3,MSI,Z97,Motherboard,Desktop,GPC-073,11.2,"[""LGA 1150""]",,,,"3,300",,32 GB,"[""DDR3""]",,TRUE,
+MBR-043,ASRock Fatal1ty Z97X KILLER,ASRock,Z97,Motherboard,Desktop,GPC-077,7.2,"[""LGA 1150""]",,,,"2,933",,32 GB,"[""DDR3""]",,TRUE,
+MBR-044,ASUS MAXIMUS VII RANGER,ASUS,Z97,Motherboard,Desktop,GPC-078,,"[""LGA 1150""]",,,,"3,200",,32 GB,"[""DDR3""]",,TRUE,
+MBR-045,Gigabyte GA-Z97-HD3,Gigabyte,Z97,Motherboard,Desktop,GPC-084,,"[""LGA 1150""]",,,,"3,100",,32 GB,"[""DDR3""]",,TRUE,
+MBR-047,ASUS Z170 PRO GAMING,ASUS,Z170,Motherboard,Desktop,GPC-106,6.4,"[""LGA 1151""]",,,,"3,333",,64 GB,"[""DDR4""]",,TRUE,
+MBR-048,Gigabyte GA-X99-UD3,Gigabyte,X99,Motherboard,Desktop,GPC-107,6.4,"[""LGA 2011-3""]",,,,"2,800",,64 GB,"[""DDR4""]",,TRUE,
+MBR-050,ASUS TUF GAMING B450-PLUS II,ASUS,B450,Motherboard,Desktop,GPC-1117,6.2,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-051,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1118,6.2,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-052,ASUS TUF GAMING B450-PLUS II,ASUS,Z97,Motherboard,Desktop,GPC-1119,6.2,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-053,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1120,6.2,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-054,MSI B450M-A PRO Max,MSI,B450,Motherboard,Desktop,GPC-1121,6.2,"[""AM4""]",,,,"4,133",,32 GB,"[""DDR4""]",,TRUE,
+MBR-055,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1122,,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,ASTRUM (SONY)
+MBR-056,Gigabyte B550M S2H,Gigabyte,B550,Motherboard,Desktop,GPC-1123,SQ,"[""AM4""]",,,,"5,100",,64 GB,"[""DDR4""]",,TRUE,
+MBR-057,ASUS PRIME A520M-A,ASUS,A520,Motherboard,Desktop,GPC-1125,6.2,"[""AM4""]",,,,"4,866",,128 GB,"[""DDR4""]",,TRUE,
+MBR-058,ASUS PRIME B460M-A R2.0,ASUS,B460,Motherboard,Desktop,GPC-1126,6.2,"[""LGA 1200""]",,,,"2,933",,128 GB,"[""DDR4""]",,TRUE,
+MBR-059,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1128,7.2,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-060,ASUS PRIME B460M-A R2.0,ASUS,B460,Motherboard,Desktop,GPC-166,16.4,"[""LGA 1200""]",,,,"2,933",,128 GB,"[""DDR4""]",,TRUE,
+MBR-061,ASUS TUF GAMING B550-PLUS,ASUS,B550,Motherboard,Desktop,GPC-1131,7.2,"[""AM4""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-062,MSI MPG Z590 GAMING PLUS,MSI,Z590,Motherboard,Desktop,GPC-1132,7.2,"[""LGA 1200""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-063,MSI MPG B550 GAMING PLUS,MSI,B550,Motherboard,Desktop,GPC-1133,6.3,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-064,MSI MAG B560 TOMAHAWK WIFI,MSI,B560,Motherboard,Desktop,GPC-1134,6.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-065,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1135,6.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-067,MSI MAG B560 TOMAHAWK WIFI,MSI,B560,Motherboard,Desktop,GPC-1137,6.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-068,ASUS TUF GAMING B550-PLUS,ASUS,B550,Motherboard,Desktop,GPC-1138,6.3,"[""AM4""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-069,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1139,6.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-070,MSI B450 GAMING PLUS MAX,MSI,B450,Motherboard,Desktop,GPC-1140,6.3,"[""AM4""]",,,,"4,133",,128 GB,"[""DDR4""]",,TRUE,
+MBR-071,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1141,6.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-072,MSI MAG B560 TOMAHAWK WIFI,MSI,B560,Motherboard,Desktop,GPC-1142,7.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-074,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1144,7.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-075,MSI MAG B560 TOMAHAWK WIFI,MSI,B560,Motherboard,Desktop,GPC-1145,7.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-076,ASUS TUF GAMING B550-PLUS,ASUS,B550,Motherboard,Desktop,GPC-1146,7.3,"[""AM4""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-077,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1147,7.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-078,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1149,7.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-079,MSI MPG B550 GAMING PLUS,MSI,B550,Motherboard,Desktop,GPC-1150,7.3,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-080,MSI MAG B560 TOMAHAWK WIFI,MSI,B560,Motherboard,Desktop,GPC-1151,6.4,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-081,ASRock B560 PRO4,ASRock,B560,Motherboard,Desktop,GPC-1152,6.4,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-084,MSI MPG Z590 GAMING PLUS,MSI,Z590,Motherboard,Desktop,GPC-1159,15.3,"[""LGA 1200""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-085,ASUS Prime Z690-A,ASUS,Z690,Motherboard,Desktop,CLA-033,12.3,"[""LGA 1700""]",,,,"6,000",,128 GB,"[""DDR5""]",,TRUE,
+MBR-087,MSI B85-G41,MSI,B85,Motherboard,Desktop,GPC-125,9.1,"[""LGA 1150""]",,,,"1,600",,64 GB,"[""DDR3""]",,TRUE,
+MBR-088,Gigabyte 990FXA-UD3R5,Gigabyte,990FX,Motherboard,Desktop,GPC-131,6.4,"[""AM3+""]",,,,,,32 GB,"[""DDR3""]",,TRUE,
+MBR-089,ASUS Z170 Pro Gaming,ASUS,Z170,Motherboard,Desktop,GPC-134,7.4,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-090,Gigabyte GA-Z97M-D3H,Gigabyte,Z97,Motherboard,Desktop,GPC-146,6.4,"[""LGA 1150""]",,,,"3,100",,32 GB,"[""DDR3""]",,TRUE,
+MBR-091,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-162,7.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-092,ASUS Z170 Pro Gaming,ASUS,Z170,Motherboard,Desktop,GPC-164,7.4,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-093,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-175,17.3,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+MBR-094,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-197,17.3,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-095,ASUS 970 PRO GAMING/AURA,ASUS,AMD 970,Motherboard,Desktop,GPC-215,,"[""AM3+""]",,,,"2,133",,32 GB,"[""DDR3""]",,TRUE,
+MBR-096,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-220,7.4,"[""LGA 1151""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-097,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-222,6.4,"[""LGA 1151""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-098,ASRock H270M Pro4,ASRock,H270,Motherboard,Desktop,GPC-316,7.4,"[""LGA 1151""]",,,,"2,133",,64 GB,"[""DDR4""]",,TRUE,
+MBR-099,ASRock H270M Pro4,ASRock,H270,Motherboard,Desktop,GPC-317,7.4,"[""LGA 1151""]",,,,"2,133",,64 GB,"[""DDR4""]",,TRUE,
+MBR-100,MSI Z170A TOMAHAWK,MSI,Z170,Motherboard,Desktop,GPC-333,9.1,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-101,ASRock H270 Pro4,ASRock,H270,Motherboard,Desktop,GPC-349,9.3,"[""LGA 1151""]",,,,"2,133",,64 GB,"[""DDR4""]",,TRUE,
+MBR-104,Gigabyte AX370-Gaming 3-CF,Gigabyte,AX370,Motherboard,Desktop,GPC-440,15.1,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-105,ASRock X470 Taichi,ASRock,X470,Motherboard,Desktop,GPC-499,10.2,"[""AM4""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-108,ASRock AB350 Pro4,ASRock,B350,Motherboard,Desktop,GPC-616,11.2,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-109,ASUS Prime Z690-A,ASUS,Z690,Motherboard,Desktop,Not available,635,"[""LGA 1700""]",,,,"6,000",,128 GB,"[""DDR5""]",,TRUE,Jest w pudelku z nie dzialajacymi
+MBR-110,ASRock AB350 Pro4,ASRock,B350,Motherboard,Desktop,GPC-623,18.4,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-111,MSI MPG X570 GAMING PLUS,MSI,X570,Motherboard,Desktop,GPC-684,9.2,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-112,ASRock B550 Phantom Gaming 4,ASRock,B550,Motherboard,Desktop,GPC-1154,14.2,"[""AM4""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-113,MSI MAG B550 TOMAHAWK,MSI,B550,Motherboard,Desktop,GPC-808,10.1,"[""AM4""]",,,,"5,100",,128 GB,"[""DDR4""]",,TRUE,
+MBR-114,Gigabyte B550 GAMING X V2,Gigabyte,B550,Motherboard,Desktop,GPC-1136,6.3,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-116,ASUS ROG STRIX X570-F GAMING,ASUS,X570,Motherboard,Desktop,GPC-1161,,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-117,ASUS Gryphon Z97 Armor Edition,ASUS,Z97,Motherboard,Desktop,GPC-1116,6.2,"[""LGA 1150""]",,,,"1,866",,32 GB,"[""DDR3""]",,TRUE,
+MBR-118,ASRock Z270 Pro4,ASRock,Z270,Motherboard,Desktop,GPC-389,10.1,"[""LGA 1151""]",,,,"3,733",,64 GB,"[""DDR4""]",,TRUE,
+MBR-120,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1157,16.3,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-124,ASUS Z170-P,ASUS,Z170,Motherboard,Desktop,GPC-615,11.3,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-127,ASUS Prime B660-PLUS D4,ASUS,B660,Motherboard,Desktop,GPC-1275,8.3,"[""LGA 1700""]",,,,"5,066",,128 GB,"[""DDR4""]",,TRUE,
+MBR-128,ASUS TUF Gaming B450-Plus II,ASUS,B450,Motherboard,Desktop,GPC-1057,9.3,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-130,ASRock B450M Pro4-F,ASRock,B450,Motherboard,Desktop,GPC-1143,7.3,"[""AM4""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-131,ASUS Z170 PRO GAMING,ASUS,Z170,Motherboard,Desktop,GPC-282,17.4,"[""LGA 1151""]",,,,"3,300",,64 GB,"[""DDR4""]",,TRUE,
+MBR-133,MSI B450 GAMING PLUS MAX,MSI,B450,Motherboard,Desktop,GPC-1148,7.3,"[""AM4""]",,,,"4,133",,128 GB,"[""DDR4""]",,TRUE,
+MBR-137,MSI B450M-A PRO Max,MSI,B450,Motherboard,Desktop,,,"[""AM4""]",,,,"4,133",,32 GB,"[""DDR4""]",,TRUE,
+MBR-139,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-185,17.4,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+MBR-140,MSI B360M Gaming Plus,MSI,B360,Motherboard,Desktop,GPC-515,10.3,"[""LGA 1151""]",,,,"2,666",,32 GB,"[""DDR4""]",,TRUE,
+MBR-141,MSI B85-G41,MSI,B85,Motherboard,Desktop,GPC-127,8.1,"[""LGA 1150""]",,,,"1,600",,64 GB,"[""DDR3""]",,TRUE,
+MBR-143,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-196,15.3,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+MBR-144,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-207,7.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-145,MSI MPG Z490 GAMING PLUS,MSI,Z490,Motherboard,Desktop,GPC-787,14.2,"[""LGA 1200""]",,,,"5,000",,128 GB,"[""DDR4""]",,TRUE,
+MBR-146,Gigabyte GA-Z97M-D3H,Gigabyte,Z97,Motherboard,Desktop,GPC-145,6.4,"[""LGA 1150""]",,,,"3,100",,32 GB,"[""DDR3""]",,TRUE,
+MBR-147,ASUS Z170-P,ASUS,Z170,Motherboard,Desktop,GPC-228,8.1,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-148,ASUS MAXIMUS VII HERO,ASUS,Z97,Motherboard,Desktop,GPC-063,8.3,"[""LGA 1150""]",,,,"3,300",,32 GB,"[""DDR3""]",,TRUE,
+MBR-149,MSI 970A-G43,MSI,AMD 970,Motherboard,Desktop,GPC-029,10.2,"[""AM3+""]",,,,"2,133",,32 GB,"[""DDR3""]",,TRUE,
+MBR-150,Gigabyte GA-Z170M-HD3P,Gigabyte,Z170,Motherboard,Desktop,GPC-074,17.4,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+MBR-153,MSI 970 Gaming,MSI,AMD 970,Motherboard,Desktop,GPC-154,16.4,"[""AM3+""]",,,,"2,133",,32 GB,"[""DDR3""]",,TRUE,
+MBR-164,ASUS PRIME X670-P,ASUS,X670,Motherboard,Desktop,GPC-1071,179,"[""AM5""]",,,,"7,600",,192 GB,"[""DDR5""]",,TRUE,
+MBR-179,MSI MPG Z590 GAMING PLUS,MSI,Z590,Motherboard,Desktop,GPC-1209,8.1,"[""LGA 1200""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-181,ASUS Z170-P,ASUS,Z170,Motherboard,Desktop,GPC-233,8.1,"[""LGA 1151""]",,,,"3,466",,64 GB,"[""DDR4""]",,TRUE,
+MBR-182,MSI MEG Z490 ACE,MSI,Z490,Motherboard,Desktop,GPC-736,16.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-185,Gigabyte B550M AOUS ELITE,Gigabyte,B550,Motherboard,Desktop,GPC-1909,15.1,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-186,Gigabyte B550M AOUS ELITE,Gigabyte,B550,Motherboard,Desktop,GPC-1883,8.3,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-187,Gigabyte B550M AOUS ELITE,Gigabyte,B550,Motherboard,Desktop,GPC-1882,9.2,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-188,Gigabyte B550M AOUS ELITE,Gigabyte,B550,Motherboard,Desktop,GPC-1886,8.3,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-189,Asus PRIME B660M-PLUS D4,ASUS,B660,Motherboard,Desktop,GPC-1493,SQ,"[""LGA 1700""]",,,,"5,066",,128 GB,"[""DDR4""]",,TRUE,
+MBR-190,TUF GAMING B550-PLUS,Asus,B550,Motherboard,Desktop,GPC-1217,9.2,"[""AM4""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-191,Gigabyte B550 GAMING X,Gigabyte,B550,Motherboard,Desktop,GPC-995,11.2,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-192,Gigabyte B550 GAMING X V2,Gigabyte,B550,Motherboard,Desktop,GPC-1561,,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,FALSE,SQ
+MBR-194,MSI Z590 PRO WIFI,MSI,Z590,Motherboard,Desktop,GPC-1064,11.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-195,AsRock Z590 Extreme,Asus,Z590,Motherboard,Desktop,GPC-969,11.2,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-196,ASUS Prime B660-PLUS D4,ASUS,B660,Motherboard,Desktop,GPC-1449,7.2,"[""LGA 1700""]",,,,"5,066",,128 GB,"[""DDR4""]",,TRUE,
+MBR-198,Gigabyte Z690 UD DDR4,Gigabyte,Z690,Motherboard,Desktop,GPC-1647,10.1,"[""LGA 1700""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-199,Gigabyte B550 GAMING X V2,Gigabyte,B550,Motherboard,Desktop,CLA-030,13.3,"[""AM4""]",,,,"4,733",,128 GB,"[""DDR4""]",,TRUE,
+MBR-201,MSI Z590 PRO WIFI,MSI,Z590,Motherboard,Desktop,GPC-980,16.3,"[""LGA 1200""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-202,Gigabyte Z370 HD3,Gigabyte,Z370,Motherboard,Desktop,GPC-391,9.3,"[""LGA 1151""]",,,,"4,000",,64 GB,"[""DDR4""]",,TRUE,
+MBR-203,MSI MAG B760 TOMAHAWK WIFI,MSI,B760,Motherboard,Desktop,GPC-926,11.3,"[""LGA 1700""]",,,,"5,333",,128 GB,"[""DDR4""]",,TRUE,
+MBR-204,MSI MAG Z390 TOMAHAWK,MSI,Z390,Motherboard,Desktop,GPC-682,SQ,"[""LGA 1151""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+MBR-205,AB350 Pro4,ASRock, B350,Motherboard,Desktop,GPC-300,9.3,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,Devolwer
+MBR-206,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-298,16.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-207,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-291,6.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-208,PRIME Z270-P,ASUS,Z270,Motherboard,Desktop,GPC-365,18.4,"[""LGA 1151""]",,,,"3,866",,64 GB,"[""DDR4""]",,TRUE,
+MBR-209,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-218,7.4,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-210,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,GPC-219,10.3,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-211,ASRock AB350 Pro4,ASRock,B350,Motherboard,Desktop,GPC-299,18.3,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-212,ASRock AB350 Pro4,ASRock,B350,Motherboard,Desktop,GPC-303,7.2,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-213,ASRock AB350 Pro4,ASRock,B350,Motherboard,Desktop,GPC-287,10.2,"[""AM4""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+MBR-214,ROG STRIX Z390-F GAMING,Asus,Z390,Motherboard,Desktop,GPC-780,9.1,"[""LGA 1151""]",,,,"4,266",,128 GB,"[""DDR4""]",,TRUE,
+GPU-000,Biostar Radeon RX 550 640SP,AMD,Radeon RX 550 640SP,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,"1,019",1.5,Polaris,4 GB,"[""GDDR5""]","2,684",TRUE,Not a regular RX 550
+GPU-001,Nvidia GeForce GTX 460,Nvidia,GeForce GTX 460,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,0.675,"1,800",GeForce 400,1 GB,"[""GDDR5""]","2,276",TRUE,--
+GPU-004,ASUS Radeon RX 580 Dual OC,AMD,Radeon RX 580,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,"1,257","2,000",Polaris,8 GB,"[""GDDR5""]","8,814",TRUE,"PC rebooting after recording starts?Needs to be tested"
+GPU-005,Zotac Gaming GeForce RTX 2060,Nvidia,GeForce RTX 2060,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.37,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-006,Sapphire NITRO+ RX 7900 XT Vapor-X,AMD,Radeon RX 7900 XT,GPU,Desktop,CLA-025,12.4,"[""PCIe""]",,,1.5,"2,500",Navi III,20 GB,"[""GDDR6""]","28,990",TRUE,--
+GPU-011,Gigabyte R9 270 WindForce 2X OC,AMD,Radeon R9 270X OC,GPU,Desktop,,,"[""PCIe""]",,,0.95,"1,400",Volcanic Islands,2 GB,"[""GDDR5""]","4,873",FALSE,Artefakty
+GPU-014,ASRock Arc A380 Challenger ITX OC,Intel,ARC A380,GPU,Desktop,GPC-1153,10.2,"[""PCIe""]",,,2.25,"1,937",Alchemist,6 GB,"[""GDDR6X""]","6,255",TRUE,--
+GPU-017,ASRock Arc A380 Challenger ITX OC,Intel,ARC A380,GPU,Desktop,GPC-1275,8.3,"[""PCIe""]",,,2.25,"1,937",Alchemist,6 GB,"[""GDDR6X""]","6,255",TRUE,--
+GPU-021,Sapphire PULSE RX 6500 XT,AMD,Radeon RX 6500 XT,GPU,Desktop,GPC-011,6.35/186,"[""PCIe""]",,,2.42,"2,248",Navi II,4 GB,"[""GDDR6""]","9,608",TRUE,--
+GPU-022,Power Color Radeon R7 240,AMD,Radeon R7 240,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.78,"1,100",Volcanic Islands,2 GB,"[""GDDR5""]",900,TRUE,--
+GPU-024,Gigabyte GeForce GTX 1650 OC,Nvidia,GeForce GTX 1650,GPU,Desktop,GPC-154,16.4,"[""PCIe""]",,,1.41,"1,500",GeForce 16,4 GB,"[""GDDR6""]","7,886",TRUE,--
+GPU-030,MSI Radeon R9 380 Gaming,AMD,Radeon R9 380,GPU,Desktop,GPC-1157,16.3,"[""PCIe""]",,,1,"1,425",Pirate Islands,4 GB,"[""GDDR5""]","6,044",TRUE,--
+GPU-039,EVGA GeForce GTX 1080 SC2 GAMING,Nvidia,GeForce GTX 1080,GPU,Desktop,CLA-420,16.2,"[""PCIe""]",,,1.71,"1,251",GeForce 10,8 GB,"[""GDDR5""]","15,585",TRUE,--
+GPU-040,ASUS TUF RX 6800 XT GAMING OC,AMD,Radeon RX 6800 XT,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.88,"2,000",Navi II,16 GB,"[""GDDR6""]","24,988",TRUE,sprawdzic czy dziala 
+GPU-041,ASUS DUAL RTX 3060 Ti V2 OC,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,GPC-1909,15.1,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,!! for further verification !!
+GPU-045,Intel Arc A750,Intel,ARC A750,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,2.05,"2,000",Alchemist,8 GB,"[""GDDR6""]","12,525",TRUE,W pudełku
+GPU-046,Sapphire PULSE RX 6800 XT,AMD,Radeon RX 6800 XT,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,1.88,"2,000",Navi II,16 GB,"[""GDDR6""]","24,988",FALSE,"Prawdopodobnie zepsuta, do sprawdzenia. Artefakty sie pojawiaja "
+GPU-047,Gigabyte GTX 1660 SUPER OC,Nvidia,GeForce GTX 1660 Super,GPU,Desktop,GPC-519,15.3,"[""PCIe""]",,,1.75,"1,750",GeForce 16,6 GB,"[""GDDR6""]","12,699",TRUE,--
+GPU-049,EVGA GTX 970 ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-228,8.1,"[""PCIe""]",,,1.05,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-051,Club3d AMD Radeon R7 360,AMD,Radeon R7 360,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1,"1,500",Pirate Islands,2 GB,"[""GDDR5""]","3,135",TRUE,--
+GPU-054,Gigabyte R9 380 G1 Gaming 4 GB,AMD,Radeon R9 380,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,0.99,"1,425",Pirate Islands,4 GB,"[""GDDR6""]","6,044",TRUE,--
+GPU-057,NVIDIA GeForce GTX 980 Ti,Nvidia,GeForce GTX 980 Ti,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1,"1,753",GeForce 900,6 GB,"[""GDDR5""]","13,721",TRUE,--
+GPU-059,Sapphire Tri-X R9 FURY OC,AMD,Radeon R9 Fury,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.04,0.5,Pirate Islands,4 GB,"[""HBM""]","9,539",FALSE,nie dziala
+GPU-060,Sapphire Radeon RX 580 Pulse,AMD,Radeon RX 580,GPU,Desktop,CLA-031,12.3,"[""PCIe""]",,,1.26,"2,000",Polaris,8 GB,"[""GDDR5""]","8,814",TRUE,--
+GPU-062,MSI Radeon R9 270X GAMING 2G,AMD,Radeon R9 270X,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1.03,"1,400",Volcanic Islands,2 GB,"[""GDDR5""]","4,873",TRUE,--
+GPU-064,NVIDIA GeForce GTX 780 Ti,Nvidia,GeForce GTX 780 Ti,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,0.88,"1,753",GeForce 700,3 GB,"[""GDDR5""]","9,462",TRUE,--
+GPU-067,Ati Radeon Hd 3450 256MB Vc X399D,AMD,Radeon HD 3450,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.6,0.5,Radeon R600,256 MB,"[""GDDR3""]",182,FALSE,broken
+GPU-068,Ati Radeon Hd 3450 256MB Vc X399D,AMD,Radeon HD 3450,GPU,Desktop,,,"[""PCIe""]",,,0.6,0.5,Radeon R600,256 MB,"[""GDDR3""]",182,FALSE,missing
+GPU-076,AMD Radeon R7 350X OEM,AMD,Radeon R7 350X,GPU,Desktop,Pocztówka,11.1,"[""PCIe""]",,,1,"1,000",Pirate Islands,4 GB,"[""DDR3""]",0,TRUE,--
+GPU-078,ASUS Turbo GeForce GTX 970 OC,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-1119,6.2,"[""PCIe""]",,,1.09,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-079,Palit GeForce GTX 980 Super JetStream,Nvidia,GeForce GTX 980,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.13,"1,753",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+GPU-081,Gainward GeForce GTX 980 Ti Phoenix,Nvidia,GeForce GTX 980 Ti,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1,"1,753",GeForce 900,6 GB,"[""GDDR5""]","13,721",TRUE,--
+GPU-084,MSI GeForce GTX 960 Gaming 2G,Nvidia,GeForce GTX 960,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,1.19,"1,753",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-085,Sapphire Radeon R9 Fury Nitro,AMD,Radeon R9 Fury,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1,0.5,Pirate Islands,4 GB,"[""HBM""]","9,539",TRUE,--
+GPU-087,EVGA GeForce GTX 660 Ti,Nvidia,GeForce GTX 660 Ti,GPU,Desktop,GPC-146,6.4,"[""PCIe""]",,,0.92,"1,502",GeForce 600,2 GB,"[""GDDR5""]","4,399",TRUE,!! for further verification !!
+GPU-088,Sapphire Radeon HD 7790 OC,AMD,Radeon HD 7790,GPU,Desktop,GPC-066,9.1,"[""PCIe""]",,,1.05,"1,600",Southern Islands,2 GB,"[""GDDR5""]","3,090",TRUE,--
+GPU-089,Gigabyte GeForce GTX 970 Mini OC,Nvidia,Geforce GTX 970 Mini,GPU,Desktop,GPC-412,7.3,"[""PCIe""]",,,1.08,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-092,Zotac GeForce GTX 970 AMP Extreme Core Edition,Nvidia,GeForce GTX 970,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.23,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-093,MSI HD 7870 2GD5T/OC,AMD,Radeon HD 7870,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1.05,"1,200",Southern Islands,2 GB,"[""GDDR5""]","4,598",TRUE,--
+GPU-094,ASUS Radeon R7 240 OC,AMD,Radeon R7 240,GPU,Desktop,Pocztówka,11.1,"[""PCIe""]",,,0.73,0.9,Volcanic Islands,2 GB,"[""DDR3""]",900,TRUE,--
+GPU-095,ASUS GeForce GTX 770 DC2,Nvidia,GeForce GTX 770,GPU,Desktop,GPC-029,10.2,"[""PCIe""]",,,1.06,"1,753",GeForce 700,2 GB,"[""GDDR5""]","5,943",TRUE,--
+GPU-096,NVIDIA GeForce RTX 3060,Nvidia,GeForce RTX 3060,GPU,Desktop,,,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",FALSE,"graphics artefacts, overheats"
+GPU-098,Sapphire Radeon RX 550 Pulse,AMD,Radeon RX 550,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1.1,"1,750",Polaris,4 GB,"[""GDDR5""]","2,684",TRUE,--
+GPU-102,MSI Radeon RX 6700 XT MECH 2X OC,AMD,Radeon RX 6700 XT,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,2.37,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,--
+GPU-104,MSI GTX 1070 ARMOR OC,Nvidia,GeForce GTX 1070,GPU,Desktop,,,"[""PCIe""]",,,1.55,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",FALSE,--
+GPU-105,HP Radeon RX 550 X,AMD,Radeon RX 550 X,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1.1,"1,500",Arctic Islands,4 GB,"[""GDDR5""]","2,382",TRUE,--
+GPU-107,ASUS Dual GeForce RTX 3060 Ti Gaming OC V2,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,Not available,635,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",FALSE,Wymieniona za 2080 Ti
+GPU-108,MSI GTX 950 Gaming,Nvidia,GeForce GTX 950,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.1,"1,653",GeForce 900,2 GB,"[""GDDR5""]","5,350",TRUE,--
+GPU-109,Nvidia GeForce GTX 460,Nvidia,GeForce GTX 460,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,0.68,"1,800",GeForce 400,1 GB,"[""GDDR5""]","2,276",TRUE,--
+GPU-110,Gigabyte RX Vega 64 GAMING OC,AMD,Radeon RX Vega 64,GPU,Desktop,,,"[""PCIe""]",,,1.27,0.945,Vega,8 GB,"[""HBM2""]","14,047",FALSE,nie działa
+GPU-111,MSI R9 380,AMD,Radeon R9 380,GPU,Desktop,,,"[""PCIe""]",,,0.98,"1,425",Pirate Islands,4 GB,"[""GDDR5""]","6,044",FALSE,broken
+GPU-112,MSI RX 460 OC,AMD,Radeon RX 460 OC,GPU,Desktop,GPC-499,10.2,"[""PCIe""]",,,1.09,"1,750",Arctic Islands,2 GB,"[""GDDR5""]","4,094",TRUE,--
+GPU-113,MSI R5 230 Low Profile 2 GB,AMD,Radeon R5 230,GPU,Desktop,,,"[""PCIe""]",,,0.63,0.667,Volcanic Islands,2 GB,"[""GDDR3""]",221,TRUE,--
+GPU-115,MSI HD 7870 OC,AMD,Radeon HD 7870,GPU,Desktop,GPC-132,8.2,"[""PCIe""]",,,1.05,"1,200",Southern Islands,2 GB,"[""GDDR5""]","4,598",TRUE,--
+GPU-116,Gigabyte GTX 1650 OC GDDR6 Rev. 2.0,Nvidia,GeForce GTX 1650,GPU,Desktop,CLA-018,13.3,"[""PCIe""]",,,1.41,"1,500",GeForce 16,4 GB,"[""GDDR6""]","7,886",TRUE,--
+GPU-117,MSI Radeon RX 6700 XT MECH 2X OC,AMD,Radeon RX 6700 XT,GPU,Desktop,GPC-1133,6.3,"[""PCIe""]",,,2.37,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,--
+GPU-119,MSI RX 5700 XT MECH OC,AMD,Radeon RX 5700 XT,GPU,Desktop,,,"[""PCIe""]",,,1.67,"1,750",Navi 10,8 GB,"[""GDDR6""]","16,293",FALSE,Its broken
+GPU-122,EVGA GTX 970 ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,1.19,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-124,AMD Radeon R7 250X,AMD,Radeon R7 250X,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.95,"1,125",Volcanic Islands,1 GB,"[""GDDR5""]","2,268",TRUE,--
+GPU-125,Gigabyte GeForce GT 710,Nvidia,GeForce GT 710,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.95,0.9,GeForce 700,2 GB,"[""DDR5""]",621,TRUE,--
+GPU-126,MSI R9 380 Gaming,AMD,Radeon R9 380,GPU,Desktop,GPC-980,16.3,"[""PCIe""]",,,0.98,"1,425",Pirate Islands,4 GB,"[""GDDR5""]","6,044",TRUE,--
+GPU-128,Gigabyte Radeon RX 6800 XT Gaming OC,AMD,Radeon RX 6800 XT,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.85,"2,000",Navi II,16 GB,"[""GDDR6""]","24,988",TRUE,--
+GPU-132,MSI GTX 960 Gaming,Nvidia,GeForce GTX 960,GPU,Desktop,,,"[""PCIe""]",,,1.19,"1,753",GeForce 900,4 GB,"[""GDDR5""]","6,118",FALSE,"Arkadiusz Czarnecki 11,03,2026 (Dio zabrał)"
+GPU-133,MSI R9 380 Gaming,AMD,Radeon R9 380,GPU,Desktop,GPC-282,17.4,"[""PCIe""]",,,0.98,"1,425",Pirate Islands,4 GB,"[""GDDR5""]","6,044",TRUE,--
+GPU-134,MSI RX 6900 XT GAMING X TRIO,AMD,Radeon RX 6900 XT,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,1.93,"2,000",Navi II,16 GB,"[""GDDR6""]","26,743",TRUE,--
+GPU-135,MSI GTX 960 Gaming,Nvidia,GeForce GTX 960,GPU,Desktop,GPC-1117,6.2,"[""PCIe""]",,,1.19,"1,753",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-138,Gigabyte GTX 980 Ti XTREME,Nvidia,GeForce GTX 980 Ti,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.21,"1,800",GeForce 900,6 GB,"[""GDDR5""]","13,721",TRUE,--
+GPU-142,EVGA GTX 970 ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1.05,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-144,ASUS GeForce RTX 2060 DUAL EVO OC,Nvidia,GeForce RTX 2060,GPU,Desktop,GPC-1149,7.3,"[""PCIe""]",,,1.3,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-145,Gigabyte GTX 970 G1 Gaming,Nvidia,GeForce GTX 970,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.18,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-149,MSI Radeon R9 380 OC,AMD,Radeon R9 380,GPU,Desktop,GPC-365,18.4,"[""PCIe""]",,,0.98,"1,375",Pirate Islands,2 GB,"[""GDDR5""]","6,044",TRUE,--
+GPU-150,ASUS DUAL GTX 1060,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-1128,7.2,"[""PCIe""]",,,1.5,"2,002",GeForce 10,3 GB,"[""GDDR5""]","9,804",TRUE,--
+GPU-151,ASUS Strix GTX 970 DirectCU II OC,Nvidia,GeForce GTX 970,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,1.11,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-152,Inno3D Geforce GTX 1050 1-SLOT EDITION 2GB,Nvidia,Geforce GTX 1050,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1.35,"1,752",GeForce 10,2 GB,"[""GDDR5""]","5,028",TRUE,--
+GPU-155,RTX 3090 Gaming OC 24G,Nvidia,GeForce RTX 3090,GPU,Desktop,GPC-1071,179,"[""PCIe""]",,,1.39,"1,219",GeForce 30,24 GB,"[""GDDR6X""]","26,646",FALSE,--
+GPU-156,ASUS DUAL RTX 4070 OC,Nvidia,GeForce RTX 4070,GPU,Desktop,CLA-022,14.2,"[""PCIe""]",,,0,"1,313",GeForce 40,12 GB,"[""GDDR6X""]","26,932",TRUE,--
+GPU-157,NVIDIA GeForce GTX 580,Nvidia,GeForce GTX 580,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,1,0.772,GeForce 500,1.5 GB,"[""GDDR5""]","4,634",FALSE,"Broken, to be verified (no display was present when using both mini-HDMI cable and DVI cable"
+GPU-159,XFX Radeon RX 580 GTS,AMD,Radeon RX 580,GPU,Desktop,,,"[""PCIe""]",,,1.26,"2,000",Polaris,8 GB,"[""GDDR5""]","8,814",FALSE,--
+GPU-160,ASUS GeForce 6600GT,Nvidia,GeForce 6600GT,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.5,0.5,GeForce 6 ,256 MB,"[""GDDR3""]",142,FALSE,--
+GPU-164,EVGA GTX 970 Superclocked ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.17,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-165,Nvidia GeForce GTX 460,Nvidia,GeForce GTX 460,GPU,Desktop,CLA-010,15.2,"[""PCIe""]",,,0.68,"1,800",GeForce 400,1 GB,"[""GDDR5""]","2,276",TRUE,--
+GPU-167,ASUS Radeon R7 240 Low Profile,AMD,Radeon R7 240,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.73,0.9,Volcanic Islands,2 GB,"[""DDR3""]",900,FALSE,--
+GPU-168,AMD Radeon R7 350X OEM,AMD,Radeon R7 350X,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1,"1,000",Pirate Islands,4 GB,"[""DDR3""]",0,TRUE,--
+GPU-169,AMD Radeon R7 350X OEM,AMD,Radeon R7 350X,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,1,"1,000",Pirate Islands,4 GB,"[""DDR3""]",0,TRUE,--
+GPU-170,AMD Radeon R5 430,AMD,Radeon R5 430,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.73,"1,150",Pirate Islands,2 GB,"[""GDDR5""]",893,FALSE,--
+GPU-171,AMD Radeon R5 430,AMD,Radeon R5 430,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.73,"1,150",Pirate Islands,2 GB,"[""GDDR5""]",893,FALSE,--
+GPU-172,Dell Nvidia Geforce GT 730 Low Profile,Nvidia,Geforce GT 730,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.902,"1,253",GeForce 700,2 GB,"[""GDDR5""]",820,TRUE,--
+GPU-173,Nvidia Quadro FX 380,Nvidia,Quadro FX 380,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.45,0.7,Quadro FX Tesla,256 MB,"[""GDDR3""]",173,FALSE,--
+GPU-175,MSI GeForce GTX 750 Ti Low Profile,Nvidia,GeForce GTX 750 Ti,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,1.02,"1,350",GeForce 700,2 GB,"[""GDDR5""]","3,903",FALSE,"There is video output, but the entire cooling system is ripped out."
+GPU-176,MSI RTX 2080 Ti GAMING X TRIO,Nvidia,GeForce RTX 2080 Ti,GPU,Desktop,CLA-069,15.2,"[""PCIe""]",,,,"1,350",GeForce 20,11 GB,"[""GDDR6""]","21,556",TRUE,Za 3060Ti (GPU-107)
+GPU-179,ASUS STRIX R9 390X DirectCU III OC,AMD,Radeon R9 390,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,1.05,"1,500",Pirate Islands,8 GB,"[""GDDR5""]","8,874",TRUE,--
+GPU-181,ASUS STRIX R9 390 DirectCU III OC,AMD,Radeon R9 390,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.05,"1,500",Pirate Islands,8 GB,"[""GDDR5""]","8,874",TRUE,--
+GPU-182,ASUS STRIX GTX 970 DirectCU II OC,Nvidia,GeForce GTX 970,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,1.11,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-185,ASUS Geforce GTX 960 Strix OC,Nvidia,GeForce GTX 960,GPU,Desktop,GPC-1150,7.3,"[""PCIe""]",,,1.23,"1,800",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-186,GIGABYTE GTX 970 Mini-ITX OC,Nvidia,GeForce GTX 970,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,1.08,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-187,ASUS STRIX R9 390X DirectCU III OC,AMD,Radeon R9 390,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.05,"1,500",Pirate Islands,8 GB,"[""GDDR5""]","8,874",TRUE,--
+GPU-190,MSI GeForce RTX 2080 Super Ventus OC,Nvidia,GeForce RTX 2080 Super,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,1.65,"1,937",GeForce 20,8 GB,"[""GDDR6""]","18,720",TRUE,
+GPU-192,PNY XLR8 RTX 4070 Ti VERTO EPIC-X Triple Fan OC,Nvidia,GeForce RTX 4070 Ti,GPU,Desktop,CLA-035,,"[""PCIe""]",,,2.31,"1,313",GeForce 40,12 GB,"[""GDDR6X""]","31,610",TRUE,--
+GPU-193,GIGABYTE RTX 4060 EAGLE OC,Nvidia,GeForce RTX 4060,GPU,Desktop,GPC-1756,18.4,"[""PCIe""]",,,1.83,"2,125",GeForce 40,8 GB,"[""GDDR6X""]","19,684",TRUE,--
+GPU-194,GIGABYTE RTX 3070 Ti GAMING OC,Nvidia,GeForce RTX 3070 Ti,GPU,Desktop,GPC-1883,8.3,"[""PCIe""]",,,1.57,"1,188",GeForce 30,8 GB,"[""GDDR6X""]","23,364",TRUE,--
+GPU-195,GIGABYTE RX 7800 XT GAMING OC,AMD,Radeon RX 7800 XT,GPU,Desktop,CLA-020,13.3,"[""PCIe""]",,,1.62,"2,438",Navi III,16 GB,"[""GDDR6""]","24,229",TRUE,--
+GPU-196,GIGABYTE RX 7700 XT GAMING OC,AMD,Radeon RX 7700 XT,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.78,"2,250",Navi III,12 GB,"[""GDDR6""]","22,463",TRUE,--
+GPU-200,ASRock Intel ARC A310 Low Profile,Intel,ARC A310,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,2,"1,550",Alchemist,4 GB ,"[""GDDR6""]","5,432",TRUE,--
+GPU-201,Palit RTX 3050 StormX OC,Nvidia,GeForce RTX 3050,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,1.04,"1,750",GeForce 30,8 GB,"[""GDDR6""]","12,572",TRUE,--
+GPU-202,AFOX GeForce RTX 2070,Nvidia,GeForce RTX 2070,GPU,Desktop,GPC-1139,6.3,"[""PCIe""]",,,1.41,"1,400",GeForce 20,8 GB,"[""GDDR6""]","16,096",TRUE,--
+GPU-203,MSI GeForce RTX 3060 Ti Gaming X,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-204,BIOSTAR GeForce RTX 3060 Ti,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.4,"1,900",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-205,Intel ARC A580 ORC OC Edition,Intel,ARC A580,GPU,Desktop,GPC-1120,6.2,"[""PCIe""]",,,1.7,"2,000",Alchemist,8 GB,"[""GDDR6""]","12,003",TRUE,--
+GPU-206,MSI R9 380 Gaming,AMD,Radeon R9 380,GPU,Desktop,,,"[""PCIe""]",,,0.98,"1,425",Pirate Islands,4 GB,"[""GDDR5""]","6,044",FALSE,--
+GPU-207,MSI RX 480 GAMING X 4 GB,AMD,RX 480,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.05,"1,250",Arctic Islands,4 GB,"[""GDDR5""]","1,751",TRUE,--
+GPU-208,Palit GeForce GTX 650,Nvidia,GeForce GTX 650,GPU,Desktop,1.2,1.2,"[""PCIe""]",,,1.05,"1,250",GeForce 600,1 GB,"[""GDDR5""]","1,751",TRUE,
+GPU-212,Sapphire Tri-X R9 290X ,AMD,Radeon R9 290X,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.01,"1,250",Volcanic Islands,4 GB,"[""GDDR5""]","8,451",TRUE,
+GPU-214,NVIDIA Quadro K4000,Nvidia,Quadro K4000,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,0.81,"1,404",Quadro Kepler,3 GB,"[""GDDR5""]","2,723",TRUE,--
+GPU-230,Gigabyte GeForce RTX 3060 Ti,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.4,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-234,Gigabyte Radeon RX 6700 XT,AMD,Radeon RX 6700 XT,GPU,Desktop,CLA-006,12.3,"[""PCIe""]",,,2.32,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,
+GPU-239,Gigabyte Radeon RX 9070 Gaming OC,AMD,Radeon RX 9070 ,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.33,"2,518",Navi IV,16 GB,"[""GDDR6""]","25,363",TRUE,--
+GPU-244,AORUS GeForce RTX 5070 Ti MASTER 16G,Nvidia,GeForce RTX 5070 Ti,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,2.29,"1,750",GeForce 50,16 GB,"[""GDDR7""]","32,857",TRUE,--
+GPU-245,ASUS TUF Gaming GeForce RTX 5080 16GB GDDR7,Nvidia,GeForce RTX 5080,GPU,Desktop,CLA-034,12.4,"[""PCIe""]",,,2.29,"1,875",GeForce 50,16 GB,"[""GDDR7""]","36,390",TRUE,--
+GPU-246,GeForce RTX 5090 32G SUPRIM SOC,Nvidia,GeForce RTX 5090,GPU,Desktop,CLA-001,12.3,"[""PCIe""]",,,2.01,"1,750",GeForce 50,32 GB,"[""GDDR7""]","39,619",TRUE,--
+GPU-248,GeForce RTX 3070 VENTUS 2X OC,Nvidia,GeForce RTX 3070 ,GPU,Desktop,GPC-965,9.2,"[""PCIe""]",,,1.75,"1,750",GeForce 30,8 GB,"[""GDDR6""]","22,216",TRUE,--
+GPU-257,MSI GTX 1070 GAMING X,Nvidia,GeForce GTX 1070,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1.77,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-259,ZOTAC GeForce GTX 1070 AMP Edition,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-1126,6.2,"[""PCIe""]",,,1.79,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-261,Gigabyte R9 380 WindForce 2X 4 GB,AMD,Radeon R9 380,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,0.97,"1,375",Pirate Islands,4 GB,"[""GDDR6""]","6,044",TRUE,--
+GPU-262,MSI GTX 1070 GAMING X,Nvidia,GeForce GTX 1070,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,1.77,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-209,AMD Radeon R5 430,AMD,Radeon R5 430,GPU,Desktop,Pocztówka,11.1,"[""PCIe""]",,,0.7,"3,680",Arctic Islands,2 GB,"[""GDDR5""]",893,TRUE,Pocztowka
+GPU-044,MSI GTX 650 OC V1,Nvidia,GeForce GTX 650,GPU,Desktop,GPC-1130,7.2,"[""PCIe""]",,,1.07,"1,250",GeForce 600,1 GB,"[""GDDR5""]","1,751",TRUE,--
+GPU-120,Zotac GTX 1060 AMP! Edition,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-008,9.1,"[""PCIe""]",,,1.58,"2,002",GeForce 10,3 GB,"[""GDDR5""]","9,804",TRUE,--
+GPU-180,MSI GTX 770 Gaming OC,Nvidia,GeForce GTX 770,GPU,Desktop,GPC-042,7.2,"[""PCIe""]",,,1.09,"1,753",GeForce 700,2 GB,"[""GDDR5""]","5,943",TRUE,--
+GPU-162,Gainward GeForce GTX 980 Phantom,Nvidia,GeForce GTX 980,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.2,"1,800",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+GPU-184,Gigabyte R9 380 WindForce 2X 4 GB,AMD,Radeon R9 380,GPU,Desktop,GPC-063,8.3,"[""PCIe""]",,,0.97,"1,375",Pirate Islands,4 GB,"[""GDDR6""]","6,044",TRUE,--
+GPU-066,PowerColor Radeon R7 240 2GB GDDR5,AMD,Radeon R7 240,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,0.83,"1,150",Volcanic Islands,2 GB,"[""GDDR5""]",900,TRUE,--
+GPU-238,Gigabyte GeForce RTX 3060 EAGLE OC 12GB,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-074,17.4,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR5""]","16,815",TRUE,--
+GPU-053,MSI RTX 2070 SUPER VENTUS,Nvidia,GeForce RTX 2070 Super,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.61,"1,750",GeForce 20,8 GB,"[""GDDR6""]","16,096",TRUE,--
+GPU-050,MSI GeForce GTX 750 Ti,Nvidia,GeForce GTX 750 Ti,GPU,Desktop,GPC-1127,6.2,"[""PCIe""]",,,1.06,"1,350",GeForce 700,2 GB,"[""GDDR5""]","3,903",TRUE,--
+GPU-008,Gainward GTX 980 Phantom,Nvidia,GeForce GTX 980,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.2,"1,800",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+GPU-240,GIGABYTE Aorus Radeon RX 9070 XT Elite,AMD,Radeon RX 9070 XT,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,2.22,"2,438",Navi IV,12 GB,"[""GDDR6""]","26,837",TRUE,--
+GPU-070,MSI GeForce GTX 960 Gaming 4G,Nvidia,GeForce GTX 960,GPU,Desktop,GPC-073,11.2,"[""PCIe""]",,,1.13,"1,753",GeForce 900,4 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-148,MSI GeForce GTX 960 OC 2GB,Nvidia,GeForce GTX 960,GPU,Desktop,GPC-1116,6.2,"[""PCIe""]",,,1.19,"1,753",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-073,Gigabyte GeForce RTX 2060 OC,Nvidia,GeForce RTX 2060,GPU,Desktop,GPC-1449,7.2,"[""PCIe""]",,,1.37,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-028,Zotac GeForce GTX 1650 D6 Gaming OC,Nvidia,GeForce GTX 1650,GPU,Desktop,GPC-1134,6.3,"[""PCIe""]",,,1.41,"1,500",GeForce 16,4 GB,"[""GDDR5""]","7,886",TRUE,--
+GPU-071,Gigabyte GTX 1650 OC,Nvidia,GeForce GTX 1650,GPU,Desktop,GPC-692,15.3,"[""PCIe""]",,,1.49,"2,001",GeForce 16,4 GB,"[""GDDR5""]","7,886",TRUE,--
+GPU-137,ASUS DUAL RX 480 OC 4 GB,AMD,Radeon RX 480,GPU,Desktop,GPC-1123,SQ,"[""PCIe""]",,,1.12,"1,750",Arctic Islands,4 GB,"[""GDDR5""]","8,569",TRUE,Poszło na SQ
+GPU-146,MSI GTX 1050 Ti OC,Nvidia,GeForce GTX 1050 Ti,GPU,Desktop,CLA-017,14.3,"[""PCIe""]",,,1.34,"1,752",GeForce 10,4 GB,"[""GDDR5""]","6,343",TRUE,--
+GPU-177,EVGA GTX 970 ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,1.05,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-037,MSI Radeon R9 380 OC,AMD,Radeon R9 380,GPU,Desktop,GPC-046,16.4,"[""PCIe""]",,,0.98,"1,375",Pirate Islands,2 GB,"[""GDDR5""]","6,044",TRUE,--
+GPU-241,Intel Arc B580 Graphics,Intel,ARC B580,GPU,Desktop,CLA-329,14.2,"[""PCIe""]",,,2.67,"2,375",Battlemage,12 GB,"[""GDDR6""]","15,774",TRUE,--
+GPU-198,Sapphire PULSE RX 7600 XT OC,AMD,Radeon RX 7600 XT,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,2.02,"2,250",Navi III,16 GB,"[""GDDR6""]","17,105",TRUE,--
+GPU-131,GIGABYTE RTX 3060 GAMING OC Rev. 2.0,Nvidia,Geforce RTX 3060,GPU,Desktop,CLA-2137,13.4,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-130,Gigabyte RTX 3060 GAMING OC Rev. 2.0,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1132,7.2,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-154,MSI GeForce RTX 3060 Ti Gaming X,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-031,Gigabyte Radeon RX 570 Gaming,AMD,Radeon RX 570,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.17,"1,750",Polaris,4 GB,"[""GDDR5""]","6,967",TRUE,--
+GPU-043,MSI RTX 3060 GAMING X,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1141,6.3,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-026,MSI RTX 3060 Ti GAMING Z TRIO LHR,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-083,MSI GeForce RTX 3060 Ti Gaming X,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]","20,352",TRUE,--
+GPU-016,Intel Arc A750,Intel,ARC A750,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,2.05,"2,000",Alchemist,8 GB,"[""GDDR6""]","12,525",TRUE,--
+GPU-199,AFOX Radeon RX 5500 XT,AMD,Radeon RX 5500 XT,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.71,"1,400",Navi II,8 GB,"[""GDDR6""]","9,085",FALSE,"Dziala tylko po HDMI, DP powoduje migotanie ekranu"
+GPU-127,Zotac GeForce RTX 3060 AMP White Edition,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1147,7.3,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-034,Sapphire NITRO Radeon RX 590,AMD,Radeon RX 590,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.47,"2,100",Polaris,8 GB,"[""GDDR5""]","9,353",TRUE,HDMI1 slot is very loose
+GPU-139,Zotac RTX 4060 Ti Twin Edge,Nvidia,GeForce RTX 4060 Ti,GPU,Desktop,GPC-618,10.1,"[""PCIe""]",,,2.31,"2,250",GeForce 40,8 GB,"[""GDDR6""]","22,699",TRUE,--
+GPU-197,Sapphire PULSE RX 7600 OC,AMD,Radeon RX 7600,GPU,Desktop,GPC-1131,7.2,"[""PCIe""]",,,1.87,"2,250",Navi III,8 GB,"[""GDDR6""]","16,583",TRUE,--
+GPU-153,Zotac GeForce RTX 2060 Twin Fan,Nvidia,GeForce RTX 2060,GPU,Desktop,GPC-684,9.2,"[""PCIe""]",,,1.37,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-010,MSI RX 6900 XT GAMING X TRIO,AMD,Radeon RX 6900 XT,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.93,"2,000",Navi II,16 GB,"[""GDDR6""]","26,743",TRUE,--
+GPU-191, MSI GeForce RTX 4060 Ti GAMING X SLIM,Nvidia,GeForce RTX 4060 Ti,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,2.67,"2,250",GeForce 40,16 GB,"[""GDDR6""]","22,743",TRUE,--
+GPU-101,Gigabyte GeForce RTX 2060 OC,Nvidia,GeForce RTX 2060,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,1.36,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-140,Zotac RTX 4070 Twin Edge OC,Nvidia,GeForce RTX 4070,GPU,Desktop,GPC-1218,7.4,"[""PCIe""]",,,1.92,"1,313",GeForce 40,12 GB,"[""GDDR6X""]","26,932",TRUE,--
+GPU-009,MSI RX 6900 XT GAMING X TRIO,AMD,Radeon RX 6900 XT,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.93,"2,000",Navi II,16 GB,"[""GDDR6""]","26,743",TRUE,--
+GPU-012,NVIDIA GeForce RTX 3090 Ti,Nvidia,GeForce RTX 3090 Ti,GPU,Desktop,GPC-1158,,"[""PCIe""]",,,1.56,"1,313",GeForce 30,24 GB,"[""GDDR6X""]","29,449",TRUE,--
+GPU-019,Acer Predator BiFrost ARC A770 OC,Intel,ARC A770,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,2.2,"2,000",Alchemist,16 GB,"[""GDDR6""]","13,246",TRUE,--
+GPU-118,Gigabyte GeForce RTX 4080 GAMING OC,Nvidia,GeForce RTX 4080,GPU,Desktop,CLA-004,15.2,"[""PCIe""]",,,2.54,"1,400",GeForce 40,16 GB,"[""GDDR6X""]","34,435",TRUE,--
+GPU-015,Palit RTX 3080 GamingPro,Nvidia,GeForce RTX 3080,GPU,Desktop,GPC-1161,,"[""PCIe""]",,,1.44,"1,188",GeForce 30,10 GB,"[""GDDR6X""]","25,090",TRUE,--
+GPU-123,MSI GeForce GTX 1070 Ti ARMOR,Nvidia,GeForce GTX 1070 Ti,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,1.6,"2,002",GeForce 10,8 GB,"[""GDDR5""]","14,670",TRUE,--
+GPU-136,Gigabyte GeForce GTX 1650 OC,Nvidia,GeForce GTX 1650,GPU,Desktop,GPC-1135,6.3,"[""PCIe""]",,,1.49,"2,001",GeForce 16,4 GB,"[""GDDR5""]","7,886",TRUE,Only HDMI output works
+GPU-038,MSI RTX 2060 Gaming Z,Nvidia,GeForce RTX 2060,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.37,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-166,AMD Radeon R7 350X OEM,AMD,Radeon R7 350X,GPU,Desktop,GPC-131,6.4,"[""PCIe""]",,,1,"1,000",Pirate Islands,4 GB,"[""DDR3""]",0,TRUE,--
+GPU-090,ASUS STRIX R9 Fury,AMD,Radeon R9 Fury,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1,0.5,Pirate Islands,4 GB,"[""HBM""]","9,539",TRUE,--
+GPU-058,MSI HD 7850 OC,AMD,Radeon HD 7850,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,0.9,"1,200",Southern Islands,1 GB,"[""GDDR5""]","3,887",TRUE,#NAME?
+GPU-236,GIGABYTE AMD Radeon RX 6600,AMD,Radeon RX 6600,GPU,Desktop,GPC-1493,SQ,"[""PCIe""]",,,1.62,"1,750",Navi II,8 GB,"[""GDDR6""]","15,096",TRUE,SQ
+GPU-189,GIGABYTE GTX 980 G1 Gaming,Nvidia,GeForce GTX 980,GPU,Desktop,GPC-061,10.3,"[""PCIe""]",,,1.75,,Maxwell,4 GB,"[""GDDR5""]","11,102",TRUE,
+GPU-237,GIGABYTE AMD Radeon RX 6700 XT,AMD,Radeon RX 6700 XT,GPU,Desktop,GPC-1561,,"[""PCIe""]",,,2.32,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",FALSE,SQ
+GPU-226,GeForce RTX 3070 Ti GAMING X TRIO 8G,Nvidia,GeForce RTX 3070 Ti,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,1.83,"1,900",GeForce 30,8 GB,"[""GDDR6X""]","23,364",TRUE,--
+GPU-086,Gigabyte Radeon R9 390,AMD,Radeon R9 390,GPU,Desktop,GPC-166,16.4,"[""PCIe""]",,,1,"1,500",Pirate Islands,8 GB,"[""GDDR5""]","8,874",TRUE,--
+GPU-178,EVGA GTX 970 ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-175,17.3,"[""PCIe""]",,,1.05,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-228,AMD Radeon RX 7700 XT Phantom Gaming 12GB OC,AMD,Radeon RX 7700 XT,GPU,Desktop,GPC-1882,9.2,"[""PCIe""]",,,1.43,"2,250",Navi III,12 GB,"[""GDDR6""]","22,463",TRUE,--
+GPU-233,AMD Radeon RX 7700 XT Phantom Gaming 12GB OC,AMD,Radeon RX 7700 XT,GPU,Desktop,GPC-787,14.2,"[""PCIe""]",,,1.43,"2,250",Navi III,12 GB,"[""GDDR6""]","22,463",TRUE,--
+GPU-114,Gigabyte RTX 3060 EAGLE OC Rev. 2.0,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1146,7.3,"[""PCIe""]",,,1.32,"1,857",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-232,AMD Radeon RX 7800 XT,AMD,Radeon RX 7800 XT,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,,"2,438",Navi III,16 GB,"[""GDDR6""]","24,229",TRUE,
+GPU-158,EVGA GTX 970 Superclocked ACX 2.0,Nvidia,GeForce GTX 970,GPU,Desktop,3.4,3.4,"[""PCIe""]",,,1.17,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-080,Gigabyte Radeon R9 285 WindForce OC,AMD,Radeon R9 285,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,0.97,"1,375",Volcanic Islands,2 GB,"[""GDDR5""]","5,549",TRUE,--
+GPU-253,GV-N970G1 GAMING-4GD,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-218,7.4,"[""PCIe""]",,,1.35,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-254,GeForce GTX 970 4GD5T OC,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-219,10.3,"[""PCIe""]",,,1.24,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-210,Gigabyte GTX 1060 6 GB,Nvidia,GeForce GTX 1060,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,1.5,"2,002",GeForce 10,6 GB,"[""GDDR5""]","10,083",TRUE,"GPU z grzybem, bez naklejki"
+GPU-147,Sapphire PULSE RX Vega 56,AMD,Radeon RX Vega 56,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,1.2,0.8,RX Vega,8 GB,"[""HBM2""]","13,074",TRUE,--
+GPU-264,ZOTAC GTX 1070 AMP!,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-283,6.4,"[""PCIe""]",,,1.8,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-260,GIGABYTE GTX 1060 WindForce 2X OC,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-287,10.2,"[""PCIe""]",,,1.77,"2,002",GeForce 10,3 GB,"[""GDDR5""]","9,804",TRUE,--
+GPU-251,GeForce GTX 1070 GAMING 8G AMD EDITION,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-291,6.4,"[""PCIe""]",,,1.7,"2,002",GeForce 10,8 GB,"[""GDDR5X""]","13,499",TRUE,--
+GPU-250,GeForce GTX 1070 GAMING 8G,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-515,10.3,"[""PCIe""]",,,1.7,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-255,MSI GTX 1070 GAMING X,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-299,18.3,"[""PCIe""]",,,1.77,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-249,GeForce GTX 1070 GAMING 8G,Nvidia,GeForce GTX 1070,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.7,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-256,MSI GTX 1070 GAMING X,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-349,9.3,"[""PCIe""]",,,1.77,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-020,ASUS DUAL GTX 1630,Nvidia,GeForce GTX 1630,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,1.74,"1,500",GeForce 16,4 GB,"[""GDDR6""]","4,977",TRUE,--
+GPU-082,Gigabyte GeForce RTX 2060 OC,Nvidia,GeForce RTX 2060,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,1.37,"1,750",GeForce 20,6 GB,"[""GDDR6""]","14,113",TRUE,--
+GPU-252,GeForce GTX 1070 GAMING 8G,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-233,8.1,"[""PCIe""]",,,1.7,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-063,Sapphire Tri-X R9 FURY OC,AMD,Radeon R9 Fury,GPU,Desktop,GPC-106,6.4,"[""PCIe""]",,,1.04,0.5,Pirate Islands,4 GB,"[""HBM""]","9,539",TRUE,--
+GPU-091,Gigabyte RTX 3060 GAMING OC Rev. 2.0,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-414,16.3,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-055,Sapphire NITRO+ RX 6700 XT,AMD,Radeon RX 6700 XT,GPU,Desktop,GPC-1217,9.2,"[""PCIe""]",,,2.46,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,--
+GPU-077,Zotac GeForce RTX 2060 Twin Fan,Nvidia,GeForce RTX 2060,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,1.47,"1,750",GeForce 20,12 GB,"[""GDDR6""]","15,926",TRUE,--
+GPU-033,Gigabyte GTX 1660 OC,Nvidia,GeForce GTX 1660,GPU,Desktop,GPC-298,16.4,"[""PCIe""]",,,1.53,"2,001",GeForce 16,6 GB,"[""GDDR6""]","11,644",TRUE,--
+GPU-227,GIGABYTE GeForce GTX 1080,Nvidia,GeForce GTX 1080,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.61,"1,251",GeForce 10,8 GB,"[""GDDR5X""]","15,585",TRUE,--
+GPU-258,ZOTAC GeForce GTX 1070 AMP Edition,Nvidia,GeForce GTX 1070,GPU,Desktop,GPC-1209,8.1,"[""PCIe""]",,,1.79,"2,002",GeForce 10,8 GB,"[""GDDR5""]","13,499",TRUE,--
+GPU-075,ASUS TUF GeForce RTX 3060 GAMING OC,Nvidia,GeForce RTX 3060,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-029,MSI GTX 1060 GAMING X,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-335,8.2,"[""PCIe""]",,,1.57,"2,002",GeForce 10,6 GB,"[""GDDR5""]","10,083",TRUE,--
+GPU-183,Gigabyte GTX 1060 Windforce 2X OC,Nvidia,Geforce GTX 1060,GPU,Desktop,GPC-682,SQ,"[""PCIe""]",,,1.56,"2,002",GeForce 10,6 GB,"[""GDDR5""]","10,083",TRUE,SQ
+GPU-143,Sapphire Radeon RX 6600 XT NITRO+ GAMING OC,AMD,Radeon RX 6600 XT,GPU,Desktop,GPC-316,7.4,"[""PCIe""]",,,2.06,"2,000",Navi II,8 GB,"[""GDDR6""]","16,468",TRUE,--
+GPU-223,GIGABYTE GeForce RTX 2080 Ti,Nvidia,GeForce RTX 2080 Ti,GPU,Desktop,GPC-736,16.3,"[""PCIe""]",,,1.35,"1,750",GeForce 30,11 GB,"[""GDDR6""]","21,556",TRUE,
+GPU-263,MSI RTX 2060 SUPER Gaming X,Nvidia,GeForce RTX 2060 SUPER,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,1.7,,GeForce 20,8 GB,"[""GDDR6""]","16,453",TRUE,--
+GPU-042,MSI RTX 3070 VENTUS 2X,Nvidia,GeForce RTX 3070,GPU,Desktop,GPC-940,17.3,"[""PCIe""]",,,1.5,"1,750",GeForce 30,8 GB,"[""GDDR6""]","22,216",TRUE,--
+GPU-027,Zotac GTX 1060 AMP! Edition,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-317,7.4,"[""PCIe""]",,,1.58,"2,002",GeForce 10,3 GB,"[""GDDR5""]","9,804",TRUE,
+GPU-225,Sapphire Nitro+ RX 6700 XT,AMD,Radeon RX 6700 XT,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,2.32,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,
+GPU-097,Gigabyte GeForce RTX 3080 Gaming OC,Nvidia,GeForce RTX 3080,GPU,Desktop,GPC-926,11.3,"[""PCIe""]",,,1.44,"1,188",GeForce 30,10 GB,"[""GDDR6X""]","25,090",TRUE,--
+GPU-219,MSI GeForce RTX 3060,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1142,7.3,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-215,GeForce RTX 3080 GAMING X TRIO 10G,Nvidia,GeForce RTX 3080,GPU,Desktop,GPC-1156,14.3,"[""PCIe""]",,,1.81,"1,188",GeForce 30,10 GB,"[""GDDR6X""]","25,090",TRUE,--
+GPU-188,Gigabyte RX 5700 XT GAMING OC,AMD,Radeon RX 5700 XT,GPU,Desktop,GPC-1057,9.3,"[""PCIe""]",,,1.65,"1,750",Navi 10,8 GB,"[""GDDR6""]","16,293",TRUE,--
+GPU-216,ASUS TUF RX 6700 XT GAMING OC,AMD,Radeon RX 6700 XT,GPU,Desktop,CLA-023,15.2,"[""PCIe""]",,,2.42,"2,000",Navi II,12 GB,"[""GDDR6""]","19,804",TRUE,--
+GPU-002,MSI GeForce RTX 3060 Gaming X 12G,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1886,8.3,"[""PCIe""]",,,1.32,"1,875",GeForce 30,12 GB,"[""GDDR6""]","16,815",TRUE,--
+GPU-023,ASUS GeForce GT 730 Low Profile,Nvidia,GeForce GT 730,GPU,Desktop,,,"[""PCIe""]",,,0.902,"1,253",GeForce 700,2 GB,"[""GDDR5""]",820,TRUE,--
+GPU-036,ASUS PHOENIX GTX 1050 Ti,Nvidia,GeForce GTX 1050 Ti,GPU,Desktop,GPC-737,15.1,"[""PCIe""]",,,1.29,"1,752",GeForce 10,4 GB,"[""GDDR5""]","6,343",TRUE,--
+GPU-048,MSI R7 370 GAMING,AMD,Radeon R7 370,GPU,Desktop,GPC-197,17.3,"[""PCIe""]",,,0.98,"1,400",Pirate Islands,4 GB,"[""GDDR5""]","4,486",TRUE,--
+GPU-052,XFX R9 285 Double Dissipation,AMD,Radeon R9 285,GPU,Desktop,GPC-215,,"[""PCIe""]",,,0.92,"1,375",Volcanic Islands,2 GB,"[""GDDR5""]","5,549",TRUE,--
+GPU-056,ASUS STRIX GTX 970 DirectCU II OC,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-012,18.3,"[""PCIe""]",,,1.11,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-061,Gigabyte RX 470 G1 Gaming,AMD,Radeon RX 470,GPU,Desktop,,,"[""PCIe""]",,,0.93,"1,650",Arctic Islands,4 GB,"[""GDDR5""]","7,949",FALSE,Broken
+GPU-065,Zotac GTX 760,Nvidia,GeForce GTX 760,GPU,Desktop,GPC-127,8.1,"[""PCIe""]",,,0.99,"1,502",GeForce 700,2 GB,"[""GDDR5""]","4,806",TRUE,Legacy product; not supported with the new drivers
+GPU-072,ASUS PHOENIX RX 6400,AMD,Radeon RX 6400,GPU,Desktop,GPC-643,17.3,"[""PCIe""]",,,1.92,"2,000",Navi II,4 GB,"[""GDDR6""]","7,669",TRUE,--
+GPU-099,ASUS GeForce GTX 1660 Ti TUF Gaming EVO OC,Nvidia,GeForce GTX 1660 TI,GPU,Desktop,GPC-616,11.2,"[""PCIe""]",,,1.5,"1,500",GeForce 16,6 GB,"[""GDDR6""]","12,879",TRUE,--
+GPU-103,Gigabyte GeForce GTX 1650 Windforce OC,Nvidia,GeForce GTX 1650,GPU,Desktop,GPC-623,18.4,"[""PCIe""]",,,1.41,"1,500",GeForce 16,4 GB,"[""GDDR6""]","7,886",TRUE,--
+GPU-213,MSI GeForce GTX 980 Gaming 4G,Nvidia,GeForce GTX 980,GPU,Desktop,GPC-107,6.4,"[""PCIe""]",,,1.2,"1,800",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+GPU-217,GIGABYTE AMD Radeon RX 6600,AMD,Radeon RX 6600,GPU,Desktop,2.4,2.4,"[""PCIe""]",,,1.62,"1,750",Navi II,8 GB,"[""GDDR6""]","15,096",TRUE,--
+GPU-221,GIGABYTE GeForce RTX 3070 GAMING OC 8G,Nvidia,GeForce RTX 3070,GPU,Desktop,GPC-220,7.4,"[""PCIe""]",,,1.81,"1,400",GeForce 30,8 GB,"[""GDDR6""]","22,216",TRUE,--
+GPU-222,GIGABYTE GeForce RTX 3070 GAMING OC 8G,Nvidia,GeForce RTX 3070,GPU,Desktop,GPC-440,15.1,"[""PCIe""]",,,1.81,"1,400",GeForce 30,8 GB,"[""GDDR6""]","22,216",TRUE,--
+GPU-229,AMD Radeon RX 7700 XT Phantom Gaming 12GB OC,AMD,Radeon RX 7700 XT,GPU,Desktop,2.2,2.2,"[""PCIe""]",,,1.43,"2,250",Navi III,12 GB,"[""GDDR6""]","22,463",TRUE,--
+CPU-001,Intel Core i3-4150,Intel,Core i3-4150,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.5,,Haswell,32 GB,"[""DDR3""]","3,405",TRUE,--
+CPU-002,Intel Core i3-4150,Intel,Core i3-4150,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.5,,Haswell,32 GB,"[""DDR3""]","3,405",TRUE,--
+CPU-003,Intel Core i3-4150,Intel,Core i3-4150,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.5,,Haswell,32 GB,"[""DDR3""]","3,405",TRUE,--
+CPU-006,Intel Core i5-4440,Intel,Core i5-4440,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.1,,Haswell,32 GB,"[""DDR3""]","4,785",TRUE,--
+CPU-008,Intel Core i3-4150,Intel,Core i3-4150,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.5,,Haswell,32 GB,"[""DDR3""]","3,405",TRUE,--
+CPU-009,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-010,Intel Core i5-7500,Intel,Core i5-7500,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,4,3.4,,Kaby Lake,64 GB,"[""DDR4""]","6,028",TRUE,--
+CPU-011,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-012,Intel Core i3-10100F,Intel,Core i3-10100F,CPU,Desktop,GPC-1126,6.2,"[""LGA 1200""]",4,8,3.6,,Comet Lake,128 GB,"[""DDR4""]","8,711",TRUE,--
+CPU-013,Intel Core i5-3330,Intel,Core i5-3330,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",4,4,3,,Ivy Bridge,32 GB,"[""DDR3""]","4,104",TRUE,--
+CPU-014,Intel Core i5-2500K,Intel,Core i5-2500K,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",4,4,3.3,,Sandy Bridge,32 GB,"[""DDR3""]","4,132",TRUE,--
+CPU-017,Intel Core i5-11600,Intel,Core i5-11600,CPU,Desktop,4.2,4.2,"[""LGA 1200""]",6,12,2.8,,Rocket Lake-S,128 GB,"[""DDR4""]","17,934",TRUE,--
+CPU-019,Intel Celeron G1820,Intel,Celeron G1820,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,2,2.7,,Haswell,32 GB,"[""DDR3""]","1,710",TRUE,--
+CPU-020,Intel Core i3-2120,Intel,Core i3-2120,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",2,4,3.3,,Sandy Bridge,32 GB,"[""DDR3""]","1,970",FALSE,nie ma obrazu
+CPU-020,Intel Pentium G645,Intel,Pentium G645,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",2,2,2.9,,Sandy Bridge,32 GB,"[""DDR3""]","1,368",TRUE,--
+CPU-021,AMD Ryzen 9 5900X,AMD,Ryzen 9 5900X,CPU,Desktop,4.1,4.1,"[""AM4""]",12,24,3.7,,Zen 3,128 GB,"[""DDR4""]","39,007",TRUE,--
+CPU-022,AMD Ryzen 9 3900,AMD,Ryzen 9 3900,CPU,Desktop,,,"[""AM4""]",12,24,3.1,,Zen 2,128 GB,"[""DDR4""]","30,595",FALSE,broken
+CPU-023,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,--
+CPU-026,AMD A4-5300,AMD,A4-5300,CPU,Desktop,,,"[""FM2""]",2,2,3.4,,Trinity,16 GB,"[""DDR3""]","1,366",FALSE,broken/CPU wygiety
+CPU-028,AMD Athlon X4 870K,AMD,Athlon X4 870K,CPU,Desktop,GPC-132,8.2,"[""FM2+""]",4,4,3.9,,Godaveri,64 GB,"[""DDR3""]","3,432",TRUE,--
+CPU-029,Intel Core i3-2120,Intel,Core i3-2120,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",2,4,3.3,,Sandy Bridge,32 GB,"[""DDR3""]","1,970",TRUE,--
+CPU-030,Intel Celeron D 360,Intel,Celeron D 360,CPU,Desktop,4.2,4.2,"[""LGA 775""]",1,1,3.46,,Cedarmill,2 GB,"[""DDR2""]",372,TRUE,--
+CPU-031,AMD FX-9370,AMD,FX-9370,CPU,Desktop,,,"[""AM3+""]",8,8,4.4,,Vishera,32 GB,"[""DDR3""]","6,359",FALSE,broken
+CPU-033,AMD FX-6300,AMD,FX-6300,CPU,Desktop,4.1,4.1,"[""AM3+""]",6,6,3.5,,Vishera,64 GB,"[""DDR3""]","4,219",TRUE,--
+CPU-035,AMD FX-8320,AMD,FX-8320,CPU,Desktop,4.1,4.1,"[""AM3+""]",8,8,3.5,,Vishera,32 GB,"[""DDR3""]","5,455",TRUE,--
+CPU-036,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.7,,Zen 3,64 GB,"[""DDR4""]","21,860",TRUE,
+CPU-037,AMD Ryzen 9 5950X,AMD,Ryzen 9 5950X,CPU,Desktop,CLA-069,15.2,"[""AM4""]",16,32,3.4,,Zen 3,32 GB,"[""DDR4""]","45,432",TRUE,--
+CPU-041,Intel Pentium 4 HT 524,Intel,Pentium 4 HT 524,CPU,Desktop,4.2,4.2,"[""LGA 775""]",1,2,3.06,,Prescott,4 GB,"[""DDR2""]",0,TRUE,--
+CPU-042,Intel Pentium 4 HT 521,Intel,Pentium 4 HT 521,CPU,Desktop,4.2,4.2,"[""LGA 775""]",1,2,2.8,,Prescott,4 GB,"[""DDR2""]",0,TRUE,--
+CPU-043,Intel Pentium 4 HT 531,Intel,Pentium 4 HT 531,CPU,Desktop,4.2,4.2,"[""LGA 775""]",1,2,3,,Prescott,4 GB,"[""DDR2""]",0,TRUE,--
+CPU-044,Intel Pentium Dual-Core E2140,Intel,Pentium Dual-Core E2140,CPU,Desktop,4.2,4.2,"[""LGA 775""]",2,2,1.6,,Allendale,8 GB ,"[""DDR2""]",532,TRUE,--
+CPU-045,Intel Core i3-4160T,Intel,Core i3-4160T,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.1,,Haswell,32 GB,"[""DDR3""]","3,113",TRUE,--
+CPU-046,Intel Core i3-550,Intel,Core i3-550,CPU,Desktop,4.2,4.2,"[""LGA 1156""]",2,4,3.2,,Clarkdale,16 GB,"[""DDR3""]","1,627",FALSE,brak mobo do sprawdzenia
+CPU-047,Intel Core i3-540,Intel,Core i3-540,CPU,Desktop,4.2,4.2,"[""LGA 1156""]",2,4,3.06,,Clarkdale,16 GB,"[""DDR3""]","1,542",FALSE,brak mobo do sprawdzenia
+CPU-048,Intel Core i3-530,Intel,Core i3-530,CPU,Desktop,4.2,4.2,"[""LGA 1156""]",2,4,2.93,,Clarkdale,16 GB,"[""DDR3""]","1,510",FALSE,brak mobo do sprawdzenia
+CPU-052,Intel Core i7-2600K,Intel,Core i7-2600K,CPU,Desktop,CLA-021,14.3,"[""LGA 1155""]",4,8,3.4,,Sandy Bridge,32 GB,"[""DDR3""]","5,484",TRUE,--
+CPU-054,Intel Core i7-4770K,Intel,Core i7-4770K,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,8,3.5,,Haswell,32 GB,"[""DDR3""]","7,134",TRUE,--
+CPU-056,Intel Core i3-4160T,Intel,Core i3-4160T,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.1,,Haswell,32 GB,"[""DDR3""]","3,113",TRUE,--
+CPU-057,Intel Core i3-6100T,Intel,Core i3-6100T,CPU,Desktop,,,"[""LGA 1151""]",2,4,3.19,,Skylake,64 GB,"[""DDR4""]","3,641",FALSE,broken
+CPU-058,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-060,Intel Core i3-4170,Intel,Core i3-4170,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",2,4,3.7,,Haswell,32 GB,"[""DDR3""]","3,585",TRUE,--
+CPU-061,AMD FX-8320,AMD,FX-8320,CPU,Desktop,,,"[""AM3+""]",8,8,3.5,,Vishera,32 GB,"[""DDR3""]","5,455",FALSE,broken
+CPU-071,Intel Core i7-4790,Intel,Core i7-4790,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,8,3.6,,Haswell,32 GB,"[""DDR3""]","7,263",TRUE,--
+CPU-082,Intel Core i5-4690K,Intel,Core i5-4690K,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.5,,Haswell,32 GB,"[""DDR3""]","5,697",TRUE,W CPU-185
+CPU-089,AMD FX-8150,AMD,FX-8150,CPU,Desktop,4.1,4.1,"[""AM3+""]",8,8,3.6,,Vishera,32 GB,"[""DDR3""]","5,304",TRUE,--
+CPU-106,AMD Ryzen 5 PRO 4650G,AMD,Ryzen 5 PRO 4650G,CPU,Desktop,GPC-995,11.2,"[""AM4""]",6,12,3.7,,Zen 2,128 GB,"[""DDR4""]","16,117",TRUE,CPU-181 tray
+CPU-109,Intel Core i5-11600,Intel,Core i5-11600,CPU,Desktop,,,"[""LGA 1200""]",6,12,2.8,,Rocket Lake-S,128 GB,"[""DDR4""]","17,934",FALSE,"Nie dziala, do sprawdzenia"
+CPU-123,Intel Core i3-2120,Intel,Core i3-2120,CPU,Desktop,5.2,5.2,"[""LGA 1155""]",2,4,3.3,,Sandy Bridge,32 GB,"[""DDR3""]","1,970",TRUE,--
+CPU-135,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-153,AMD Ryzen 5 1400,AMD,Ryzen 5 1400,CPU,Desktop,4.1,4.1,"[""AM4""]",4,8,3.2,,Zen,64 GB,"[""DDR4""]","7,734",TRUE,--
+CPU-158,AMD Ryzen 5 2600X,AMD,Ryzen 5 2600X,CPU,Desktop,CLA-420,16.2,"[""AM4""]",6,12,3.6,,Zen +,64 GB,"[""DDR4""]","13,892",TRUE,Jest w płycie ASRock A520M na szafie
+CPU-168,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,w cpu 136
+CPU-171,Intel Pentium G2020,Intel,Pentium G2020,CPU,Desktop,4.2,4.2,"[""LGA 1155""]",2,2,2.9,,Ivy Bridge,32 GB,"[""DDR3""]","1,699",TRUE,--
+CPU-184,AMD FX-8350,AMD,FX-8350,CPU,Desktop,4.1,4.1,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,088",TRUE,--
+CPU-194,AMD FX-8370,AMD,FX-8370,CPU,Desktop,4.1,4.1,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,159",TRUE,--
+CPU-195,AMD Ryzen 7 8700G,AMD,Ryzen 7 8700G,CPU,Desktop,GPC-011,6.35/186,"[""AM5""]",8,16,4.2,,Zen 4,256 GB,"[""DDR5""]","31,697",TRUE,--
+CPU-196,AMD Ryzen 9 7950X3D,AMD,Ryzen 9 7950X3D,CPU,Desktop,CLA-031,12.3,"[""AM5""]",16,32,4.2,,Zen 4,128 GB,"[""DDR5""]","50,321",TRUE,--
+CPU-197,AMD Ryzen 5 8500G,AMD,Ryzen 5 8500G,CPU,Desktop,CLA-420,16.2,"[""AM5""]",6,12,3.5,,Zen 4,256 GB,"[""DDR5""]","21,621",TRUE,W GPC-420
+CPU-199,Intel Core i3-14100F,Intel,Core i3-14100F,CPU,Desktop,4.2,4.2,"[""LGA 1700""]",4,8,3.5,,Raptor Lake,192 GB,"[""DDR4""]","15,399",TRUE,--
+CPU-204,Intel Core i5-14400,Intel,Core i5-14400,CPU,Desktop,4.2,4.2,"[""LGA 1700""]",10,16,2.5,,Raptor Lake,192 GB,"[""DDR4""]","25,346",TRUE,--
+CPU-205,Intel Core i9-11900KF,Intel,Core i9-11900KF,CPU,Desktop,GPC-1153,10.2,"[""LGA 1200""]",8,16,3.5,,Rocket Lake ,128 GB,"[""DDR4""]","24,712",TRUE,--
+CPU-206,Intel Core i7-10700KF,Intel,Core i7-10700KF,CPU,Desktop,4.2,4.2,"[""LGA 1200""]",8,16,3.8,,Comet Lake,128 GB,"[""DDR4""]","18,424",TRUE,--
+CPU-207,Intel Core i7-9700,Intel,Core i7-9700,CPU,Desktop,CLA-003,13.4,"[""LGA 1151""]",8,8,3,,Coffee Lake,128 GB,"[""DDR4""]","13,226",TRUE,"Broken, need investigation"
+CPU-215,Intel Core i7-10700K,Intel,Core i7-10700K,CPU,Desktop,GPC-940,17.3,"[""LGA 1200""]",8,16,38,,Comet Lake,128 GB,"[""DDR4""]","18,618",FALSE,Missing
+CPU-223,Intel Core i5-9400F,Intel,Core i5-9400F,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",6,6,2.8,,Coffee Lake,128 GB,"[""DDR4""]","9,457",TRUE,--
+CPU-235,Intel Core i5-9600K,Intel,Core i5-9600K,CPU,Desktop,GPC-515,10.3,"[""LGA 1151""]",6,6,3.7,,Coffee Lake,128 GB,"[""DDR4""]","10,636",FALSE,--
+CPU-210,Intel Core i5-8500,Intel,Core i5-8500,CPU,Desktop,Pocztówka,11.1,"[""LGA 1151""]",6,6,3,,Coffee Lake,128 GB,"[""DDR4""]","9,529",TRUE,Pocztowka
+CPU-176,Intel Core i3-4370,Intel,Core i3-4370,CPU,Desktop,BOX-011,1.2,"[""LGA 1150""]",2,4,3.8,,Haswell,32 GB,"[""DDR3""]","3,853",TRUE,--
+CPU-167,Intel Core i5-6600K,Intel,Core i5-6600K,CPU,Desktop,BOX-012,1.2,"[""LGA 1151""]",4,4,3.5,,Skylake,64 GB,"[""DDR4""]","6,306",TRUE,--
+CPU-163,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,BOX-014,1.3,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-178,AMD FX-8320,AMD,FX-8320,CPU,Desktop,BOX-015,1.3,"[""AM3+""]",8,8,3.5,,Vishera,32 GB,"[""DDR3""]","5,455",TRUE,--
+CPU-177,Intel Core 2 Duo E8600,Intel,Core 2 Duo E8600,CPU,Desktop,BOX-017,1.3,"[""LGA 775""]",2,2,3.3,,Wolfdale,8 GB,"[""DDR3""]","1,367",TRUE,--
+CPU-051,Intel Core 2 Duo E8600,Intel,Core 2 Duo E8600,CPU,Desktop,BOX-018,1.3,"[""LGA 775""]",2,2,3.33,,Wolfdale,8 GB,"[""DDR3""]","1,367",TRUE,--
+CPU-085,Intel Core i3-4130,Intel,Core i3-4130T,CPU,Desktop,GPC-006,10.3,"[""LGA 1150""]",2,4,3.4,,Haswell,32 GB,"[""DDR3""]","3,330",TRUE,--
+CPU-072,Intel Core i7-4770K,Intel,Core i7-4770K,CPU,Desktop,GPC-008,9.1,"[""LGA 1150""]",4,8,3.5,,Haswell,32 GB,"[""DDR3""]","7,134",TRUE,--
+CPU-165,AMD Ryzen 5 3600X,AMD,Ryzen 5 3600X,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.8,,Zen 2,128 GB,"[""DDR4""]","18,155",TRUE,Jest w MB TUF Gaming X570 na szafie
+CPU-074,Intel Core i5-4670,Intel,Core i5-4670,CPU,Desktop,GPC-027,10.3,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,497",TRUE,--
+CPU-191,AMD FX-8320,AMD,FX-8320,CPU,Desktop,GPC-029,10.2,"[""AM3+""]",8,8,3.5,,Vishera,32 GB,"[""DDR3""]","5,455",TRUE,--
+CPU-251,Intel Core i5-4690K,Intel,Core i5-4690K,CPU,Desktop,GPC-042,7.2,"[""LGA 1150""]",4,4,3.5,,Haswell,32 GB,"[""DDR3""]","5,697",TRUE,--
+CPU-075,AMD FX-6300,AMD,FX-6300,CPU,Desktop,GPC-045,7.2,"[""LGA 1150""]",6,6,3.5,,Vishera,64 GB,"[""DDR3""]","4,219",TRUE,--
+CPU-076,AMD FX-8320,AMD,FX-8320,CPU,Desktop,GPC-046,16.4,"[""AM3+""]",8,8,3.5,,Vishera,32 GB,"[""DDR3""]","5,455",TRUE,--
+CPU-077,AMD FX-8350,AMD,FX-8350,CPU,Desktop,GPC-061,10.3,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,088",TRUE,--
+CPU-190,Intel Core i7-4790K,Intel,Core i7-4790K,CPU,Desktop,GPC-063,8.3,"[""LGA 1150""]",4,8,4,,Haswell,32 GB,"[""DDR3""]","8,062",TRUE,--
+CPU-078,AMD FX-8370,AMD,FX-8370,CPU,Desktop,GPC-066,9.1,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,159",TRUE,--
+CPU-079,Intel Core i7-4790,Intel,Core i7-4790,CPU,Desktop,GPC-072,18.3,"[""LGA 1150""]",4,8,3.6,,Haswell,32 GB,"[""DDR3""]","7,263",TRUE,--
+CPU-080,Intel Core i5-4590,Intel,Core i5-4590,CPU,Desktop,GPC-077,7.2,"[""LGA 1150""]",4,4,3.3,,Haswell,32 GB,"[""DDR3""]","5,373",TRUE,--
+CPU-192,Intel Core i5-6600K,Intel,Core i5-6600K,CPU,Desktop,GPC-074,17.4,"[""LGA 1151""]",4,4,3.5,,Skylake,64 GB,"[""DDR4""]","6,306",TRUE,--
+--,Intel Core i5-4570,Intel,Core i5-4570,CPU,Desktop,GPC-073,11.2,"[""LGA 1150""]",4,4,3.2,,Haswell,32 GB,"[""DDR3""]","5,238",TRUE,--
+CPU-083,Intel Core i7-4790K,Intel,Core i7-4790K,CPU,Desktop,GPC-078,,"[""LGA 1150""]",4,8,4,,Haswell,32 GB,"[""DDR3""]","8,062",TRUE,--
+CPU-084,Intel Core i5-4670K,Intel,Core i5-4670K,CPU,Desktop,GPC-084,,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,581",TRUE,--
+CPU-086,Intel Core i9-10920X X-series,Intel,Core i9-10920X,CPU,Desktop,GPC-1048,10.2,"[""LGA 2066""]",12,24,3.5,,Comet Lake,64 GB,"[""DDR4""]","26,016",TRUE,--
+CPU-172,AMD Ryzen 9 3900X,AMD,Ryzen 9 3900X,CPU,Desktop,GPC-1057,9.3,"[""AM4""]",12,24,3.8,,Zen 2,32 GB,"[""DDR4""]","32,546",TRUE,--
+CPU-087,Intel Core i5-6600K,Intel,Core i5-6600K,CPU,Desktop,GPC-106,6.4,"[""LGA 1151""]",4,4,3.5,,Skylake,32 GB,"[""DDR4""]","6,306",TRUE,--
+CPU-216,Intel Core i7-11700K,Intel,Core i7-11700K,CPU,Desktop,GPC-1064,11.3,"[""LGA 1200""]",8,16,38,,Comet Lake,32 GB,"[""DDR4""]","24,411",TRUE,--
+CPU-088,Intel Core i7-5820K,Intel,Core i7-5820K,CPU,Desktop,GPC-107,6.4,"[""LGA 2011-3""]",6,12,3.3,,Haswell EE,64 GB,"[""DDR4""]","9,828",TRUE,--
+CPU-039,AMD Ryzen 9 7900X3D,AMD,Ryzen 9 7900X3D,CPU,Desktop,GPC-1071,179,"[""AM5""]",12,24,4.4,,Zen 4,128 GB,"[""DDR5""]","50,321",TRUE,--
+CPU-161,Intel Core i7-5775C,Intel,Core i7-5775C,CPU,Desktop,GPC-1116,6.2,"[""LGA 1150""]",4,8,3.3,,Broadwell,64 GB,"[""DDR3L""]","7,742",TRUE,--
+CPU-090,AMD Ryzen 3 4300G,AMD,Ryzen 3 4300G,CPU,Desktop,GPC-1117,6.2,"[""AM4""]",4,8,3.8,,Zen 2,128 GB,"[""DDR4""]","9,497",TRUE,--
+CPU-091,Intel Core i9-10900F,Intel,Core i9-10900F,CPU,Desktop,4.2,4.2,"[""LGA 1200""]",10,20,2.8,,Comet Lake,64 GB,"[""DDR4""]","19,793",TRUE,opakowanie po CPU-205
+CPU-025,AMD Ryzen 3 1200,AMD,Ryzen 3 1200,CPU,Desktop,GPC-1119,6.2,"[""AM4""]",4,4,3.1,,Zen,128 GB,"[""DDR4""]","6,261",TRUE,--
+CPU-093,Intel Core i3-10100F,Intel,Core i3-10100F,CPU,Desktop,GPC-1120,6.2,"[""LGA 1200""]",4,8,3.6,,Comet Lake,32 GB,"[""DDR4""]","8,711",TRUE,--
+CPU-092,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,GPC-1121,6.2,"[""AM4""]",6,12,3.6,,Zen 2,32 GB,"[""DDR4""]","17,701",TRUE,"wyłącza się ciągle, do sprawdzenia"
+CPU-095,Intel Core i5-10400F,Intel,Core i5-10400F,CPU,Desktop,GPC-1122,,"[""LGA 1200""]",6,12,2.9,,Comet Lake,128 GB,"[""DDR4""]","12,117",TRUE,ASTRUM (SONY)
+CPU-096,AMD Ryzen 3 1200,AMD,Ryzen 3 1200,CPU,Desktop,GPC-1123,SQ,"[""AM4""]",4,4,3.1,,Zen,64 GB,"[""DDR4""]","6,261",TRUE,Poszło na SQ
+CPU-097,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,GPC-737,15.1,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,--
+CPU-098,Intel Core i3-10100,Intel,Core i3-10100,CPU,Desktop,CLA-018,13.3,"[""LGA 1200""]",4,8,3.6,,Comet Lake,128 GB,"[""DDR4""]","8,551",TRUE,--
+CPU-175,Intel Pentium G3220,Intel,Pentium G3200,CPU,Desktop,GPC-1127,6.2,"[""LGA 1150""]",2,2,3,,Haswell,32 GB,"[""DDR3""]","1,885",TRUE,--
+CPU-099,Intel Core i3-10320,Intel,Core i3-10320,CPU,Desktop,GPC-1128,7.2,"[""LGA 1200""]",4,8,3.8,,Comet Lake,128 GB,"[""DDR4""]","9,982",TRUE,--
+CPU-208,Intel Core i5-6400,Intel,Core i5-6400,CPU,Desktop,GPC-1130,7.2,"[""LGA 1151""]",4,4,2.7,,Skylake,64 GB,"[""DDR4""]","5,173",TRUE,--
+CPU-101,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,3.1,3.1,"[""AM4""]",6,12,3.7,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-102,Intel Core i5-11600KF,Intel,Core i5-11600KF,CPU,Desktop,GPC-1132,7.2,"[""LGA 1200""]",6,12,3.9,,Rocket Lake,128 GB,"[""DDR4""]","19,512",TRUE,--
+CPU-103,AMD Ryzen 7 5800X,AMD,Ryzen 7 5800X,CPU,Desktop,GPC-1133,6.3,"[""AM4""]",8,16,3.8,,Zen 3,128 GB,"[""DDR4""]","27,737",TRUE,--
+CPU-104,Intel Core i5-11400F,Intel,Core i5-11400F,CPU,Desktop,GPC-1134,6.3,"[""LGA 1200""]",6,12,2.6,,Rocket Lake,128 GB,"[""DDR4""]","16,907",TRUE,--
+CPU-105,Intel Core i5-11400F,Intel,Core i5-11400F,CPU,Desktop,GPC-1135,6.3,"[""LGA 1200""]",6,12,2.6,,Rocket Lake,128 GB,"[""DDR4""]","16,907",TRUE,--
+CPU-024,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1136,6.3,"[""AM4""]",6,12,3.7,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-107,Intel Core i5-10600KF,Intel,Core i5-10600KF,CPU,Desktop,GPC-1137,6.3,"[""LGA 1200""]",6,12,4.1,,Comet Lake,128 GB,"[""DDR4""]","14,169",TRUE,--
+CPU-108,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,GPC-1138,6.3,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,--
+CPU-113,Intel Core i5-11600K,Intel,Core i5-11600K,CPU,Desktop,GPC-1139,6.3,"[""LGA 1200""]",6,12,3.9,,Rocket Lake-S,128 GB,"[""DDR4""]","19,527",TRUE,--
+CPU-110,AMD Ryzen 5 2600,AMD,Ryzen 5 2600,CPU,Desktop,GPC-1140,6.3,"[""AM4""]",6,12,3.4,,Zen +,64 GB,"[""DDR4""]","13,161",TRUE,--
+CPU-111,Intel Core i5-11500,Intel,Core i5-11500,CPU,Desktop,GPC-1141,6.3,"[""LGA 1200""]",6,12,2.7,,Rocket Lake,128 GB,"[""DDR4""]","17,117",TRUE,--
+CPU-112,Intel Core i5-11600K,Intel,Core i5-11600K,CPU,Desktop,GPC-1142,7.3,"[""LGA 1200""]",6,12,3.9,,Rocket Lake,128 GB,"[""DDR4""]","19,527",TRUE,--
+CPU-173,AMD Ryzen 5 2600,AMD,Ryzen 5 2600,CPU,Desktop,GPC-1143,7.3,"[""AM4""]",6,12,3.4,,Zen +,64 GB,"[""DDR4""]","13,161",TRUE,--
+CPU-114,Intel Core i7-11700K,Intel,Core i7-11700K,CPU,Desktop,GPC-1144,7.3,"[""LGA 1200""]",8,16,2.5,,Rocket Lake-S,128 GB,"[""DDR4""]","24,411",TRUE,--
+CPU-115,Intel Core i5-10600KF,Intel,Core i5-10600KF,CPU,Desktop,GPC-1145,7.3,"[""LGA 1200""]",6,12,4.1,,Comet Lake,128 GB,"[""DDR4""]","14,169",TRUE,--
+CPU-231,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1146,7.3,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-117,Intel Core i5-11500,Intel,Core i5-11500,CPU,Desktop,GPC-1147,7.3,"[""LGA 1200""]",6,12,2.7,,Rocket Lake,128 GB,"[""DDR4""]","17,117",TRUE,
+CPU-094,AMD Ryzen 5 4500,AMD,Ryzen 5 4500,CPU,Desktop,GPC-1148,7.3,"[""AM4""]",6,12,3.6,,Zen 2,64 GB,"[""DDR4""]","16,092",TRUE,--
+CPU-119,Intel Core i5-11600K,Intel,Core i5-11600K,CPU,Desktop,GPC-1149,7.3,"[""LGA 1200""]",6,12,3.9,,Rocket Lake-S,128 GB,"[""DDR4""]","19,527",TRUE,--
+CPU-120,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.7,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,tray CPU-181
+CPU-121,Intel Core i5-11600,Intel,Core i5-11600,CPU,Desktop,GPC-1151,6.4,"[""LGA 1200""]",6,12,2.8,,Rocket Lake-S,128 GB,"[""DDR4""]","17,934",TRUE,--
+CPU-122,Intel Core i5-11500,Intel,Core i5-11500,CPU,Desktop,GPC-1152,6.4,"[""LGA 1200""]",6,12,2.7,,Rocket Lake,128 GB,"[""DDR4""]","17,117",TRUE,--
+CPU-049,Intel Core i9-10900K,Intel,Core i9-10900K,CPU,Desktop,GPC-1118,6.2,"[""LGA 1200""]",10,20,3.7,,Comet Lake,128 GB,"[""DDR4""]","22,467",TRUE,w opakowaniu po CPU-205
+CPU-157,AMD Ryzen 7 3700X,AMD,Ryzen 7 3700X,CPU,Desktop,4.1,4.1,"[""AM4""]",8,16,3.6,,Zen 2,128 GB,"[""DDR4""]","22,459",TRUE,
+CPU-124,Intel Core i7-12700,Intel,Core i7-12700,CPU,Desktop,GPC-1155,13.3,"[""LGA 1700""]",12,20,2.1,,Alder Lake-S,128 GB,"[""DDR4""]","30,215",TRUE,--
+CPU-125,AMD Ryzen 9 5900X,AMD,Ryzen 9 5900X,CPU,Desktop,GPC-1156,14.3,"[""AM4""]",12,24,3.7,,Zen 3,128 GB,"[""DDR4""]","39,007",TRUE,--
+CPU-164,Intel Celeron G5905,Intel,Celeron G5905,CPU,Desktop,GPC-1157,16.3,"[""LGA 1200""]",2,2,3.4,,Comet Lake,128 GB,"[""DDR4""]","2,770",TRUE,--
+CPU-126,AMD Ryzen 9 7900X,AMD,Ryzen 9 7900X,CPU,Desktop,GPC-1158,,"[""AM5""]",12,24,4.7,,Zen 4,128 GB,"[""DDR5""]","51,411",TRUE,--
+CPU-127,Intel Core i5-11400,Intel,Core i5-11400,CPU,Desktop,GPC-1159,15.3,"[""LGA 1200""]",6,12,2.6,,Rocket Lake-S,128 GB,"[""DDR4""]","16,695",TRUE,--
+CPU-128,Intel Core i5-12500,Intel,Core i5-12500,CPU,Desktop,CLA-033,12.3,"[""LGA 1200""]",6,12,2.6,,Alder Lake-S,128 GB,"[""DDR4""]","16,907",TRUE,ostatnio w gpc1160
+CPU-160,AMD Ryzen 5 3600X,AMD,Ryzen 5 3600X,CPU,Desktop,,,"[""LGA 1700""]",6,6,3,,Zen 2,128 GB,"[""DDR4""]","19,904",FALSE,#NAME?
+CPU-209,Intel Core i5-11600KF,Intel,Core i5-11600KF,CPU,Desktop,GPC-1161,,"[""AM4""]",6,12,3.8,,Rocket Lake ,128 GB,"[""DDR4""]","18,155",TRUE,--
+CPU-232,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1131,7.2,"[""AM4""]",6,12,3.9,,Zen 3,128 GB,"[""DDR4""]","19,512",TRUE,--
+CPU-185,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1217,9.2,"[""LGA 1200""]",6,12,3.75,,Rocket Lake ,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-130,Intel Core i5-4590S,Intel,Core i5-4590S,CPU,Desktop,GPC-125,9.1,"[""LGA 1150""]",4,4,2.9,,Haswell,32 GB,"[""DDR3""]","5,125",TRUE,--
+CPU-004,Intel Core i3-4150,Intel,Core i3-4150,CPU,Desktop,GPC-127,8.1,"[""LGA 1150""]",2,4,3.5,,Haswell,32 GB,"[""DDR3""]","3,405",TRUE,--
+CPU-170,Intel Core i5-12400F,Intel,Core i5-12400F,CPU,Desktop,CLA-023,15.2,"[""LGA 1700""]",6,12,2.5,,Alder Lake-S,128 GB,"[""DDR4""]","19,497",TRUE,--
+CPU-131,AMD FX-4300,AMD,FX-4300,CPU,Desktop,GPC-131,6.4,"[""AM3+""]",4,4,3.8,,Vishera,32 GB,"[""DDR3""]","2,989",TRUE,--
+CPU-132,Intel Core i5-6600K,Intel,Core i5-6600K,CPU,Desktop,GPC-134,7.4,"[""LGA 1151""]",4,4,3.5,,Skylake,64 GB,"[""DDR4""]","6,306",TRUE,--
+CPU-214,Intel Core i5-12400F,Intel,Core i5-12400F,CPU,Desktop,GPC-618,10.1,"[""LGA 1700""]",6,12,2.5,,Alder Lake-S,128 GB,"[""DDR4""]","19,497",TRUE,--
+CPU-187,Intel Core i5-4670,Intel,Core i5-4670,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,497",TRUE,tray cpu-208
+CPU-133,Intel Core i5-4670,Intel,Core i5-4670,CPU,Desktop,GPC-146,6.4,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,497",TRUE,--
+CPU-193,AMD FX-8350,AMD,FX-8350,CPU,Desktop,GPC-154,16.4,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,088",TRUE,--
+CPU-233,AMD Ryzen 5 5600,AMD,Ryzen 5 5600,CPU,Desktop,GPC-1561,,"[""AM4""]",6,12,3.5,,Zen 3,128 GB,"[""DDR4""]","21,545",FALSE,SQ
+CPU-134,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-162,7.4,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-059,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-164,7.4,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-222,Intel Core i5-12600K,Intel,Core i5-12600K,CPU,Desktop,GPC-1647,10.1,"[""LGA 1700""]",10,16,3.7,,Alder Lake-S,128 GB,"[""DDR4""]","27,614",TRUE,--
+CPU-100,Intel Core i3-10320,Intel,Core i3-10320,CPU,Desktop,GPC-166,16.4,"[""LGA 1200""]",4,8,3.8,,Comet Lake,128 GB,"[""DDR4""]","9,982",TRUE,--
+CPU-182,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-175,17.3,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-180,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-185,17.4,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-224,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1882,9.2,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-229,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1883,8.3,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-225,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,GPC-1886,8.3,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-227,AMD Ryzen 9 5900X,AMD,Ryzen 9 5900X,CPU,Desktop,4.1,4.1,"[""AM4""]",12,24,3.7,,Zen 3,128 GB,"[""DDR4""]","39,007",TRUE,W opakowaniu po CPU-274
+CPU-183,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-196,15.3,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-137,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-197,17.3,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-186,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-207,7.4,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-138,AMD FX-8370,AMD,FX-8370,CPU,Desktop,GPC-215,,"[""AM3+""]",8,8,4,,Vishera,32 GB,"[""DDR3""]","6,159",TRUE,--
+CPU-240,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-218,7.4,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-241,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-219,10.3,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-139,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-220,7.4,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-140,Intel Core i3-6100T,Intel,Core i3-6100T,CPU,Desktop,GPC-222,6.4,"[""LGA 1151""]",2,4,3.19,,Skylake,64 GB,"[""DDR4""]","3,641",TRUE,https://www.intel.pl/content/www/pl/pl/products/sku/90734/intel-core-i36100t-processor-3m-cache-3-20-ghz/specifications.html
+CPU-189,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-228,8.1,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-211,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,GPC-233,8.1,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-174,Intel Core i5-7600K,Intel,Core i5-7600K,CPU,Desktop,GPC-282,17.4,"[""LGA 1151""]",4,4,3.8,,Kaby Lake,64 GB,"[""DDR4""]","6,805",TRUE,--
+CPU-246,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-283,6.4,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-244,AMD Ryzen 7 1700X,AMD,Ryzen 7 1700X,CPU,Desktop,GPC-287,10.2,"[""AM4""]",8,16,3.8,,Zen,64 GB,"[""DDR4""]","15,634",TRUE,--
+CPU-238,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-291,6.4,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-237,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-298,16.4,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-242,AMD Ryzen 7 1700X,AMD,Ryzen 7 1700X,CPU,Desktop,GPC-299,18.3,"[""AM4""]",8,16,3.8,,Zen,64 GB,"[""DDR4""]","15,634",TRUE,--
+CPU-236,AMD Ryzen 7 1700X,AMD,Ryzen 7 1700X,CPU,Desktop,GPC-300,9.3,"[""AM4""]",8,16,3.8,,Zen,64 GB,"[""DDR4""]","15,634",TRUE,Devolwer
+CPU-243,AMD Ryzen 7 1700X,AMD,Ryzen 7 1700X,CPU,Desktop,GPC-303,7.2,"[""AM4""]",8,16,3.8,,Zen,64 GB,"[""DDR4""]","15,634",TRUE,--
+CPU-141,Intel Core i3-7100,Intel,Core i3-7100,CPU,Desktop,GPC-316,7.4,"[""LGA 1151""]",2,4,3.9,,Kaby Lake,64 GB,"[""DDR4""]","4,317",TRUE,--
+CPU-142,Intel Core i3-7100,Intel,Core i3-7100,CPU,Desktop,GPC-317,7.4,"[""LGA 1151""]",2,4,3.9,,Kaby Lake,64 GB,"[""DDR4""]","4,317",TRUE,--
+CPU-143,Intel Core i7-6700K,Intel,Core i7-6700K,CPU,Desktop,GPC-333,9.1,"[""LGA 1151""]",4,8,4,,Skylake,64 GB,"[""DDR4""]","8,929",TRUE,--
+CPU-144,Intel Core i5-7500,Intel,Core i5-7500,CPU,Desktop,GPC-349,9.3,"[""LGA 1151""]",4,4,3.4,,Kaby Lake,64 GB,"[""DDR4""]","6,028",TRUE,--
+CPU-239,Intel Core i7-7700K,Intel,Core i7-7700K,CPU,Desktop,GPC-365,18.4,"[""LGA 1151""]",4,8,4.2,,Skylake,64 GB,"[""DDR4""]","9,628",TRUE,--
+CPU-162,Intel Core i5-7500,Intel,Core i5-7500,CPU,Desktop,GPC-389,10.1,"[""LGA 1151""]",4,4,3.4,,Kaby Lake,64 GB,"[""DDR4""]","6,028",TRUE,--
+CPU-055,Intel Core i5-9400F,Intel,Core i5-9400F,CPU,Desktop,GPC-391,9.3,"[""LGA 1151""]",6,6,2.9,,Coffee Lake Refresh,64 GB,"[""DDR4""]","9,457",TRUE,W CPU-004
+CPU-147,Intel Core i9-7940X,Intel,Core i9-7940X,CPU,Desktop,GPC-414,16.3,"[""LGA 2066""]",14,28,3.1,,Kaby Lake,128 GB,"[""DDR4""]","25,611",TRUE,--
+CPU-148,AMD Ryzen 7 2700X,AMD,Ryzen 7 2700X,CPU,Desktop,GPC-440,15.1,"[""AM4""]",8,16,3.7,,Zen +,64 GB,"[""DDR4""]","17,471",TRUE,--
+CPU-149,AMD Ryzen 7 2700X,AMD,Ryzen 7 2700X,CPU,Desktop,GPC-499,10.2,"[""AM4""]",8,16,3.7,,Zen +,64 GB,"[""DDR4""]","17,471",TRUE,--
+CPU-062,Intel Core i5-9400F,Intel,Core i5-9400F,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",6,6,2.9,,Coffee Lake Refresh,64 GB,"[""DDR4""]","9,457",TRUE,--
+CPU-067,Intel Core i7-8700K,Intel,Core i7-8700K,CPU,Desktop,5.2,5.2,"[""LGA 1151""]",6,12,3.7,,Coffee Lake,128 GB,"[""DDR4""]","13,576",TRUE,--
+CPU-166,Intel Core i5-6600K,Intel,Core i5-6600K,CPU,Desktop,GPC-615,11.3,"[""LGA 1151""]",4,4,3.5,,Skylake,64 GB,"[""DDR4""]","6,306",TRUE,--
+CPU-066,AMD Ryzen 5 1400,AMD,Ryzen 5 1400,CPU,Desktop,GPC-616,11.2,"[""AM4""]",4,8,3.2,,Zen,64 GB,"[""DDR4""]","7,734",TRUE,--
+CPU-018,Intel Core i5-13600KF,Intel,Core i5-13600KF,CPU,Desktop,GPC-1756,18.4,"[""LGA 1700""]",14,20,3.5,,Raptor Lake,128 GB,"[""DDR4""]","37,488",TRUE,--
+CPU-155,AMD Ryzen 7 2700X,AMD,Ryzen 7 2700X,CPU,Desktop,GPC-623,18.4,"[""AM4""]",8,16,3.7,,Zen +,64 GB,"[""DDR4""]","17,471",TRUE,--
+CPU-065,AMD Ryzen 7 4700G,AMD,Ryzen 7 4700G,CPU,Desktop,GPC-643,17.3,"[""AM4""]",8,16,3.6,,Zen 2,128 GB,"[""DDR4""]","20,131",TRUE,Gigabyte Aorus B450 M
+CPU-145,Intel Core i3-8100,Intel,Core i3-8100,CPU,Desktop,GPC-682,SQ,"[""LGA 1151""]",4,4,3.6,,Coffee Lake,64 GB,"[""DDR4""]","6,084",TRUE,W CPU-029 / SQ
+CPU-156,AMD Ryzen 5 3600X,AMD,Ryzen 5 3600X,CPU,Desktop,GPC-684,9.2,"[""AM4""]",6,12,3.8,,Zen 2,128 GB,"[""DDR4""]","18,155",TRUE,--
+CPU-221,Intel Core i7-10700K,Intel,Core i7-10700K,CPU,Desktop,GPC-736,16.3,"[""LGA 1200""]",8,16,38,,Comet Lake,128 GB,"[""DDR4""]","18,618",TRUE,--
+CPU-034,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,--
+CPU-245,Intel Core i7-9700K,Intel,Core i7-9700K,CPU,Desktop,GPC-780,9.1,"[""LGA 1151""]",8,8,3.6,,Coffee Lake,128 GB,"[""DDR4""]","14,414",TRUE,--
+CPU-115,Intel Core i7-10700K,Intel,Core i7-10700K,CPU,Desktop,GPC-787,14.2,"[""LGA 1200""]",8,16,38,,Comet Lake,128 GB,"[""DDR4""]","18,618",TRUE,--
+CPU-158,AMD Ryzen 5 1600,AMD,Ryzen 5 1600,CPU,Desktop,GPC-808,10.1,"[""AM4""]",6,12,3.2,,Zen,32 GB,"[""DDR4""]","12,272",TRUE,--
+CPU-220,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,CLA-030,13.3,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,--
+CPU-201,Intel Core i9-13900KF,Intel,Core i9-13900KF,CPU,Desktop,GPC-926,11.3,"[""LGA 1700""]",24,32,3,,Raptor Lake,192 GB,"[""DDR4""]","57,756",TRUE,--
+CPU-212,Intel Core i7-11700K,Intel,Core i7-10700K,CPU,Desktop,GPC-969,11.2,"[""LGA 1200""]",8,16,38,,Comet Lake,128 GB,"[""DDR4""]","18,618",TRUE,--
+CPU-218,Intel Core i7-11700K,Intel,Core i7-11700K,CPU,Desktop,GPC-980,16.3,"[""LGA 1200""]",8,16,36,,Comet Lake,128 GB,"[""DDR4""]","24,411",TRUE,--
+CPU-213,AMD Ryzen 5 5600X,AMD,Ryzen 5 5600X,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.75,,Zen 3,128 GB,"[""DDR4""]","21,860",TRUE,tray od CPU-197
+CPU-007,Intel Core i5-4690,Intel,Core i5-4690,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,576",TRUE,--
+CPU-063,AMD A10-7870K,AMD,A10-7870K,CPU,Desktop,4.1,4.1,"[""FM2+""]",4,4,3.9,,Godaveri,32 GB,"[""DDR3""]","3,501",TRUE,--
+CPU-069,Intel Core i3-12100,Intel,Core i3-12100,CPU,Desktop,CLA-032,16.2,"[""LGA 1700""]",4,4,3.3,,Alder Lake,128 GB,"[""DDR4""]","11,880",TRUE,--
+CPU-081,Intel Core i5-4440,Intel,Core i5-4440,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.1,,Haswell,32 GB,"[""DDR3""]","4,785",TRUE,--
+CPU-118,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,4.1,4.1,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,CPU-188 tray
+CPU-129,Intel Core i7-6700K,Intel,Core i7-6700K,CPU,Desktop,,,"[""LGA 1151""]",4,8,4,,Skylake,64 GB,"[""DDR4""]","8,929",TRUE,--
+CPU-136,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,--
+CPU-151,Intel Core i3-7300,Intel,Core i3-7300,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",2,4,4,,Kaby Lake,64 GB,"[""DDR4""]","4,519",TRUE,--
+CPU-152,Intel Core i5-7400,Intel,Core i7-7400,CPU,Desktop,,,"[""LGA 1151""]",4,4,3,,Kaby Lake,64 GB,"[""DDR4""]","5,474",FALSE,CPU error
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck1,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck2,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck3,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck4,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck5,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+,AMD Zen 2,AMD,Valve Jupiter,CPU,Handheld,SteamDeck6,Rambo,"[""BGA ST1""]",4,8,2.4,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,
+GPU-265,GeForce GTX 970 GAMING 4G,Nvidia,GeForce GTX 970,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.25,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-266,GeForce GTX 970 GAMING 4G,Nvidia,GeForce GTX 970,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.25,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-267,GeForce GTX 970 GAMING 4G,Nvidia,GeForce GTX 970,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.25,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-268,GeForce GTX 970 GAMING 4G,Nvidia,GeForce GTX 970,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,1.25,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-269,GeForce GTX 960 2GD5T OC,Nvidia,GeForce GTX 960,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.24,"1,753",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-270,MSI GTX-970-4GD5T-OC,Nvidia,GeForce GTX 970,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.1,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-271,GeForce GTX 1060 G1 Gaming 6G,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-615,11.3,"[""PCIe""]",,,1.62,"2,002",GeForce 10,6 GB,"[""GDDR5""]","9,804",TRUE,Artefakty graficzne + nie chce wykrywac niektorych display portow
+GPU-272,EVGA GTX 980 CLASSIFIED,Nvidia,GeForce GTX 980,GPU,Desktop,GPC-995,11.2,"[""PCIe""]",,,1.29,"1,753",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+GPU-273,EVGA GTX 970 Superclocked,Nvidia,GeForce GTX 970,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.31,"1,753",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,--
+GPU-274,GIGABYTE GTX 960 WindForce,Nvidia,GeForce GTX 960,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.21,"1,753",GeForce 900,2 GB,"[""GDDR5""]","6,118",TRUE,--
+GPU-275,GIGABYTE GTX 980 WindForce,Nvidia,GeForce GTX 980,GPU,Desktop,GPC-969,11.2,"[""PCIe""]",,,1.27,"1,753",GeForce 900,4 GB,"[""GDDR5""]","11,102",TRUE,--
+CPU-247,AMD Ryzen Threadripper 1900X,AMD,AMD Ryzen Threadripper 1900X,CPU,Desktop,CLA-069,15.2,"[""Socket SP3r2""]",8,16,3.8,,Ryzen Threadripper,2 TB,"[""DDR4""]",,TRUE,--
+CPU-248,Intel Core i5-8600K,Intel,Core i5-8600K,CPU,Desktop,CLA-012,13.4,"[""LGA 1151""]",6,6,3.6,,Coffee Lake,128 GB,"[""DDR4""]","10,129",TRUE,W opakowaniu od CPU-207
+,AMD Ryzen Z1 Extreme,AMD,Ryzen Z1 Extreme,CPU,Handheld,ASUS ROG Ally 1,Rambo,"[""FP8""]",8,16,3.3,,Ryzen Z Series,24 GB,"[""LPDDR5X""]",,TRUE,"--"
+,AMD Ryzen Z1 Extreme,AMD,Ryzen Z1 Extreme,CPU,Handheld,ASUS ROG Ally 2,Rambo,"[""FP8""]",8,16,3.3,,Ryzen Z Series,24 GB,"[""LPDDR5X""]",,TRUE,"--"
+,AMD Ryzen Z1 Extreme,AMD,Ryzen Z1 Extreme,CPU,Handheld,ASUS ROG Ally 3,Rambo,"[""FP8""]",8,16,3.3,,Ryzen Z Series,24 GB,"[""LPDDR5X""]",,TRUE,"--"
+,AMD Ryzen Z1 Extreme,AMD,Ryzen Z1 Extreme,CPU,Handheld,LENOVO Legion GO,Rambo,"[""FP8""]",8,16,3.3,,Ryzen Z Series,24 GB,"[""LPDDR5X""]",,TRUE,--
+,AMD Ryzen Z2 Go,AMD,Ryzen Z2,CPU,Handheld,LENOVO Legion GO S,Rambo,"[""FP7""]",4,8,3,,Ryzen Z Series,16 GB,"[""LPDDR5X""]",,TRUE,"--"
+,"Intel Core Ultra 7 processor 155H",Intel,Core Ultra 7 155H,CPU,Handheld,MSI Claw,Rambo,"[""LGA 1851""]",16,22,4.8,,Ultra 7,96 GB,"[""LPDDR5X""]",,TRUE,"--"
+CPU-249,Intel Core i7-8700K,Intel,Core i7-8700K,CPU,Desktop,5.2,5.2,"[""LGA 1151""]",6,12,3.7,,Coffee Lake,128 GB,"[""DDR4""]","13,576",TRUE,--
+GPU-276,ASUS DUAL-RTX2080-O8G-EVO,Nvidia,GeForce RTX 2080,GPU,Desktop,CLA-029,14.2,"[""PCIe""]",,,1.51,"14,000",GeForce 20,8 GB,"[""GDDR6""]",,TRUE,"--"
+GPU-277,Gigabyte Radeon RX 6900 XT Gaming OC,AMD,Radeon RX 6900 XT,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,1.87,"2,000",Navi II,16 GB,"[""GDDR6""]","26,743",TRUE,"--"
+GPU-278,NVIDIA Quadro RTX 4000,Nvidia,Quadro RTX 4000,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1,"1,625",Quadro Turing,8 GB,"[""GDDR6""]",,TRUE,"--"
+CPU-250,Intel Core i7-7700K,Intel,Core i7-7700K,CPU,Desktop,GPC-335,8.2,"[""LGA 1151""]",4,8,4.2,,Skylake,64 GB,"[""DDR4""]","9,628",TRUE,--
+GPU-279,GeForce GTX 1080 Ti GAMING X 11G,Nvidia,GeForce GTX 1080 Ti,GPU,Desktop,3.5,3.5,"[""PCIe""]",,,1.68,1.112,GeForce 10,11 GB,"[""GDDR5X""]","18,601",TRUE,--
+CPU-251,AMD A6-7400K,AMD,AMD A6-7400K,CPU,Desktop,4.1,4.1,"[""FM2+""]",2,2,3.5,,A6,32 GB,"[""DDR3""]",,TRUE,"w trayu po CPU-028"
+GPU-280,Nvidia GeForce GTX 460,Nvidia,GeForce GTX 460,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,0.68,"1,800",GeForce 400,1 GB,"[""GDDR5""]","2,276",TRUE,--
+MBR-216,MSI Z270 TOMAHAWK,Intel,Z270,Motherboard,Desktop,GPC-335,8.2,"[""LGA 1151""]",,,,,,64 GB,"[""DDR4""]",,TRUE,--
+MBR-217,ASRock FM2A88X Extreme4+,AMD,A88X,Motherboard,Desktop,GPC-132,8.2,"[""FM2+""]",,,,,,64 GB,"[""DDR3""]",,TRUE,--
+CPU-252,AMD Ryzen 9 5900X,AMD,Ryzen 9 5900X,CPU,Desktop,GPC-965,9.2,"[""AM4""]",12,24,3.7,,Zen 3,128 GB,"[""DDR4""]","39,007",TRUE,--
+GPU-281,SAPPHIRE NITRO+ AMD Radeon RX 6900 XT Gaming,AMD,Radeon RX 6900 XT,GPU,Desktop,2.5,2.5,"[""PCIe""]",,,1.93,"2,000",Navi II,16 GB,"[""GDDR6""]","26,743",TRUE,--
+MBR-219,MSI MPG B550 GAMING PLUS,MSI,B550,Motherboard,Desktop,GPC-965,9.2,"[""AM4""]",,,,"4,400",,128 GB,"[""DDR4""]",,TRUE,
+CPU-253,Intel Core i7-8700K,Intel,Core i7-8700K,CPU,Desktop,GPC-404,17.4,"[""LGA 1151""]",6,12,3.7,,Coffee Lake,128 GB,"[""DDR4""]","13,576",TRUE,--
+MBR-220,ASRock Z370 Extreme 4,ASRock,Z370,Motherboard,Desktop,GPC-404,17.4,"[""LGA 1151""]",,,,"4,333",,64 GB,"[""DDR4""]",,TRUE,
+GPU-282,ASUS Radeon RX 580 Dual OC,AMD,Radeon RX 580,GPU,Desktop,,,"[""PCIe""]",,,"1,257","2,000",Polaris,8 GB,"[""GDDR5""]","8,814",FALSE,Missing
+MBR-221,ASUS TUF Z370-PLUS GAMING,Intel,Z370,Motherboard,Desktop,GPC-412,7.3,"[""LGA 1151""]",,,,,,128 GB,"[""DDR4""]",,TRUE,
+GPU-283,MSI GTX 1080 Ti Armor OC,Nvidia,GeForce GTX 1080 Ti,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,153,"1,376",GeForce 10,11 GB,"[""GDDR5X""]","18,601",TRUE,--
+MBR-222,ASRock FM2A68M-HD+,AMD,A68,Motherboard,Desktop,CLA-010,15.2,"[""FM2""]",,,,,,32 GB,"[""DDR3""]",,TRUE,
+MBR-223,MSI MAG B460 TORPEDO,Intel,B460,Motherboard,Desktop,CLA-018,13.3,"[""LGA 1200""]",,,,,,128 GB,"[""DDR4""]",,TRUE,
+CPU-254,Intel Core i7-8700,Intel,Core i7-8700,CPU,Desktop,GPC-474,8.2,"[""LGA 1151""]",6,12,3.2,,Coffee Lake,128 GB,"[""DDR4""]",,TRUE,--
+GPU-284,ASUS ROG Strix GeForce RTX 2060 EVO,Nvidia,GeForce RTX 2060,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,"1,830","14,000",GeForce 20,6 GB,"[""GDDR6""]",,TRUE,--
+CPU-255,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+,AMD Ryzen 7 5800H,AMD,,CPU,Laptop,CLL-038,14,,,,,,,,,,TRUE,
+,AMD Radeon RX 6600M,AMD,,GPU,Laptop,CLL-038,14,,,,,,,,,,TRUE,
+CPU-256,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-257,Intel Core i5-4690,Intel,Core i5-4690,CPU,Desktop,5.3,5.3,"[""LGA 1150""]",4,4,3.4,,Haswell,32 GB,"[""DDR3""]","5,576",TRUE,--
+CPU-258,Intel Core i5-8500,Intel,Core i5-8500,CPU,Desktop,GPC-412,7.3,"[""LGA 1151""]",6,6,3,,Coffee Lake,128 GB,"[""DDR4""]","9,529",TRUE,Pocztowka
+CPU-259,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-260,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-261,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-262,Intel Core i7-4790,Intel,Core i7-4790,CPU,Desktop,5.3,5.3,"[""LGA 1150""]",4,8,3.6,,Haswell,32 GB,"[""DDR3""]","7,263",TRUE,--
+CPU-263,Intel Core i5-6500,Intel,Core i5-6500,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.2,,Skylake,64 GB,"[""DDR4""]","5,605",TRUE,--
+CPU-264,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-265,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-266,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-267,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-268,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-269,Intel Core i5-7600,Intel,Core i5-7600,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.5,,Kaby Lake,64 GB,"[""DDR4""]",,TRUE,
+CPU-270,Intel Core i5-7600K,Intel,Core i5-7600K,CPU,Desktop,5.3,5.3,"[""LGA 1151""]",4,4,3.8,,Kaby Lake,64 GB,"[""DDR4""]","6,805",TRUE,--
+GPU-121,Nvidia GeForce GT 1030,Nvidia,GeForce GT 1030,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1.22,"1,502",GeForce 10,2 GB,"[""GDDR5""]","2,415",TRUE,
+GPU-289,MSI GTX 1060 AERO ITX,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-185,17.4,"[""PCIe""]",,,1.5,"2,002",GeForce 10,3 GB,"[""GDDR5""]",,TRUE,
+CPU-271,AMD Ryzen 7 3700X,AMD,Ryzen 7 3700X,CPU,Desktop,GPC-1154,14.2,"[""AM4""]",8,16,3.6,,Zen 2,128 GB,"[""DDR4""]","22,459",TRUE,
+MBR-225,MSI B450M-A PRO Max,MSI,B450,Motherboard,Desktop,,,"[""AM4""]",,,,"2,400",,32 GB,"[""DDR4""]",,TRUE,
+MBR-226,ASRock B250 Pro4,ASRock,B250,Motherboard,Desktop,,,"[""LGA 1151""]",,,,"2,400",,64 GB,"[""DDR4""]",,TRUE,
+CPU-272,Intel Core i7-7700K,Intel,Core i7-7700K,CPU,Desktop,,,"[""LGA 1151""]",4,8,4.2,,Skylake,64 GB,"[""DDR4""]","9,628",TRUE,W MBR-226
+MBR-227,MSI Z170A PC MATE,MSI,Z170,Motherboard,Desktop,BOX-010,1.2,"[""LGA 1151""]",,,,"3,600",,64 GB,"[""DDR4""]",,TRUE,
+MBR-228,ASUS TUF GAMING X570-PLUS,ASUS,X570,Motherboard,Desktop,CLA-069,15.2,"[""AM4""]",,,,"5,100",,128 GB,"[""DDR4""]",,TRUE,
+MBR-229,ASRock B365 Pro4,ASRock,B365,Motherboard,Desktop,,,,,,,"2,666",,64 GB,"[""DDR4""]",,TRUE,
+CPU-273,Intel Core i7-9700K,Intel,Core i7-9700K,CPU,Desktop,,,"[""LGA 1151""]",8,8,3.6,,Coffee Lake,128 GB,"[""DDR4""]","14,414",TRUE,W MBR-229
+CPU-274,AMD Ryzen 5 5500,AMD,Ryzen 5 5500,CPU,Desktop,GPC-1909,15.1,"[""AM4""]",6,12,3.6,,Zen 3,128 GB,"[""DDR4""]","19,321",TRUE,
+GPU-129,ZOTAC GAMING GeForce RTX 3060 AMP White Edition,Nvidia,GeForce RTX 3060,GPU,Desktop,CLA-033,12.3,"[""PCIe""]",,,"1,320","1,875",GeForce 20,12 GB,"[""GDDR6""]",,TRUE,
+MBR-230,ASRock A520M-HVS,ASRock,A520,Motherboard,Desktop,,,"[""AM4""]",,,,"4,733",,64 GB,"[""DDR4""]",,TRUE,"W śmieć kartonie, po uruchomieniu gry, zużycie gpu skacze na 100%"
+MBR-231,ASUS PRIME X670-P,ASUS,X670,Motherboard,Desktop,CLA-031,12.3,"[""AM5""]",,,,"7,600",,192 GB,"[""DDR5""]",,TRUE,
+GPU-290,Zotac GTX 980 AMP! 4GB,Nvidia,GeForce GTX 980,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,"1,139","7,010",GeForce 900,4 GB,"[""GDDR5""]",,TRUE,
+GPU-291,MSI Radeon RX 580 Armor 8G,AMD,Radeon RX 580,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,"1,257","2,000",Polaris,8GB,"[""GDDR5""]","8,801",TRUE,
+MBR-232,Gigabyte Z370 HD3,Gigabyte,Z370,Motherboard,Desktop,GPC-519,15.3,"[""LGA 1151""]",,,,"4,000",,64 GB,"[""DDR4""]",,TRUE,
+MBR-233,MSI PRO H610M-E DDR4,MSI,H610,Motherboard,Desktop,CLA-032,16.2,"[""LGA 1200""]",,,,"3,200",,64 GB,"[""DDR4""]",,TRUE,
+CPU-275,AMD Ryzen 7 1800X,AMD,Ryzen 7 1800X,CPU,Desktop,GPC-1125,6.2,"[""AM4""]",8,16,"3,600","2,666",,128 GB,"[""DDR4""]",,TRUE,W opakowaniu CPU-034
+CPU-276,AMD Ryzen 5 1600X,AMD,Ryzen 5 1600X,CPU,Desktop,GPC-1150,7.3,"[""AM4""]",6,12,"3,600","2,666",,128 GB,"[""DDR4""]",,TRUE,W opakowaniu CPU-038
+CPU-277,Intel Core i7-6850K,Intel,Core i7-6850K,CPU,Desktop,4.2,4.2,"[""LGA 2011""]",6,12,"3,600","2,400", Broadwell-E,128 GB,"[""DDR4""]",,TRUE,
+,AMD Ryzen AI Z2 Extreme,AMD,Ryzen AI Z2 Extreme,CPU,Handheld,ASUS ROG Xbox Ally X,Rambo,"[""FP8""]",8,16,"2,000","1,000",Ryzen Z Series,,"[""LPDDR5X""]",,TRUE,
+,AMD Ryzen Z2 A,AMD,Ryzen Z2 A,CPU,Handheld,ASUS ROG Xbox Ally,Rambo,"[""FP8""]",4,8,"2,800","1,600",Ryzen Z Series,,,,TRUE,
+CPU-278,Intel Core i7-13700K,Intel,Core i7-13700K,CPU,Desktop,GPC-1449,7.2,"[""LGA 1700""]",16,24,"2,500","5,600",Raptor Lake,192 GB,"[""DDR4"",""DDR5""]",,TRUE,w brackecie CPU-113
+GPU-292,GeForce RTX 4070 Ti EAGLE OC 12G,Nvidia,GeForce RTX 4070 Ti,GPU,Desktop,GPC-1064,11.3,"[""PCIe""]",,,"2,625","2,100",GeForce 40,12 GB,"[""GDDR6X""]",,TRUE,
+MBR-233,MSI MPG Z490 GAMING PLUS,MSI,Z490,Motherboard,Desktop,GPC-940,17.3,"[""LGA 1200""]",,,,"5,000",,128 GB,"[""DDR4""]",,TRUE,
+MBR-234,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-1130,7.2,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+MBR-235,ROG STRIX X570-E GAMING WIFI II,ASUS,X570,Motherboard,Desktop,CLA-029,14.2,"[""AM4""]",,,,"4,600",,128 GB,"[""DDR4""]",,TRUE,
+CPU-279,Intel Core i5-11400F,Intel,Core i5-11400F,CPU,Desktop,GPC-1218,7.4,"[""LGA 1200""]",6,12,2.6,,Rocket Lake,128 GB,"[""DDR4""]","16,907",TRUE,
+MBR-236,Gigabyte B560M D3H,Gigabyte,B560,Motherboard,Desktop,GPC-1218,7.4,"[""LGA 1200""]",,,,"4,800",,128 GB,"[""DDR4""]",,TRUE,
+MBR-237,Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-172,8.1,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+CPU-280,Intel Core i7-6700,Intel,Core i7-6700,CPU,Desktop,GPC-172,8.1,"[""LGA 1151""]",4,8,34,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,
+GPU-293,NVIDIA GeForce GTX 970,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-172,8.1,"[""PCIe""]",,,105,"1,175",GeForce 900,4 GB,"[""GDDR5""]","9,639",TRUE,
+MBR-238,MSI Z390-A PRO,MSI,Z390,Motherboard,Desktop,GPC-474,8.2,"[""LGA 1151""]",,,,"4,200",,128 GB,"[""DDR4""]",,TRUE,
+MBR-239,ASUS Prime Z690-P D4,ASUS,Z690,Motherboard,Desktop,GPC-1756,18.4,"[""LGA 1700""]",,,,"6,000",,128 GB,"[""DDR5""]",,TRUE,
+GPU-294,Sapphire Nitro R9 390X,AMD,Radeon R9 390,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,"1,060","1,500",Pirate Islands,8 GB,"[""GDDR5""]","9,278",TRUE,
+GPU-295,EVGA GTX 970,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-196,15.3,"[""PCIe""]",,,"1,050","1,753",GeForce 900,4 GB ,"[""GDDR5""]","9,639",TRUE,
+GPU-296,ASUS R9 390 DirectCU II,AMD,Radeon R9 390,GPU,Desktop,1.5,1.5,"[""PCIe""]",,,"1,000","1,500",Pirate Islands,8 GB,"[""GDDR5""]","8,853",TRUE,
+GPU-297,GIGABYTE GTX 1060 G1 Gaming Rev. 2.0,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-303,7.2,"[""PCIe""]",,,"1,595","2,002",GeForce 10,6 GB,"[""GDDR5""]","10,063",TRUE,
+GPU-298,Palit GTX 1070 Ti Super JetStream,Nvidia,GeForce GTX 1070 Ti,GPU,Desktop,GPC-1154,14.2,"[""PCIe""]",,,"1,607","2,002",GeForce 10,8 GB,"[""GDDR5""]","14,670",TRUE,
+GPU-299,EVGA GTX 1080,Nvidia,GeForce GTX 1080,GPU,Desktop,GPC-300,9.3,"[""PCIe""]",,,"1,607","1,251",GeForce 10,8 GB,"[""GDDR5""]","15,610",TRUE,Devolwer
+GPU-306,EVGA GTX 1070 SC ACX 3.0,Nvidia,GeForce GTX 1070,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,"1,594","1,784",GeForce 10,8 GB,"[""GDDR5""]","13,506",TRUE,
+GPU-300,EVGA GTX 1080,Nvidia,GeForce GTX 1080,GPU,Desktop,GPC-072,18.3,"[""PCIe""]",,,"1,607","1,251",GeForce 10,8 GB,"[""GDDR5""]","15,610",TRUE,
+GPU-301,ASUS ROG Matrix R9 290X Platinum,AMD,Radeon R9 290X,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,"1,050","1,350",Volcanic Islands,4 GB ,"[""GDDR5""]","8,427",TRUE,
+GPU-302,ZOTAC GTX 980 Ti AMP! Extreme Edition,Nvidia,GeForce GTX 980 Ti,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,"1,253","1,800",GeForce 900,6 GB,"[""GDDR5""]","13,710",TRUE,
+GPU-303,ASUS ROG STRIX GTX 1060 GAMING,Nvidia,GeForce 1060,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,"1,506","2,002",GeForce 10,6 GB,"[""GDDR5""]","10,063",TRUE,
+GPU-304,Gainward GTX 980 Ti PHOENIX GS,Nvidia,Geforce 980,GPU,Desktop,1.6,1.6,"[""PCIe""]",,,"1,152","1,753",GeForce 900,6 GB,"[""GDDR5""]","13,710",TRUE,
+GPU-305,Inno3D GTX 1050 Ti 1-Slot Edition,Nvidia,GeForce 1050,GPU,Desktop,GPC-134,7.4,"[""PCIe""]",,,"1,291","1,752",GeForce 10,4 GB,"[""GDDR5""]","6,349",TRUE,
+--,AMD Ryzen 5 7520C,AMD,,CPU,Laptop,CLL-041,14,"["" FT6""]",4,8,2.8,,Zen 2,16 GB,"[""LPDDR5""]",,TRUE,Laptop CPU
+--,MediaTek Kompanio 520,Mediatek,,CPU,Laptop,CLL-039,14,,8,8,2,,Kompanio,8 GB,"[""LPDDR4x""]",,TRUE,Laptop CPU
+--,Qualcomm Snapdragon 7c,Qualcomm,,CPU,Laptop,CLL-040,14,,8,8,2.4,,Kryo 495,4 GB,"[""DDR4L""]",,TRUE,Laptop CPU
+GPU-307,AMD Radeon 7,AMD,Radeon 7,GPU,Desktop,GPC-2510,15.1,"[""PCIe""]",,,"1,400","1,000",Vega 2,16 GB,"[""HBM2""]",,TRUE,
+CPU-281,AMD Ryzen Threadripper 1950X,AMD,AMD Ryzen Threadripper 1900X,CPU,Desktop,GPC-2510,15.1,"[""SP3r2""]",16,32,"3,400","2,666",Ryzen Threadripper,,"[""DDR4""]",,TRUE,
+CPU-282,Intel Core i5-11600KF,Intel,Core i5-11600KF,CPU,Desktop,GPC-1209,8.1,"[""AM4""]",6,12,3.8,,Rocket Lake ,128 GB,"[""DDR4""]","18,155",TRUE,--
+CPU-283,AMD Ryzen 9 9950X3D,AMD,Ryzen 9 9950X3D,CPU,Desktop,CLA-001,12.3,"[""AM5""]",16,32,4.3,,Zen 5,192 GB,"[""DDR5""]",,TRUE,w pudeku od CPU-286
+CPU-284,AMD Ryzen 7 9700X,AMD,AMD Ryzen 7 9700X,CPU,Desktop,4.1,4.1,"[""AM5""]",8,16,3.8,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+CPU-285,AMD Ryzen 5 9600X,AMD,Ryzen 5 9600X,CPU,Desktop,4.1,4.1,"[""AM5""]",6,12,3.9,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+CPU-286,AMD Ryzen 9 9950X,AMD,Ryzen 9 9950X3D,CPU,Desktop,4.1,4.1,"[""AM5""]",16,32,4.3,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+CPU-287,AMD Ryzen 7 9850X3D,AMD,Ryzen 7 9850X3D,CPU,Desktop,CLA-017,14.3,"[""AM5""]",8,16,4.7,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+CPU-288,AMD Ryzen 9 9900X3D,AMD,Ryzen 9 9900X3D,CPU,Desktop,4.1,4.1,"[""AM5""]",12,24,4.4,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+GPU-308,Gigabyte GTX 1060 Gaming 6 GB,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-389,10.1,"[""PCIe""]",,,1.6,"2,002",GeForce 10,6 GB,"[""GDDR5""]","10,083",TRUE,
+CPU-289,AMD Ryzen 9 9900X,AMD,Ryzen 9 9900X,CPU,Desktop,4.1,4.1,"[""AM5""]",12,24,4.4,,Zen 5,192 GB,"[""DDR5""]",,TRUE,
+CPU-290,Intel Core Ultra 9 285K,Intel,Intel Core Ultra 9 285K,CPU,Desktop,CLA-034,12.4,"[""LGA 1851""]",24,24,3.2,,Arrow Lake,256 GB,"[""DDR5""]",,TRUE,
+CPU-291,Intel Core Ultra 7 265KF,Intel,Intel Core Ultra 7 265KF,CPU,Desktop,4.2,4.2,"[""LGA 1851""]",20,20,3.9,,Arrow Lake,256 GB,"[""DDR5""]",,TRUE,
+CPU-292,Intel Core Ultra 5 245KF,Intel,Intel Core Ultra 5 245KF,CPU,Desktop,CLA-035,,"[""LGA 1851""]",14,14,4.2,,Arrow Lake,256 GB,"[""DDR5""]",,TRUE,
+CPU-293,Intel Core Ultra 5 225F,Intel,Intel Core Ultra 5 225F,CPU,Desktop,4.2,4.2,"[""LGA 1851""]",10,10,3.3,,Arrow Lake,256 GB,"[""DDR5""]",,TRUE,
+MBR-240,ASUS PRIME X670-P,ASUS,X670,Motherboard,Desktop,CLA-001,12.3,"[""AM5""]",,,,"7,600",,192 GB,"[""DDR5""]",,TRUE,
+MBR-241,ASUS PRIME X670-P,ASUS,X670,Motherboard,Desktop,CLA-017,14.3,"[""AM5""]",,,,"7,600",,192 GB,"[""DDR5""]",,TRUE,"wlaczac bez podlaczonej klawy i myszki"
+GPU-309,ASUS Turbo GTX 1080 8GB,Nvidia,GeForce GTX 1080,GPU,Desktop,Compat Server,183,"[""PCIe""]",,,,,GeForce 10,8 GB,"[""GDDR5""]",,TRUE,
+GPU-310,ASUS Turbo GTX 1080 8GB,Nvidia,GeForce GTX 1080,GPU,Desktop,Compat Server,183,"[""PCIe""]",,,,,GeForce 10,8 GB,"[""GDDR5""]",,TRUE,
+GPU-311,MSI Radeon RX 480 GAMING X 8G,AMD,Radeon RX 480,GPU,Desktop,3.2,3.2,"[""PCIe""]",,,"1,120","2,000",Arctic Islands,8 GB,"[""GDDR5""]",,TRUE,
+CPU-294,AMD Ryzen 5 3600,AMD,Ryzen 5 3600,CPU,Desktop,GPC-1014,8.2,"[""AM4""]",6,12,3.6,,Zen 2,128 GB,"[""DDR4""]","17,701",TRUE,--
+MBR-242,ASUS TUF GAMING X570-PLUS,ASUS,X570,Motherboard,Desktop,GPC-1014,8.2,"[""AM4""]",,,,"5,100",,128 GB,"[""DDR4""]",,TRUE,ASUS TUF GAMING X570-PLUS
+GPU-312,Sapphire Radeon RX 580 Pulse,AMD,Radeon RX 580,GPU,Desktop,GPC-1014,8.2,"[""PCIe""]",,,1.26,"2,000",Polaris,8 GB,"[""GDDR5""]","8,814",TRUE,--
+MBR-243,ASRock B650M PG LIGHTNING WiFi,ASRock,B650,Motherboard,Desktop,GPC-011,6.35/186,"[""AM5""]",,,,"7,200",,192 GB,"[""DDR5""]",,TRUE,--
+CPU-295,Intel Core i7-9700K,Intel,Core i7-9700K,CPU,Desktop,GPC-012,18.3,"[""LGA 1151""]",8,8,3.6,,Coffee Lake,128 GB,"[""DDR4""]","14,414",TRUE,W PC co przyszedł do nas jest oznaczony naklejką 
+GPU-313,Gigabyte RTX 2070 Windforce OC,Nvidia,GeForce RTX 2070,GPU,Desktop,2.1,2.1,"[""PCIe""]",,,"1,710","14,000",GeForce 20,8 GB,"[""GDDR6""]",,TRUE,
+CPU-296,Intel Core i3-12100F,Intel,i3-12100F,CPU,Desktop,GPC-1610,,"[""LGA 1700""]",4,8,3.3,,Alder Lake,128 GB,"[""DDR4""]",,TRUE,
+GPU-314,AFOX Geforce GTX 1660Ti,Nvidia,GeForce GTX 1660 TI,GPU,Desktop,GPC-1144,7.3,"[""PCIe""]",,,"1,500","1,200",GeForce 10,6 GB,"[""GDDR6""]",,TRUE,
+GPU-315,ASUS DUAL RX 6500 XT OC,AMD,Radeon RX 6500 XT,GPU,Desktop,,,"[""PCIe""]",,,"2,365","2,248",Navi II,4 GB,"[""GDDR6""]",,TRUE,
+CPU-297,Intel Core i3-12100F,Intel,i3-12100F,CPU,Desktop,GPC-1607,,"[""LGA 1700""]",4,8,3.3,,Alder Lake,128 GB,"[""DDR4""]",,TRUE,
+CPU-298,AMD Ryzen 7 5700X,AMD,Ryzen 7 5700X,CPU,Desktop,GPC-1280,,"[""AM4""]",8,16,3.4,,Zen 3,128 GB,"[""DDR4""]",,TRUE,
+GPU-316,Gigabyte GTX 1660 SUPER OC,Nvidia,GeForce GTX 1660 Super,GPU,Desktop,GPC-1280,,"[""PCIe""]",,,1.75,"1,750",GeForce 16,6 GB,"[""GDDR6""]","12,699",TRUE,--
+CPU-299,Intel Core i7-9700,Intel,Core i7-9700,CPU,Desktop,GPC-712,,"[""LGA 1151""]",8,8,3,,Coffee Lake,128 GB,"[""DDR4""]",,TRUE,
+GPU-317,MSI GeForce RTX 2080 Super Ventus OC,Nvidia,GeForce RTX 2080 Super,GPU,Desktop,GPC-712,,"[""PCIe""]",,,1.65,"1,937",GeForce 20,8 GB,"[""GDDR6""]","18,720",TRUE,
+GPU-318,XFX RX 5700 Double Dissipation Ultra,AMD,Radeon RX 5700,GPU,Desktop,3.1,3.1,"[""PCIe""]",,,1.565,1.75,Navi,8 GB,"[""GDDR6""]",,TRUE,
+CPU-300,Intel Core i3-8100,Intel,Core i3-8100,CPU,Desktop,,,"[""LGA 1151""]",4,4,3.6,,Coffee Lake,64 GB,"[""DDR4""]","6,084",TRUE,
+GPU-319,MSI GTX 1050 Ti GAMING X,Nvidia,GeForce GTX 1050 Ti,GPU,Desktop,GPC-777,,"[""PCIe""]",,,1.354,1.752,GeForce 10,4 GB,"[""GDDR5""]",,TRUE,
+CPU-301,AMD Ryzen 7 1700,AMD,Ryzen 7 1700,CPU,Desktop,GPC-352,,"[""AM4""]",8,16,3,,Zen,64 GB,"[""DDR4""]",,TRUE,
+GPU-320,ASUS TURBO RTX 2080,Nvidia,GeForce RTX 2080,GPU,Desktop,2.6,2.6,"[""PCIe""]",,,"1,515","1,750",GeForce 20,8 GB,"[""GDDR6""]",,TRUE,
+GPU-321,ASUS ROG STRIX RX 580 GAMING OC,AMD,Radeon RX 580,GPU,Desktop,GPC-352,,"[""PCIe""]",,,1.257,2,Polaris,8 GB,"[""GDDR5""]",,TRUE,
+GPU-322,Sapphire PULSE RX 6400,AMD,Radeon RX 6400,GPU,Desktop,3.6,3.6,"[""PCIe""]",,,1.923,2,Navi II,4 GB,"[""GDDR6""]",,TRUE,
+MBR-244,ASRock Z890 LiveMixer WiFi,ASRock,Z890,Motherboard,Desktop,CLA-034,12.4,"[""LGA 1851""]",,,,"9,466",,256 GB,"[""DDR5""]",,TRUE,
+MBR-245,ASRock Z890 LiveMixer WiFi,ASRock,Z890,Motherboard,Desktop,CLA-035,,"[""LGA 1851""]",,,,"9,466",,256 GB,"[""DDR5""]",,TRUE,
+MBR-246,ASRock Z890 LiveMixer WiFi,ASRock,Z890,Motherboard,Desktop,,,"[""LGA 1851""]",,,,"9,466",,256 GB,"[""DDR5""]",,TRUE,
+MBR-247,ASRock Z890 LiveMixer WiFi,ASRock,Z890,Motherboard,Desktop,,,"[""LGA 1851""]",,,,"9,466",,256 GB,"[""DDR5""]",,TRUE,
+MBR-248,ASRock Z890 LiveMixer WiFi,ASRock,Z890,Motherboard,Desktop,,,"[""LGA 1851""]",,,,"9,466",,256 GB,"[""DDR5""]",,TRUE,
+GPU-323,ASUS TUF Radeon RX 5600 XT Top Evo,AMD,Radeon RX 5600 XT,GPU,Desktop,2.3,2.3,"[""PCIe""]",,,"1,130","14,000",Navi,6 GB,"[""GDDR6""]",,TRUE,
+GPU-324,PowerColor RX 5600 XT Red Dragon ,AMD,Radeon RX 5600 XT,GPU,Desktop,3.3,3.3,"[""PCIe""]",,,"1,130","12,000",Navi,6 GB,"[""GDDR6""]",,TRUE,
+GPU-325,Gigabyte GeForce RTX 3060 Gaming OC ,Nvidia,GeForce RTX 3060,GPU,Desktop,GPC-1653,8.3,"[""PCIe""]",,,"1,320","1,875",GeForce 30,8 GB,"[""GDDR6""]",,TRUE,
+,,,,,,,,,,,,,,,,,TRUE,
+CPU-302,Intel Core i5-10400,Intel,Core i5-10400,CPU,Desktop,GPC-1653,8.3,"[""LGA 1200""]",6,12,100,,Comet Lake,128 GB,"[""DDR4""]",,TRUE,
+CPU-303,AMD Ryzen 7 5700X,AMD,Ryzen 7 5700X,CPU,Desktop,GPC-996,11.3,"[""AM4""]",8,16,100,,Zen 3,128 GB,"[""DDR4""]",,TRUE,
+GPU-326,NVIDIA GeForce GTX 1660 SUPER,Nvidia,GeForce GTX 1660 Super,GPU,Desktop,GPC-996,11.3,"[""PCIe""]",,,1.75,"1,750",GeForce 16,6 GB,"[""GDDR6""]",,TRUE,
+MBR-249,MSI MAG B660M MORTAR WIFI DDR4,MSI,B660,Motherboard,Desktop,GPC-618,10.1,"[""LGA 1700""]",,,,"3,200",,128 GB,"[""DDR4""]",,TRUE,
+CPU-304,Intel Core i7-11700K,Intel,Core i7-10700K,CPU,Desktop,GPC-1462,,"[""LGA 1200""]",8,16,38,,Comet Lake,128 GB,"[""DDR4""]","18,618",TRUE,--
+GPU-327,GeForce RTX 3060 Ti VENTUS 2X 8G OCV1 LHR,Nvidia,GeForce RTX 3060 Ti,GPU,Desktop,GPC-1647,10.1,"[""PCIe""]",,,1.41,"1,750",GeForce 30,8 GB,"[""GDDR6""]",,TRUE,--
+GPU-328,GIGABYTE GTX 1060 WindForce 2X OC,Nvidia,GeForce GTX 1060,GPU,Desktop,GPC-376,,"[""PCIe""]",,,1.55,"2,002",GeForce 10,6 GB,"[""GDDR5""]",,TRUE,
+CPU-306,Intel Core i5-4460,Intel,Core i5-4460,CPU,Desktop,GPC-376,,"[""LGA 1150""]",4,4,3.2,,Haswell,32 GB,"[""DDR3""]",,TRUE,
+,,,,,,,,,,,,,,,,,TRUE,
+MBR-250,MSI B350 GAMING PRO CARBON,MSI,B350,Motherboard,Desktop,GPC-352,,"[""AM4""]",,,,"3,200",,64,"[""DDR4""]",,TRUE,
+CPU-307,Intel Core i5-8400,Intel,Core i5-8400,CPU,Desktop,4.2,4.2,"[""LGA 1151""]",6,6,2.8,,Coffee Lake,128 GB,"[""DDR4""]","9,224",TRUE,"Broken, need investigation"
+MBR-251, Gigabyte GA-Z170M-D3H,Gigabyte,Z170,Motherboard,Desktop,GPC-181,8.2,"[""LGA 1151""]",,,,"3,400",,64 GB,"[""DDR4""]",,TRUE,
+CPU-308, Intel Core i7-6700,Intel, Intel Core i7-6700,CPU,Desktop,GPC-181,8.2,"[""LGA 1151""]",4,8,3.4,,Skylake,64 GB,"[""DDR4""]","8,052",TRUE,
+GPU-329,EVGA GTX 970,Nvidia,GeForce GTX 970,GPU,Desktop,GPC-181,8.2,"[""PCIe""]",,,1.05,"1,753",GeForce 900,4 GB,"[""GDDR5""]",,TRUE,
+CPU-309,AMD Ryzen 7 3800X,AMD,AMD Ryzen 7 3800X,CPU,Desktop,GPC-1030,19.3,"[""AM4""]",8,16,3.9,,,128 GB,"[""DDR4""]",,TRUE,
+CPU-310, Intel Core i5-4590,Intel,Core i5-4590,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.3,,Haswell,32 GB,"[""DDR3""]",,TRUE,tray CPU-005
+GPU-330,AMD Radeon RX 580 (polaris 20),AMD,AMD Radeon RX 580 (polaris 20),GPU,Desktop,GPC-1030,19.3,"[""PCIe""]",,,1.257,"2,000",Polaris,8 GB,"[""GDDR5""]",,TRUE,
+CPU-311,Intel Core i5-4590,Intel,Core i5-4590,CPU,Desktop,4.2,4.2,"[""LGA 1150""]",4,4,3.3,,Haswell,32 GB,"[""DDR3""]",,TRUE,tray cpu-012
+MBR-252,MSI MPG X570 Gaming Plus,MSI,X570,Motherboard,Desktop,GPC-1030,19.3,"[""AM4""]",,,,"1,333",,128 GB,"[""DDR4""]",,TRUE,
+CPU-312,Intel Core i5-4590,Intel,Core i5-4590,CPU,Desktop,GPC-145,6.4,"[""LGA 1150""]",4,4,3.3,,Haswell,32 GB,"[""DDR3""]",,TRUE,

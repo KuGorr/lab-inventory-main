@@ -1,0 +1,873 @@
+Błąd API: -- AMD Ryzen 5 4600H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- AMD Ryzen 5 5600H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- AMD Ryzen 5 7535HS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- AMD Ryzen 5 PRO 2500U → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- AMD Ryzen 7 4800H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- AMD Ryzen 7 5800H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-001 Intel Core i3-4150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-002 Intel Core i3-4150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-003 Intel Core i3-4150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-004 Intel Core i3-4150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-006 Intel Core i5-4440 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-007 Intel Core i5-4690 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-008 Intel Core i3-4150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-009 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-010 Intel Core i5-7500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-011 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-012 Intel Core i3-10100F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-013 Intel Core i5-3330 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-014 Intel Core i5-2500K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-015 Intel Core i7-3770 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-016 Intel Core i7-13700KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-017 Intel Core i5-11600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-018 Intel Core i5-13600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-019 Intel Celeron G1820 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-020 Intel Core i3-2120 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-020 Intel Pentium G645 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-021 AMD Ryzen 9 5900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-023 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-024 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-025 AMD Ryzen 3 1200 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-027 AMD A8-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-028 AMD Athlon X4 870K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-029 Intel Core i3-2120 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-030 Intel Celeron D 360 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-033 AMD FX-6300 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-034 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-035 AMD FX-8320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-036 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-037 AMD Ryzen 9 5950X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-038 AMD Ryzen 5 7600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-041 Intel Pentium 4 HT 524 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-042 Intel Pentium 4 HT 521 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-043 Intel Pentium 4 HT 531 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-044 Intel Pentium Dual-Core E2140 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-045 Intel Core i3-4160T → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-046 Intel Core i3-550 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-047 Intel Core i3-540 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-048 Intel Core i3-530 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-049 Intel Core i9-10900K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-050 Intel Core i7-11700F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-051 Intel Core 2 Duo E8600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-052 Intel Core i7-2600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-054 Intel Core i7-4770K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-055 Intel Core i5-9400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-056 Intel Core i3-4160T → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-058 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-059 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-060 Intel Core i3-4170 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-062 Intel Core i5-9400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-063 AMD A10-7870K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-064 AMD Ryzen 9 5950X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-065 AMD Ryzen 7 4700G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-066 AMD Ryzen 5 1400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-067 Intel Core i7-8700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-068 AMD Ryzen 7 7700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-069 Intel Core i3-12100 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-070 Intel Core i3-13100F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-071 Intel Core i7-4790 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-072 Intel Core i7-4770K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-073 AMD FX-8350 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-074 Intel Core i5-4670 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-075 AMD FX-6300 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-076 AMD FX-8320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-077 AMD FX-8350 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-078 AMD FX-8370 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-079 Intel Core i7-4790 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-080 Intel Core i5-4590 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-081 Intel Core i5-4440 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-082 Intel Core i5-4690K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-085 Intel Core i3-4130 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-086 Intel Core i9-10920X X-series → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-087 Intel Core i5-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-088 Intel Core i7-5820K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-089 AMD FX-8150 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-090 AMD Ryzen 3 4300G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-091 Intel Core i9-10900F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-092 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-093 Intel Core i3-10100F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-094 AMD Ryzen 5 4500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-097 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-098 Intel Core i3-10100 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-099 Intel Core i3-10320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-100 Intel Core i3-10320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-101 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-102 Intel Core i5-11600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-103 AMD Ryzen 7 5800X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-104 Intel Core i5-11400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-105 Intel Core i5-11400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-106 AMD Ryzen 5 PRO 4650G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-107 Intel Core i5-10600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-108 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-110 AMD Ryzen 5 2600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-111 Intel Core i5-11500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-112 Intel Core i5-11600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-113 Intel Core i5-11600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-114 Intel Core i7-11700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-115 Intel Core i5-10600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-115 Intel Core i7-10700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-117 Intel Core i5-11500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-118 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-119 Intel Core i5-11600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-120 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-121 Intel Core i5-11600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-122 Intel Core i5-11500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-123 Intel Core i3-2120 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-124 Intel Core i7-12700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-125 AMD Ryzen 9 5900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-127 Intel Core i5-11400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-128 Intel Core i5-12500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-130 Intel Core i5-4590S → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-131 AMD FX-4300 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-132 Intel Core i5-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-133 Intel Core i5-4670 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-134 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-135 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-136 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-137 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-139 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-140 Intel Core i3-6100T → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-141 Intel Core i3-7100 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-142 Intel Core i3-7100 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-143 Intel Core i7-6700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-144 Intel Core i5-7500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-146 Intel Core i5-8400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-147 Intel Core i9-7940X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-148 AMD Ryzen 7 2700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-149 AMD Ryzen 7 2700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-150 Intel Core i5-9500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-151 Intel Core i3-7300 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-153 AMD Ryzen 5 1400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-154 Intel Core i9-12900K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-155 AMD Ryzen 7 2700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-156 AMD Ryzen 5 3600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-157 AMD Ryzen 7 3700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-158 AMD Ryzen 5 1600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-158 AMD Ryzen 5 2600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-161 Intel Core i7-5775C → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-162 Intel Core i5-7500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-163 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-164 Intel Celeron G5905 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-165 AMD Ryzen 5 3600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-166 Intel Core i5-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-167 Intel Core i5-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-168 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-170 Intel Core i5-12400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-171 Intel Pentium G2020 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-172 AMD Ryzen 9 3900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-173 AMD Ryzen 5 2600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-174 Intel Core i5-7600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-175 Intel Pentium G3220 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-176 Intel Core i3-4370 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-177 Intel Core 2 Duo E8600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-178 AMD FX-8320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-179 AMD Ryzen 7 7800X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-180 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-181 Intel Core i3-4130T → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-182 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-183 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-184 AMD FX-8350 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-185 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-186 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-187 Intel Core i5-4670 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-188 Intel Core i7-9700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-189 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-190 Intel Core i7-4790K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-191 AMD FX-8320 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-192 Intel Core i5-6600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-193 AMD FX-8350 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-194 AMD FX-8370 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-196 AMD Ryzen 9 7950X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-197 AMD Ryzen 5 8500G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-198 AMD Ryzen 7 5800X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-199 Intel Core i3-14100F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-200 Intel Core i9-14900KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-201 Intel Core i9-13900KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-202 Intel Core i7-14700KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-203 Intel Core i5-14600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-204 Intel Core i5-14400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-205 Intel Core i9-11900KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-206 Intel Core i7-10700KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-207 Intel Core i7-9700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-208 Intel Core i5-6400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-210 Intel Core i5-8500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-211 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-212 Intel Core i7-11700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-213 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-214 Intel Core i5-12400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-215 Intel Core i7-10700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-216 Intel Core i7-11700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-218 Intel Core i7-11700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-220 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-221 Intel Core i7-10700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-222 Intel Core i5-12600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-223 Intel Core i5-9400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-224 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-225 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-226 AMD Ryzen 9 5950X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-227 AMD Ryzen 9 5900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-229 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-231 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-232 AMD Ryzen 5 5600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-235 Intel Core i5-9600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-236 AMD Ryzen 7 1700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-237 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-238 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-239 Intel Core i7-7700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-240 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-241 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-242 AMD Ryzen 7 1700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-243 AMD Ryzen 7 1700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-244 AMD Ryzen 7 1700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-245 Intel Core i7-9700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-246 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-247 AMD Ryzen Threadripper 1900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-248 Intel Core i5-8600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-249 Intel Core i7-8700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-250 Intel Core i7-7700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-251 AMD A6-7400K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-251 Intel Core i5-4690K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-252 AMD Ryzen 9 5900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-253 Intel Core i7-8700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-254 Intel Core i7-8700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-255 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-256 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-257 Intel Core i5-4690 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-258 Intel Core i5-8500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-259 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-260 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-261 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-262 Intel Core i7-4790 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-263 Intel Core i5-6500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-264 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-265 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-266 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-267 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-268 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-269 Intel Core i5-7600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-270 Intel Core i5-7600K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-271 AMD Ryzen 7 3700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-274 AMD Ryzen 5 5500 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-275 AMD Ryzen 7 1800X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-276 AMD Ryzen 5 1600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-277 Intel Core i7-6850K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-278 Intel Core i7-13700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-279 Intel Core i5-11400F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-280 Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-281 AMD Ryzen Threadripper 1950X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-282 Intel Core i5-11600KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-283 AMD Ryzen 9 9950X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-284 AMD Ryzen 7 9700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-285 AMD Ryzen 5 9600X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-286 AMD Ryzen 9 9950X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-287 AMD Ryzen 7 9850X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-288 AMD Ryzen 9 9900X3D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-289 AMD Ryzen 9 9900X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-290 Intel Core Ultra 9 285K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-291 Intel Core Ultra 7 265KF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-293 Intel Core Ultra 5 225F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-294 AMD Ryzen 5 3600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-295 Intel Core i7-9700K → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-302 Intel Core i5-10400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-303 AMD Ryzen 7 5700X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-307 Intel Core i5-8400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-308  Intel Core i7-6700 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-309 AMD Ryzen 7 3800X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-310  Intel Core i5-4590 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-311 Intel Core i5-4590 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: CPU-312 Intel Core i5-4590 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-000 Biostar Radeon RX 550 640SP → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-001 Nvidia GeForce GTX 460 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-002 MSI GeForce RTX 3060 Gaming X 12G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-003 Gigabyte RX 5700 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-004 ASUS Radeon RX 580 Dual OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-005 Zotac Gaming GeForce RTX 2060 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-006 Sapphire NITRO+ RX 7900 XT Vapor-X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-007 Sapphire PULSE RX 7900 XTX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-008 Gainward GTX 980 Phantom → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-009 MSI RX 6900 XT GAMING X TRIO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-010 MSI RX 6900 XT GAMING X TRIO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-013 MSI GeForce RTX 3070 Ti VENTUS 3X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-014 ASRock Arc A380 Challenger ITX OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-016 Intel Arc A750 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-017 ASRock Arc A380 Challenger ITX OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-018 Zotac RTX 3050 Solo → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-019 Acer Predator BiFrost ARC A770 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-020 ASUS DUAL GTX 1630 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-022 Power Color Radeon R7 240 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-024 Gigabyte GeForce GTX 1650 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-025 ASRock Radeon RX 6500 XT Phantom Gaming D OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-026 MSI RTX 3060 Ti GAMING Z TRIO LHR → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-027 Zotac GTX 1060 AMP! Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-028 Zotac GeForce GTX 1650 D6 Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-029 MSI GTX 1060 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-030 MSI Radeon R9 380 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-031 Gigabyte Radeon RX 570 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-032 ASUS Geforce GTX 960 Strix OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-033 Gigabyte GTX 1660 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-034 Sapphire NITRO Radeon RX 590 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-035 Sapphire NITRO+ RX 6700 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-036 ASUS PHOENIX GTX 1050 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-037 MSI Radeon R9 380 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-038 MSI RTX 2060 Gaming Z → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-039 EVGA GeForce GTX 1080 SC2 GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-040 ASUS TUF RX 6800 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-041 ASUS DUAL RTX 3060 Ti V2 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-042 MSI RTX 3070 VENTUS 2X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-043 MSI RTX 3060 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-044 MSI GTX 650 OC V1 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-045 Intel Arc A750 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-046 Sapphire PULSE RX 6800 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-047 Gigabyte GTX 1660 SUPER OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-048 MSI R7 370 GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-049 EVGA GTX 970 ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-050 MSI GeForce GTX 750 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-051 Club3d AMD Radeon R7 360 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-053 MSI RTX 2070 SUPER VENTUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-054 Gigabyte R9 380 G1 Gaming 4 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-055 Sapphire NITRO+ RX 6700 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-056 ASUS STRIX GTX 970 DirectCU II OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-057 NVIDIA GeForce GTX 980 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-058 MSI HD 7850 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-059 Sapphire Tri-X R9 FURY OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-060 Sapphire Radeon RX 580 Pulse → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-062 MSI Radeon R9 270X GAMING 2G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-063 Sapphire Tri-X R9 FURY OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-064 NVIDIA GeForce GTX 780 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-065 Zotac GTX 760 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-066 PowerColor Radeon R7 240 2GB GDDR5 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-067 Ati Radeon Hd 3450 256MB Vc X399D → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-069 Gigabyte GeForce RTX 4090 GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-070 MSI GeForce GTX 960 Gaming 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-071 Gigabyte GTX 1650 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-072 ASUS PHOENIX RX 6400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-073 Gigabyte GeForce RTX 2060 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-075 ASUS TUF GeForce RTX 3060 GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-076 AMD Radeon R7 350X OEM → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-077 Zotac GeForce RTX 2060 Twin Fan → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-078 ASUS Turbo GeForce GTX 970 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-079 Palit GeForce GTX 980 Super JetStream → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-080 Gigabyte Radeon R9 285 WindForce OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-081 Gainward GeForce GTX 980 Ti Phoenix → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-082 Gigabyte GeForce RTX 2060 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-083 MSI GeForce RTX 3060 Ti Gaming X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-084 MSI GeForce GTX 960 Gaming 2G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-085 Sapphire Radeon R9 Fury Nitro → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-086 Gigabyte Radeon R9 390 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-087 EVGA GeForce GTX 660 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-088 Sapphire Radeon HD 7790 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-089 Gigabyte GeForce GTX 970 Mini OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-090 ASUS STRIX R9 Fury → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-091 Gigabyte RTX 3060 GAMING OC Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-092 Zotac GeForce GTX 970 AMP Extreme Core Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-093 MSI HD 7870 2GD5T/OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-094 ASUS Radeon R7 240 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-095 ASUS GeForce GTX 770 DC2 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-097 Gigabyte GeForce RTX 3080 Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-098 Sapphire Radeon RX 550 Pulse → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-099 ASUS GeForce GTX 1660 Ti TUF Gaming EVO OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-100 MSI GeForce GTX 1060 3GT OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-101 Gigabyte GeForce RTX 2060 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-102 MSI Radeon RX 6700 XT MECH 2X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-103 Gigabyte GeForce GTX 1650 Windforce OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-105 HP Radeon RX 550 X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-106 Gigabyte GTX 1060 Gaming 6 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-108 MSI GTX 950 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-109 Nvidia GeForce GTX 460 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-112 MSI RX 460 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-114 Gigabyte RTX 3060 EAGLE OC Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-115 MSI HD 7870 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-116 Gigabyte GTX 1650 OC GDDR6 Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-117 MSI Radeon RX 6700 XT MECH 2X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-118 Gigabyte GeForce RTX 4080 GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-120 Zotac GTX 1060 AMP! Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-121 Nvidia GeForce GT 1030 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-122 EVGA GTX 970 ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-123 MSI GeForce GTX 1070 Ti ARMOR → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-124 AMD Radeon R7 250X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-125 Gigabyte GeForce GT 710 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-126 MSI R9 380 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-127 Zotac GeForce RTX 3060 AMP White Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-128 Gigabyte Radeon RX 6800 XT Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-129 ZOTAC GAMING GeForce RTX 3060 AMP White Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-130 Gigabyte RTX 3060 GAMING OC Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-131 GIGABYTE RTX 3060 GAMING OC Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-133 MSI R9 380 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-134 MSI RX 6900 XT GAMING X TRIO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-135 MSI GTX 960 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-136 Gigabyte GeForce GTX 1650 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-138 Gigabyte GTX 980 Ti XTREME → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-139 Zotac RTX 4060 Ti Twin Edge → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-140 Zotac RTX 4070 Twin Edge OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-141 MSI RTX 4070 Ti VENTUS 3X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-142 EVGA GTX 970 ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-143 Sapphire Radeon RX 6600 XT NITRO+ GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-144 ASUS GeForce RTX 2060 DUAL EVO OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-145 Gigabyte GTX 970 G1 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-146 MSI GTX 1050 Ti OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-147 Sapphire PULSE RX Vega 56 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-148 MSI GeForce GTX 960 OC 2GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-149 MSI Radeon R9 380 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-150 ASUS DUAL GTX 1060 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-151 ASUS Strix GTX 970 DirectCU II OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-152 Inno3D Geforce GTX 1050 1-SLOT EDITION 2GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-153 Zotac GeForce RTX 2060 Twin Fan → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-154 MSI GeForce RTX 3060 Ti Gaming X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-156 ASUS DUAL RTX 4070 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-157 NVIDIA GeForce GTX 580 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-158 EVGA GTX 970 Superclocked ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-160 ASUS GeForce 6600GT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-162 Gainward GeForce GTX 980 Phantom → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-164 EVGA GTX 970 Superclocked ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-165 Nvidia GeForce GTX 460 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-166 AMD Radeon R7 350X OEM → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-167 ASUS Radeon R7 240 Low Profile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-168 AMD Radeon R7 350X OEM → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-169 AMD Radeon R7 350X OEM → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-170 AMD Radeon R5 430 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-171 AMD Radeon R5 430 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-172 Dell Nvidia Geforce GT 730 Low Profile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-173 Nvidia Quadro FX 380 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-175 MSI GeForce GTX 750 Ti Low Profile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-176 MSI RTX 2080 Ti GAMING X TRIO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-177 EVGA GTX 970 ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-178 EVGA GTX 970 ACX 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-179 ASUS STRIX R9 390X DirectCU III OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-180 MSI GTX 770 Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-181 ASUS STRIX R9 390 DirectCU III OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-182 ASUS STRIX GTX 970 DirectCU II OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-184 Gigabyte R9 380 WindForce 2X 4 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-185 ASUS Geforce GTX 960 Strix OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-186 GIGABYTE GTX 970 Mini-ITX OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-187 ASUS STRIX R9 390X DirectCU III OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-188 Gigabyte RX 5700 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-189 GIGABYTE GTX 980 G1 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-190 MSI GeForce RTX 2080 Super Ventus OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-191  MSI GeForce RTX 4060 Ti GAMING X SLIM → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-193 GIGABYTE RTX 4060 EAGLE OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-194 GIGABYTE RTX 3070 Ti GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-195 GIGABYTE RX 7800 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-196 GIGABYTE RX 7700 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-197 Sapphire PULSE RX 7600 OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-198 Sapphire PULSE RX 7600 XT OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-199 AFOX Radeon RX 5500 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-200 ASRock Intel ARC A310 Low Profile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-201 Palit RTX 3050 StormX OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-202 AFOX GeForce RTX 2070 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-203 MSI GeForce RTX 3060 Ti Gaming X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-204 BIOSTAR GeForce RTX 3060 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-205 Intel ARC A580 ORC OC Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-207 MSI RX 480 GAMING X 4 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-208 Palit GeForce GTX 650 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-209 AMD Radeon R5 430 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-210 Gigabyte GTX 1060 6 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-211 MSI GeForce GTX 1080 Ti Ganeing X Trio → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-212 Sapphire Tri-X R9 290X  → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-213 MSI GeForce GTX 980 Gaming 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-214 NVIDIA Quadro K4000 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-215 GeForce RTX 3080 GAMING X TRIO 10G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-216 ASUS TUF RX 6700 XT GAMING OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-217 GIGABYTE AMD Radeon RX 6600 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-219 MSI GeForce RTX 3060 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-221 GIGABYTE GeForce RTX 3070 GAMING OC 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-222 GIGABYTE GeForce RTX 3070 GAMING OC 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-223 GIGABYTE GeForce RTX 2080 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-225 Sapphire Nitro+ RX 6700 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-226 GeForce RTX 3070 Ti GAMING X TRIO 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-227 GIGABYTE GeForce GTX 1080 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-228 AMD Radeon RX 7700 XT Phantom Gaming 12GB OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-229 AMD Radeon RX 7700 XT Phantom Gaming 12GB OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-230 Gigabyte GeForce RTX 3060 Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-232 AMD Radeon RX 7800 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-233 AMD Radeon RX 7700 XT Phantom Gaming 12GB OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-234 Gigabyte Radeon RX 6700 XT → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-238 Gigabyte GeForce RTX 3060 EAGLE OC 12GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-239 Gigabyte Radeon RX 9070 Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-240 GIGABYTE Aorus Radeon RX 9070 XT Elite → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-241 Intel Arc B580 Graphics → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-242 Intel Arc B570 Challenger 10GB OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-243 ASUS PRIME GeForce RTX 5070 12GB GDDR7 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-244 AORUS GeForce RTX 5070 Ti MASTER 16G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-245 ASUS TUF Gaming GeForce RTX 5080 16GB GDDR7 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-246 GeForce RTX 5090 32G SUPRIM SOC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-248 GeForce RTX 3070 VENTUS 2X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-249 GeForce GTX 1070 GAMING 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-250 GeForce GTX 1070 GAMING 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-251 GeForce GTX 1070 GAMING 8G AMD EDITION → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-252 GeForce GTX 1070 GAMING 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-253 GV-N970G1 GAMING-4GD → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-254 GeForce GTX 970 4GD5T OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-255 MSI GTX 1070 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-256 MSI GTX 1070 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-257 MSI GTX 1070 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-258 ZOTAC GeForce GTX 1070 AMP Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-259 ZOTAC GeForce GTX 1070 AMP Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-260 GIGABYTE GTX 1060 WindForce 2X OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-261 Gigabyte R9 380 WindForce 2X 4 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-262 MSI GTX 1070 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-263 MSI RTX 2060 SUPER Gaming X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-264 ZOTAC GTX 1070 AMP! → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-265 GeForce GTX 970 GAMING 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-266 GeForce GTX 970 GAMING 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-267 GeForce GTX 970 GAMING 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-268 GeForce GTX 970 GAMING 4G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-269 GeForce GTX 960 2GD5T OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-270 MSI GTX-970-4GD5T-OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-271 GeForce GTX 1060 G1 Gaming 6G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-272 EVGA GTX 980 CLASSIFIED → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-273 EVGA GTX 970 Superclocked → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-274 GIGABYTE GTX 960 WindForce → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-275 GIGABYTE GTX 980 WindForce → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-276 ASUS DUAL-RTX2080-O8G-EVO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-277 Gigabyte Radeon RX 6900 XT Gaming OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-278 NVIDIA Quadro RTX 4000 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-279 GeForce GTX 1080 Ti GAMING X 11G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-280 Nvidia GeForce GTX 460 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-281 SAPPHIRE NITRO+ AMD Radeon RX 6900 XT Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-283 MSI GTX 1080 Ti Armor OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-284 ASUS ROG Strix GeForce RTX 2060 EVO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-289 MSI GTX 1060 AERO ITX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-290 Zotac GTX 980 AMP! 4GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-291 MSI Radeon RX 580 Armor 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-292 GeForce RTX 4070 Ti EAGLE OC 12G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-293 NVIDIA GeForce GTX 970 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-294 Sapphire Nitro R9 390X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-295 EVGA GTX 970 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-296 ASUS R9 390 DirectCU II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-297 GIGABYTE GTX 1060 G1 Gaming Rev. 2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-298 Palit GTX 1070 Ti Super JetStream → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-299 EVGA GTX 1080 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-300 EVGA GTX 1080 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-301 ASUS ROG Matrix R9 290X Platinum → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-302 ZOTAC GTX 980 Ti AMP! Extreme Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-303 ASUS ROG STRIX GTX 1060 GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-304 Gainward GTX 980 Ti PHOENIX GS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-305 Inno3D GTX 1050 Ti 1-Slot Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-306 EVGA GTX 1070 SC ACX 3.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-307 AMD Radeon 7 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-308 Gigabyte GTX 1060 Gaming 6 GB → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-311 MSI Radeon RX 480 GAMING X 8G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-312 Sapphire Radeon RX 580 Pulse → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-313 Gigabyte RTX 2070 Windforce OC → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-314 AFOX Geforce GTX 1660Ti → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-318 XFX RX 5700 Double Dissipation Ultra → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-320 ASUS TURBO RTX 2080 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-322 Sapphire PULSE RX 6400 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-323 ASUS TUF Radeon RX 5600 XT Top Evo → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-324 PowerColor RX 5600 XT Red Dragon  → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-325 Gigabyte GeForce RTX 3060 Gaming OC  → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-326 NVIDIA GeForce GTX 1660 SUPER → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-327 GeForce RTX 3060 Ti VENTUS 2X 8G OCV1 LHR → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-329 EVGA GTX 970 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: GPU-330 AMD Radeon RX 580 (polaris 20) → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i3-1115G4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-11400H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-1235U → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-12450H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-4570 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-540M → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-7200U  → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i5-9300HF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i7-12700H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i7-13620H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i7-13650HX  → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i7-4710HQ → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i7-7700HQ → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core i9-13900HX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Intel Core Ultra 7 Processor 255HX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-001 MSI Z790 Tomahawk WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-002 Gigabyte X670 Aorus Elite AX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-003 MSI MAG B660M MORTAR WIFI DDR4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-004 ASUS Prime X299-A II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-005 MSI MAG B660M MORTAR WIFI DDR4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-007 ASUS Prime X299-Deluxe → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-008 ASUS ROG Strix X570-F Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-011 ROG Strix Z590-E GAMING WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-013 ASUS ROG STRIX X570-F GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-014 ASUS ROG STRIX X570-F GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-018 Gigabyte B360 HD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-020 Gigabyte GA-Z97-HD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-024 Gigabyte B360 HD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-027 Gigabyte B450 Aorus M → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-028 ASUS PRIME B450M-A → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-031 ASUS Prime Z690-A → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-032 MSI Z87-G45 GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-033 MSI Z87-G45 GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-035 MSI Z97-G43 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-036 ASRock 970 Extreme3 R2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-037 ASUS M5A78L-M/USB3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-038 Gigabyte 990FXA-UD3R5 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-039 ASRock 990FX Exterme 6 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-040 MSI Z97 GAMING 3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-041 MSI Z97 GAMING 3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-043 ASRock Fatal1ty Z97X KILLER → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-047 ASUS Z170 PRO GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-048 Gigabyte GA-X99-UD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-050 ASUS TUF GAMING B450-PLUS II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-051 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-052 ASUS TUF GAMING B450-PLUS II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-053 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-054 MSI B450M-A PRO Max → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-057 ASUS PRIME A520M-A → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-058 ASUS PRIME B460M-A R2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-059 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-060 ASUS PRIME B460M-A R2.0 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-061 ASUS TUF GAMING B550-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-062 MSI MPG Z590 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-063 MSI MPG B550 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-064 MSI MAG B560 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-065 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-067 MSI MAG B560 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-068 ASUS TUF GAMING B550-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-069 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-070 MSI B450 GAMING PLUS MAX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-071 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-072 MSI MAG B560 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-074 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-075 MSI MAG B560 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-076 ASUS TUF GAMING B550-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-077 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-078 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-079 MSI MPG B550 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-080 MSI MAG B560 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-081 ASRock B560 PRO4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-083 MSI MPG Z590 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-084 MSI MPG Z590 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-085 ASUS Prime Z690-A → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-087 MSI B85-G41 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-088 Gigabyte 990FXA-UD3R5 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-089 ASUS Z170 Pro Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-090 Gigabyte GA-Z97M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-091 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-092 ASUS Z170 Pro Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-093 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-094 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-096 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-097 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-098 ASRock H270M Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-099 ASRock H270M Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-100 MSI Z170A TOMAHAWK → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-101 ASRock H270 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-102 ASUS Rog STRIX Z370-E GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-104 Gigabyte AX370-Gaming 3-CF → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-105 ASRock X470 Taichi → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-108 ASRock AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-110 ASRock AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-111 MSI MPG X570 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-112 ASRock B550 Phantom Gaming 4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-113 MSI MAG B550 TOMAHAWK → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-114 Gigabyte B550 GAMING X V2 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-117 ASUS Gryphon Z97 Armor Edition → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-118 ASRock Z270 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-120 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-124 ASUS Z170-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-127 ASUS Prime B660-PLUS D4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-128 ASUS TUF Gaming B450-Plus II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-130 ASRock B450M Pro4-F → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-131 ASUS Z170 PRO GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-132 Biostar H61MHV3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-133 MSI B450 GAMING PLUS MAX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-139 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-140 MSI B360M Gaming Plus → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-141 MSI B85-G41 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-143 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-144 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-145 MSI MPG Z490 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-146 Gigabyte GA-Z97M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-147 ASUS Z170-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-148 ASUS MAXIMUS VII HERO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-149 MSI 970A-G43 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-150 Gigabyte GA-Z170M-HD3P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-153 MSI 970 Gaming → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-160 ASRock B650M PG LIGHTNING WiFi → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-170 MSI MAG B760 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-171 MSI MAG B760 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-179 MSI MPG Z590 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-181 ASUS Z170-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-182 MSI MEG Z490 ACE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-185 Gigabyte B550M AOUS ELITE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-186 Gigabyte B550M AOUS ELITE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-187 Gigabyte B550M AOUS ELITE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-188 Gigabyte B550M AOUS ELITE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-190 TUF GAMING B550-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-191 Gigabyte B550 GAMING X → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-194 MSI Z590 PRO WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-195 AsRock Z590 Extreme → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-196 ASUS Prime B660-PLUS D4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-198 Gigabyte Z690 UD DDR4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-199 Gigabyte B550 GAMING X V2 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-201 MSI Z590 PRO WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-202 Gigabyte Z370 HD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-203 MSI MAG B760 TOMAHAWK WIFI → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-205 AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-206 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-207 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-208 PRIME Z270-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-209 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-210 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-211 ASRock AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-212 ASRock AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-213 ASRock AB350 Pro4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-214 ROG STRIX Z390-F GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-215 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-216 MSI Z270 TOMAHAWK → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-217 ASRock FM2A88X Extreme4+ → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-218 ASUS B85M-G → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-219 MSI MPG B550 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-220 ASRock Z370 Extreme 4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-221 ASUS TUF Z370-PLUS GAMING → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-222 ASRock FM2A68M-HD+ → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-223 MSI MAG B460 TORPEDO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-227 MSI Z170A PC MATE → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-228 ASUS TUF GAMING X570-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-231 ASUS PRIME X670-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-232 Gigabyte Z370 HD3 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-233 MSI MPG Z490 GAMING PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-233 MSI PRO H610M-E DDR4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-234 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-235 ROG STRIX X570-E GAMING WIFI II → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-236 Gigabyte B560M D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-237 Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-238 MSI Z390-A PRO → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-239 ASUS Prime Z690-P D4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-240 ASUS PRIME X670-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-241 ASUS PRIME X670-P → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-242 ASUS TUF GAMING X570-PLUS → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-244 ASRock Z890 LiveMixer WiFi → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-249 MSI MAG B660M MORTAR WIFI DDR4 → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-251  Gigabyte GA-Z170M-D3H → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: MBR-252 MSI MPG X570 Gaming Plus → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Mediatek MT8173C → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce 940MX → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce GTX 1060 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce GTX 1650 laptop GPU → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce GTX 1660 Ti Max-Q → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce GTX 850M → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 2050 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce RTX 3050 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce RTX 3050 Ti Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce RTX 3060 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Nvidia GeForce RTX 3070 Laptop GPU → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 3070 Ti Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 4050 Laptop GPU → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 4060 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 4070 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 5060 Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- NVIDIA GeForce RTX 5070 Ti Mobile → 400 {"detail":"Asset with this tag already exists"}
+Błąd API: -- Qualcomm Snapdragon 730 → 400 {"detail":"Asset with this tag already exists"}
+Brak kontenera (opcjonalne): GPC-1030 dla CPU-309 AMD Ryzen 7 3800X
+Brak kontenera (opcjonalne): GPC-1030 dla GPU-330 AMD Radeon RX 580 (polaris 20)
+Brak kontenera (opcjonalne): GPC-1030 dla MBR-252 MSI MPG X570 Gaming Plus
+Brak lokalizacji: 14 dla  AMD Radeon RX 6600M
+Brak lokalizacji: 14 dla -- AMD Ryzen 5 7520C
+Brak lokalizacji: 14 dla  AMD Ryzen 7 5800H
+Brak lokalizacji: 14 dla -- Intel Core i3-7100U
+Brak lokalizacji: 14 dla -- Intel Core i5-6200U 
+Brak lokalizacji: 14 dla -- Intel Core i7-6500U 
+Brak lokalizacji: 14 dla -- Intel Pentium Dual-Core T4300
+Brak lokalizacji: 14 dla -- MediaTek Kompanio 520
+Brak lokalizacji: 14 dla -- NVIDIA GeForce 940M
+Brak lokalizacji: 14 dla -- NVIDIA GeForce G102M
+Brak lokalizacji: 14 dla -- NVIDIA GeForce GTX 950M
+Brak lokalizacji: 14 dla -- Qualcomm Snapdragon 7c
+Brak lokalizacji: 179 dla CPU-039 AMD Ryzen 9 7900X3D
+Brak lokalizacji: 179 dla GPU-155 RTX 3090 Gaming OC 24G
+Brak lokalizacji: 179 dla MBR-164 ASUS PRIME X670-P
+Brak lokalizacji: 183 dla GPU-309 ASUS Turbo GTX 1080 8GB
+Brak lokalizacji: 183 dla GPU-310 ASUS Turbo GTX 1080 8GB
+Brak lokalizacji: 6.35/176 dla CPU-169 AMD Ryzen 9 5900X
+Brak lokalizacji: 6.35/176 dla GPU-247 PowerColor Radeon RX 9070 XT Hellhound 16GB GDDR6
+Brak lokalizacji: 6.35/176 dla MBR-026 ASUS ROG STRIX X570-F GAMING
+Brak lokalizacji: 6.35/186 dla CPU-195 AMD Ryzen 7 8700G
+Brak lokalizacji: 6.35/186 dla GPU-021 Sapphire PULSE RX 6500 XT
+Brak lokalizacji: 6.35/186 dla MBR-243 ASRock B650M PG LIGHTNING WiFi
+Brak lokalizacji: 635 dla GPU-107 ASUS Dual GeForce RTX 3060 Ti Gaming OC V2
+Brak lokalizacji: 635 dla MBR-109 ASUS Prime Z690-A
+Brak lokalizacji: CLA-035 dla CPU-292 Intel Core Ultra 5 245KF
+Brak lokalizacji: CLA-035 dla GPU-192 PNY XLR8 RTX 4070 Ti VERTO EPIC-X Triple Fan OC
+Brak lokalizacji: CLA-035 dla MBR-245 ASRock Z890 LiveMixer WiFi
+Brak lokalizacji: GPC-078 dla CPU-083 Intel Core i7-4790K
+Brak lokalizacji: GPC-078 dla MBR-044 ASUS MAXIMUS VII RANGER
+Brak lokalizacji: GPC-084 dla CPU-084 Intel Core i5-4670K
+Brak lokalizacji: GPC-084 dla MBR-045 Gigabyte GA-Z97-HD3
+Brak lokalizacji: GPC-1122 dla CPU-095 Intel Core i5-10400F
+Brak lokalizacji: GPC-1122 dla MBR-055 ASRock B560 PRO4
+Brak lokalizacji: GPC-1158 dla CPU-126 AMD Ryzen 9 7900X
+Brak lokalizacji: GPC-1158 dla GPU-012 NVIDIA GeForce RTX 3090 Ti
+Brak lokalizacji: GPC-1158 dla MBR-006 Gigabyte X670 Aorus Elite AX
+Brak lokalizacji: GPC-1161 dla CPU-209 Intel Core i5-11600KF
+Brak lokalizacji: GPC-1161 dla GPU-015 Palit RTX 3080 GamingPro
+Brak lokalizacji: GPC-1161 dla MBR-116 ASUS ROG STRIX X570-F GAMING
+Brak lokalizacji: GPC-1280 dla CPU-298 AMD Ryzen 7 5700X
+Brak lokalizacji: GPC-1280 dla GPU-316 Gigabyte GTX 1660 SUPER OC
+Brak lokalizacji: GPC-1462 dla CPU-304 Intel Core i7-11700K
+Brak lokalizacji: GPC-1561 dla CPU-233 AMD Ryzen 5 5600
+Brak lokalizacji: GPC-1561 dla GPU-237 GIGABYTE AMD Radeon RX 6700 XT
+Brak lokalizacji: GPC-1561 dla MBR-192 Gigabyte B550 GAMING X V2
+Brak lokalizacji: GPC-1607 dla CPU-297 Intel Core i3-12100F
+Brak lokalizacji: GPC-1610 dla CPU-296 Intel Core i3-12100F
+Brak lokalizacji: GPC-215 dla CPU-138 AMD FX-8370
+Brak lokalizacji: GPC-215 dla GPU-052 XFX R9 285 Double Dissipation
+Brak lokalizacji: GPC-215 dla MBR-095 ASUS 970 PRO GAMING/AURA
+Brak lokalizacji: GPC-352 dla CPU-301 AMD Ryzen 7 1700
+Brak lokalizacji: GPC-352 dla GPU-321 ASUS ROG STRIX RX 580 GAMING OC
+Brak lokalizacji: GPC-352 dla MBR-250 MSI B350 GAMING PRO CARBON
+Brak lokalizacji: GPC-376 dla CPU-306 Intel Core i5-4460
+Brak lokalizacji: GPC-376 dla GPU-328 GIGABYTE GTX 1060 WindForce 2X OC
+Brak lokalizacji: GPC-712 dla CPU-299 Intel Core i7-9700
+Brak lokalizacji: GPC-712 dla GPU-317 MSI GeForce RTX 2080 Super Ventus OC
+Brak lokalizacji: GPC-777 dla GPU-319 MSI GTX 1050 Ti GAMING X
+Brak lokalizacji: Krzysiek dla -- AMD Ryzen AI 9 HX 370
+Brak lokalizacji: Krzysiek dla -- NVIDIA GeForce RTX 5070 Ti Mobile
+Brak lokalizacji: (pusto) dla  
+Brak lokalizacji: (pusto) dla CPU-005 Intel Core i5-4440
+Brak lokalizacji: (pusto) dla CPU-022 AMD Ryzen 9 3900
+Brak lokalizacji: (pusto) dla CPU-026 AMD A4-5300
+Brak lokalizacji: (pusto) dla CPU-031 AMD FX-9370
+Brak lokalizacji: (pusto) dla CPU-057 Intel Core i3-6100T
+Brak lokalizacji: (pusto) dla CPU-061 AMD FX-8320
+Brak lokalizacji: (pusto) dla CPU-109 Intel Core i5-11600
+Brak lokalizacji: (pusto) dla CPU-129 Intel Core i7-6700K
+Brak lokalizacji: (pusto) dla CPU-152 Intel Core i5-7400
+Brak lokalizacji: (pusto) dla CPU-160 AMD Ryzen 5 3600X
+Brak lokalizacji: (pusto) dla CPU-272 Intel Core i7-7700K
+Brak lokalizacji: (pusto) dla CPU-273 Intel Core i7-9700K
+Brak lokalizacji: (pusto) dla CPU-300 Intel Core i3-8100
+Brak lokalizacji: (pusto) dla GPU-011 Gigabyte R9 270 WindForce 2X OC
+Brak lokalizacji: (pusto) dla GPU-023 ASUS GeForce GT 730 Low Profile
+Brak lokalizacji: (pusto) dla GPU-061 Gigabyte RX 470 G1 Gaming
+Brak lokalizacji: (pusto) dla GPU-068 Ati Radeon Hd 3450 256MB Vc X399D
+Brak lokalizacji: (pusto) dla GPU-096 NVIDIA GeForce RTX 3060
+Brak lokalizacji: (pusto) dla GPU-104 MSI GTX 1070 ARMOR OC
+Brak lokalizacji: (pusto) dla GPU-110 Gigabyte RX Vega 64 GAMING OC
+Brak lokalizacji: (pusto) dla GPU-111 MSI R9 380
+Brak lokalizacji: (pusto) dla GPU-113 MSI R5 230 Low Profile 2 GB
+Brak lokalizacji: (pusto) dla GPU-119 MSI RX 5700 XT MECH OC
+Brak lokalizacji: (pusto) dla GPU-132 MSI GTX 960 Gaming
+Brak lokalizacji: (pusto) dla GPU-159 XFX Radeon RX 580 GTS
+Brak lokalizacji: (pusto) dla GPU-206 MSI R9 380 Gaming
+Brak lokalizacji: (pusto) dla GPU-282 ASUS Radeon RX 580 Dual OC
+Brak lokalizacji: (pusto) dla GPU-315 ASUS DUAL RX 6500 XT OC
+Brak lokalizacji: (pusto) dla MBR-137 MSI B450M-A PRO Max
+Brak lokalizacji: (pusto) dla MBR-225 MSI B450M-A PRO Max
+Brak lokalizacji: (pusto) dla MBR-226 ASRock B250 Pro4
+Brak lokalizacji: (pusto) dla MBR-229 ASRock B365 Pro4
+Brak lokalizacji: (pusto) dla MBR-230 ASRock A520M-HVS
+Brak lokalizacji: (pusto) dla MBR-246 ASRock Z890 LiveMixer WiFi
+Brak lokalizacji: (pusto) dla MBR-247 ASRock Z890 LiveMixer WiFi
+Brak lokalizacji: (pusto) dla MBR-248 ASRock Z890 LiveMixer WiFi
+Brak lokalizacji: Rambo dla  AMD Ryzen AI Z2 Extreme
+Brak lokalizacji: Rambo dla  AMD Ryzen Z1 Extreme
+Brak lokalizacji: Rambo dla  AMD Ryzen Z2 A
+Brak lokalizacji: Rambo dla  AMD Ryzen Z2 Go
+Brak lokalizacji: Rambo dla  AMD Zen 2
+Brak lokalizacji: Rambo dla  Intel Core Ultra 7 processor 155H
+Brak lokalizacji: SQ dla CPU-096 AMD Ryzen 3 1200
+Brak lokalizacji: SQ dla CPU-145 Intel Core i3-8100
+Brak lokalizacji: SQ dla GPU-137 ASUS DUAL RX 480 OC 4 GB
+Brak lokalizacji: SQ dla GPU-183 Gigabyte GTX 1060 Windforce 2X OC
+Brak lokalizacji: SQ dla GPU-236 GIGABYTE AMD Radeon RX 6600
+Brak lokalizacji: SQ dla MBR-056 Gigabyte B550M S2H
+Brak lokalizacji: SQ dla MBR-189 Asus PRIME B660M-PLUS D4
+Brak lokalizacji: SQ dla MBR-204 MSI MAG Z390 TOMAHAWK
+Brak lokalizacji: TV dla GPU-218 GIGABYTE GeForce RTX 3070 GAMING OC 8G
