@@ -4,6 +4,9 @@ from ..database import SessionLocal
 from .. import models, schemas
 from ..auth import require_role
 
+# 🔥 WEBSOCKET BROADCAST
+from .ws import broadcast_locations_update
+
 router = APIRouter(
     prefix="/locations",
     tags=["locations"]
@@ -33,7 +36,7 @@ def list_locations(db: Session = Depends(get_db)):
     response_model=schemas.LocationRead,
     dependencies=[Depends(require_role("manager"))]
 )
-def create_location(location: schemas.LocationCreate, db: Session = Depends(get_db)):
+async def create_location(location: schemas.LocationCreate, db: Session = Depends(get_db)):
     existing = db.query(models.Location).filter(models.Location.code == location.code).first()
     if existing:
         raise HTTPException(status_code=400, detail="Location with this code already exists")
@@ -46,6 +49,10 @@ def create_location(location: schemas.LocationCreate, db: Session = Depends(get_
     db.add(loc)
     db.commit()
     db.refresh(loc)
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE
+    await broadcast_locations_update()
+
     return loc
 
 
@@ -56,13 +63,17 @@ def create_location(location: schemas.LocationCreate, db: Session = Depends(get_
     "/{location_id}",
     dependencies=[Depends(require_role("admin"))]
 )
-def delete_location(location_id: int, db: Session = Depends(get_db)):
+async def delete_location(location_id: int, db: Session = Depends(get_db)):
     loc = db.query(models.Location).filter(models.Location.id == location_id).first()
     if not loc:
         raise HTTPException(status_code=404, detail="Location not found")
 
     db.delete(loc)
     db.commit()
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE
+    await broadcast_locations_update()
+
     return {"status": "deleted"}
 
 

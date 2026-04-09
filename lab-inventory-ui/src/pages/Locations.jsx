@@ -17,12 +17,24 @@ export default function Locations() {
     const res = await fetch("http://10.19.148.12:8000/locations/");
     const data = await res.json();
 
-    // sortowanie po kodzie
     setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
   };
 
   useEffect(() => {
     loadLocations();
+  }, []);
+
+  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie listy lokalizacji
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
+
+    ws.onmessage = (event) => {
+      if (event.data === "locations_updated") {
+        loadLocations();
+      }
+    };
+
+    return () => ws.close();
   }, []);
 
   const createLocation = async (e) => {
@@ -48,12 +60,10 @@ export default function Locations() {
         Authorization: `Bearer ${token}`,
       },
     });
+
     loadLocations();
   };
 
-  // -----------------------------
-  // FILTERING
-  // -----------------------------
   const filtered = locations.filter((loc) => {
     const text = search.toLowerCase();
 

@@ -158,10 +158,29 @@ export default function Assets() {
     container: "",
   });
 
-  useEffect(() => {
+  // --- ŁADOWANIE ASSETÓW ---
+  const loadAssets = () => {
     fetch("http://10.19.148.12:8000/assets")
       .then((res) => res.json())
       .then((data) => setAssets(data));
+  };
+
+  // --- PIERWSZE ŁADOWANIE ---
+  useEffect(() => {
+    loadAssets();
+  }, []);
+
+  // --- REALTIME WEBSOCKET ---
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+
+    ws.onmessage = (event) => {
+      if (event.data === "assets_updated") {
+        loadAssets();
+      }
+    };
+
+    return () => ws.close();
   }, []);
 
   const uniqueValues = (field) => {

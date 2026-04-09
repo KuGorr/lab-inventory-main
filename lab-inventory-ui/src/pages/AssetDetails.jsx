@@ -17,8 +17,16 @@ export default function AssetDetails() {
 
   const loadAsset = () => {
     fetch(`http://10.19.148.12:8000/assets/${id}`)
-      .then(res => res.json())
-      .then(data => setAsset(data));
+      .then(res => {
+        if (res.status === 404) {
+          navigate("/assets"); // asset został usunięty przez kogoś innego
+          return null;
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (data) setAsset(data);
+      });
   };
 
   const loadHistory = (pageNum = 1) => {
@@ -35,6 +43,20 @@ export default function AssetDetails() {
     loadAsset();
     loadHistory(1);
   }, [id]);
+
+  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów assetu
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+
+    ws.onmessage = (event) => {
+      if (event.data === "assets_updated") {
+        loadAsset();
+        loadHistory(page);
+      }
+    };
+
+    return () => ws.close();
+  }, [id, page]);
 
   if (!asset) return <div>Ładowanie...</div>;
 

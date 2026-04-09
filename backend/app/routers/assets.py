@@ -7,6 +7,8 @@ from ..database import get_db
 from app import models, schemas
 from ..auth import require_admin, get_current_user
 
+# IMPORT WEBSOCKET BROADCAST
+from .ws import broadcast_assets_update, broadcast_history_update
 
 router = APIRouter(
     prefix="/assets",
@@ -26,9 +28,6 @@ def get_global_history(
     if page < 1:
         page = 1
 
-    # -----------------------------
-    # 1. Historia ASSETÓW
-    # -----------------------------
     asset_query = (
         db.query(
             models.AssetHistory,
@@ -59,9 +58,6 @@ def get_global_history(
             "note": h.note,
         })
 
-    # -----------------------------
-    # 2. Historia KONTENERÓW
-    # -----------------------------
     container_query = (
         db.query(
             models.ContainerHistory,
@@ -92,15 +88,9 @@ def get_global_history(
             "note": h.note,
         })
 
-    # -----------------------------
-    # 3. Połączenie + sortowanie
-    # -----------------------------
     combined = asset_items + container_items
     combined.sort(key=lambda x: x["moved_at"], reverse=True)
 
-    # -----------------------------
-    # 4. Paginacja
-    # -----------------------------
     total = len(combined)
     pages = (total + limit - 1) // limit
 
@@ -116,9 +106,6 @@ def get_global_history(
     }
 
 
-# ---------------------------------------------------------
-# GET /assets/history/users — lista unikalnych użytkowników
-# ---------------------------------------------------------
 @router.get("/history/users")
 def get_history_users(db: Session = Depends(get_db)):
     users_assets = (
@@ -138,9 +125,6 @@ def get_history_users(db: Session = Depends(get_db)):
     return sorted(list(merged))
 
 
-# ---------------------------------------------------------
-# GET /assets — pełna lista assetów
-# ---------------------------------------------------------
 @router.get("/", response_model=list[schemas.AssetRead])
 def get_assets(db: Session = Depends(get_db)):
     assets = (
@@ -159,7 +143,7 @@ def get_assets(db: Session = Depends(get_db)):
 # POST /assets — tworzenie assetu
 # ---------------------------------------------------------
 @router.post("/", response_model=schemas.AssetRead)
-def create_asset(
+async def create_asset(
     asset: schemas.AssetCreate,
     db: Session = Depends(get_db),
     current_user: models.User = Depends(require_admin)
@@ -172,12 +156,14 @@ def create_asset(
     db.add(new_asset)
     db.commit()
     db.refresh(new_asset)
+
+    # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
+    await broadcast_assets_update()
+    await broadcast_history_update()
+
     return new_asset
 
 
-# ---------------------------------------------------------
-# GET /assets/{asset_id} — pełne dane assetu
-# ---------------------------------------------------------
 @router.get("/{asset_id}", response_model=schemas.AssetRead)
 def get_asset(asset_id: int, db: Session = Depends(get_db)):
     asset = (
@@ -197,9 +183,6 @@ def get_asset(asset_id: int, db: Session = Depends(get_db)):
     return asset
 
 
-# ---------------------------------------------------------
-# GET /assets/{asset_id}/history — historia ruchów z paginacją
-# ---------------------------------------------------------
 @router.get("/{asset_id}/history")
 def get_asset_history(
     asset_id: int,
@@ -256,7 +239,7 @@ def get_asset_history(
 # POST /assets/{asset_id}/move — przenoszenie assetu
 # ---------------------------------------------------------
 @router.post("/{asset_id}/move", response_model=schemas.AssetRead)
-def move_asset(
+async def move_asset(
     asset_id: int,
     req: schemas.MoveAssetRequest,
     db: Session = Depends(get_db),
@@ -266,9 +249,6 @@ def move_asset(
     if not asset:
         raise HTTPException(status_code=404, detail="Asset not found")
 
-    # -----------------------------------------
-    # USTALENIE SKĄD
-    # -----------------------------------------
     if asset.container_id:
         old_location_id = asset.container.location_id
         old_location_name = asset.container.code
@@ -276,18 +256,12 @@ def move_asset(
         old_location_id = asset.location_id
         old_location_name = asset.location.code if asset.location else None
 
-    # -----------------------------------------
-    # USTALENIE DOKĄD
-    # -----------------------------------------
     location = db.query(models.Location).filter(models.Location.code == req.target).first()
     container = db.query(models.Container).filter(models.Container.code == req.target).first()
 
     if not location and not container:
         raise HTTPException(status_code=400, detail="Nie znaleziono lokalizacji ani kontenera o takim kodzie")
 
-    # -----------------------------------------
-    # RUCH DO LOKALIZACJI
-    # -----------------------------------------
     if location:
         asset.location_id = location.id
         asset.container_id = None
@@ -309,11 +283,13 @@ def move_asset(
         db.add(history)
         db.commit()
         db.refresh(asset)
+
+        # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
+        await broadcast_assets_update()
+        await broadcast_history_update()
+
         return asset
 
-    # -----------------------------------------
-    # RUCH DO KONTENERA
-    # -----------------------------------------
     if container:
         asset.container_id = container.id
         asset.location_id = container.location_id
@@ -335,56 +311,16 @@ def move_asset(
         db.add(history)
         db.commit()
         db.refresh(asset)
+
+        # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
+        await broadcast_assets_update()
+        await broadcast_history_update()
+
         return asset
 
 
-# ---------------------------------------------------------
-# GET /assets/{asset_id}/location — łańcuch lokalizacji
-# ---------------------------------------------------------
-@router.get("/{asset_id}/location")
-def get_asset_location(asset_id: int, db: Session = Depends(get_db)):
-    asset = (
-        db.query(models.Asset)
-        .options(
-            selectinload(models.Asset.location),
-            selectinload(models.Asset.container)
-        )
-        .filter(models.Asset.id == asset_id)
-        .first()
-    )
-
-    if not asset:
-        raise HTTPException(status_code=404, detail="Asset not found")
-
-    if asset.location_id and not asset.container_id:
-        return {
-            "asset": asset.tag,
-            "location_type": "drawer",
-            "drawer": asset.location.code if asset.location else None,
-            "chain": f"{asset.tag} → {asset.location.code if asset.location else '[missing]'}"
-        }
-
-    if asset.container_id:
-        container = asset.container
-        loc = container.location if container else None
-
-        return {
-            "asset": asset.tag,
-            "location_type": "container",
-            "container": container.code if container else None,
-            "drawer": loc.code if loc else None,
-            "chain": f"{asset.tag} → {container.code if container else '[missing]'} → {loc.code if loc else '[missing]'}"
-        }
-
-    return {
-        "asset": asset.tag,
-        "location_type": "unknown",
-        "chain": f"{asset.tag} → [no location]"
-    }
-
-
 @router.delete("/{asset_id}", response_model=dict)
-def delete_asset(asset_id: int, db: Session = Depends(get_db)):
+async def delete_asset(asset_id: int, db: Session = Depends(get_db)):
     asset = db.query(models.Asset).filter(models.Asset.id == asset_id).first()
     if not asset:
         raise HTTPException(status_code=404, detail="Asset not found")
@@ -393,5 +329,9 @@ def delete_asset(asset_id: int, db: Session = Depends(get_db)):
 
     db.delete(asset)
     db.commit()
+
+    # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
+    await broadcast_assets_update()
+    await broadcast_history_update()
 
     return {"status": "deleted", "asset_id": asset_id}

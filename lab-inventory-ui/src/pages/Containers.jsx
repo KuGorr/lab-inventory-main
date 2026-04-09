@@ -41,6 +41,21 @@ export default function Containers() {
   }, []);
 
   // -----------------------------
+  // REALTIME WEBSOCKET
+  // -----------------------------
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+
+    ws.onmessage = (event) => {
+      if (event.data === "containers_updated") {
+        loadContainers();
+      }
+    };
+
+    return () => ws.close();
+  }, []);
+
+  // -----------------------------
   // CLOSE DROPDOWN ON OUTSIDE CLICK
   // -----------------------------
   useEffect(() => {

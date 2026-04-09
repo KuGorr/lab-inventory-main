@@ -5,6 +5,13 @@ from ..database import SessionLocal, get_db
 from .. import models, schemas
 from ..auth import require_role
 
+# 🔥 IMPORT WEBSOCKET BROADCAST
+from .ws import (
+    broadcast_containers_update,
+    broadcast_assets_update,
+    broadcast_history_update
+)
+
 router = APIRouter(
     prefix="/containers",
     tags=["containers"]
@@ -42,7 +49,7 @@ def list_containers(db: Session = Depends(get_db)):
     response_model=schemas.ContainerRead,
     dependencies=[Depends(require_role("manager"))]
 )
-def create_container(container: schemas.ContainerCreate, db: Session = Depends(get_db)):
+async def create_container(container: schemas.ContainerCreate, db: Session = Depends(get_db)):
 
     existing = db.query(models.Container).filter(models.Container.code == container.code).first()
     if existing:
@@ -57,6 +64,11 @@ def create_container(container: schemas.ContainerCreate, db: Session = Depends(g
     db.add(cont)
     db.commit()
     db.refresh(cont)
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE
+    await broadcast_containers_update()
+    await broadcast_history_update()
+
     return cont
 
 
@@ -67,7 +79,7 @@ def create_container(container: schemas.ContainerCreate, db: Session = Depends(g
     "/{container_id}",
     dependencies=[Depends(require_role("admin"))]
 )
-def delete_container(container_id: int, db: Session = Depends(get_db)):
+async def delete_container(container_id: int, db: Session = Depends(get_db)):
     cont = db.query(models.Container).filter(models.Container.id == container_id).first()
     if not cont:
         raise HTTPException(status_code=404, detail="Container not found")
@@ -79,6 +91,11 @@ def delete_container(container_id: int, db: Session = Depends(get_db)):
 
     db.delete(cont)
     db.commit()
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE
+    await broadcast_containers_update()
+    await broadcast_history_update()
+
     return {"status": "deleted"}
 
 
@@ -89,7 +106,7 @@ def delete_container(container_id: int, db: Session = Depends(get_db)):
     "/{container_id}/move",
     dependencies=[Depends(require_role("compat"))]
 )
-def move_container(
+async def move_container(
     container_id: int,
     req: schemas.MoveAssetRequest,
     db: Session = Depends(get_db),
@@ -143,15 +160,21 @@ def move_container(
 
     db.commit()
 
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE KONTENERÓW
+    await broadcast_containers_update()
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE ASSETÓW
+    await broadcast_assets_update()
+
+    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE HISTORII
+    await broadcast_history_update()
+
     return {
         "status": "ok",
         "container": container.code,
         "new_location": location.code,
         "moved_assets": len(assets)
     }
-
-
-
 
 
 # -----------------------------
@@ -206,7 +229,6 @@ def get_container_history(
         "pages": pages,
         "limit": limit
     }
-
 
 
 # -----------------------------

@@ -17,8 +17,16 @@ export default function ContainerDetails() {
 
   const loadContainer = () => {
     fetch(`http://10.19.148.12:8000/containers/${id}`)
-      .then(res => res.json())
-      .then(data => setContainer(data));
+      .then(res => {
+        if (res.status === 404) {
+          navigate("/containers"); // kontener został usunięty przez kogoś innego
+          return null;
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (data) setContainer(data);
+      });
   };
 
   const loadHistory = (pageNum = 1) => {
@@ -35,6 +43,20 @@ export default function ContainerDetails() {
     loadContainer();
     loadHistory(1);
   }, [id]);
+
+  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów kontenera
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+
+    ws.onmessage = (event) => {
+      if (event.data === "containers_updated") {
+        loadContainer();
+        loadHistory(historyPage);
+      }
+    };
+
+    return () => ws.close();
+  }, [id, historyPage]);
 
   if (!container) return <div>Ładowanie...</div>;
 
@@ -71,9 +93,7 @@ export default function ContainerDetails() {
         </p>
       )}
 
-      {/* ----------------------------- */}
       {/* INFORMACJE */}
-      {/* ----------------------------- */}
       <h2>Informacje</h2>
       <p>Kod: {container.code}</p>
       <p>Opis: {container.description}</p>
@@ -89,18 +109,14 @@ export default function ContainerDetails() {
         )}
       </p>
 
-      {/* ----------------------------- */}
-      {/* PRZENOŚ KONTENER (compat+) */}
-      {/* ----------------------------- */}
+      {/* PRZENOŚ KONTENER */}
       {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
         <Link to={`/containers/${id}/move`}>
           <button style={{ marginRight: "10px" }}>Przenieś kontener</button>
         </Link>
       )}
 
-      {/* ----------------------------- */}
-      {/* USUŃ KONTENER (admin only) */}
-      {/* ----------------------------- */}
+      {/* USUŃ KONTENER */}
       {user.role === "admin" && (
         <button
           onClick={deleteContainer}
@@ -110,9 +126,7 @@ export default function ContainerDetails() {
         </button>
       )}
 
-      {/* ----------------------------- */}
       {/* ASSETY W KONTENERZE */}
-      {/* ----------------------------- */}
       <h2>Assety w kontenerze</h2>
 
       {container.assets.length === 0 && <p>Brak assetów.</p>}
@@ -138,9 +152,7 @@ export default function ContainerDetails() {
         </table>
       )}
 
-      {/* ----------------------------- */}
-      {/* HISTORIA KONTENERA */}
-      {/* ----------------------------- */}
+      {/* HISTORIA */}
       <h2 style={{ marginTop: "30px" }}>Historia ruchów kontenera</h2>
 
       {history.length === 0 && <p>Brak historii.</p>}

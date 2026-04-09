@@ -1,14 +1,41 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 export default function LocationDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [data, setData] = useState(null);
 
-  useEffect(() => {
+  const loadData = () => {
     fetch(`http://10.19.148.12:8000/locations/${id}/contents`)
-      .then(res => res.json())
-      .then(data => setData(data));
+      .then(res => {
+        if (res.status === 404) {
+          navigate("/locations"); // lokalizacja została usunięta przez kogoś innego
+          return null;
+        }
+        return res.json();
+      })
+      .then(json => {
+        if (json) setData(json);
+      });
+  };
+
+  useEffect(() => {
+    loadData();
+  }, [id]);
+
+  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów lokalizacji
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
+
+    ws.onmessage = (event) => {
+      if (event.data === "locations_updated") {
+        loadData();
+      }
+    };
+
+    return () => ws.close();
   }, [id]);
 
   if (!data) return <div>Ładowanie...</div>;

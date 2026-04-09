@@ -25,11 +25,23 @@ export default function History() {
   useEffect(() => {
     loadHistory(1);
 
-    // Pobranie listy użytkowników
     fetch("http://10.19.148.12:8000/assets/history/users")
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);
+
+  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie historii
+  useEffect(() => {
+    const ws = new WebSocket("ws://10.19.148.12:8000/ws/history");
+
+    ws.onmessage = (event) => {
+      if (event.data === "history_updated") {
+        loadHistory(page, movedBy);
+      }
+    };
+
+    return () => ws.close();
+  }, [page, movedBy]);
 
   const handleFilter = () => {
     loadHistory(1, movedBy);
@@ -48,13 +60,12 @@ export default function History() {
       {/* FILTR */}
       <div style={{ margin: "20px 0", display: "flex", alignItems: "center", gap: "10px" }}>
         
-        {/* DROPDOWN */}
         <select
           value={movedBy}
           onChange={e => {
             const value = e.target.value;
             setMovedBy(value);
-            loadHistory(1, value); // ← AUTOMATYCZNE FILTROWANIE
+            loadHistory(1, value);
           }}
           onKeyDown={e => {
             if (e.key === "Enter") handleFilter();
@@ -67,7 +78,6 @@ export default function History() {
           ))}
         </select>
 
-        {/* X — WYCZYŚĆ */}
         {movedBy && (
           <button
             onClick={clearFilter}
