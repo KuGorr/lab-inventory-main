@@ -47,9 +47,13 @@ class Container(Base):
     comment = Column(String, nullable=True)
     location_id = Column(Integer, ForeignKey("locations.id"))
 
+    # 🔥 NOWE
+    status = Column(String, nullable=True)
+
     location = relationship("Location", back_populates="containers")
     assets = relationship("Asset", back_populates="container")
     history = relationship("ContainerHistory", backref="container")
+
 
 
 # -----------------------------
@@ -87,7 +91,6 @@ class Asset(Base):
     manufacturer = Column(String, nullable=True)
     notes = Column(Text, nullable=True)
 
-    # 🔥 NOWE POLE — komentarz assetu
     comment = Column(String, nullable=True)
 
     platform = Column(String, nullable=True)
@@ -100,7 +103,9 @@ class Asset(Base):
     memory_size = Column(String, nullable=True)
     memory_type = Column(String, nullable=True)
     score = Column(String, nullable=True)
-    available = Column(Boolean, default=True)
+
+    # 🔥 NOWE
+    status = Column(String, nullable=True)
 
     location_id = Column(Integer, ForeignKey("locations.id"), nullable=True)
     container_id = Column(Integer, ForeignKey("containers.id"), nullable=True)

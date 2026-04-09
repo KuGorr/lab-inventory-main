@@ -158,6 +158,9 @@ export default function Assets() {
     container: "",
   });
 
+  // ⭐ STATUS FILTER
+  const [statusFilter, setStatusFilter] = useState("all"); // ⭐ default
+
   // --- ŁADOWANIE ASSETÓW ---
   const loadAssets = () => {
     fetch("http://10.19.148.12:8000/assets/")
@@ -247,7 +250,14 @@ export default function Assets() {
       return val?.toLowerCase().includes(filters[key].toLowerCase());
     });
 
-    return matchesSearch && matchesFilters;
+    const matchesStatus =
+      statusFilter === "all"
+        ? true
+        : statusFilter === "none"
+        ? !a.status
+        : a.status === statusFilter;
+
+    return matchesSearch && matchesFilters && matchesStatus;
   });
 
   const autoProps = {
@@ -326,6 +336,110 @@ export default function Assets() {
         >
           Wyczyść filtry
         </button>
+
+        {/* STATUS FILTER */}
+        <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
+          {/* ⭐ ALL */}
+          <button
+            onClick={() => setStatusFilter("all")}
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
+              background: statusFilter === "all" ? "#fff8d1" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            ⭐
+          </button>
+
+          {/* NO STATUS */}
+          <button
+            onClick={() =>
+              setStatusFilter(statusFilter === "none" ? "all" : "none")
+            }
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
+              background: statusFilter === "none" ? "#eaeaea" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+            title="Brak statusu"
+          >
+            ◻️?
+          </button>
+
+          {/* AVAILABLE */}
+          <button
+            onClick={() =>
+              setStatusFilter(statusFilter === "available" ? "all" : "available")
+            }
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "available" ? "3px solid #4CAF50" : "1px solid #ccc",
+              background: statusFilter === "available" ? "#4CAF5022" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            ✅
+          </button>
+
+          {/* BORROWED */}
+          <button
+            onClick={() =>
+              setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
+            }
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "borrowed" ? "3px solid #2196F3" : "1px solid #ccc",
+              background: statusFilter === "borrowed" ? "#2196F322" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            🔄
+          </button>
+
+          {/* BROKEN */}
+          <button
+            onClick={() =>
+              setStatusFilter(statusFilter === "broken" ? "all" : "broken")
+            }
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "broken" ? "3px solid #F44336" : "1px solid #ccc",
+              background: statusFilter === "broken" ? "#F4433622" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            🗑️
+          </button>
+
+          {/* LOST */}
+          <button
+            onClick={() =>
+              setStatusFilter(statusFilter === "lost" ? "all" : "lost")
+            }
+            style={{
+              padding: "6px 10px",
+              fontSize: "22px",
+              border: statusFilter === "lost" ? "3px solid #9C27B0" : "1px solid #ccc",
+              background: statusFilter === "lost" ? "#9C27B022" : "#fff",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            ❓
+          </button>
+        </div>
       </div>
 
       {/* TABELA */}
@@ -340,6 +454,7 @@ export default function Assets() {
       >
         <thead>
           <tr>
+            <th style={{ width: "40px" }}>S</th>
             <th style={{ maxWidth: "150px" }}>Tag</th>
             <th style={{ minWidth: "200px" }}>Nazwa</th>
             <th style={{ maxWidth: "70px" }}>Typ</th>
@@ -355,8 +470,21 @@ export default function Assets() {
           {filtered.map((a) => {
             const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;
 
+            const statusIcon =
+              a.status === "available" ? "✅" :
+              a.status === "borrowed" ? "🔄" :
+              a.status === "broken" ? "🗑️" :
+              a.status === "lost" ? "❓" :
+              "◻️?";
+
             return (
               <tr key={a.id}>
+                {/* STATUS */}
+                <td style={{ fontSize: "22px", textAlign: "center" }}>
+                  {statusIcon}
+                </td>
+
+                {/* TAG */}
                 <td
                   style={{
                     maxWidth: "150px",
@@ -367,8 +495,10 @@ export default function Assets() {
                   <Link to={`/assets/${a.id}`}>{a.tag}</Link>
                 </td>
 
+                {/* NAZWA */}
                 <td style={{ minWidth: "200px" }}>{a.name}</td>
 
+                {/* TYP */}
                 <td
                   style={{
                     maxWidth: "70px",
@@ -379,8 +509,10 @@ export default function Assets() {
                   {typeNormalized}
                 </td>
 
+                {/* MODEL */}
                 <td style={{ minWidth: "200px" }}>{a.model}</td>
 
+                {/* OEM */}
                 <td
                   style={{
                     maxWidth: "100px",
@@ -391,10 +523,13 @@ export default function Assets() {
                   {a.manufacturer || a.producer || a.oem || "-"}
                 </td>
 
+                {/* LOKALIZACJA */}
                 <td style={{ maxWidth: "110px" }}>{a.location?.code || "-"}</td>
 
+                {/* KONTENER */}
                 <td style={{ maxWidth: "80px" }}>{a.container?.code || "-"}</td>
 
+                {/* KOMENTARZ */}
                 <td style={{ minWidth: "200px" }}>
                   {a.comment?.trim() || "-"}
                 </td>

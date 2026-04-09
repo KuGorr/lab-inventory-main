@@ -59,6 +59,9 @@ class ContainerBase(BaseModel):
     description: Optional[str] = None
     comment: Optional[str] = None
 
+    # 🔥 NOWE — status kontenera
+    status: Optional[str] = None
+
 
 class ContainerCreate(ContainerBase):
     location_id: int
@@ -95,8 +98,11 @@ class AssetBase(BaseModel):
     memory_clock: float | None = None
     score: float | None = None
 
-    # 🔥 NOWE POLE — komentarz assetu
+    # 🔥 NOWE — komentarz assetu
     comment: Optional[str] = None
+
+    # 🔥 NOWE — status assetu
+    status: Optional[str] = None
 
 
 class AssetCreate(AssetBase):

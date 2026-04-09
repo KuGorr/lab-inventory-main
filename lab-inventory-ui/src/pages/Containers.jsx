@@ -20,6 +20,9 @@ export default function Containers() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
+  // ⭐ STATUS FILTER
+  const [statusFilter, setStatusFilter] = useState("all");
+
   // -----------------------------
   // LOAD DATA
   // -----------------------------
@@ -108,12 +111,21 @@ export default function Containers() {
   // -----------------------------
   const filtered = containers.filter((c) => {
     const text = search.toLowerCase();
-    return (
+
+    const matchesSearch =
       c.code?.toLowerCase().includes(text) ||
       c.description?.toLowerCase().includes(text) ||
       c.location?.code?.toLowerCase().includes(text) ||
-      c.comment?.toLowerCase().includes(text)
-    );
+      c.comment?.toLowerCase().includes(text);
+
+    const matchesStatus =
+      statusFilter === "all"
+        ? true
+        : statusFilter === "none"
+        ? !c.status
+        : c.status === statusFilter;
+
+    return matchesSearch && matchesStatus;
   });
 
   return (
@@ -232,10 +244,114 @@ export default function Containers() {
         </div>
       )}
 
+      {/* STATUS FILTER */}
+      <div style={{ marginTop: "10px", marginBottom: "20px", display: "flex", gap: "10px" }}>
+        {/* ⭐ ALL */}
+        <button
+          onClick={() => setStatusFilter("all")}
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
+            background: statusFilter === "all" ? "#fff8d1" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          ⭐
+        </button>
+
+        {/* NONE */}
+        <button
+          onClick={() =>
+            setStatusFilter(statusFilter === "none" ? "all" : "none")
+          }
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
+            background: statusFilter === "none" ? "#eaeaea" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          ◻️?
+        </button>
+
+        {/* AVAILABLE */}
+        <button
+          onClick={() =>
+            setStatusFilter(statusFilter === "available" ? "all" : "available")
+          }
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "available" ? "3px solid #4CAF50" : "1px solid #ccc",
+            background: statusFilter === "available" ? "#4CAF5022" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          ✅
+        </button>
+
+        {/* BORROWED */}
+        <button
+          onClick={() =>
+            setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
+          }
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "borrowed" ? "3px solid #2196F3" : "1px solid #ccc",
+            background: statusFilter === "borrowed" ? "#2196F322" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          🔄
+        </button>
+
+        {/* BROKEN */}
+        <button
+          onClick={() =>
+            setStatusFilter(statusFilter === "broken" ? "all" : "broken")
+          }
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "broken" ? "3px solid #F44336" : "1px solid #ccc",
+            background: statusFilter === "broken" ? "#F4433622" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          🗑️
+        </button>
+
+        {/* LOST */}
+        <button
+          onClick={() =>
+            setStatusFilter(statusFilter === "lost" ? "all" : "lost")
+          }
+          style={{
+            padding: "6px 10px",
+            fontSize: "22px",
+            border: statusFilter === "lost" ? "3px solid #9C27B0" : "1px solid #ccc",
+            background: statusFilter === "lost" ? "#9C27B022" : "#fff",
+            borderRadius: "6px",
+            cursor: "pointer",
+          }}
+        >
+          ❓
+        </button>
+      </div>
+
       {/* TABLE */}
       <table border="1" cellPadding="4">
         <thead>
           <tr>
+            <th style={{ width: "40px" }}>S</th>
             <th>Kod</th>
             <th>Opis</th>
             <th>Lokalizacja</th>
@@ -244,21 +360,35 @@ export default function Containers() {
           </tr>
         </thead>
         <tbody>
-          {filtered.map((c) => (
-            <tr key={c.id}>
-              <td>
-                <Link to={`/containers/${c.id}`}>{c.code}</Link>
-              </td>
-              <td>{c.description}</td>
-              <td>{c.location?.code || "-"}</td>
-              <td>{c.comment?.trim() || "-"}</td>
-              <td>
-                {user.role === "admin" && (
-                  <button onClick={() => deleteContainer(c.id)}>Usuń</button>
-                )}
-              </td>
-            </tr>
-          ))}
+          {filtered.map((c) => {
+            const statusIcon =
+              c.status === "available" ? "✅" :
+              c.status === "borrowed" ? "🔄" :
+              c.status === "broken" ? "🗑️" :
+              c.status === "lost" ? "❓" :
+              "◻️?";
+
+            return (
+              <tr key={c.id}>
+                {/* STATUS */}
+                <td style={{ fontSize: "22px", textAlign: "center" }}>
+                  {statusIcon}
+                </td>
+
+                <td>
+                  <Link to={`/containers/${c.id}`}>{c.code}</Link>
+                </td>
+                <td>{c.description}</td>
+                <td>{c.location?.code || "-"}</td>
+                <td>{c.comment?.trim() || "-"}</td>
+                <td>
+                  {user.role === "admin" && (
+                    <button onClick={() => deleteContainer(c.id)}>Usuń</button>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
 

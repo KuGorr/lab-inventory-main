@@ -235,7 +235,7 @@ def get_asset_history(
 
 
 # ---------------------------------------------------------
-# 🔥 NOWE: POST /assets/{asset_id}/comment — edycja komentarza
+# 🔥 POST /assets/{asset_id}/comment — edycja komentarza
 # ---------------------------------------------------------
 @router.post("/{asset_id}/comment")
 async def update_asset_comment(
@@ -255,6 +255,35 @@ async def update_asset_comment(
     await broadcast_history_update()
 
     return {"status": "ok", "comment": asset.comment}
+
+
+# ---------------------------------------------------------
+# 🔥 NOWE: POST /assets/{asset_id}/status — zmiana statusu
+# ---------------------------------------------------------
+@router.post("/{asset_id}/status")
+async def update_asset_status(
+    asset_id: int,
+    data: dict,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(require_role("compat"))
+):
+    asset = db.query(models.Asset).filter(models.Asset.id == asset_id).first()
+    if not asset:
+        raise HTTPException(status_code=404, detail="Asset not found")
+
+    new_status = data.get("status")
+
+    allowed = ["available", "borrowed", "broken", "lost", None]
+
+    if new_status not in allowed:
+        raise HTTPException(status_code=400, detail="Invalid status")
+
+    asset.status = new_status
+    db.commit()
+
+    await broadcast_assets_update()
+
+    return {"status": "ok", "new_status": new_status}
 
 
 # ---------------------------------------------------------

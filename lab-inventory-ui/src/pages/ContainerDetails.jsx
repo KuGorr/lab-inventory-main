@@ -1,6 +1,54 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
+/* ------------------------------
+   STATUS SELECTOR (NAPRAWIONY)
+------------------------------ */
+const StatusSelector = ({ value, onChange, disabled }) => {
+  // Normalizacja wartości z backendu
+  const normalized =
+    value === null || value === "null" || value === undefined || value === ""
+      ? "none"
+      : value;
+
+  const options = [
+    { key: "none", icon: "◻️?", label: "Brak statusu", color: "#777" },
+    { key: "available", icon: "✅", label: "Dostępny", color: "#4CAF50" },
+    { key: "borrowed", icon: "🔄", label: "Pożyczony", color: "#2196F3" },
+    { key: "broken", icon: "🗑️", label: "Zepsuty", color: "#F44336" },
+    { key: "lost", icon: "❓", label: "Zaginiony", color: "#9C27B0" },
+  ];
+
+  return (
+    <div style={{ display: "flex", gap: "10px" }}>
+      {options.map((o) => {
+        const active = normalized === o.key;
+
+        return (
+          <button
+            key={o.key}
+            onClick={() => !disabled && onChange(o.key)}
+            style={{
+              padding: "8px 14px",
+              border: active ? `3px solid ${o.color}` : "1px solid #ccc",
+              background: active ? `${o.color}22` : "#fff",
+              cursor: disabled ? "default" : "pointer",
+              fontSize: "26px",
+              borderRadius: "8px",
+              opacity: disabled ? 0.5 : 1,
+              transition: "0.15s ease",
+              transform: active ? "scale(1.1)" : "scale(1.0)",
+            }}
+            title={o.label}
+          >
+            {o.icon}
+          </button>
+        );
+      })}
+    </div>
+  );
+};
+
 export default function ContainerDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -17,20 +65,20 @@ export default function ContainerDetails() {
 
   const loadContainer = () => {
     fetch(`http://10.19.148.12:8000/containers/${id}`)
-      .then(res => {
+      .then((res) => {
         if (res.status === 404) {
           navigate("/containers");
           return null;
         }
         return res.json();
       })
-      .then(data => data && setContainer(data));
+      .then((data) => data && setContainer(data));
   };
 
   const loadHistory = (pageNum = 1) => {
     fetch(`http://10.19.148.12:8000/containers/${id}/history?page=${pageNum}`)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setHistory(data.items);
         setHistoryPages(data.pages);
         setHistoryPage(data.page);
@@ -57,6 +105,11 @@ export default function ContainerDetails() {
   }, [id, historyPage]);
 
   if (!container) return <div>Ładowanie...</div>;
+
+  const canEdit =
+    user.role === "compat" ||
+    user.role === "manager" ||
+    user.role === "admin";
 
   // -----------------------------
   // DELETE CONTAINER (admin only)
@@ -92,9 +145,43 @@ export default function ContainerDetails() {
     });
   };
 
+  // -----------------------------
+  // UPDATE STATUS (NAPRAWIONE)
+  // -----------------------------
+  const updateStatus = async (newStatus) => {
+    const backendValue = newStatus === "none" ? null : newStatus;
+
+    await fetch(`http://10.19.148.12:8000/containers/${id}/status`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ status: backendValue }),
+    });
+
+    setContainer({ ...container, status: backendValue });
+  };
+
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Kontener: {container.code}</h1>
+      {/* NAGŁÓWEK + STATUS */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h1>Kontener: {container.code}</h1>
+
+        <StatusSelector
+          value={container.status}
+          disabled={!canEdit}
+          onChange={updateStatus}
+        />
+      </div>
+
       <Link to="/containers">← Powrót</Link>
 
       {error && (
@@ -121,12 +208,14 @@ export default function ContainerDetails() {
           <h2>Komentarz</h2>
           <p>{container.comment?.trim() || "Brak komentarza"}</p>
 
-          {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
+          {canEdit && (
             <div style={{ marginTop: "20px" }}>
               <h3>Edytuj komentarz</h3>
               <textarea
                 value={container.comment || ""}
-                onChange={(e) => setContainer({ ...container, comment: e.target.value })}
+                onChange={(e) =>
+                  setContainer({ ...container, comment: e.target.value })
+                }
                 rows={3}
                 style={{ width: "300px" }}
               />
@@ -141,12 +230,16 @@ export default function ContainerDetails() {
               <Link to={`/locations/${container.location.id}`}>
                 {container.location.code}
               </Link>
-            ) : "-"}
+            ) : (
+              "-"
+            )}
           </p>
 
-          {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
+          {canEdit && (
             <Link to={`/containers/${id}/move`}>
-              <button style={{ marginRight: "10px" }}>Przenieś kontener</button>
+              <button style={{ marginRight: "10px" }}>
+                Przenieś kontener
+              </button>
             </Link>
           )}
 
@@ -173,9 +266,11 @@ export default function ContainerDetails() {
                 </tr>
               </thead>
               <tbody>
-                {container.assets.map(a => (
+                {container.assets.map((a) => (
                   <tr key={a.id}>
-                    <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
+                    <td>
+                      <Link to={`/assets/${a.id}`}>{a.tag}</Link>
+                    </td>
                     <td>{a.name}</td>
                     <td>{a.type}</td>
                   </tr>
@@ -201,11 +296,14 @@ export default function ContainerDetails() {
             {history.length > 0 && (
               <>
                 <ul>
-                  {history.map(h => (
+                  {history.map((h) => (
                     <li key={h.id} style={{ marginBottom: "12px" }}>
-                      <strong>{new Date(h.moved_at).toLocaleString()}</strong>
+                      <strong>
+                        {new Date(h.moved_at).toLocaleString()}
+                      </strong>
                       <br />
-                      {(h.old_location_name || "-")} → {(h.new_location_name || "-")}
+                      {(h.old_location_name || "-")} →{" "}
+                      {(h.new_location_name || "-")}
                       <br />
                       {h.note?.trim() || "brak notatki"}
                       <br />
@@ -218,22 +316,26 @@ export default function ContainerDetails() {
 
                 {/* PAGINACJA */}
                 <div style={{ marginTop: "20px" }}>
-                  {Array.from({ length: historyPages }, (_, i) => i + 1).map(num => (
-                    <button
-                      key={num}
-                      onClick={() => loadHistory(num)}
-                      style={{
-                        marginRight: "5px",
-                        padding: "5px 10px",
-                        background: num === historyPage ? "#333" : "#ddd",
-                        color: num === historyPage ? "white" : "black",
-                        border: "none",
-                        cursor: "pointer",
-                      }}
-                    >
-                      {num}
-                    </button>
-                  ))}
+                  {Array.from({ length: historyPages }, (_, i) => i + 1).map(
+                    (num) => (
+                      <button
+                        key={num}
+                        onClick={() => loadHistory(num)}
+                        style={{
+                          marginRight: "5px",
+                          padding: "5px 10px",
+                          background:
+                            num === historyPage ? "#333" : "#ddd",
+                          color:
+                            num === historyPage ? "white" : "black",
+                          border: "none",
+                          cursor: "pointer",
+                        }}
+                      >
+                        {num}
+                      </button>
+                    )
+                  )}
                 </div>
               </>
             )}
