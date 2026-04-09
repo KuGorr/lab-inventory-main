@@ -19,14 +19,12 @@ export default function ContainerDetails() {
     fetch(`http://10.19.148.12:8000/containers/${id}`)
       .then(res => {
         if (res.status === 404) {
-          navigate("/containers"); // kontener został usunięty przez kogoś innego
+          navigate("/containers");
           return null;
         }
         return res.json();
       })
-      .then(data => {
-        if (data) setContainer(data);
-      });
+      .then(data => data && setContainer(data));
   };
 
   const loadHistory = (pageNum = 1) => {
@@ -44,7 +42,7 @@ export default function ContainerDetails() {
     loadHistory(1);
   }, [id]);
 
-  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów kontenera
+  // 🔥 REALTIME WEBSOCKET
   useEffect(() => {
     const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
 
@@ -68,9 +66,7 @@ export default function ContainerDetails() {
 
     const res = await fetch(`http://10.19.148.12:8000/containers/${id}`, {
       method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     if (!res.ok) {
@@ -80,6 +76,20 @@ export default function ContainerDetails() {
     }
 
     navigate("/containers");
+  };
+
+  // -----------------------------
+  // UPDATE COMMENT (compat+)
+  // -----------------------------
+  const saveComment = async () => {
+    await fetch(`http://10.19.148.12:8000/containers/${id}/comment`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ comment: container.comment || "" }),
+    });
   };
 
   return (
@@ -93,109 +103,143 @@ export default function ContainerDetails() {
         </p>
       )}
 
-      {/* INFORMACJE */}
-      <h2>Informacje</h2>
-      <p>Kod: {container.code}</p>
-      <p>Opis: {container.description}</p>
+      {/* DWIE KOLUMNY */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "30px",
+          marginTop: "20px",
+        }}
+      >
+        {/* LEWA KOLUMNA */}
+        <div>
+          <h2>Informacje</h2>
+          <p>Kod: {container.code}</p>
+          <p>Opis: {container.description}</p>
 
-      <p>
-        Lokalizacja:{" "}
-        {container.location ? (
-          <Link to={`/locations/${container.location.id}`}>
-            {container.location.code}
-          </Link>
-        ) : (
-          "-"
-        )}
-      </p>
+          <h2>Komentarz</h2>
+          <p>{container.comment?.trim() || "Brak komentarza"}</p>
 
-      {/* PRZENOŚ KONTENER */}
-      {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
-        <Link to={`/containers/${id}/move`}>
-          <button style={{ marginRight: "10px" }}>Przenieś kontener</button>
-        </Link>
-      )}
+          {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
+            <div style={{ marginTop: "20px" }}>
+              <h3>Edytuj komentarz</h3>
+              <textarea
+                value={container.comment || ""}
+                onChange={(e) => setContainer({ ...container, comment: e.target.value })}
+                rows={3}
+                style={{ width: "300px" }}
+              />
+              <br />
+              <button onClick={saveComment}>Zapisz komentarz</button>
+            </div>
+          )}
 
-      {/* USUŃ KONTENER */}
-      {user.role === "admin" && (
-        <button
-          onClick={deleteContainer}
-          style={{ background: "red", color: "white" }}
-        >
-          Usuń kontener
-        </button>
-      )}
+          <p style={{ marginTop: "20px" }}>
+            Lokalizacja:{" "}
+            {container.location ? (
+              <Link to={`/locations/${container.location.id}`}>
+                {container.location.code}
+              </Link>
+            ) : "-"}
+          </p>
 
-      {/* ASSETY W KONTENERZE */}
-      <h2>Assety w kontenerze</h2>
+          {(user.role === "compat" || user.role === "manager" || user.role === "admin") && (
+            <Link to={`/containers/${id}/move`}>
+              <button style={{ marginRight: "10px" }}>Przenieś kontener</button>
+            </Link>
+          )}
 
-      {container.assets.length === 0 && <p>Brak assetów.</p>}
+          {user.role === "admin" && (
+            <button
+              onClick={deleteContainer}
+              style={{ background: "red", color: "white" }}
+            >
+              Usuń kontener
+            </button>
+          )}
 
-      {container.assets.length > 0 && (
-        <table border="1" cellPadding="4">
-          <thead>
-            <tr>
-              <th>Tag</th>
-              <th>Nazwa</th>
-              <th>Typ</th>
-            </tr>
-          </thead>
-          <tbody>
-            {container.assets.map(a => (
-              <tr key={a.id}>
-                <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
-                <td>{a.name}</td>
-                <td>{a.type}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+          <h2 style={{ marginTop: "30px" }}>Assety w kontenerze</h2>
 
-      {/* HISTORIA */}
-      <h2 style={{ marginTop: "30px" }}>Historia ruchów kontenera</h2>
+          {container.assets.length === 0 && <p>Brak assetów.</p>}
 
-      {history.length === 0 && <p>Brak historii.</p>}
+          {container.assets.length > 0 && (
+            <table border="1" cellPadding="4">
+              <thead>
+                <tr>
+                  <th>Tag</th>
+                  <th>Nazwa</th>
+                  <th>Typ</th>
+                </tr>
+              </thead>
+              <tbody>
+                {container.assets.map(a => (
+                  <tr key={a.id}>
+                    <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
+                    <td>{a.name}</td>
+                    <td>{a.type}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
 
-      {history.length > 0 && (
-        <>
-          <ul>
-            {history.map(h => (
-              <li key={h.id} style={{ marginBottom: "12px" }}>
-                <strong>{new Date(h.moved_at).toLocaleString()}</strong>
-                <br />
-                {(h.old_location_name || "-")} → {(h.new_location_name || "-")}
-                <br />
-                {h.note && h.note.trim() !== "" ? h.note : "brak notatki"}
-                <br />
-                <em style={{ color: "#aaa" }}>
-                  przeniósł: {h.moved_by || "nieznany"}
-                </em>
-              </li>
-            ))}
-          </ul>
+        {/* PRAWA KOLUMNA — HISTORIA */}
+        <div>
+          <h2>Historia ruchów kontenera</h2>
 
-          {/* PAGINACJA */}
-          <div style={{ marginTop: "20px" }}>
-            {Array.from({ length: historyPages }, (_, i) => i + 1).map(num => (
-              <button
-                key={num}
-                onClick={() => loadHistory(num)}
-                style={{
-                  marginRight: "5px",
-                  padding: "5px 10px",
-                  background: num === historyPage ? "#333" : "#ddd",
-                  color: num === historyPage ? "white" : "black",
-                  border: "none",
-                  cursor: "pointer"
-                }}
-              >
-                {num}
-              </button>
-            ))}
+          <div
+            style={{
+              paddingRight: "10px",
+              borderLeft: "2px solid #ddd",
+              paddingLeft: "15px",
+            }}
+          >
+            {history.length === 0 && <p>Brak historii.</p>}
+
+            {history.length > 0 && (
+              <>
+                <ul>
+                  {history.map(h => (
+                    <li key={h.id} style={{ marginBottom: "12px" }}>
+                      <strong>{new Date(h.moved_at).toLocaleString()}</strong>
+                      <br />
+                      {(h.old_location_name || "-")} → {(h.new_location_name || "-")}
+                      <br />
+                      {h.note?.trim() || "brak notatki"}
+                      <br />
+                      <em style={{ color: "#aaa" }}>
+                        przeniósł: {h.moved_by || "nieznany"}
+                      </em>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* PAGINACJA */}
+                <div style={{ marginTop: "20px" }}>
+                  {Array.from({ length: historyPages }, (_, i) => i + 1).map(num => (
+                    <button
+                      key={num}
+                      onClick={() => loadHistory(num)}
+                      style={{
+                        marginRight: "5px",
+                        padding: "5px 10px",
+                        background: num === historyPage ? "#333" : "#ddd",
+                        color: num === historyPage ? "white" : "black",
+                        border: "none",
+                        cursor: "pointer",
+                      }}
+                    >
+                      {num}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 }

@@ -15,11 +15,11 @@ export default function MoveAsset() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://10.19.148.12:8000/locations")
+    fetch("http://10.19.148.12:8000/locations/")
       .then(res => res.json())
       .then(data => setLocations(data));
 
-    fetch("http://10.19.148.12:8000/containers")
+    fetch("http://10.19.148.12:8000/containers/")
       .then(res => res.json())
       .then(data => setContainers(data));
   }, []);

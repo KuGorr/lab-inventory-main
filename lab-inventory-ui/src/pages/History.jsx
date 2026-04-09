@@ -25,7 +25,7 @@ export default function History() {
   useEffect(() => {
     loadHistory(1);
 
-    fetch("http://10.19.148.12:8000/assets/history/users")
+    fetch("http://10.19.148.12:8000/assets/history/users/")
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);

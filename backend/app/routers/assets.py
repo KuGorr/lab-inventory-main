@@ -5,7 +5,7 @@ from typing import Optional
 
 from ..database import get_db
 from app import models, schemas
-from ..auth import require_admin, get_current_user
+from ..auth import require_admin, get_current_user, require_role
 
 # IMPORT WEBSOCKET BROADCAST
 from .ws import broadcast_assets_update, broadcast_history_update
@@ -157,7 +157,6 @@ async def create_asset(
     db.commit()
     db.refresh(new_asset)
 
-    # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
     await broadcast_assets_update()
     await broadcast_history_update()
 
@@ -236,6 +235,29 @@ def get_asset_history(
 
 
 # ---------------------------------------------------------
+# 🔥 NOWE: POST /assets/{asset_id}/comment — edycja komentarza
+# ---------------------------------------------------------
+@router.post("/{asset_id}/comment")
+async def update_asset_comment(
+    asset_id: int,
+    data: dict,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(require_role("compat"))
+):
+    asset = db.query(models.Asset).filter(models.Asset.id == asset_id).first()
+    if not asset:
+        raise HTTPException(status_code=404, detail="Asset not found")
+
+    asset.comment = data.get("comment", "")
+    db.commit()
+
+    await broadcast_assets_update()
+    await broadcast_history_update()
+
+    return {"status": "ok", "comment": asset.comment}
+
+
+# ---------------------------------------------------------
 # POST /assets/{asset_id}/move — przenoszenie assetu
 # ---------------------------------------------------------
 @router.post("/{asset_id}/move", response_model=schemas.AssetRead)
@@ -284,7 +306,6 @@ async def move_asset(
         db.commit()
         db.refresh(asset)
 
-        # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
         await broadcast_assets_update()
         await broadcast_history_update()
 
@@ -312,7 +333,6 @@ async def move_asset(
         db.commit()
         db.refresh(asset)
 
-        # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
         await broadcast_assets_update()
         await broadcast_history_update()
 
@@ -330,7 +350,6 @@ async def delete_asset(asset_id: int, db: Session = Depends(get_db)):
     db.delete(asset)
     db.commit()
 
-    # 🔥 POWIADOM WSZYSTKICH KLIENTÓW
     await broadcast_assets_update()
     await broadcast_history_update()
 

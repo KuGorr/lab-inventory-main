@@ -95,6 +95,9 @@ class AssetBase(BaseModel):
     memory_clock: float | None = None
     score: float | None = None
 
+    # 🔥 NOWE POLE — komentarz assetu
+    comment: Optional[str] = None
+
 
 class AssetCreate(AssetBase):
     location_id: int | None = None

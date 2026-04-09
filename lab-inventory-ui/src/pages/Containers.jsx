@@ -24,13 +24,13 @@ export default function Containers() {
   // LOAD DATA
   // -----------------------------
   const loadContainers = () => {
-    fetch("http://10.19.148.12:8000/containers")
+    fetch("http://10.19.148.12:8000/containers/")
       .then((res) => res.json())
       .then((data) => setContainers(data));
   };
 
   const loadLocations = () => {
-    fetch("http://10.19.148.12:8000/locations")
+    fetch("http://10.19.148.12:8000/locations/")
       .then((res) => res.json())
       .then((data) => setLocations(data));
   };
@@ -111,7 +111,8 @@ export default function Containers() {
     return (
       c.code?.toLowerCase().includes(text) ||
       c.description?.toLowerCase().includes(text) ||
-      c.location?.code?.toLowerCase().includes(text)
+      c.location?.code?.toLowerCase().includes(text) ||
+      c.comment?.toLowerCase().includes(text)
     );
   });
 
@@ -122,7 +123,7 @@ export default function Containers() {
       {/* SEARCH */}
       <input
         type="text"
-        placeholder="Szukaj po kodzie, opisie, lokalizacji..."
+        placeholder="Szukaj po kodzie, opisie, lokalizacji, komentarzu..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         style={{
@@ -238,6 +239,7 @@ export default function Containers() {
             <th>Kod</th>
             <th>Opis</th>
             <th>Lokalizacja</th>
+            <th>Komentarz</th>
             <th>Akcje</th>
           </tr>
         </thead>
@@ -249,6 +251,7 @@ export default function Containers() {
               </td>
               <td>{c.description}</td>
               <td>{c.location?.code || "-"}</td>
+              <td>{c.comment?.trim() || "-"}</td>
               <td>
                 {user.role === "admin" && (
                   <button onClick={() => deleteContainer(c.id)}>Usuń</button>

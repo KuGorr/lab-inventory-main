@@ -100,6 +100,33 @@ async def delete_container(container_id: int, db: Session = Depends(get_db)):
 
 
 # -----------------------------
+# 🔥 NOWE: UPDATE COMMENT (compat+)
+# -----------------------------
+@router.post(
+    "/{container_id}/comment",
+    dependencies=[Depends(require_role("compat"))]
+)
+async def update_container_comment(
+    container_id: int,
+    data: dict,
+    db: Session = Depends(get_db)
+):
+    cont = db.query(models.Container).filter(models.Container.id == container_id).first()
+    if not cont:
+        raise HTTPException(status_code=404, detail="Container not found")
+
+    cont.comment = data.get("comment", "")
+    db.commit()
+
+    # realtime
+    await broadcast_containers_update()
+    await broadcast_assets_update()
+    await broadcast_history_update()
+
+    return {"status": "ok", "comment": cont.comment}
+
+
+# -----------------------------
 # MOVE CONTAINER (compat+)
 # -----------------------------
 @router.post(
@@ -160,13 +187,9 @@ async def move_container(
 
     db.commit()
 
-    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE KONTENERÓW
+    # 🔥 realtime
     await broadcast_containers_update()
-
-    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE ASSETÓW
     await broadcast_assets_update()
-
-    # 🔥 POWIADOM WSZYSTKICH O ZMIANIE HISTORII
     await broadcast_history_update()
 
     return {
@@ -254,6 +277,7 @@ def get_container(container_id: int, db: Session = Depends(get_db)):
         "id": container.id,
         "code": container.code,
         "description": container.description,
+        "comment": container.comment,
         "location": container.location,
         "assets": assets
     }

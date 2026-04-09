@@ -13,7 +13,7 @@ export default function MoveContainer() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://10.19.148.12:8000/locations")
+    fetch("http://10.19.148.12:8000/locations/")
       .then(res => res.json())
       .then(data => setLocations(data));
   }, []);

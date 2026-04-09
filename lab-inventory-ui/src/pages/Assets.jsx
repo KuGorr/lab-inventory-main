@@ -160,7 +160,7 @@ export default function Assets() {
 
   // --- ŁADOWANIE ASSETÓW ---
   const loadAssets = () => {
-    fetch("http://10.19.148.12:8000/assets")
+    fetch("http://10.19.148.12:8000/assets/")
       .then((res) => res.json())
       .then((data) => setAssets(data));
   };
@@ -223,7 +223,8 @@ export default function Assets() {
       a.socket?.toLowerCase().includes(text) ||
       a.memory_type?.toLowerCase().includes(text) ||
       a.location?.code?.toLowerCase().includes(text) ||
-      a.container?.code?.toLowerCase().includes(text);
+      a.container?.code?.toLowerCase().includes(text) ||
+      a.comment?.toLowerCase().includes(text);
 
     const matchesFilters = Object.keys(filters).every((key) => {
       if (!filters[key]) return true;
@@ -346,6 +347,7 @@ export default function Assets() {
             <th style={{ maxWidth: "100px" }}>OEM</th>
             <th style={{ maxWidth: "110px" }}>Lokalizacja</th>
             <th style={{ maxWidth: "80px" }}>Kontener</th>
+            <th style={{ minWidth: "200px" }}>Komentarz</th>
           </tr>
         </thead>
 
@@ -392,11 +394,16 @@ export default function Assets() {
                 <td style={{ maxWidth: "110px" }}>{a.location?.code || "-"}</td>
 
                 <td style={{ maxWidth: "80px" }}>{a.container?.code || "-"}</td>
+
+                <td style={{ minWidth: "200px" }}>
+                  {a.comment?.trim() || "-"}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+
       {filtered.length === 0 && <p>Brak wyników.</p>}
     </div>
   );

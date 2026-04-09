@@ -51,6 +51,7 @@ class Container(Base):
     assets = relationship("Asset", back_populates="container")
     history = relationship("ContainerHistory", backref="container")
 
+
 # -----------------------------
 # CONTAINER HISTORY
 # -----------------------------
@@ -86,6 +87,9 @@ class Asset(Base):
     manufacturer = Column(String, nullable=True)
     notes = Column(Text, nullable=True)
 
+    # 🔥 NOWE POLE — komentarz assetu
+    comment = Column(String, nullable=True)
+
     platform = Column(String, nullable=True)
     socket = Column(String, nullable=True)
     cores = Column(Integer, nullable=True)
@@ -107,7 +111,7 @@ class Asset(Base):
 
 
 # -----------------------------
-# ASSET HISTORY (POPRAWIONE)
+# ASSET HISTORY
 # -----------------------------
 
 class AssetHistory(Base):
@@ -116,22 +120,18 @@ class AssetHistory(Base):
     id = Column(Integer, primary_key=True, index=True)
     asset_id = Column(Integer, ForeignKey("assets.id"))
 
-    # ID lokalizacji (zawsze ID Location)
     old_location_id = Column(Integer, nullable=True)
     new_location_id = Column(Integer, nullable=True)
 
-    # Nazwy (kod lokalizacji lub kod kontenera)
     old_location_name = Column(String, nullable=True)
     new_location_name = Column(String, nullable=True)
 
     note = Column(String, default="")
     moved_at = Column(DateTime, default=datetime.utcnow)
 
-    # Kto przeniósł
     moved_by = Column(String, nullable=True)
 
     asset = relationship("Asset", back_populates="history")
-
 
 
 # -----------------------------

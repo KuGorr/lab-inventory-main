@@ -11,7 +11,7 @@ export default function AdminUserEdit() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://10.19.148.12:8000/users", {
+    fetch("http://10.19.148.12:8000/users/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
