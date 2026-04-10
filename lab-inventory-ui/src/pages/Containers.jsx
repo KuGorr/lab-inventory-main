@@ -245,14 +245,21 @@ export default function Containers() {
       )}
 
       {/* STATUS FILTER */}
-      <div style={{ marginTop: "10px", marginBottom: "20px", display: "flex", gap: "10px" }}>
-        {/* ⭐ ALL */}
+      <div
+        style={{
+          marginTop: "10px",
+          marginBottom: "20px",
+          display: "flex",
+          gap: "10px",
+        }}
+      >
         <button
           onClick={() => setStatusFilter("all")}
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
+            border:
+              statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
             background: statusFilter === "all" ? "#fff8d1" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -261,7 +268,6 @@ export default function Containers() {
           ⭐
         </button>
 
-        {/* NONE */}
         <button
           onClick={() =>
             setStatusFilter(statusFilter === "none" ? "all" : "none")
@@ -269,7 +275,8 @@ export default function Containers() {
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
+            border:
+              statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
             background: statusFilter === "none" ? "#eaeaea" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -278,7 +285,6 @@ export default function Containers() {
           ◻️?
         </button>
 
-        {/* AVAILABLE */}
         <button
           onClick={() =>
             setStatusFilter(statusFilter === "available" ? "all" : "available")
@@ -286,7 +292,10 @@ export default function Containers() {
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "available" ? "3px solid #4CAF50" : "1px solid #ccc",
+            border:
+              statusFilter === "available"
+                ? "3px solid #4CAF50"
+                : "1px solid #ccc",
             background: statusFilter === "available" ? "#4CAF5022" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -295,7 +304,6 @@ export default function Containers() {
           ✅
         </button>
 
-        {/* BORROWED */}
         <button
           onClick={() =>
             setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
@@ -303,7 +311,10 @@ export default function Containers() {
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "borrowed" ? "3px solid #2196F3" : "1px solid #ccc",
+            border:
+              statusFilter === "borrowed"
+                ? "3px solid #2196F3"
+                : "1px solid #ccc",
             background: statusFilter === "borrowed" ? "#2196F322" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -312,7 +323,6 @@ export default function Containers() {
           🔄
         </button>
 
-        {/* BROKEN */}
         <button
           onClick={() =>
             setStatusFilter(statusFilter === "broken" ? "all" : "broken")
@@ -320,7 +330,10 @@ export default function Containers() {
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "broken" ? "3px solid #F44336" : "1px solid #ccc",
+            border:
+              statusFilter === "broken"
+                ? "3px solid #F44336"
+                : "1px solid #ccc",
             background: statusFilter === "broken" ? "#F4433622" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -329,7 +342,6 @@ export default function Containers() {
           🗑️
         </button>
 
-        {/* LOST */}
         <button
           onClick={() =>
             setStatusFilter(statusFilter === "lost" ? "all" : "lost")
@@ -337,7 +349,10 @@ export default function Containers() {
           style={{
             padding: "6px 10px",
             fontSize: "22px",
-            border: statusFilter === "lost" ? "3px solid #9C27B0" : "1px solid #ccc",
+            border:
+              statusFilter === "lost"
+                ? "3px solid #9C27B0"
+                : "1px solid #ccc",
             background: statusFilter === "lost" ? "#9C27B022" : "#fff",
             borderRadius: "6px",
             cursor: "pointer",
@@ -345,6 +360,19 @@ export default function Containers() {
         >
           ❓
         </button>
+      </div>
+
+      {/* 🔥 LICZNIK KONTENERÓW */}
+      <div
+        style={{
+          marginTop: "-10px",
+          marginBottom: "20px",
+          fontSize: "18px",
+          fontWeight: "bold",
+          color: "#333",
+        }}
+      >
+        Wyniki: {filtered.length} / {containers.length}
       </div>
 
       {/* TABLE */}
@@ -362,15 +390,18 @@ export default function Containers() {
         <tbody>
           {filtered.map((c) => {
             const statusIcon =
-              c.status === "available" ? "✅" :
-              c.status === "borrowed" ? "🔄" :
-              c.status === "broken" ? "🗑️" :
-              c.status === "lost" ? "❓" :
-              "◻️?";
+              c.status === "available"
+                ? "✅"
+                : c.status === "borrowed"
+                ? "🔄"
+                : c.status === "broken"
+                ? "🗑️"
+                : c.status === "lost"
+                ? "❓"
+                : "◻️?";
 
             return (
               <tr key={c.id}>
-                {/* STATUS */}
                 <td style={{ fontSize: "22px", textAlign: "center" }}>
                   {statusIcon}
                 </td>

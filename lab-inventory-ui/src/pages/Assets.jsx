@@ -158,22 +158,18 @@ export default function Assets() {
     container: "",
   });
 
-  // ⭐ STATUS FILTER
-  const [statusFilter, setStatusFilter] = useState("all"); // ⭐ default
+  const [statusFilter, setStatusFilter] = useState("all");
 
-  // --- ŁADOWANIE ASSETÓW ---
   const loadAssets = () => {
     fetch("http://10.19.148.12:8000/assets/")
       .then((res) => res.json())
       .then((data) => setAssets(data));
   };
 
-  // --- PIERWSZE ŁADOWANIE ---
   useEffect(() => {
     loadAssets();
   }, []);
 
-  // --- REALTIME WEBSOCKET ---
   useEffect(() => {
     const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
 
@@ -339,7 +335,6 @@ export default function Assets() {
 
         {/* STATUS FILTER */}
         <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
-          {/* ⭐ ALL */}
           <button
             onClick={() => setStatusFilter("all")}
             style={{
@@ -354,7 +349,6 @@ export default function Assets() {
             ⭐
           </button>
 
-          {/* NO STATUS */}
           <button
             onClick={() =>
               setStatusFilter(statusFilter === "none" ? "all" : "none")
@@ -372,7 +366,6 @@ export default function Assets() {
             ◻️?
           </button>
 
-          {/* AVAILABLE */}
           <button
             onClick={() =>
               setStatusFilter(statusFilter === "available" ? "all" : "available")
@@ -389,7 +382,6 @@ export default function Assets() {
             ✅
           </button>
 
-          {/* BORROWED */}
           <button
             onClick={() =>
               setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
@@ -406,7 +398,6 @@ export default function Assets() {
             🔄
           </button>
 
-          {/* BROKEN */}
           <button
             onClick={() =>
               setStatusFilter(statusFilter === "broken" ? "all" : "broken")
@@ -423,7 +414,6 @@ export default function Assets() {
             🗑️
           </button>
 
-          {/* LOST */}
           <button
             onClick={() =>
               setStatusFilter(statusFilter === "lost" ? "all" : "lost")
@@ -439,6 +429,18 @@ export default function Assets() {
           >
             ❓
           </button>
+        </div>
+
+        {/* 🔥 LICZNIK ASSETÓW */}
+        <div
+          style={{
+            marginTop: "15px",
+            fontSize: "18px",
+            fontWeight: "bold",
+            color: "#333",
+          }}
+        >
+          Wyniki: {filtered.length} / {assets.length}
         </div>
       </div>
 
@@ -479,12 +481,10 @@ export default function Assets() {
 
             return (
               <tr key={a.id}>
-                {/* STATUS */}
                 <td style={{ fontSize: "22px", textAlign: "center" }}>
                   {statusIcon}
                 </td>
 
-                {/* TAG */}
                 <td
                   style={{
                     maxWidth: "150px",
@@ -495,10 +495,8 @@ export default function Assets() {
                   <Link to={`/assets/${a.id}`}>{a.tag}</Link>
                 </td>
 
-                {/* NAZWA */}
                 <td style={{ minWidth: "200px" }}>{a.name}</td>
 
-                {/* TYP */}
                 <td
                   style={{
                     maxWidth: "70px",
@@ -509,10 +507,8 @@ export default function Assets() {
                   {typeNormalized}
                 </td>
 
-                {/* MODEL */}
                 <td style={{ minWidth: "200px" }}>{a.model}</td>
 
-                {/* OEM */}
                 <td
                   style={{
                     maxWidth: "100px",
@@ -523,13 +519,10 @@ export default function Assets() {
                   {a.manufacturer || a.producer || a.oem || "-"}
                 </td>
 
-                {/* LOKALIZACJA */}
                 <td style={{ maxWidth: "110px" }}>{a.location?.code || "-"}</td>
 
-                {/* KONTENER */}
                 <td style={{ maxWidth: "80px" }}>{a.container?.code || "-"}</td>
 
-                {/* KOMENTARZ */}
                 <td style={{ minWidth: "200px" }}>
                   {a.comment?.trim() || "-"}
                 </td>

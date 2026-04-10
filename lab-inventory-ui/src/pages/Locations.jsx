@@ -74,7 +74,7 @@ export default function Locations() {
   });
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <h1>Lokalizacje</h1>
 
       {/* SEARCH */}
@@ -99,6 +99,7 @@ export default function Locations() {
               placeholder="Kod"
               value={form.code}
               onChange={(e) => setForm({ ...form, code: e.target.value })}
+              style={{ marginRight: "10px" }}
             />
             <input
               placeholder="Opis"
@@ -106,13 +107,28 @@ export default function Locations() {
               onChange={(e) =>
                 setForm({ ...form, description: e.target.value })
               }
+              style={{ marginRight: "10px" }}
             />
             <button type="submit">Dodaj</button>
           </form>
         </>
       )}
 
+      {/* 🔥 LICZNIK LOKALIZACJI */}
+      <div
+        style={{
+          marginTop: "20px",
+          marginBottom: "15px",
+          fontSize: "18px",
+          fontWeight: "bold",
+          color: "#333",
+        }}
+      >
+        Wyniki: {filtered.length} / {locations.length}
+      </div>
+
       <h2>Lista lokalizacji</h2>
+
       <table border="1" cellPadding="8">
         <thead>
           <tr>
