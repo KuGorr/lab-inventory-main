@@ -90,7 +90,6 @@ class AssetBase(BaseModel):
     memory_size: str | None = None
     memory_type: str | None = None
     notes: str | None = None
-    available: bool | None = None
 
     cores: int | None = None
     threads: int | None = None
