@@ -26,7 +26,8 @@ export default function AdminUsers() {
   const loadUsers = async () => {
     setError("");
 
-    const res = await fetch("http://10.19.148.12:8000/users/", {
+    // const res = await fetch("http://10.19.148.12:8000/users/", {
+    const res = await fetch("http://localhost:8000/users/", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -55,7 +56,8 @@ export default function AdminUsers() {
       return;
     }
 
-    const res = await fetch("http://10.19.148.12:8000/users/", {
+    // const res = await fetch("http://10.19.148.12:8000/users/", {
+    const res = await fetch("http://localhost:8000/users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +82,8 @@ export default function AdminUsers() {
   const deleteUser = async (id) => {
     if (!window.confirm("Czy na pewno chcesz usunąć użytkownika?")) return;
 
-    const res = await fetch(`http://10.19.148.12:8000/users/${id}`, {
+    // const res = await fetch(`http://10.19.148.12:8000/users/${id}`, {
+    const res = await fetch(`http://localhost:8000/users/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -101,7 +104,8 @@ export default function AdminUsers() {
     setError("");
 
     const res = await fetch(
-      `http://10.19.148.12:8000/users/${id}/role?new_role=${newRole}`,
+      // `http://10.19.148.12:8000/users/${id}/role?new_role=${newRole}`,
+      `http://localhost:8000/users/${id}/role?new_role=${newRole}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
@@ -127,7 +131,8 @@ export default function AdminUsers() {
     }
 
     const res = await fetch(
-      `http://10.19.148.12:8000/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
+      // `http://10.19.148.12:8000/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
+      `http://localhost:8000/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
@@ -155,14 +160,14 @@ export default function AdminUsers() {
   // ACCESS CONTROL
   // ---------------------------------------
   if (user.role !== "admin") {
-    return <div style={{ padding: "20px" }}>Brak dostępu.</div>;
+    return <div className="page">Brak dostępu.</div>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Panel administratora — użytkownicy</h1>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="msg-error">{error}</p>}
 
       {/* SEARCH */}
       <input
@@ -170,17 +175,16 @@ export default function AdminUsers() {
         placeholder="Szukaj użytkownika..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{ width: "300px", padding: "8px", marginBottom: "20px" }}
+        className="search-input search-input--sm"
       />
 
       {/* CREATE USER */}
       <h2>Dodaj użytkownika</h2>
-      <form onSubmit={createUser}>
+      <form onSubmit={createUser} className="inline-form">
         <input
           placeholder="Login"
           value={form.username}
           onChange={(e) => setForm({ ...form, username: e.target.value })}
-          style={{ marginRight: "10px" }}
         />
 
         <input
@@ -188,13 +192,11 @@ export default function AdminUsers() {
           type="password"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
-          style={{ marginRight: "10px" }}
         />
 
         <select
           value={form.role}
           onChange={(e) => setForm({ ...form, role: e.target.value })}
-          style={{ marginRight: "10px" }}
         >
           <option value="user">user</option>
           <option value="compat">compat</option>
@@ -206,9 +208,9 @@ export default function AdminUsers() {
       </form>
 
       {/* USER LIST */}
-      <h2 style={{ marginTop: "30px" }}>Lista użytkowników</h2>
+      <h2>Lista użytkowników</h2>
 
-      <table border="1" cellPadding="8">
+      <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -234,52 +236,51 @@ export default function AdminUsers() {
                 </select>
               </td>
               <td>
-                {/* CHANGE PASSWORD BUTTON */}
-                {passwordChange.userId === u.id ? (
-                  <>
-                    <input
-                      type="password"
-                      placeholder="Nowe hasło"
-                      value={passwordChange.newPassword}
-                      onChange={(e) =>
-                        setPasswordChange({
-                          ...passwordChange,
-                          newPassword: e.target.value,
-                        })
-                      }
-                      style={{ marginRight: "10px" }}
-                    />
-                    <button onClick={changePassword}>Zapisz</button>
+                <div className="btn-row">
+                  {/* CHANGE PASSWORD BUTTON */}
+                  {passwordChange.userId === u.id ? (
+                    <>
+                      <input
+                        type="password"
+                        placeholder="Nowe hasło"
+                        value={passwordChange.newPassword}
+                        onChange={(e) =>
+                          setPasswordChange({
+                            ...passwordChange,
+                            newPassword: e.target.value,
+                          })
+                        }
+                        style={{ width: "160px" }}
+                      />
+                      <button onClick={changePassword}>Zapisz</button>
+                      <button
+                        className="btn-secondary"
+                        onClick={() =>
+                          setPasswordChange({ userId: null, newPassword: "" })
+                        }
+                      >
+                        Anuluj
+                      </button>
+                    </>
+                  ) : (
                     <button
-                      style={{ marginLeft: "5px" }}
+                      className="btn-info"
                       onClick={() =>
-                        setPasswordChange({ userId: null, newPassword: "" })
+                        setPasswordChange({ userId: u.id, newPassword: "" })
                       }
                     >
-                      Anuluj
+                      Zmień hasło
                     </button>
-                  </>
-                ) : (
-                  <button
-                    onClick={() =>
-                      setPasswordChange({ userId: u.id, newPassword: "" })
-                    }
-                  >
-                    Zmień hasło
-                  </button>
-                )}
+                  )}
 
-                {/* DELETE USER */}
-                <button
-                  style={{
-                    marginLeft: "10px",
-                    background: "red",
-                    color: "white",
-                  }}
-                  onClick={() => deleteUser(u.id)}
-                >
-                  Usuń
-                </button>
+                  {/* DELETE USER */}
+                  <button
+                    className="btn-danger"
+                    onClick={() => deleteUser(u.id)}
+                  >
+                    Usuń
+                  </button>
+                </div>
               </td>
             </tr>
           ))}

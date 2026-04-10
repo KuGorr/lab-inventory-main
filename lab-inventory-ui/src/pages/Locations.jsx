@@ -14,7 +14,8 @@ export default function Locations() {
   const token = localStorage.getItem("token");
 
   const loadLocations = async () => {
-    const res = await fetch("http://10.19.148.12:8000/locations/");
+    // const res = await fetch("http://10.19.148.12:8000/locations/");
+    const res = await fetch("http://localhost:8000/locations/");
     const data = await res.json();
 
     setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
@@ -26,7 +27,8 @@ export default function Locations() {
 
   // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie listy lokalizacji
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
+    const ws = new WebSocket("ws://localhost:8000/ws/locations");
 
     ws.onmessage = (event) => {
       if (event.data === "locations_updated") {
@@ -40,7 +42,8 @@ export default function Locations() {
   const createLocation = async (e) => {
     e.preventDefault();
 
-    await fetch("http://10.19.148.12:8000/locations/", {
+    // await fetch("http://10.19.148.12:8000/locations/", {
+    await fetch("http://localhost:8000/locations/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +57,8 @@ export default function Locations() {
   };
 
   const deleteLocation = async (id) => {
-    await fetch(`http://10.19.148.12:8000/locations/${id}`, {
+    // await fetch(`http://10.19.148.12:8000/locations/${id}`, {
+    await fetch(`http://localhost:8000/locations/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -74,7 +78,7 @@ export default function Locations() {
   });
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Lokalizacje</h1>
 
       {/* SEARCH */}
@@ -83,23 +87,17 @@ export default function Locations() {
         placeholder="Szukaj po kodzie lub opisie..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{
-          width: "300px",
-          padding: "8px",
-          marginBottom: "15px",
-          fontSize: "16px",
-        }}
+        className="search-input search-input--sm"
       />
 
       {(user.role === "manager" || user.role === "admin") && (
         <>
           <h2>Dodaj lokalizację</h2>
-          <form onSubmit={createLocation}>
+          <form onSubmit={createLocation} className="inline-form">
             <input
               placeholder="Kod"
               value={form.code}
               onChange={(e) => setForm({ ...form, code: e.target.value })}
-              style={{ marginRight: "10px" }}
             />
             <input
               placeholder="Opis"
@@ -107,7 +105,6 @@ export default function Locations() {
               onChange={(e) =>
                 setForm({ ...form, description: e.target.value })
               }
-              style={{ marginRight: "10px" }}
             />
             <button type="submit">Dodaj</button>
           </form>
@@ -115,21 +112,13 @@ export default function Locations() {
       )}
 
       {/* 🔥 LICZNIK LOKALIZACJI */}
-      <div
-        style={{
-          marginTop: "20px",
-          marginBottom: "15px",
-          fontSize: "18px",
-          fontWeight: "bold",
-          color: "#333",
-        }}
-      >
+      <div className="result-counter">
         Wyniki: {filtered.length} / {locations.length}
       </div>
 
       <h2>Lista lokalizacji</h2>
 
-      <table border="1" cellPadding="8">
+      <table>
         <thead>
           <tr>
             <th>Kod</th>
@@ -147,7 +136,7 @@ export default function Locations() {
               <td>{loc.description}</td>
               <td>
                 {user.role === "admin" && (
-                  <button onClick={() => deleteLocation(loc.id)}>Usuń</button>
+                  <button className="btn-danger" onClick={() => deleteLocation(loc.id)}>Usuń</button>
                 )}
               </td>
             </tr>
@@ -156,7 +145,7 @@ export default function Locations() {
       </table>
 
       {filtered.length === 0 && (
-        <p style={{ marginTop: "10px" }}>Brak wyników.</p>
+        <p>Brak wyników.</p>
       )}
     </div>
   );

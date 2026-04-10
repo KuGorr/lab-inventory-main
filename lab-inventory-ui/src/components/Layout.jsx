@@ -1,9 +1,27 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Layout({ children }) {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
+
+  // Theme: persisted in localStorage, applied as class on <html>
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark"
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") {
+      root.classList.add("light-theme");
+    } else {
+      root.classList.remove("light-theme");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   const logout = () => {
     localStorage.removeItem("token");
@@ -11,84 +29,37 @@ export default function Layout({ children }) {
     navigate("/login");
   };
 
-  // GLOBAL FIX — usuwa marginesy i ustawia tło na CAŁEJ stronie
-  useEffect(() => {
-    document.body.style.margin = "0";
-    document.documentElement.style.margin = "0";
-    document.body.style.background = "var(--background-color, #111)";
-    document.documentElement.style.background = "var(--background-color, #111)";
-    document.body.style.overflowX = "hidden";
-  }, []);
-
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        width: "100vw",
-        background: "var(--background-color, #111)",
-        color: "var(--text-color, #fff)",
-      }}
-    >
+    <div className="app-shell">
       {/* FIXED SIDEBAR */}
-      <aside
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 220,
-          height: "100vh",
-          padding: 20,
-          display: "flex",
-          flexDirection: "column",
-          gap: 10,
-          background: "var(--sidebar-bg, #1a1a1a)",
-          color: "var(--sidebar-text, #fff)",
-          borderRight: "1px solid rgba(255,255,255,0.1)",
-          boxSizing: "border-box",
-          overflowY: "auto",
-        }}
-      >
-        <h3 style={{ marginTop: 0 }}>Lab Inventory</h3>
+      <aside className="sidebar">
+        <h3>Lab Inventory</h3>
 
-        <Link to="/" style={{ color: "inherit" }}>Assety</Link>
-        <Link to="/containers" style={{ color: "inherit" }}>Kontenery</Link>
-        <Link to="/locations" style={{ color: "inherit" }}>Lokalizacje</Link>
-        <Link to="/history" style={{ color: "inherit" }}>Historia</Link>
+        <Link to="/">Assety</Link>
+        <Link to="/containers">Kontenery</Link>
+        <Link to="/locations">Lokalizacje</Link>
+        <Link to="/history">Historia</Link>
 
         {user.role === "admin" && (
-          <Link to="/admin/users" style={{ color: "inherit" }}>
+          <Link to="/admin/users">
             Panel administratora
           </Link>
         )}
 
-        <button
-          onClick={logout}
-          style={{
-            marginTop: "auto",
-            background: "#c62828",
-            color: "white",
-            padding: "8px 12px",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Wyloguj
-        </button>
+        {/* Bottom controls: theme toggle + logout */}
+        <div className="sidebar-bottom">
+          <button onClick={toggleTheme} className="btn-theme-toggle">
+            {theme === "dark" ? "☀️ Jasny motyw" : "🌙 Ciemny motyw"}
+          </button>
+
+          <button onClick={logout} className="sidebar-logout">
+            Wyloguj
+          </button>
+        </div>
       </aside>
 
       {/* MAIN CONTENT */}
-      <main
-        style={{
-          flexGrow: 1,
-          padding: 20,
-          paddingLeft: 240, // <-- to usuwa pasek, NIE margin-left
-          overflowX: "hidden",
-          background: "var(--background-color, #111)",
-          color: "var(--text-color, #fff)",
-          minHeight: "100vh",
-        }}
-      >
+      <main className="main-content">
         {children}
       </main>
     </div>

@@ -43,16 +43,8 @@ const AutoInput = memo(function AutoInput({
   };
 
   return (
-    <div
-      className="auto-input-wrapper"
-      style={{
-        display: "inline-block",
-        marginRight: "10px",
-        marginBottom: "10px",
-        position: "relative",
-      }}
-    >
-      <div style={{ position: "relative" }}>
+    <div className="auto-input-wrapper">
+      <div className="auto-input-inner">
         <input
           ref={inputRef}
           placeholder={label}
@@ -62,27 +54,15 @@ const AutoInput = memo(function AutoInput({
           }
           onClick={() => setOpenDropdown(field)}
           onKeyDown={handleKeyDown}
-          style={{
-            width: "160px",
-            height: "32px",
-            paddingRight: "24px",
-          }}
         />
 
         {value && (
           <span
+            className="auto-input-clear"
             onClick={() => {
               setFilters({ ...filters, [field]: "" });
               setOpenDropdown(null);
               inputRef.current?.focus();
-            }}
-            style={{
-              position: "absolute",
-              right: "6px",
-              top: "6px",
-              cursor: "pointer",
-              fontWeight: "bold",
-              color: "#666",
             }}
           >
             ×
@@ -91,40 +71,15 @@ const AutoInput = memo(function AutoInput({
       </div>
 
       {openDropdown === field && options.length > 0 && (
-        <div
-          style={{
-            position: "absolute",
-            top: "38px",
-            left: 0,
-            width: "160px",
-            maxHeight: "220px",
-            overflowY: "auto",
-            background: "white",
-            border: "1px solid #ccc",
-            borderRadius: "6px",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-            zIndex: 10,
-          }}
-        >
+        <div className="auto-dropdown">
           {options.map((opt) => (
             <div
               key={opt}
+              className="auto-dropdown-item"
               onClick={() => {
                 setFilters({ ...filters, [field]: opt });
                 setOpenDropdown(null);
               }}
-              style={{
-                padding: "8px",
-                cursor: "pointer",
-                borderBottom: "1px solid #eee",
-                transition: "background 0.15s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.background = "#f5f5f5")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.background = "white")
-              }
             >
               {opt}
             </div>
@@ -161,7 +116,8 @@ export default function Assets() {
   const [statusFilter, setStatusFilter] = useState("all");
 
   const loadAssets = () => {
-    fetch("http://10.19.148.12:8000/assets/")
+    // fetch("http://10.19.148.12:8000/assets/")
+    fetch("http://localhost:8000/assets/")
       .then((res) => res.json())
       .then((data) => setAssets(data));
   };
@@ -171,7 +127,8 @@ export default function Assets() {
   }, []);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+    const ws = new WebSocket("ws://localhost:8000/ws/assets");
 
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
@@ -265,7 +222,7 @@ export default function Assets() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Assety</h1>
 
       <input
@@ -273,19 +230,14 @@ export default function Assets() {
         placeholder="Szukaj globalnie..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{
-          width: "400px",
-          padding: "8px",
-          marginBottom: "20px",
-          fontSize: "16px",
-        }}
+        className="search-input"
       />
 
       {/* FILTRY */}
-      <div style={{ marginBottom: "20px" }}>
+      <div className="filters">
         <h3>Filtry</h3>
 
-        <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+        <div className="filters-row">
           <AutoInput field="tag" label="TAG" {...autoProps} />
           <AutoInput field="item_name" label="NAZWA" {...autoProps} />
           <AutoInput field="oem" label="OEM" {...autoProps} />
@@ -293,7 +245,7 @@ export default function Assets() {
           <AutoInput field="platform" label="PLATFORMA" {...autoProps} />
         </div>
 
-        <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+        <div className="filters-row">
           <AutoInput field="type" label="TYP" {...autoProps} />
           <AutoInput field="socket" label="SOCKET" {...autoProps} />
           <AutoInput field="generation" label="GEN" {...autoProps} />
@@ -301,12 +253,13 @@ export default function Assets() {
           <AutoInput field="memory_type" label="RAM TYPE" {...autoProps} />
         </div>
 
-        <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
+        <div className="filters-row">
           <AutoInput field="location" label="LOKALIZACJA" {...autoProps} />
           <AutoInput field="container" label="KONTENER" {...autoProps} />
         </div>
 
         <button
+          className="btn-clear-filters"
           onClick={() => {
             setFilters({
               tag: "",
@@ -324,27 +277,15 @@ export default function Assets() {
             });
             setOpenDropdown(null);
           }}
-          style={{
-            padding: "8px 16px",
-            cursor: "pointer",
-            marginTop: "10px",
-          }}
         >
           Wyczyść filtry
         </button>
 
         {/* STATUS FILTER */}
-        <div style={{ marginTop: "15px", display: "flex", gap: "10px" }}>
+        <div className="status-filter">
           <button
             onClick={() => setStatusFilter("all")}
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
-              background: statusFilter === "all" ? "#fff8d1" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "all" ? "active active-all" : ""}`}
           >
             ⭐
           </button>
@@ -353,14 +294,7 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "none" ? "all" : "none")
             }
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
-              background: statusFilter === "none" ? "#eaeaea" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "none" ? "active active-none" : ""}`}
             title="Brak statusu"
           >
             ◻️?
@@ -370,14 +304,7 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "available" ? "all" : "available")
             }
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "available" ? "3px solid #4CAF50" : "1px solid #ccc",
-              background: statusFilter === "available" ? "#4CAF5022" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "available" ? "active active-available" : ""}`}
           >
             ✅
           </button>
@@ -386,14 +313,7 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
             }
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "borrowed" ? "3px solid #2196F3" : "1px solid #ccc",
-              background: statusFilter === "borrowed" ? "#2196F322" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "borrowed" ? "active active-borrowed" : ""}`}
           >
             🔄
           </button>
@@ -402,14 +322,7 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "broken" ? "all" : "broken")
             }
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "broken" ? "3px solid #F44336" : "1px solid #ccc",
-              background: statusFilter === "broken" ? "#F4433622" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "broken" ? "active active-broken" : ""}`}
           >
             🗑️
           </button>
@@ -418,53 +331,31 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "lost" ? "all" : "lost")
             }
-            style={{
-              padding: "6px 10px",
-              fontSize: "22px",
-              border: statusFilter === "lost" ? "3px solid #9C27B0" : "1px solid #ccc",
-              background: statusFilter === "lost" ? "#9C27B022" : "#fff",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
+            className={`status-btn ${statusFilter === "lost" ? "active active-lost" : ""}`}
           >
             ❓
           </button>
         </div>
 
         {/* 🔥 LICZNIK ASSETÓW */}
-        <div
-          style={{
-            marginTop: "15px",
-            fontSize: "18px",
-            fontWeight: "bold",
-            color: "#333",
-          }}
-        >
+        <div className="result-counter">
           Wyniki: {filtered.length} / {assets.length}
         </div>
       </div>
 
       {/* TABELA */}
-      <table
-        border="1"
-        cellPadding="6"
-        style={{
-          width: "auto",
-          tableLayout: "fixed",
-          borderCollapse: "collapse",
-        }}
-      >
+      <table>
         <thead>
           <tr>
-            <th style={{ width: "40px" }}>S</th>
-            <th style={{ maxWidth: "150px" }}>Tag</th>
-            <th style={{ minWidth: "200px" }}>Nazwa</th>
-            <th style={{ maxWidth: "70px" }}>Typ</th>
-            <th style={{ minWidth: "200px" }}>Model</th>
-            <th style={{ maxWidth: "100px" }}>OEM</th>
-            <th style={{ maxWidth: "110px" }}>Lokalizacja</th>
-            <th style={{ maxWidth: "80px" }}>Kontener</th>
-            <th style={{ minWidth: "200px" }}>Komentarz</th>
+            <th className="col-status">S</th>
+            <th className="col-tag">Tag</th>
+            <th className="col-name">Nazwa</th>
+            <th className="col-type">Typ</th>
+            <th className="col-model">Model</th>
+            <th className="col-oem">OEM</th>
+            <th className="col-location">Lokalizacja</th>
+            <th className="col-container">Kontener</th>
+            <th className="col-comment">Komentarz</th>
           </tr>
         </thead>
 
@@ -481,49 +372,31 @@ export default function Assets() {
 
             return (
               <tr key={a.id}>
-                <td style={{ fontSize: "22px", textAlign: "center" }}>
+                <td className="status-icon-cell">
                   {statusIcon}
                 </td>
 
-                <td
-                  style={{
-                    maxWidth: "150px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
+                <td className="col-tag td-ellipsis">
                   <Link to={`/assets/${a.id}`}>{a.tag}</Link>
                 </td>
 
-                <td style={{ minWidth: "200px" }}>{a.name}</td>
+                <td className="col-name">{a.name}</td>
 
-                <td
-                  style={{
-                    maxWidth: "70px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
+                <td className="col-type td-ellipsis">
                   {typeNormalized}
                 </td>
 
-                <td style={{ minWidth: "200px" }}>{a.model}</td>
+                <td className="col-model">{a.model}</td>
 
-                <td
-                  style={{
-                    maxWidth: "100px",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
+                <td className="col-oem td-ellipsis">
                   {a.manufacturer || a.producer || a.oem || "-"}
                 </td>
 
-                <td style={{ maxWidth: "110px" }}>{a.location?.code || "-"}</td>
+                <td className="col-location">{a.location?.code || "-"}</td>
 
-                <td style={{ maxWidth: "80px" }}>{a.container?.code || "-"}</td>
+                <td className="col-container">{a.container?.code || "-"}</td>
 
-                <td style={{ minWidth: "200px" }}>
+                <td className="col-comment">
                   {a.comment?.trim() || "-"}
                 </td>
               </tr>

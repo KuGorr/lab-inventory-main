@@ -9,7 +9,8 @@ export default function History() {
   const [users, setUsers] = useState([]);
 
   const loadHistory = (pageNum = 1, moved = movedBy) => {
-    let url = `http://10.19.148.12:8000/assets/history?page=${pageNum}`;
+    // let url = `http://10.19.148.12:8000/assets/history?page=${pageNum}`;
+    let url = `http://localhost:8000/assets/history?page=${pageNum}`;
     if (moved) url += `&moved_by=${moved}`;
 
     fetch(url)
@@ -24,14 +25,16 @@ export default function History() {
   useEffect(() => {
     loadHistory(1);
 
-    fetch("http://10.19.148.12:8000/assets/history/users")
+    // fetch("http://10.19.148.12:8000/assets/history/users")
+    fetch("http://localhost:8000/assets/history/users")
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);
 
   // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie historii
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/history");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/history");
+    const ws = new WebSocket("ws://localhost:8000/ws/history");
 
     ws.onmessage = (event) => {
       if (event.data === "history_updated") {
@@ -52,13 +55,12 @@ export default function History() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Globalna historia ruchów</h1>
-      <Link to="/">← Powrót</Link>
+      <Link to="/" className="back-link">← Assety</Link>
 
       {/* FILTR */}
-      <div style={{ margin: "20px 0", display: "flex", alignItems: "center", gap: "10px" }}>
-        
+      <div className="history-filter">
         <select
           value={movedBy}
           onChange={e => {
@@ -69,7 +71,6 @@ export default function History() {
           onKeyDown={e => {
             if (e.key === "Enter") handleFilter();
           }}
-          style={{ padding: "6px", minWidth: "200px" }}
         >
           <option value="">Wszyscy użytkownicy</option>
           {users.map(u => (
@@ -78,25 +79,16 @@ export default function History() {
         </select>
 
         {movedBy && (
-          <button
-            onClick={clearFilter}
-            style={{
-              padding: "6px 10px",
-              background: "#ccc",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold"
-            }}
-          >
+          <button onClick={clearFilter} className="btn-clear-x">
             ✕
           </button>
         )}
       </div>
 
       {/* TABELA */}
-      <table border="1" cellPadding="6" style={{ width: "100%", borderCollapse: "collapse" }}>
+      <table className="table-wide">
         <thead>
-          <tr style={{ background: "#eee" }}>
+          <tr>
             <th>TAG</th>
             <th>Nazwa</th>
             <th>Skąd</th>
@@ -131,19 +123,12 @@ export default function History() {
       </table>
 
       {/* PAGINACJA */}
-      <div style={{ marginTop: "20px" }}>
+      <div className="pagination">
         {Array.from({ length: pages }, (_, i) => i + 1).map(num => (
           <button
             key={num}
             onClick={() => loadHistory(num)}
-            style={{
-              marginRight: "5px",
-              padding: "5px 10px",
-              background: num === page ? "#333" : "#ddd",
-              color: num === page ? "white" : "black",
-              border: "none",
-              cursor: "pointer"
-            }}
+            className={num === page ? "active" : ""}
           >
             {num}
           </button>

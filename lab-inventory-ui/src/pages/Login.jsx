@@ -18,7 +18,8 @@ export default function Login() {
     form.append("password", password);
 
     const res = await api.post(
-      "http://10.19.148.12:8000/auth/login",
+      // "http://10.19.148.12:8000/auth/login",
+      "http://localhost:8000/auth/login",
       form,
       {
         headers: {
@@ -46,26 +47,40 @@ export default function Login() {
 };
 
   return (
-    <div style={{ maxWidth: 300, margin: "80px auto" }}>
-      <h2>Logowanie</h2>
-      <form onSubmit={submit}>
-        <input
-          placeholder="Login"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+    <div className="login-page">
+      <div className="login-card">
+        <div className="login-brand">Lab Inventory</div>
+        <h2>Logowanie</h2>
 
-        <input
-          placeholder="Hasło"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <form onSubmit={submit}>
+          <div className="field">
+            <label htmlFor="username">Login</label>
+            <input
+              id="username"
+              placeholder="Wpisz login"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              autoComplete="username"
+            />
+          </div>
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
+          <div className="field">
+            <label htmlFor="password">Hasło</label>
+            <input
+              id="password"
+              placeholder="Wpisz hasło"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+            />
+          </div>
 
-        <button>Zaloguj</button>
-      </form>
+          {error && <p className="msg-error">{error}</p>}
+
+          <button type="submit">Zaloguj się</button>
+        </form>
+      </div>
     </div>
   );
 }

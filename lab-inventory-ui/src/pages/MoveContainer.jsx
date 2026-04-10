@@ -13,7 +13,8 @@ export default function MoveContainer() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://10.19.148.12:8000/locations/")
+    // fetch("http://10.19.148.12:8000/locations/")
+    fetch("http://localhost:8000/locations/")
       .then(res => res.json())
       .then(data => setLocations(data));
   }, []);
@@ -22,7 +23,8 @@ export default function MoveContainer() {
     e.preventDefault();
     setError("");
 
-    const res = await fetch(`http://10.19.148.12:8000/containers/${id}/move`, {
+    // const res = await fetch(`http://10.19.148.12:8000/containers/${id}/move`, {
+    const res = await fetch(`http://localhost:8000/containers/${id}/move`, {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",
@@ -41,19 +43,19 @@ export default function MoveContainer() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Przenieś kontener</h1>
-      <Link to={`/containers/${id}`}>← Powrót</Link>
+      <Link to={`/containers/${id}`} className="back-link">← Powrót</Link>
 
       {error && (
-        <p style={{ color: "red", marginTop: "10px" }}>
+        <p className="msg-error">
           {error}
         </p>
       )}
 
       <form onSubmit={submitMove}>
-        <div>
-          <label>Nowa lokalizacja:</label><br />
+        <div className="form-row">
+          <label>Nowa lokalizacja:</label>
 
           <input
             list="locations"
@@ -61,7 +63,6 @@ export default function MoveContainer() {
             onChange={e => setTarget(e.target.value)}
             placeholder="Wpisz np. 9.3"
             required
-            style={{ width: "300px" }}
           />
 
           <datalist id="locations">
@@ -73,16 +74,15 @@ export default function MoveContainer() {
           </datalist>
         </div>
 
-        <div style={{ marginTop: "15px" }}>
-          <label>Notatka:</label><br />
+        <div className="form-row">
+          <label>Notatka:</label>
           <textarea
             value={note}
             onChange={e => setNote(e.target.value)}
-            style={{ width: "300px", height: "80px" }}
           />
         </div>
 
-        <button type="submit" style={{ marginTop: "15px" }}>
+        <button type="submit" className="form-row">
           Przenieś
         </button>
       </form>

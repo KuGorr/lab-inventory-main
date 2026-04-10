@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>lab-inventory-ui</title>
+    <title>Lab Inventory</title>
+    <!-- Apply saved theme before React renders to prevent flash -->
+    <script>
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.classList.add("light-theme");
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

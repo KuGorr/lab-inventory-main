@@ -27,13 +27,15 @@ export default function Containers() {
   // LOAD DATA
   // -----------------------------
   const loadContainers = () => {
-    fetch("http://10.19.148.12:8000/containers/")
+    // fetch("http://10.19.148.12:8000/containers/")
+    fetch("http://localhost:8000/containers/")
       .then((res) => res.json())
       .then((data) => setContainers(data));
   };
 
   const loadLocations = () => {
-    fetch("http://10.19.148.12:8000/locations/")
+    // fetch("http://10.19.148.12:8000/locations/")
+    fetch("http://localhost:8000/locations/")
       .then((res) => res.json())
       .then((data) => setLocations(data));
   };
@@ -47,7 +49,8 @@ export default function Containers() {
   // REALTIME WEBSOCKET
   // -----------------------------
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+    const ws = new WebSocket("ws://localhost:8000/ws/containers");
 
     ws.onmessage = (event) => {
       if (event.data === "containers_updated") {
@@ -78,7 +81,8 @@ export default function Containers() {
   const createContainer = async (e) => {
     e.preventDefault();
 
-    await fetch("http://10.19.148.12:8000/containers/", {
+    // await fetch("http://10.19.148.12:8000/containers/", {
+    await fetch("http://localhost:8000/containers/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +100,8 @@ export default function Containers() {
   // DELETE CONTAINER
   // -----------------------------
   const deleteContainer = async (id) => {
-    await fetch(`http://10.19.148.12:8000/containers/${id}`, {
+    // await fetch(`http://10.19.148.12:8000/containers/${id}`, {
+    await fetch(`http://localhost:8000/containers/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -129,7 +134,7 @@ export default function Containers() {
   });
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Kontenery</h1>
 
       {/* SEARCH */}
@@ -138,25 +143,19 @@ export default function Containers() {
         placeholder="Szukaj po kodzie, opisie, lokalizacji, komentarzu..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        style={{
-          width: "400px",
-          padding: "8px",
-          marginBottom: "15px",
-          fontSize: "16px",
-        }}
+        className="search-input"
       />
 
       {/* CREATE FORM */}
       {(user.role === "manager" || user.role === "admin") && (
-        <div style={{ marginBottom: "20px" }}>
+        <div className="section">
           <h2>Dodaj kontener</h2>
 
-          <form onSubmit={createContainer}>
+          <form onSubmit={createContainer} className="inline-form">
             <input
               placeholder="Kod"
               value={form.code}
               onChange={(e) => setForm({ ...form, code: e.target.value })}
-              style={{ marginRight: "10px" }}
             />
 
             <input
@@ -165,18 +164,10 @@ export default function Containers() {
               onChange={(e) =>
                 setForm({ ...form, description: e.target.value })
               }
-              style={{ marginRight: "10px" }}
             />
 
             {/* AUTOCOMPLETE LOCATION */}
-            <div
-              ref={dropdownRef}
-              style={{
-                position: "relative",
-                display: "inline-block",
-                marginRight: "10px",
-              }}
-            >
+            <div ref={dropdownRef} className="loc-autocomplete">
               <input
                 placeholder="Wybierz lub wpisz lokalizację..."
                 value={locationSearch}
@@ -185,23 +176,10 @@ export default function Containers() {
                   setShowDropdown(true);
                 }}
                 onFocus={() => setShowDropdown(true)}
-                style={{ width: "200px" }}
               />
 
               {showDropdown && (
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "35px",
-                    left: 0,
-                    width: "100%",
-                    background: "white",
-                    border: "1px solid #ccc",
-                    maxHeight: "150px",
-                    overflowY: "auto",
-                    zIndex: 10,
-                  }}
-                >
+                <div className="loc-dropdown">
                   {locations
                     .filter((loc) =>
                       loc.code
@@ -211,11 +189,7 @@ export default function Containers() {
                     .map((loc) => (
                       <div
                         key={loc.id}
-                        style={{
-                          padding: "6px",
-                          cursor: "pointer",
-                          borderBottom: "1px solid #eee",
-                        }}
+                        className="loc-dropdown-item"
                         onClick={() => {
                           setForm({ ...form, location_id: loc.id });
                           setLocationSearch(loc.code);
@@ -231,7 +205,7 @@ export default function Containers() {
                       .toLowerCase()
                       .includes(locationSearch.toLowerCase())
                   ).length === 0 && (
-                    <div style={{ padding: "6px", color: "#888" }}>
+                    <div className="loc-dropdown-empty">
                       Brak wyników
                     </div>
                   )}
@@ -245,25 +219,10 @@ export default function Containers() {
       )}
 
       {/* STATUS FILTER */}
-      <div
-        style={{
-          marginTop: "10px",
-          marginBottom: "20px",
-          display: "flex",
-          gap: "10px",
-        }}
-      >
+      <div className="status-filter">
         <button
           onClick={() => setStatusFilter("all")}
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "all" ? "3px solid gold" : "1px solid #ccc",
-            background: statusFilter === "all" ? "#fff8d1" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "all" ? "active active-all" : ""}`}
         >
           ⭐
         </button>
@@ -272,15 +231,7 @@ export default function Containers() {
           onClick={() =>
             setStatusFilter(statusFilter === "none" ? "all" : "none")
           }
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "none" ? "3px solid #999" : "1px solid #ccc",
-            background: statusFilter === "none" ? "#eaeaea" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "none" ? "active active-none" : ""}`}
         >
           ◻️?
         </button>
@@ -289,17 +240,7 @@ export default function Containers() {
           onClick={() =>
             setStatusFilter(statusFilter === "available" ? "all" : "available")
           }
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "available"
-                ? "3px solid #4CAF50"
-                : "1px solid #ccc",
-            background: statusFilter === "available" ? "#4CAF5022" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "available" ? "active active-available" : ""}`}
         >
           ✅
         </button>
@@ -308,17 +249,7 @@ export default function Containers() {
           onClick={() =>
             setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
           }
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "borrowed"
-                ? "3px solid #2196F3"
-                : "1px solid #ccc",
-            background: statusFilter === "borrowed" ? "#2196F322" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "borrowed" ? "active active-borrowed" : ""}`}
         >
           🔄
         </button>
@@ -327,17 +258,7 @@ export default function Containers() {
           onClick={() =>
             setStatusFilter(statusFilter === "broken" ? "all" : "broken")
           }
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "broken"
-                ? "3px solid #F44336"
-                : "1px solid #ccc",
-            background: statusFilter === "broken" ? "#F4433622" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "broken" ? "active active-broken" : ""}`}
         >
           🗑️
         </button>
@@ -346,40 +267,22 @@ export default function Containers() {
           onClick={() =>
             setStatusFilter(statusFilter === "lost" ? "all" : "lost")
           }
-          style={{
-            padding: "6px 10px",
-            fontSize: "22px",
-            border:
-              statusFilter === "lost"
-                ? "3px solid #9C27B0"
-                : "1px solid #ccc",
-            background: statusFilter === "lost" ? "#9C27B022" : "#fff",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
+          className={`status-btn ${statusFilter === "lost" ? "active active-lost" : ""}`}
         >
           ❓
         </button>
       </div>
 
       {/* 🔥 LICZNIK KONTENERÓW */}
-      <div
-        style={{
-          marginTop: "-10px",
-          marginBottom: "20px",
-          fontSize: "18px",
-          fontWeight: "bold",
-          color: "#333",
-        }}
-      >
+      <div className="result-counter result-counter--tight">
         Wyniki: {filtered.length} / {containers.length}
       </div>
 
       {/* TABLE */}
-      <table border="1" cellPadding="4">
+      <table>
         <thead>
           <tr>
-            <th style={{ width: "40px" }}>S</th>
+            <th className="col-status">S</th>
             <th>Kod</th>
             <th>Opis</th>
             <th>Lokalizacja</th>
@@ -402,7 +305,7 @@ export default function Containers() {
 
             return (
               <tr key={c.id}>
-                <td style={{ fontSize: "22px", textAlign: "center" }}>
+                <td className="status-icon-cell">
                   {statusIcon}
                 </td>
 
@@ -414,7 +317,7 @@ export default function Containers() {
                 <td>{c.comment?.trim() || "-"}</td>
                 <td>
                   {user.role === "admin" && (
-                    <button onClick={() => deleteContainer(c.id)}>Usuń</button>
+                    <button className="btn-danger" onClick={() => deleteContainer(c.id)}>Usuń</button>
                   )}
                 </td>
               </tr>
@@ -423,9 +326,7 @@ export default function Containers() {
         </tbody>
       </table>
 
-      {filtered.length === 0 && (
-        <p style={{ marginTop: "10px" }}>Brak wyników.</p>
-      )}
+      {filtered.length === 0 && <p>Brak wyników.</p>}
     </div>
   );
 }

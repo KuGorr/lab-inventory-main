@@ -11,7 +11,8 @@ export default function AdminUserEdit() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://10.19.148.12:8000/users/", {
+    // fetch("http://10.19.148.12:8000/users/", {
+    fetch("http://localhost:8000/users/", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -27,7 +28,8 @@ export default function AdminUserEdit() {
     setError("");
 
     const res = await fetch(
-      `http://10.19.148.12:8000/users/${id}/role?new_role=${role}`,
+      // `http://10.19.148.12:8000/users/${id}/role?new_role=${role}`,
+      `http://localhost:8000/users/${id}/role?new_role=${role}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
@@ -46,15 +48,15 @@ export default function AdminUserEdit() {
   if (!user) return <div>Ładowanie...</div>;
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Edytuj użytkownika: {user.username}</h1>
-      <Link to="/admin/users">← Powrót</Link>
+      <Link to="/admin/users" className="back-link">← Użytkownicy</Link>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="msg-error">{error}</p>}
 
       <form onSubmit={submit}>
-        <div>
-          <label>Rola:</label><br />
+        <div className="form-row">
+          <label>Rola:</label>
           <select value={role} onChange={(e) => setRole(e.target.value)}>
             <option value="user">user</option>
             <option value="compat">compat</option>
@@ -63,7 +65,7 @@ export default function AdminUserEdit() {
           </select>
         </div>
 
-        <button type="submit" style={{ marginTop: "15px" }}>
+        <button type="submit" className="form-row">
           Zapisz
         </button>
       </form>

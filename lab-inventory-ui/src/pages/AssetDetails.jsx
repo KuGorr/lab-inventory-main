@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 /* ------------------------------
@@ -20,25 +20,20 @@ const StatusSelector = ({ value, onChange, disabled }) => {
   ];
 
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <div className="status-selector">
       {options.map((o) => {
         const active = normalized === o.key;
+        const classes = [
+          active ? "active" : "",
+          active ? `active-${o.key}` : "",
+          disabled ? "disabled" : "",
+        ].filter(Boolean).join(" ");
 
         return (
           <button
             key={o.key}
             onClick={() => !disabled && onChange(o.key)}
-            style={{
-              padding: "8px 14px",
-              border: active ? `3px solid ${o.color}` : "1px solid #ccc",
-              background: active ? `${o.color}22` : "#fff",
-              cursor: disabled ? "default" : "pointer",
-              fontSize: "26px",
-              borderRadius: "8px",
-              opacity: disabled ? 0.5 : 1,
-              transition: "0.15s ease",
-              transform: active ? "scale(1.1)" : "scale(1.0)",
-            }}
+            className={classes}
             title={o.label}
           >
             {o.icon}
@@ -62,35 +57,38 @@ export default function AssetDetails() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
-  const loadAsset = () => {
-    fetch(`http://10.19.148.12:8000/assets/${id}`)
+  const loadAsset = useCallback(() => {
+    // fetch(`http://10.19.148.12:8000/assets/${id}`)
+    fetch(`http://localhost:8000/assets/${id}`)
       .then((res) => {
         if (res.status === 404) {
-          navigate("/assets");
+          navigate("/");
           return null;
         }
         return res.json();
       })
       .then((data) => data && setAsset(data));
-  };
+  }, [id, navigate]);
 
-  const loadHistory = (pageNum = 1) => {
-    fetch(`http://10.19.148.12:8000/assets/${id}/history?page=${pageNum}`)
+  const loadHistory = useCallback((pageNum = 1) => {
+    // fetch(`http://10.19.148.12:8000/assets/${id}/history?page=${pageNum}`)
+    fetch(`http://localhost:8000/assets/${id}/history?page=${pageNum}`)
       .then((res) => res.json())
       .then((data) => {
         setHistory(data.items);
         setPages(data.pages);
         setPage(data.page);
       });
-  };
+  }, [id]);
 
   useEffect(() => {
     loadAsset();
     loadHistory(1);
-  }, [id]);
+  }, [id, loadAsset, loadHistory]);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
+    const ws = new WebSocket("ws://localhost:8000/ws/assets");
 
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
@@ -100,23 +98,25 @@ export default function AssetDetails() {
     };
 
     return () => ws.close();
-  }, [id, page]);
+  }, [id, page, loadAsset, loadHistory]);
 
   if (!asset) return <div>Ładowanie...</div>;
 
   const deleteAsset = async () => {
     if (!window.confirm("Czy na pewno chcesz usunąć ten asset?")) return;
 
-    await fetch(`http://10.19.148.12:8000/assets/${id}`, {
+    // await fetch(`http://10.19.148.12:8000/assets/${id}`, {
+    await fetch(`http://localhost:8000/assets/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
 
-    navigate("/assets");
+    navigate("/");
   };
 
   const saveComment = async () => {
-    await fetch(`http://10.19.148.12:8000/assets/${id}/comment`, {
+    // await fetch(`http://10.19.148.12:8000/assets/${id}/comment`, {
+    await fetch(`http://localhost:8000/assets/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -132,7 +132,8 @@ export default function AssetDetails() {
   const updateStatus = async (newStatus) => {
     const backendValue = newStatus === "none" ? null : newStatus;
 
-    await fetch(`http://10.19.148.12:8000/assets/${id}/status`, {
+    // await fetch(`http://10.19.148.12:8000/assets/${id}/status`, {
+    await fetch(`http://localhost:8000/assets/${id}/status`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -150,15 +151,9 @@ export default function AssetDetails() {
     user.role === "admin";
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       {/* NAGŁÓWEK + STATUS */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="details-header">
         <h1>Szczegóły assetu: {asset.tag}</h1>
 
         <StatusSelector
@@ -168,21 +163,14 @@ export default function AssetDetails() {
         />
       </div>
 
-      <Link to="/assets">← Powrót</Link>
+      <Link to="/" className="back-link">← Assety</Link>
 
       {/* DWIE KOLUMNY */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "30px",
-          marginTop: "20px",
-        }}
-      >
+      <div className="details-grid">
         {/* LEWA KOLUMNA */}
         <div>
           <h2>Specyfikacja</h2>
-          <table>
+          <table className="info-table">
             <tbody>
               <tr><td>Nazwa:</td><td>{asset.name}</td></tr>
               <tr><td>Typ:</td><td>{asset.type}</td></tr>
@@ -206,7 +194,7 @@ export default function AssetDetails() {
           <p>{asset.comment?.trim() || "Brak komentarza"}</p>
 
           {canEdit && (
-            <div style={{ marginTop: "20px" }}>
+            <div className="form-row">
               <h3>Edytuj komentarz</h3>
               <textarea
                 value={asset.comment || ""}
@@ -214,7 +202,6 @@ export default function AssetDetails() {
                   setAsset({ ...asset, comment: e.target.value })
                 }
                 rows={3}
-                style={{ width: "300px" }}
               />
               <br />
               <button onClick={saveComment}>Zapisz komentarz</button>
@@ -242,42 +229,32 @@ export default function AssetDetails() {
             )}
           </p>
 
-          {canEdit && (
-            <Link to={`/assets/${id}/move`}>
-              <button style={{ marginRight: "10px" }}>
-                Przenieś asset
+          <div className="btn-row">
+            {canEdit && (
+              <Link to={`/assets/${id}/move`}>
+                <button>Przenieś asset</button>
+              </Link>
+            )}
+            {user.role === "admin" && (
+              <button onClick={deleteAsset} className="btn-danger">
+                Usuń asset
               </button>
-            </Link>
-          )}
-
-          {user.role === "admin" && (
-            <button
-              onClick={deleteAsset}
-              style={{ background: "red", color: "white" }}
-            >
-              Usuń asset
-            </button>
-          )}
+            )}
+          </div>
         </div>
 
         {/* PRAWA KOLUMNA — HISTORIA */}
         <div>
           <h2>Historia ruchów</h2>
 
-          <div
-            style={{
-              paddingRight: "10px",
-              borderLeft: "2px solid #ddd",
-              paddingLeft: "15px",
-            }}
-          >
+          <div className="history-timeline">
             {history.length === 0 && <p>Brak historii.</p>}
 
             {history.length > 0 && (
               <>
                 <ul>
                   {history.map((h) => (
-                    <li key={h.id} style={{ marginBottom: "12px" }}>
+                    <li key={h.id} className="history-item">
                       <strong>
                         {new Date(h.moved_at).toLocaleString()}
                       </strong>
@@ -287,29 +264,20 @@ export default function AssetDetails() {
                       <br />
                       {h.note?.trim() || "brak notatki"}
                       <br />
-                      <em style={{ color: "#aaa" }}>
+                      <em className="meta-dim">
                         przeniósł: {h.moved_by || "nieznany"}
                       </em>
                     </li>
                   ))}
                 </ul>
 
-                <div style={{ marginTop: "20px" }}>
+                <div className="pagination">
                   {Array.from({ length: pages }, (_, i) => i + 1).map(
                     (num) => (
                       <button
                         key={num}
                         onClick={() => loadHistory(num)}
-                        style={{
-                          marginRight: "5px",
-                          padding: "5px 10px",
-                          background:
-                            num === page ? "#333" : "#ddd",
-                          color:
-                            num === page ? "white" : "black",
-                          border: "none",
-                          cursor: "pointer",
-                        }}
+                        className={num === page ? "active" : ""}
                       >
                         {num}
                       </button>

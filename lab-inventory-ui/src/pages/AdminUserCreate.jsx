@@ -22,7 +22,8 @@ export default function AdminUserCreate() {
       return;
     }
 
-    const res = await fetch("http://10.19.148.12:8000/users/", {
+    // const res = await fetch("http://10.19.148.12:8000/users/", {
+    const res = await fetch("http://localhost:8000/users/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,15 +42,15 @@ export default function AdminUserCreate() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       <h1>Dodaj użytkownika</h1>
-      <Link to="/admin/users">← Powrót</Link>
+      <Link to="/admin/users" className="back-link">← Użytkownicy</Link>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="msg-error">{error}</p>}
 
       <form onSubmit={submit}>
-        <div>
-          <label>Login:</label><br />
+        <div className="form-row">
+          <label>Login:</label>
           <input
             value={form.username}
             onChange={(e) => setForm({ ...form, username: e.target.value })}
@@ -57,8 +58,8 @@ export default function AdminUserCreate() {
           />
         </div>
 
-        <div style={{ marginTop: "10px" }}>
-          <label>Hasło:</label><br />
+        <div className="form-row">
+          <label>Hasło:</label>
           <input
             type="password"
             value={form.password}
@@ -67,8 +68,8 @@ export default function AdminUserCreate() {
           />
         </div>
 
-        <div style={{ marginTop: "10px" }}>
-          <label>Rola:</label><br />
+        <div className="form-row">
+          <label>Rola:</label>
           <select
             value={form.role}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
@@ -80,7 +81,7 @@ export default function AdminUserCreate() {
           </select>
         </div>
 
-        <button type="submit" style={{ marginTop: "15px" }}>
+        <button type="submit" className="form-row">
           Utwórz
         </button>
       </form>

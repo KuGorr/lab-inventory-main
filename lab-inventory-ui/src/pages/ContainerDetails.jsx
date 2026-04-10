@@ -20,25 +20,20 @@ const StatusSelector = ({ value, onChange, disabled }) => {
   ];
 
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <div className="status-selector">
       {options.map((o) => {
         const active = normalized === o.key;
+        const classes = [
+          active ? "active" : "",
+          active ? `active-${o.key}` : "",
+          disabled ? "disabled" : "",
+        ].filter(Boolean).join(" ");
 
         return (
           <button
             key={o.key}
             onClick={() => !disabled && onChange(o.key)}
-            style={{
-              padding: "8px 14px",
-              border: active ? `3px solid ${o.color}` : "1px solid #ccc",
-              background: active ? `${o.color}22` : "#fff",
-              cursor: disabled ? "default" : "pointer",
-              fontSize: "26px",
-              borderRadius: "8px",
-              opacity: disabled ? 0.5 : 1,
-              transition: "0.15s ease",
-              transform: active ? "scale(1.1)" : "scale(1.0)",
-            }}
+            className={classes}
             title={o.label}
           >
             {o.icon}
@@ -64,7 +59,8 @@ export default function ContainerDetails() {
   const token = localStorage.getItem("token");
 
   const loadContainer = () => {
-    fetch(`http://10.19.148.12:8000/containers/${id}`)
+    // fetch(`http://10.19.148.12:8000/containers/${id}`)
+    fetch(`http://localhost:8000/containers/${id}`)
       .then((res) => {
         if (res.status === 404) {
           navigate("/containers");
@@ -76,7 +72,8 @@ export default function ContainerDetails() {
   };
 
   const loadHistory = (pageNum = 1) => {
-    fetch(`http://10.19.148.12:8000/containers/${id}/history?page=${pageNum}`)
+    // fetch(`http://10.19.148.12:8000/containers/${id}/history?page=${pageNum}`)
+    fetch(`http://localhost:8000/containers/${id}/history?page=${pageNum}`)
       .then((res) => res.json())
       .then((data) => {
         setHistory(data.items);
@@ -92,7 +89,8 @@ export default function ContainerDetails() {
 
   // 🔥 REALTIME WEBSOCKET
   useEffect(() => {
-    const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
+    const ws = new WebSocket("ws://localhost:8000/ws/containers");
 
     ws.onmessage = (event) => {
       if (event.data === "containers_updated") {
@@ -117,7 +115,8 @@ export default function ContainerDetails() {
   const deleteContainer = async () => {
     if (!window.confirm("Czy na pewno chcesz usunąć ten kontener?")) return;
 
-    const res = await fetch(`http://10.19.148.12:8000/containers/${id}`, {
+    // const res = await fetch(`http://10.19.148.12:8000/containers/${id}`, {
+    const res = await fetch(`http://localhost:8000/containers/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -135,7 +134,8 @@ export default function ContainerDetails() {
   // UPDATE COMMENT (compat+)
   // -----------------------------
   const saveComment = async () => {
-    await fetch(`http://10.19.148.12:8000/containers/${id}/comment`, {
+    // await fetch(`http://10.19.148.12:8000/containers/${id}/comment`, {
+    await fetch(`http://localhost:8000/containers/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -151,7 +151,8 @@ export default function ContainerDetails() {
   const updateStatus = async (newStatus) => {
     const backendValue = newStatus === "none" ? null : newStatus;
 
-    await fetch(`http://10.19.148.12:8000/containers/${id}/status`, {
+    // await fetch(`http://10.19.148.12:8000/containers/${id}/status`, {
+    await fetch(`http://localhost:8000/containers/${id}/status`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -164,15 +165,9 @@ export default function ContainerDetails() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="page">
       {/* NAGŁÓWEK + STATUS */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
+      <div className="details-header">
         <h1>Kontener: {container.code}</h1>
 
         <StatusSelector
@@ -182,23 +177,16 @@ export default function ContainerDetails() {
         />
       </div>
 
-      <Link to="/containers">← Powrót</Link>
+      <Link to="/containers" className="back-link">← Kontenery</Link>
 
       {error && (
-        <p style={{ color: "red", marginTop: "10px" }}>
+        <p className="msg-error">
           {error}
         </p>
       )}
 
       {/* DWIE KOLUMNY */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "30px",
-          marginTop: "20px",
-        }}
-      >
+      <div className="details-grid">
         {/* LEWA KOLUMNA */}
         <div>
           <h2>Informacje</h2>
@@ -209,7 +197,7 @@ export default function ContainerDetails() {
           <p>{container.comment?.trim() || "Brak komentarza"}</p>
 
           {canEdit && (
-            <div style={{ marginTop: "20px" }}>
+            <div className="form-row">
               <h3>Edytuj komentarz</h3>
               <textarea
                 value={container.comment || ""}
@@ -217,14 +205,13 @@ export default function ContainerDetails() {
                   setContainer({ ...container, comment: e.target.value })
                 }
                 rows={3}
-                style={{ width: "300px" }}
               />
               <br />
               <button onClick={saveComment}>Zapisz komentarz</button>
             </div>
           )}
 
-          <p style={{ marginTop: "20px" }}>
+          <p>
             Lokalizacja:{" "}
             {container.location ? (
               <Link to={`/locations/${container.location.id}`}>
@@ -235,29 +222,25 @@ export default function ContainerDetails() {
             )}
           </p>
 
-          {canEdit && (
-            <Link to={`/containers/${id}/move`}>
-              <button style={{ marginRight: "10px" }}>
-                Przenieś kontener
+          <div className="btn-row">
+            {canEdit && (
+              <Link to={`/containers/${id}/move`}>
+                <button>Przenieś kontener</button>
+              </Link>
+            )}
+            {user.role === "admin" && (
+              <button onClick={deleteContainer} className="btn-danger">
+                Usuń kontener
               </button>
-            </Link>
-          )}
+            )}
+          </div>
 
-          {user.role === "admin" && (
-            <button
-              onClick={deleteContainer}
-              style={{ background: "red", color: "white" }}
-            >
-              Usuń kontener
-            </button>
-          )}
-
-          <h2 style={{ marginTop: "30px" }}>Assety w kontenerze</h2>
+          <h2>Assety w kontenerze</h2>
 
           {container.assets.length === 0 && <p>Brak assetów.</p>}
 
           {container.assets.length > 0 && (
-            <table border="1" cellPadding="4">
+            <table>
               <thead>
                 <tr>
                   <th>Tag</th>
@@ -284,20 +267,14 @@ export default function ContainerDetails() {
         <div>
           <h2>Historia ruchów kontenera</h2>
 
-          <div
-            style={{
-              paddingRight: "10px",
-              borderLeft: "2px solid #ddd",
-              paddingLeft: "15px",
-            }}
-          >
+          <div className="history-timeline">
             {history.length === 0 && <p>Brak historii.</p>}
 
             {history.length > 0 && (
               <>
                 <ul>
                   {history.map((h) => (
-                    <li key={h.id} style={{ marginBottom: "12px" }}>
+                    <li key={h.id} className="history-item">
                       <strong>
                         {new Date(h.moved_at).toLocaleString()}
                       </strong>
@@ -307,7 +284,7 @@ export default function ContainerDetails() {
                       <br />
                       {h.note?.trim() || "brak notatki"}
                       <br />
-                      <em style={{ color: "#aaa" }}>
+                      <em className="meta-dim">
                         przeniósł: {h.moved_by || "nieznany"}
                       </em>
                     </li>
@@ -315,22 +292,13 @@ export default function ContainerDetails() {
                 </ul>
 
                 {/* PAGINACJA */}
-                <div style={{ marginTop: "20px" }}>
+                <div className="pagination">
                   {Array.from({ length: historyPages }, (_, i) => i + 1).map(
                     (num) => (
                       <button
                         key={num}
                         onClick={() => loadHistory(num)}
-                        style={{
-                          marginRight: "5px",
-                          padding: "5px 10px",
-                          background:
-                            num === historyPage ? "#333" : "#ddd",
-                          color:
-                            num === historyPage ? "white" : "black",
-                          border: "none",
-                          cursor: "pointer",
-                        }}
+                        className={num === historyPage ? "active" : ""}
                       >
                         {num}
                       </button>
