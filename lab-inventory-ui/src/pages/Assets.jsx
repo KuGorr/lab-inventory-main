@@ -140,25 +140,6 @@ export default function Assets() {
     return () => ws.close();
   }, [loadAssets]);
 
-  // -----------------------------
-  // Autocomplete dropdown options
-  // -----------------------------
-  const uniqueValues = (field) => {
-    const values = assets
-      .map((a) => {
-        if (field === "item_name") return a.name;
-        if (field === "chipset") return a.model;
-        if (field === "location") return a.location?.code;
-        if (field === "container") return a.container?.code;
-        if (field === "oem") return a.manufacturer || a.producer || a.oem;
-        return a[field];
-      })
-      .filter(Boolean)
-      .map((v) => (v === "Motherboard" ? "MOBO" : v));
-
-    return [...new Set(values)].sort();
-  };
-
   // Close autocomplete on outside click
   useEffect(() => {
     const close = (e) => {
@@ -172,54 +153,76 @@ export default function Assets() {
 
   // -----------------------------
   // Filter: search + fields + status
+  // excludeField — omit one filter key so its dropdown stays open to valid options
   // -----------------------------
-  const filtered = assets.filter((a) => {
+  const applyFilters = (list, excludeField = null) => {
     const text = search.toLowerCase();
-    const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;
 
-    const matchesSearch =
-      a.tag?.toLowerCase().includes(text) ||
-      a.name?.toLowerCase().includes(text) ||
-      typeNormalized.toLowerCase().includes(text) ||
-      a.model?.toLowerCase().includes(text) ||
-      (a.manufacturer || a.producer || a.oem)?.toLowerCase().includes(text) ||
-      a.platform?.toLowerCase().includes(text) ||
-      a.socket?.toLowerCase().includes(text) ||
-      a.memory_type?.toLowerCase().includes(text) ||
-      a.location?.code?.toLowerCase().includes(text) ||
-      a.container?.code?.toLowerCase().includes(text) ||
-      a.comment?.toLowerCase().includes(text);
+    return list.filter((a) => {
+      const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;
 
-    const matchesFilters = Object.keys(filters).every((key) => {
-      if (!filters[key]) return true;
+      const matchesSearch =
+        a.tag?.toLowerCase().includes(text) ||
+        a.name?.toLowerCase().includes(text) ||
+        typeNormalized.toLowerCase().includes(text) ||
+        a.model?.toLowerCase().includes(text) ||
+        (a.manufacturer || a.producer || a.oem)?.toLowerCase().includes(text) ||
+        a.platform?.toLowerCase().includes(text) ||
+        a.socket?.toLowerCase().includes(text) ||
+        a.memory_type?.toLowerCase().includes(text) ||
+        a.location?.code?.toLowerCase().includes(text) ||
+        a.container?.code?.toLowerCase().includes(text) ||
+        a.comment?.toLowerCase().includes(text);
 
-      const val =
-        key === "item_name"
-          ? a.name
-          : key === "chipset"
-          ? a.model
-          : key === "location"
-          ? a.location?.code
-          : key === "container"
-          ? a.container?.code
-          : key === "oem"
-          ? (a.manufacturer || a.producer || a.oem)
-          : key === "type"
-          ? typeNormalized
+      const matchesFilters = Object.keys(filters).every((key) => {
+        if (key === excludeField) return true;
+        if (!filters[key]) return true;
+
+        const val =
+          key === "item_name"   ? a.name
+          : key === "chipset"   ? a.model
+          : key === "location"  ? a.location?.code
+          : key === "container" ? a.container?.code
+          : key === "oem"       ? (a.manufacturer || a.producer || a.oem)
+          : key === "type"      ? typeNormalized
           : a[key];
 
-      return val?.toLowerCase().includes(filters[key].toLowerCase());
-    });
+        return val?.toLowerCase().includes(filters[key].toLowerCase());
+      });
 
-    const matchesStatus =
-      statusFilter === "all"
-        ? true
-        : statusFilter === "none"
-        ? !a.status
+      const matchesStatus =
+        statusFilter === "all"  ? true
+        : statusFilter === "none" ? !a.status
         : a.status === statusFilter;
 
-    return matchesSearch && matchesFilters && matchesStatus;
-  });
+      return matchesSearch && matchesFilters && matchesStatus;
+    });
+  };
+
+  const filtered = applyFilters(assets);
+
+  // -----------------------------
+  // Autocomplete dropdown options
+  // Each field's options are derived from assets matching all OTHER active filters,
+  // so selecting one filter narrows down the choices in the remaining dropdowns.
+  // -----------------------------
+  const uniqueValues = (field) => {
+    const subset = applyFilters(assets, field);
+
+    const values = subset
+      .map((a) => {
+        if (field === "item_name") return a.name;
+        if (field === "chipset")   return a.model;
+        if (field === "location")  return a.location?.code;
+        if (field === "container") return a.container?.code;
+        if (field === "oem")       return a.manufacturer || a.producer || a.oem;
+        return a[field];
+      })
+      .filter(Boolean)
+      .map((v) => (v === "Motherboard" ? "MOBO" : v));
+
+    return [...new Set(values)].sort();
+  };
 
   const autoProps = {
     filters,
