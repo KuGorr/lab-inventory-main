@@ -1,10 +1,10 @@
-/* =============================================================
+/* 
    Lab Inventory — Global Stylesheet
    Dark theme default · switchable to light via .light-theme
-   ============================================================= */
+   */
 
 
-/* ── Design tokens — DARK ─────────────────────────────────── */
+/* ── Design tokens — DARK  */
 :root {
   --bg-app:       #0d0f16;
   --bg-surface:   #161923;
@@ -311,6 +311,8 @@ tbody tr:last-child td { border-bottom: none; }
   border-right: 1px solid var(--border);
   box-sizing: border-box;
   overflow-y: auto;
+  /* Added the z-index to fix the icons showing on the sidebar on the devices with small resolution */
+  z-index: 200;
   transition: background var(--transition), border-color var(--transition);
 }
 
