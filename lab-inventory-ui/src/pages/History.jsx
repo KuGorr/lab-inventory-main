@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { API_BASE, WS_BASE } from "../api/axios";
 import { Link } from "react-router-dom";
 
 export default function History() {
@@ -8,9 +9,11 @@ export default function History() {
   const [movedBy, setMovedBy] = useState("");
   const [users, setUsers] = useState([]);
 
+  // -----------------------------
+  // Load history
+  // -----------------------------
   const loadHistory = useCallback((pageNum = 1, moved = movedBy) => {
-    // let url = `http://10.19.148.12:8000/assets/history?page=${pageNum}`;
-    let url = `http://localhost:8000/assets/history?page=${pageNum}`;
+    let url = `${API_BASE}/assets/history?page=${pageNum}`;
     if (moved) url += `&moved_by=${moved}`;
 
     fetch(url)
@@ -23,8 +26,7 @@ export default function History() {
   }, [movedBy]);
 
   useEffect(() => {
-    // fetch("http://10.19.148.12:8000/assets/history?page=1")
-    fetch("http://localhost:8000/assets/history?page=1")
+    fetch(`${API_BASE}/assets/history?page=1`)
       .then(res => res.json())
       .then(data => {
         setHistory(data.items);
@@ -32,16 +34,14 @@ export default function History() {
         setPage(data.page);
       });
 
-    // fetch("http://10.19.148.12:8000/assets/history/users")
-    fetch("http://localhost:8000/assets/history/users")
+    fetch(`${API_BASE}/assets/history/users`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);
 
-  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie historii
+  // Append new entries as moves happen across the system
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/history");
-    const ws = new WebSocket("ws://localhost:8000/ws/history");
+    const ws = new WebSocket(`${WS_BASE}/ws/history`);
 
     ws.onmessage = (event) => {
       if (event.data === "history_updated") {
@@ -52,6 +52,9 @@ export default function History() {
     return () => ws.close();
   }, [loadHistory, page, movedBy]);
 
+  // -----------------------------
+  // Filter by user
+  // -----------------------------
   const handleFilter = () => {
     loadHistory(1, movedBy);
   };

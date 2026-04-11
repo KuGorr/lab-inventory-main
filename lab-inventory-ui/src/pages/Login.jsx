@@ -9,42 +9,30 @@ export default function Login() {
   const navigate = useNavigate();
 
   const submit = async (e) => {
-  e.preventDefault();
-  setError("");
+    e.preventDefault();
+    setError("");
 
-  try {
-    const form = new URLSearchParams();
-    form.append("username", username);
-    form.append("password", password);
+    try {
+      const form = new URLSearchParams();
+      form.append("username", username);
+      form.append("password", password);
 
-    const res = await api.post(
-      // "http://10.19.148.12:8000/auth/login",
-      "http://localhost:8000/auth/login",
-      form,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+      const res = await api.post("/auth/login", form, {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      });
+
+      localStorage.setItem("token", res.data.access_token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      navigate("/");
+    } catch (err) {
+      if (err.response?.status === 401) {
+        setError("Nieprawidłowy login lub hasło");
+      } else {
+        setError("Błąd połączenia z serwerem");
       }
-    );
-
-    // ZAPIS TOKENA
-    localStorage.setItem("token", res.data.access_token);
-
-    // ZAPIS DANYCH UŻYTKOWNIKA (rola, nazwa)
-    localStorage.setItem("user", JSON.stringify(res.data.user));
-
-    navigate("/");
-  } catch (err) {
-    console.log("AXIOS ERROR:", err);
-
-    if (err.response?.status === 401) {
-      setError("Nieprawidłowy login lub hasło");
-    } else {
-      setError("Błąd połączenia z serwerem");
     }
-  }
-};
+  };
 
   return (
     <div className="login-page">

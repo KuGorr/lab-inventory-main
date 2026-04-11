@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { API_BASE, WS_BASE } from "../api/axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 export default function LocationDetails() {
@@ -8,28 +9,21 @@ export default function LocationDetails() {
   const [data, setData] = useState(null);
 
   const loadData = useCallback(() => {
-    // fetch(`http://10.19.148.12:8000/locations/${id}/contents`)
-    fetch(`http://localhost:8000/locations/${id}/contents`)
+    fetch(`${API_BASE}/locations/${id}/contents`)
       .then(res => {
-        if (res.status === 404) {
-          navigate("/locations"); // lokalizacja została usunięta przez kogoś innego
-          return null;
-        }
+        if (res.status === 404) { navigate("/locations"); return null; }
         return res.json();
       })
-      .then(json => {
-        if (json) setData(json);
-      });
+      .then(json => { if (json) setData(json); });
   }, [id, navigate]);
 
   useEffect(() => {
     loadData();
   }, [loadData]);
 
-  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów lokalizacji
+  // Reload when another user moves assets/containers in this location
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
-    const ws = new WebSocket("ws://localhost:8000/ws/locations");
+    const ws = new WebSocket(`${WS_BASE}/ws/locations`);
 
     ws.onmessage = (event) => {
       if (event.data === "locations_updated") {
@@ -47,9 +41,6 @@ export default function LocationDetails() {
       <h1>Lokalizacja: {data.location}</h1>
       <Link to="/locations" className="back-link">← Lokalizacje</Link>
 
-      {/* ----------------------------- */}
-      {/* KONTENERY */}
-      {/* ----------------------------- */}
       <h2>Kontenery w tej lokalizacji</h2>
 
       {data.containers.length === 0 && <p>Brak kontenerów.</p>}
@@ -73,9 +64,6 @@ export default function LocationDetails() {
         </table>
       )}
 
-      {/* ----------------------------- */}
-      {/* ASSETY */}
-      {/* ----------------------------- */}
       <h2>Assety w tej lokalizacji</h2>
 
       {data.assets.length === 0 && <p>Brak assetów.</p>}

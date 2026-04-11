@@ -1,9 +1,8 @@
 import { useEffect, useState, memo, useRef, useCallback } from "react";
+import { API_BASE, WS_BASE } from "../api/axios";
 import { Link } from "react-router-dom";
 
-// ---------------------------
-// STABILNY, MEMOIZOWANY AutoInput
-// ---------------------------
+// Memoized autocomplete input — stable ref prevents filter re-renders
 const AutoInput = memo(function AutoInput({
   field,
   label,
@@ -115,9 +114,11 @@ export default function Assets() {
 
   const [statusFilter, setStatusFilter] = useState("all");
 
+  // -----------------------------
+  // Load data
+  // -----------------------------
   const loadAssets = useCallback(() => {
-    // fetch("http://10.19.148.12:8000/assets/")
-    fetch("http://localhost:8000/assets/")
+    fetch(`${API_BASE}/assets/`)
       .then((res) => res.json())
       .then((data) => setAssets(data));
   }, []);
@@ -126,9 +127,9 @@ export default function Assets() {
     loadAssets();
   }, [loadAssets]);
 
+  // Keep table in sync when another user modifies assets
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
-    const ws = new WebSocket("ws://localhost:8000/ws/assets");
+    const ws = new WebSocket(`${WS_BASE}/ws/assets`);
 
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
@@ -139,6 +140,9 @@ export default function Assets() {
     return () => ws.close();
   }, [loadAssets]);
 
+  // -----------------------------
+  // Autocomplete dropdown options
+  // -----------------------------
   const uniqueValues = (field) => {
     const values = assets
       .map((a) => {
@@ -155,6 +159,7 @@ export default function Assets() {
     return [...new Set(values)].sort();
   };
 
+  // Close autocomplete on outside click
   useEffect(() => {
     const close = (e) => {
       if (!e.target.closest(".auto-input-wrapper")) {
@@ -165,6 +170,9 @@ export default function Assets() {
     return () => document.removeEventListener("mousedown", close);
   }, []);
 
+  // -----------------------------
+  // Filter: search + fields + status
+  // -----------------------------
   const filtered = assets.filter((a) => {
     const text = search.toLowerCase();
     const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;

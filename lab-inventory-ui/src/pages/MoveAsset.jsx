@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../api/axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 export default function MoveAsset() {
@@ -15,23 +16,23 @@ export default function MoveAsset() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    // fetch("http://10.19.148.12:8000/locations/")
-    fetch("http://localhost:8000/locations/")
+    fetch(`${API_BASE}/locations/`)
       .then(res => res.json())
       .then(data => setLocations(data));
 
-    // fetch("http://10.19.148.12:8000/containers/")
-    fetch("http://localhost:8000/containers/")
+    fetch(`${API_BASE}/containers/`)
       .then(res => res.json())
       .then(data => setContainers(data));
   }, []);
 
+  // -----------------------------
+  // Submit move
+  // -----------------------------
   async function submitMove(e) {
     e.preventDefault();
     setError("");
 
-    // const res = await fetch(`http://10.19.148.12:8000/assets/${id}/move`, {
-    const res = await fetch(`http://localhost:8000/assets/${id}/move`, {
+    const res = await fetch(`${API_BASE}/assets/${id}/move`, {
       method: "POST",
       headers: { 
         "Content-Type": "application/json",

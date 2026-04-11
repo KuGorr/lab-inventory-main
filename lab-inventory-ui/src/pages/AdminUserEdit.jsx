@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../api/axios";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 export default function AdminUserEdit() {
@@ -11,8 +12,7 @@ export default function AdminUserEdit() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // fetch("http://10.19.148.12:8000/users/", {
-    fetch("http://localhost:8000/users/", {
+    fetch(`${API_BASE}/users/`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -27,14 +27,10 @@ export default function AdminUserEdit() {
     e.preventDefault();
     setError("");
 
-    const res = await fetch(
-      // `http://10.19.148.12:8000/users/${id}/role?new_role=${role}`,
-      `http://localhost:8000/users/${id}/role?new_role=${role}`,
-      {
-        method: "PATCH",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const res = await fetch(`${API_BASE}/users/${id}/role?new_role=${role}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
     if (!res.ok) {
       const data = await res.json();

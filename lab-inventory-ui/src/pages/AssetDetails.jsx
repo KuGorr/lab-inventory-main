@@ -1,78 +1,31 @@
 import { useEffect, useState, useCallback } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-
-/* ------------------------------
-   STATUS SELECTOR (NAPRAWIONY)
------------------------------- */
-const StatusSelector = ({ value, onChange, disabled }) => {
-  // Normalizacja wartości z backendu
-  const normalized =
-    value === null || value === "null" || value === undefined || value === ""
-      ? "none"
-      : value;
-
-  const options = [
-    { key: "none", icon: "◻️?", label: "Brak statusu", color: "#777" },
-    { key: "available", icon: "✅", label: "Dostępny", color: "#4CAF50" },
-    { key: "borrowed", icon: "🔄", label: "Pożyczony", color: "#2196F3" },
-    { key: "broken", icon: "🗑️", label: "Zepsuty", color: "#F44336" },
-    { key: "lost", icon: "❓", label: "Zaginiony", color: "#9C27B0" },
-  ];
-
-  return (
-    <div className="status-selector">
-      {options.map((o) => {
-        const active = normalized === o.key;
-        const classes = [
-          active ? "active" : "",
-          active ? `active-${o.key}` : "",
-          disabled ? "disabled" : "",
-        ].filter(Boolean).join(" ");
-
-        return (
-          <button
-            key={o.key}
-            onClick={() => !disabled && onChange(o.key)}
-            className={classes}
-            title={o.label}
-          >
-            {o.icon}
-          </button>
-        );
-      })}
-    </div>
-  );
-};
+import StatusSelector from "../components/StatusSelector";
+import { API_BASE, WS_BASE } from "../api/axios";
 
 export default function AssetDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   const [asset, setAsset] = useState(null);
-
   const [history, setHistory] = useState([]);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
 
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const user  = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
   const loadAsset = useCallback(() => {
-    // fetch(`http://10.19.148.12:8000/assets/${id}`)
-    fetch(`http://localhost:8000/assets/${id}`)
+    fetch(`${API_BASE}/assets/${id}`)
       .then((res) => {
-        if (res.status === 404) {
-          navigate("/");
-          return null;
-        }
+        if (res.status === 404) { navigate("/"); return null; }
         return res.json();
       })
       .then((data) => data && setAsset(data));
   }, [id, navigate]);
 
   const loadHistory = useCallback((pageNum = 1) => {
-    // fetch(`http://10.19.148.12:8000/assets/${id}/history?page=${pageNum}`)
-    fetch(`http://localhost:8000/assets/${id}/history?page=${pageNum}`)
+    fetch(`${API_BASE}/assets/${id}/history?page=${pageNum}`)
       .then((res) => res.json())
       .then((data) => {
         setHistory(data.items);
@@ -86,9 +39,9 @@ export default function AssetDetails() {
     loadHistory(1);
   }, [id, loadAsset, loadHistory]);
 
+  // Reload if another user edits this asset while it's open
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
-    const ws = new WebSocket("ws://localhost:8000/ws/assets");
+    const ws = new WebSocket(`${WS_BASE}/ws/assets`);
 
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
@@ -102,11 +55,19 @@ export default function AssetDetails() {
 
   if (!asset) return <div>Ładowanie...</div>;
 
+  // compat and above can edit status/comment and move assets
+  const canEdit =
+    user.role === "compat" ||
+    user.role === "manager" ||
+    user.role === "admin";
+
+  // -----------------------------
+  // Delete asset
+  // -----------------------------
   const deleteAsset = async () => {
     if (!window.confirm("Czy na pewno chcesz usunąć ten asset?")) return;
 
-    // await fetch(`http://10.19.148.12:8000/assets/${id}`, {
-    await fetch(`http://localhost:8000/assets/${id}`, {
+    await fetch(`${API_BASE}/assets/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -114,9 +75,11 @@ export default function AssetDetails() {
     navigate("/");
   };
 
+  // -----------------------------
+  // Save comment
+  // -----------------------------
   const saveComment = async () => {
-    // await fetch(`http://10.19.148.12:8000/assets/${id}/comment`, {
-    await fetch(`http://localhost:8000/assets/${id}/comment`, {
+    await fetch(`${API_BASE}/assets/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -126,14 +89,13 @@ export default function AssetDetails() {
     });
   };
 
-  /* ------------------------------
-     ZMIANA STATUSU
-  ------------------------------ */
+  // -----------------------------
+  // Update status
+  // -----------------------------
   const updateStatus = async (newStatus) => {
     const backendValue = newStatus === "none" ? null : newStatus;
 
-    // await fetch(`http://10.19.148.12:8000/assets/${id}/status`, {
-    await fetch(`http://localhost:8000/assets/${id}/status`, {
+    await fetch(`${API_BASE}/assets/${id}/status`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -145,27 +107,15 @@ export default function AssetDetails() {
     setAsset({ ...asset, status: backendValue });
   };
 
-  const canEdit =
-    user.role === "compat" ||
-    user.role === "manager" ||
-    user.role === "admin";
-
   return (
     <div className="page">
-      {/* NAGŁÓWEK + STATUS */}
       <div className="details-header">
         <h1>Szczegóły assetu: {asset.tag}</h1>
-
-        <StatusSelector
-          value={asset.status}
-          disabled={!canEdit}
-          onChange={updateStatus}
-        />
+        <StatusSelector value={asset.status} disabled={!canEdit} onChange={updateStatus} />
       </div>
 
       <Link to="/" className="back-link">← Assety</Link>
 
-      {/* DWIE KOLUMNY */}
       <div className="details-grid">
         {/* LEWA KOLUMNA */}
         <div>
@@ -198,9 +148,7 @@ export default function AssetDetails() {
               <h3>Edytuj komentarz</h3>
               <textarea
                 value={asset.comment || ""}
-                onChange={(e) =>
-                  setAsset({ ...asset, comment: e.target.value })
-                }
+                onChange={(e) => setAsset({ ...asset, comment: e.target.value })}
                 rows={3}
               />
               <br />
@@ -212,21 +160,13 @@ export default function AssetDetails() {
           <p>
             Lokalizacja:{" "}
             {asset.location ? (
-              <Link to={`/locations/${asset.location.id}`}>
-                {asset.location.code}
-              </Link>
-            ) : (
-              "-"
-            )}
+              <Link to={`/locations/${asset.location.id}`}>{asset.location.code}</Link>
+            ) : "-"}
             <br />
             Kontener:{" "}
             {asset.container ? (
-              <Link to={`/containers/${asset.container.id}`}>
-                {asset.container.code}
-              </Link>
-            ) : (
-              "-"
-            )}
+              <Link to={`/containers/${asset.container.id}`}>{asset.container.code}</Link>
+            ) : "-"}
           </p>
 
           <div className="btn-row">
@@ -255,34 +195,27 @@ export default function AssetDetails() {
                 <ul>
                   {history.map((h) => (
                     <li key={h.id} className="history-item">
-                      <strong>
-                        {new Date(h.moved_at).toLocaleString()}
-                      </strong>
+                      <strong>{new Date(h.moved_at).toLocaleString()}</strong>
                       <br />
-                      {(h.old_location_name || "-")} →{" "}
-                      {(h.new_location_name || "-")}
+                      {h.old_location_name || "-"} → {h.new_location_name || "-"}
                       <br />
                       {h.note?.trim() || "brak notatki"}
                       <br />
-                      <em className="meta-dim">
-                        przeniósł: {h.moved_by || "nieznany"}
-                      </em>
+                      <em className="meta-dim">przeniósł: {h.moved_by || "nieznany"}</em>
                     </li>
                   ))}
                 </ul>
 
                 <div className="pagination">
-                  {Array.from({ length: pages }, (_, i) => i + 1).map(
-                    (num) => (
-                      <button
-                        key={num}
-                        onClick={() => loadHistory(num)}
-                        className={num === page ? "active" : ""}
-                      >
-                        {num}
-                      </button>
-                    )
-                  )}
+                  {Array.from({ length: pages }, (_, i) => i + 1).map((num) => (
+                    <button
+                      key={num}
+                      onClick={() => loadHistory(num)}
+                      className={num === page ? "active" : ""}
+                    >
+                      {num}
+                    </button>
+                  ))}
                 </div>
               </>
             )}

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { API_BASE, WS_BASE } from "../api/axios";
 import { Link } from "react-router-dom";
 
 export default function Containers() {
@@ -27,15 +28,13 @@ export default function Containers() {
   // LOAD DATA
   // -----------------------------
   const loadContainers = useCallback(() => {
-    // fetch("http://10.19.148.12:8000/containers/")
-    fetch("http://localhost:8000/containers/")
+    fetch(`${API_BASE}/containers/`)
       .then((res) => res.json())
       .then((data) => setContainers(data));
   }, []);
 
   const loadLocations = useCallback(() => {
-    // fetch("http://10.19.148.12:8000/locations/")
-    fetch("http://localhost:8000/locations/")
+    fetch(`${API_BASE}/locations/`)
       .then((res) => res.json())
       .then((data) => setLocations(data));
   }, []);
@@ -45,12 +44,9 @@ export default function Containers() {
     loadLocations();
   }, [loadContainers, loadLocations]);
 
-  // -----------------------------
-  // REALTIME WEBSOCKET
-  // -----------------------------
+  // Keep table in sync when another user modifies containers
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
-    const ws = new WebSocket("ws://localhost:8000/ws/containers");
+    const ws = new WebSocket(`${WS_BASE}/ws/containers`);
 
     ws.onmessage = (event) => {
       if (event.data === "containers_updated") {
@@ -81,8 +77,7 @@ export default function Containers() {
   const createContainer = async (e) => {
     e.preventDefault();
 
-    // await fetch("http://10.19.148.12:8000/containers/", {
-    await fetch("http://localhost:8000/containers/", {
+    await fetch(`${API_BASE}/containers/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -100,8 +95,7 @@ export default function Containers() {
   // DELETE CONTAINER
   // -----------------------------
   const deleteContainer = async (id) => {
-    // await fetch(`http://10.19.148.12:8000/containers/${id}`, {
-    await fetch(`http://localhost:8000/containers/${id}`, {
+    await fetch(`${API_BASE}/containers/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

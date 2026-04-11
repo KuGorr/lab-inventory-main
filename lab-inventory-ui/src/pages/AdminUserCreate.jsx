@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE } from "../api/axios";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function AdminUserCreate() {
@@ -22,8 +23,7 @@ export default function AdminUserCreate() {
       return;
     }
 
-    // const res = await fetch("http://10.19.148.12:8000/users/", {
-    const res = await fetch("http://localhost:8000/users/", {
+    const res = await fetch(`${API_BASE}/users/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

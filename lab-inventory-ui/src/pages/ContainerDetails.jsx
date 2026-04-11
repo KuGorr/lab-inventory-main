@@ -1,48 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-
-/* ------------------------------
-   STATUS SELECTOR (NAPRAWIONY)
------------------------------- */
-const StatusSelector = ({ value, onChange, disabled }) => {
-  // Normalizacja wartości z backendu
-  const normalized =
-    value === null || value === "null" || value === undefined || value === ""
-      ? "none"
-      : value;
-
-  const options = [
-    { key: "none", icon: "◻️?", label: "Brak statusu", color: "#777" },
-    { key: "available", icon: "✅", label: "Dostępny", color: "#4CAF50" },
-    { key: "borrowed", icon: "🔄", label: "Pożyczony", color: "#2196F3" },
-    { key: "broken", icon: "🗑️", label: "Zepsuty", color: "#F44336" },
-    { key: "lost", icon: "❓", label: "Zaginiony", color: "#9C27B0" },
-  ];
-
-  return (
-    <div className="status-selector">
-      {options.map((o) => {
-        const active = normalized === o.key;
-        const classes = [
-          active ? "active" : "",
-          active ? `active-${o.key}` : "",
-          disabled ? "disabled" : "",
-        ].filter(Boolean).join(" ");
-
-        return (
-          <button
-            key={o.key}
-            onClick={() => !disabled && onChange(o.key)}
-            className={classes}
-            title={o.label}
-          >
-            {o.icon}
-          </button>
-        );
-      })}
-    </div>
-  );
-};
+import StatusSelector from "../components/StatusSelector";
+import { API_BASE, WS_BASE } from "../api/axios";
 
 export default function ContainerDetails() {
   const { id } = useParams();
@@ -50,30 +9,24 @@ export default function ContainerDetails() {
 
   const [container, setContainer] = useState(null);
   const [error, setError] = useState("");
-
   const [history, setHistory] = useState([]);
   const [historyPage, setHistoryPage] = useState(1);
   const [historyPages, setHistoryPages] = useState(1);
 
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const user  = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
   const loadContainer = useCallback(() => {
-    // fetch(`http://10.19.148.12:8000/containers/${id}`)
-    fetch(`http://localhost:8000/containers/${id}`)
+    fetch(`${API_BASE}/containers/${id}`)
       .then((res) => {
-        if (res.status === 404) {
-          navigate("/containers");
-          return null;
-        }
+        if (res.status === 404) { navigate("/containers"); return null; }
         return res.json();
       })
       .then((data) => data && setContainer(data));
   }, [id, navigate]);
 
   const loadHistory = useCallback((pageNum = 1) => {
-    // fetch(`http://10.19.148.12:8000/containers/${id}/history?page=${pageNum}`)
-    fetch(`http://localhost:8000/containers/${id}/history?page=${pageNum}`)
+    fetch(`${API_BASE}/containers/${id}/history?page=${pageNum}`)
       .then((res) => res.json())
       .then((data) => {
         setHistory(data.items);
@@ -87,10 +40,9 @@ export default function ContainerDetails() {
     loadHistory(1);
   }, [loadContainer, loadHistory]);
 
-  // 🔥 REALTIME WEBSOCKET
+  // Reload if another user edits this container while it's open
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/containers");
-    const ws = new WebSocket("ws://localhost:8000/ws/containers");
+    const ws = new WebSocket(`${WS_BASE}/ws/containers`);
 
     ws.onmessage = (event) => {
       if (event.data === "containers_updated") {
@@ -104,19 +56,19 @@ export default function ContainerDetails() {
 
   if (!container) return <div>Ładowanie...</div>;
 
+  // compat and above can edit status/comment and move containers
   const canEdit =
     user.role === "compat" ||
     user.role === "manager" ||
     user.role === "admin";
 
   // -----------------------------
-  // DELETE CONTAINER (admin only)
+  // Delete container
   // -----------------------------
   const deleteContainer = async () => {
     if (!window.confirm("Czy na pewno chcesz usunąć ten kontener?")) return;
 
-    // const res = await fetch(`http://10.19.148.12:8000/containers/${id}`, {
-    const res = await fetch(`http://localhost:8000/containers/${id}`, {
+    const res = await fetch(`${API_BASE}/containers/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -131,11 +83,10 @@ export default function ContainerDetails() {
   };
 
   // -----------------------------
-  // UPDATE COMMENT (compat+)
+  // Save comment
   // -----------------------------
   const saveComment = async () => {
-    // await fetch(`http://10.19.148.12:8000/containers/${id}/comment`, {
-    await fetch(`http://localhost:8000/containers/${id}/comment`, {
+    await fetch(`${API_BASE}/containers/${id}/comment`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -146,13 +97,12 @@ export default function ContainerDetails() {
   };
 
   // -----------------------------
-  // UPDATE STATUS (NAPRAWIONE)
+  // Update status
   // -----------------------------
   const updateStatus = async (newStatus) => {
     const backendValue = newStatus === "none" ? null : newStatus;
 
-    // await fetch(`http://10.19.148.12:8000/containers/${id}/status`, {
-    await fetch(`http://localhost:8000/containers/${id}/status`, {
+    await fetch(`${API_BASE}/containers/${id}/status`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -166,26 +116,15 @@ export default function ContainerDetails() {
 
   return (
     <div className="page">
-      {/* NAGŁÓWEK + STATUS */}
       <div className="details-header">
         <h1>Kontener: {container.code}</h1>
-
-        <StatusSelector
-          value={container.status}
-          disabled={!canEdit}
-          onChange={updateStatus}
-        />
+        <StatusSelector value={container.status} disabled={!canEdit} onChange={updateStatus} />
       </div>
 
       <Link to="/containers" className="back-link">← Kontenery</Link>
 
-      {error && (
-        <p className="msg-error">
-          {error}
-        </p>
-      )}
+      {error && <p className="msg-error">{error}</p>}
 
-      {/* DWIE KOLUMNY */}
       <div className="details-grid">
         {/* LEWA KOLUMNA */}
         <div>
@@ -201,9 +140,7 @@ export default function ContainerDetails() {
               <h3>Edytuj komentarz</h3>
               <textarea
                 value={container.comment || ""}
-                onChange={(e) =>
-                  setContainer({ ...container, comment: e.target.value })
-                }
+                onChange={(e) => setContainer({ ...container, comment: e.target.value })}
                 rows={3}
               />
               <br />
@@ -214,12 +151,8 @@ export default function ContainerDetails() {
           <p>
             Lokalizacja:{" "}
             {container.location ? (
-              <Link to={`/locations/${container.location.id}`}>
-                {container.location.code}
-              </Link>
-            ) : (
-              "-"
-            )}
+              <Link to={`/locations/${container.location.id}`}>{container.location.code}</Link>
+            ) : "-"}
           </p>
 
           <div className="btn-row">
@@ -251,9 +184,7 @@ export default function ContainerDetails() {
               <tbody>
                 {container.assets.map((a) => (
                   <tr key={a.id}>
-                    <td>
-                      <Link to={`/assets/${a.id}`}>{a.tag}</Link>
-                    </td>
+                    <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
                     <td>{a.name}</td>
                     <td>{a.type}</td>
                   </tr>
@@ -275,35 +206,27 @@ export default function ContainerDetails() {
                 <ul>
                   {history.map((h) => (
                     <li key={h.id} className="history-item">
-                      <strong>
-                        {new Date(h.moved_at).toLocaleString()}
-                      </strong>
+                      <strong>{new Date(h.moved_at).toLocaleString()}</strong>
                       <br />
-                      {(h.old_location_name || "-")} →{" "}
-                      {(h.new_location_name || "-")}
+                      {h.old_location_name || "-"} → {h.new_location_name || "-"}
                       <br />
                       {h.note?.trim() || "brak notatki"}
                       <br />
-                      <em className="meta-dim">
-                        przeniósł: {h.moved_by || "nieznany"}
-                      </em>
+                      <em className="meta-dim">przeniósł: {h.moved_by || "nieznany"}</em>
                     </li>
                   ))}
                 </ul>
 
-                {/* PAGINACJA */}
                 <div className="pagination">
-                  {Array.from({ length: historyPages }, (_, i) => i + 1).map(
-                    (num) => (
-                      <button
-                        key={num}
-                        onClick={() => loadHistory(num)}
-                        className={num === historyPage ? "active" : ""}
-                      >
-                        {num}
-                      </button>
-                    )
-                  )}
+                  {Array.from({ length: historyPages }, (_, i) => i + 1).map((num) => (
+                    <button
+                      key={num}
+                      onClick={() => loadHistory(num)}
+                      className={num === historyPage ? "active" : ""}
+                    >
+                      {num}
+                    </button>
+                  ))}
                 </div>
               </>
             )}

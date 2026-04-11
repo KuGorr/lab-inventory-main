@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { API_BASE, WS_BASE } from "../api/axios";
 import { Link } from "react-router-dom";
 
 export default function Locations() {
@@ -14,26 +15,22 @@ export default function Locations() {
   const token = localStorage.getItem("token");
 
   const loadLocations = useCallback(async () => {
-    // const res = await fetch("http://10.19.148.12:8000/locations/");
-    const res = await fetch("http://localhost:8000/locations/");
+    const res = await fetch(`${API_BASE}/locations/`);
     const data = await res.json();
-
     setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
   }, []);
 
   useEffect(() => {
     (async () => {
-      // const res = await fetch("http://10.19.148.12:8000/locations/");
-      const res = await fetch("http://localhost:8000/locations/");
+      const res = await fetch(`${API_BASE}/locations/`);
       const data = await res.json();
       setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
     })();
   }, []);
 
-  // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie listy lokalizacji
+  // Keep table in sync when another user modifies locations
   useEffect(() => {
-    // const ws = new WebSocket("ws://10.19.148.12:8000/ws/locations");
-    const ws = new WebSocket("ws://localhost:8000/ws/locations");
+    const ws = new WebSocket(`${WS_BASE}/ws/locations`);
 
     ws.onmessage = (event) => {
       if (event.data === "locations_updated") {
@@ -44,11 +41,13 @@ export default function Locations() {
     return () => ws.close();
   }, [loadLocations]);
 
+  // -----------------------------
+  // Create location
+  // -----------------------------
   const createLocation = async (e) => {
     e.preventDefault();
 
-    // await fetch("http://10.19.148.12:8000/locations/", {
-    await fetch("http://localhost:8000/locations/", {
+    await fetch(`${API_BASE}/locations/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,9 +60,11 @@ export default function Locations() {
     loadLocations();
   };
 
+  // -----------------------------
+  // Delete location
+  // -----------------------------
   const deleteLocation = async (id) => {
-    // await fetch(`http://10.19.148.12:8000/locations/${id}`, {
-    await fetch(`http://localhost:8000/locations/${id}`, {
+    await fetch(`${API_BASE}/locations/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -73,6 +74,9 @@ export default function Locations() {
     loadLocations();
   };
 
+  // -----------------------------
+  // Filter by search
+  // -----------------------------
   const filtered = locations.filter((loc) => {
     const text = search.toLowerCase();
 
@@ -116,7 +120,6 @@ export default function Locations() {
         </>
       )}
 
-      {/* 🔥 LICZNIK LOKALIZACJI */}
       <div className="result-counter">
         Wyniki: {filtered.length} / {locations.length}
       </div>

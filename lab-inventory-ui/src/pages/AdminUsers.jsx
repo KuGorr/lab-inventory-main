@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../api/axios";
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);
@@ -11,7 +12,6 @@ export default function AdminUsers() {
     role: "user",
   });
 
-  // NEW: state for password change
   const [passwordChange, setPasswordChange] = useState({
     userId: null,
     newPassword: "",
@@ -26,8 +26,7 @@ export default function AdminUsers() {
   const loadUsers = async () => {
     setError("");
 
-    // const res = await fetch("http://10.19.148.12:8000/users/", {
-    const res = await fetch("http://localhost:8000/users/", {
+    const res = await fetch(`${API_BASE}/users/`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -42,8 +41,7 @@ export default function AdminUsers() {
 
   useEffect(() => {
     (async () => {
-      // const res = await fetch("http://10.19.148.12:8000/users/", {
-      const res = await fetch("http://localhost:8000/users/", {
+      const res = await fetch(`${API_BASE}/users/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) return;
@@ -64,8 +62,7 @@ export default function AdminUsers() {
       return;
     }
 
-    // const res = await fetch("http://10.19.148.12:8000/users/", {
-    const res = await fetch("http://localhost:8000/users/", {
+    const res = await fetch(`${API_BASE}/users/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -90,8 +87,7 @@ export default function AdminUsers() {
   const deleteUser = async (id) => {
     if (!window.confirm("Czy na pewno chcesz usunąć użytkownika?")) return;
 
-    // const res = await fetch(`http://10.19.148.12:8000/users/${id}`, {
-    const res = await fetch(`http://localhost:8000/users/${id}`, {
+    const res = await fetch(`${API_BASE}/users/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -111,14 +107,10 @@ export default function AdminUsers() {
   const changeRole = async (id, newRole) => {
     setError("");
 
-    const res = await fetch(
-      // `http://10.19.148.12:8000/users/${id}/role?new_role=${newRole}`,
-      `http://localhost:8000/users/${id}/role?new_role=${newRole}`,
-      {
-        method: "PATCH",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const res = await fetch(`${API_BASE}/users/${id}/role?new_role=${newRole}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
     if (!res.ok) {
       const data = await res.json();
@@ -139,8 +131,7 @@ export default function AdminUsers() {
     }
 
     const res = await fetch(
-      // `http://10.19.148.12:8000/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
-      `http://localhost:8000/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
+      `${API_BASE}/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
