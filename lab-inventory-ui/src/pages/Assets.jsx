@@ -1,4 +1,4 @@
-import { useEffect, useState, memo, useRef } from "react";
+import { useEffect, useState, memo, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 // ---------------------------
@@ -115,16 +115,16 @@ export default function Assets() {
 
   const [statusFilter, setStatusFilter] = useState("all");
 
-  const loadAssets = () => {
+  const loadAssets = useCallback(() => {
     // fetch("http://10.19.148.12:8000/assets/")
     fetch("http://localhost:8000/assets/")
       .then((res) => res.json())
       .then((data) => setAssets(data));
-  };
+  }, []);
 
   useEffect(() => {
     loadAssets();
-  }, []);
+  }, [loadAssets]);
 
   useEffect(() => {
     // const ws = new WebSocket("ws://10.19.148.12:8000/ws/assets");
@@ -137,7 +137,7 @@ export default function Assets() {
     };
 
     return () => ws.close();
-  }, []);
+  }, [loadAssets]);
 
   const uniqueValues = (field) => {
     const values = assets
@@ -286,6 +286,7 @@ export default function Assets() {
           <button
             onClick={() => setStatusFilter("all")}
             className={`status-btn ${statusFilter === "all" ? "active active-all" : ""}`}
+            title="Wszystkie"
           >
             ⭐
           </button>
@@ -305,6 +306,7 @@ export default function Assets() {
               setStatusFilter(statusFilter === "available" ? "all" : "available")
             }
             className={`status-btn ${statusFilter === "available" ? "active active-available" : ""}`}
+            title="Dostępny"
           >
             ✅
           </button>
@@ -314,6 +316,7 @@ export default function Assets() {
               setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
             }
             className={`status-btn ${statusFilter === "borrowed" ? "active active-borrowed" : ""}`}
+            title="Wypożyczony"
           >
             🔄
           </button>
@@ -323,6 +326,7 @@ export default function Assets() {
               setStatusFilter(statusFilter === "broken" ? "all" : "broken")
             }
             className={`status-btn ${statusFilter === "broken" ? "active active-broken" : ""}`}
+            title="Uszkodzony"
           >
             🗑️
           </button>
@@ -332,6 +336,7 @@ export default function Assets() {
               setStatusFilter(statusFilter === "lost" ? "all" : "lost")
             }
             className={`status-btn ${statusFilter === "lost" ? "active active-lost" : ""}`}
+            title="Zagubiony"
           >
             ❓
           </button>

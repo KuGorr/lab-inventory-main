@@ -41,8 +41,16 @@ export default function AdminUsers() {
   };
 
   useEffect(() => {
-    loadUsers();
-  }, []);
+    (async () => {
+      // const res = await fetch("http://10.19.148.12:8000/users/", {
+      const res = await fetch("http://localhost:8000/users/", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      setUsers(data);
+    })();
+  }, [token]);
 
   // ---------------------------------------
   // CREATE USER

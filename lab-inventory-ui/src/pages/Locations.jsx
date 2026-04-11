@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Locations() {
@@ -13,16 +13,21 @@ export default function Locations() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
-  const loadLocations = async () => {
+  const loadLocations = useCallback(async () => {
     // const res = await fetch("http://10.19.148.12:8000/locations/");
     const res = await fetch("http://localhost:8000/locations/");
     const data = await res.json();
 
     setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
-  };
+  }, []);
 
   useEffect(() => {
-    loadLocations();
+    (async () => {
+      // const res = await fetch("http://10.19.148.12:8000/locations/");
+      const res = await fetch("http://localhost:8000/locations/");
+      const data = await res.json();
+      setLocations(data.sort((a, b) => a.code.localeCompare(b.code)));
+    })();
   }, []);
 
   // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie listy lokalizacji
@@ -37,7 +42,7 @@ export default function Locations() {
     };
 
     return () => ws.close();
-  }, []);
+  }, [loadLocations]);
 
   const createLocation = async (e) => {
     e.preventDefault();

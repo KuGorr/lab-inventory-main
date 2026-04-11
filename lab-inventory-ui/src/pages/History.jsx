@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function History() {
@@ -8,7 +8,7 @@ export default function History() {
   const [movedBy, setMovedBy] = useState("");
   const [users, setUsers] = useState([]);
 
-  const loadHistory = (pageNum = 1, moved = movedBy) => {
+  const loadHistory = useCallback((pageNum = 1, moved = movedBy) => {
     // let url = `http://10.19.148.12:8000/assets/history?page=${pageNum}`;
     let url = `http://localhost:8000/assets/history?page=${pageNum}`;
     if (moved) url += `&moved_by=${moved}`;
@@ -20,10 +20,17 @@ export default function History() {
         setPages(data.pages);
         setPage(data.page);
       });
-  };
+  }, [movedBy]);
 
   useEffect(() => {
-    loadHistory(1);
+    // fetch("http://10.19.148.12:8000/assets/history?page=1")
+    fetch("http://localhost:8000/assets/history?page=1")
+      .then(res => res.json())
+      .then(data => {
+        setHistory(data.items);
+        setPages(data.pages);
+        setPage(data.page);
+      });
 
     // fetch("http://10.19.148.12:8000/assets/history/users")
     fetch("http://localhost:8000/assets/history/users")
@@ -43,7 +50,7 @@ export default function History() {
     };
 
     return () => ws.close();
-  }, [page, movedBy]);
+  }, [loadHistory, page, movedBy]);
 
   const handleFilter = () => {
     loadHistory(1, movedBy);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 export default function LocationDetails() {
@@ -7,7 +7,7 @@ export default function LocationDetails() {
 
   const [data, setData] = useState(null);
 
-  const loadData = () => {
+  const loadData = useCallback(() => {
     // fetch(`http://10.19.148.12:8000/locations/${id}/contents`)
     fetch(`http://localhost:8000/locations/${id}/contents`)
       .then(res => {
@@ -20,11 +20,11 @@ export default function LocationDetails() {
       .then(json => {
         if (json) setData(json);
       });
-  };
+  }, [id, navigate]);
 
   useEffect(() => {
     loadData();
-  }, [id]);
+  }, [loadData]);
 
   // 🔥 REALTIME WEBSOCKET — automatyczne odświeżanie szczegółów lokalizacji
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function LocationDetails() {
     };
 
     return () => ws.close();
-  }, [id]);
+  }, [loadData]);
 
   if (!data) return <div>Ładowanie...</div>;
 

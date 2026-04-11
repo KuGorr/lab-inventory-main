@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Containers() {
@@ -26,24 +26,24 @@ export default function Containers() {
   // -----------------------------
   // LOAD DATA
   // -----------------------------
-  const loadContainers = () => {
+  const loadContainers = useCallback(() => {
     // fetch("http://10.19.148.12:8000/containers/")
     fetch("http://localhost:8000/containers/")
       .then((res) => res.json())
       .then((data) => setContainers(data));
-  };
+  }, []);
 
-  const loadLocations = () => {
+  const loadLocations = useCallback(() => {
     // fetch("http://10.19.148.12:8000/locations/")
     fetch("http://localhost:8000/locations/")
       .then((res) => res.json())
       .then((data) => setLocations(data));
-  };
+  }, []);
 
   useEffect(() => {
     loadContainers();
     loadLocations();
-  }, []);
+  }, [loadContainers, loadLocations]);
 
   // -----------------------------
   // REALTIME WEBSOCKET
@@ -59,7 +59,7 @@ export default function Containers() {
     };
 
     return () => ws.close();
-  }, []);
+  }, [loadContainers]);
 
   // -----------------------------
   // CLOSE DROPDOWN ON OUTSIDE CLICK
@@ -223,6 +223,7 @@ export default function Containers() {
         <button
           onClick={() => setStatusFilter("all")}
           className={`status-btn ${statusFilter === "all" ? "active active-all" : ""}`}
+          title="Wszystkie"
         >
           ⭐
         </button>
@@ -232,6 +233,7 @@ export default function Containers() {
             setStatusFilter(statusFilter === "none" ? "all" : "none")
           }
           className={`status-btn ${statusFilter === "none" ? "active active-none" : ""}`}
+          title="Brak statusu"
         >
           ◻️?
         </button>
@@ -241,6 +243,7 @@ export default function Containers() {
             setStatusFilter(statusFilter === "available" ? "all" : "available")
           }
           className={`status-btn ${statusFilter === "available" ? "active active-available" : ""}`}
+          title="Dostępny"
         >
           ✅
         </button>
@@ -250,6 +253,7 @@ export default function Containers() {
             setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
           }
           className={`status-btn ${statusFilter === "borrowed" ? "active active-borrowed" : ""}`}
+          title="Wypożyczony"
         >
           🔄
         </button>
@@ -259,6 +263,7 @@ export default function Containers() {
             setStatusFilter(statusFilter === "broken" ? "all" : "broken")
           }
           className={`status-btn ${statusFilter === "broken" ? "active active-broken" : ""}`}
+          title="Uszkodzony"
         >
           🗑️
         </button>
@@ -268,6 +273,7 @@ export default function Containers() {
             setStatusFilter(statusFilter === "lost" ? "all" : "lost")
           }
           className={`status-btn ${statusFilter === "lost" ? "active active-lost" : ""}`}
+          title="Zagubiony"
         >
           ❓
         </button>

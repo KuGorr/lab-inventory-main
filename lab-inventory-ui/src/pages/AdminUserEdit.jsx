@@ -21,7 +21,7 @@ export default function AdminUserEdit() {
         setUser(u);
         setRole(u.role);
       });
-  }, [id]);
+  }, [id, token]);
 
   const submit = async (e) => {
     e.preventDefault();

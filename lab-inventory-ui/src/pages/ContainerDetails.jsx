@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 /* ------------------------------
@@ -58,7 +58,7 @@ export default function ContainerDetails() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
-  const loadContainer = () => {
+  const loadContainer = useCallback(() => {
     // fetch(`http://10.19.148.12:8000/containers/${id}`)
     fetch(`http://localhost:8000/containers/${id}`)
       .then((res) => {
@@ -69,9 +69,9 @@ export default function ContainerDetails() {
         return res.json();
       })
       .then((data) => data && setContainer(data));
-  };
+  }, [id, navigate]);
 
-  const loadHistory = (pageNum = 1) => {
+  const loadHistory = useCallback((pageNum = 1) => {
     // fetch(`http://10.19.148.12:8000/containers/${id}/history?page=${pageNum}`)
     fetch(`http://localhost:8000/containers/${id}/history?page=${pageNum}`)
       .then((res) => res.json())
@@ -80,12 +80,12 @@ export default function ContainerDetails() {
         setHistoryPages(data.pages);
         setHistoryPage(data.page);
       });
-  };
+  }, [id]);
 
   useEffect(() => {
     loadContainer();
     loadHistory(1);
-  }, [id]);
+  }, [loadContainer, loadHistory]);
 
   // 🔥 REALTIME WEBSOCKET
   useEffect(() => {
@@ -100,7 +100,7 @@ export default function ContainerDetails() {
     };
 
     return () => ws.close();
-  }, [id, historyPage]);
+  }, [loadContainer, loadHistory, historyPage]);
 
   if (!container) return <div>Ładowanie...</div>;
 
