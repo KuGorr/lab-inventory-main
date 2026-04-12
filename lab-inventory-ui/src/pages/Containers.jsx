@@ -48,6 +48,7 @@ export default function Containers() {
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/containers`);
 
+    ws.onerror = () => {};
     ws.onmessage = (event) => {
       if (event.data === "containers_updated") {
         loadContainers();

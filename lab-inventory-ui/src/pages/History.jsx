@@ -43,6 +43,7 @@ export default function History() {
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/history`);
 
+    ws.onerror = () => {};
     ws.onmessage = (event) => {
       if (event.data === "history_updated") {
         loadHistory(page, movedBy);

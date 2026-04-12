@@ -34,8 +34,8 @@
   --info:         #4ea8de;
   --warning:      #f0a429;
 
-  --sidebar-bg:   #111420;
-  --sidebar-w:    244px;
+  --sidebar-bg: #111420;
+  --sidebar-w:  244px;
 
   --radius-xs:    4px;
   --radius-sm:    7px;
@@ -311,10 +311,11 @@ tbody tr:last-child td { border-bottom: none; }
   border-right: 1px solid var(--border);
   box-sizing: border-box;
   overflow-y: auto;
-  /* Added the z-index to fix the icons showing on the sidebar on the devices with small resolution */
   z-index: 200;
-  transition: background var(--transition), border-color var(--transition);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background var(--transition), border-color var(--transition);
 }
+.sidebar.sidebar--closed { transform: translateX(-100%); }
 
 .sidebar h3 {
   margin: 0 0 24px;
@@ -326,6 +327,49 @@ tbody tr:last-child td { border-bottom: none; }
   color: var(--accent);
   border-radius: var(--radius-sm);
   background: var(--accent-soft);
+}
+
+/* Backdrop — overlay behind sidebar on small screens */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 199;
+  backdrop-filter: blur(1px);
+}
+
+/* Edge tab — slides along with the sidebar border */
+.sidebar-edge-btn {
+  position: fixed;
+  top: calc(50vh - 26px);
+  left: var(--sidebar-w);
+  z-index: 201;
+  width: 22px;
+  height: 52px;
+  padding: 0;
+  background: var(--bg-surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  border-left: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 14px;
+  cursor: pointer;
+  transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background var(--transition), color var(--transition),
+              border-color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-edge-btn:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: none;
+}
+.sidebar-edge-btn.sidebar--closed {
+  left: 0;
 }
 
 .sidebar a {
@@ -397,7 +441,12 @@ tbody tr:last-child td { border-bottom: none; }
   box-sizing: border-box;
   background: var(--bg-app);
   color: var(--text);
-  transition: background var(--transition), color var(--transition);
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              background var(--transition), color var(--transition);
+}
+/* Sidebar closed — full width */
+.main-content.sidebar--closed {
+  margin-left: 0;
 }
 
 
@@ -461,6 +510,25 @@ tbody tr:last-child td { border-bottom: none; }
   font-weight: 600;
   margin-top: 10px;
   justify-content: center;
+}
+
+/* Theme toggle on login page — fixed top-right corner */
+.login-theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 8px 14px;
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+}
+.login-theme-toggle:hover {
+  background: var(--bg-hover);
+  color: var(--text-h);
+  box-shadow: none;
 }
 
 
@@ -547,15 +615,16 @@ tbody tr:last-child td { border-bottom: none; }
 }
 
 .btn-clear-filters {
-  background: var(--bg-surface-2);
-  color: var(--text-muted);
-  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
   margin-top: 12px;
   font-size: 13px;
 }
 .btn-clear-filters:hover {
-  background: var(--bg-hover);
-  color: var(--text);
+  background: var(--danger-soft);
+  color: var(--danger-hover);
+  border-color: var(--danger-hover);
   box-shadow: none;
 }
 
@@ -584,6 +653,13 @@ tbody tr:last-child td { border-bottom: none; }
   transition: color var(--transition);
 }
 .auto-input-clear:hover { color: var(--text-h); }
+
+/* Active filter — purple highlight */
+.auto-input-inner.has-value input {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text-h);
+}
 
 .auto-dropdown {
   position: absolute;
@@ -710,7 +786,27 @@ tbody tr:last-child td { border-bottom: none; }
   margin-top: 28px;
 }
 @media (max-width: 960px) {
+  /* Sidebar overlays content — no margin push */
+  .main-content,
+  .main-content.sidebar--closed {
+    margin-left: 0;
+    padding: 24px 20px;
+  }
+  /* Sidebar closed: extra left pad clears the 22px edge tab */
+  .main-content.sidebar--closed {
+    padding-left: 32px;
+  }
+
+  /* Backdrop visible when sidebar open */
+  .sidebar-backdrop { display: block; }
+
   .details-grid { grid-template-columns: 1fr; }
+  table { display: block; overflow-x: auto; }
+
+  h1 { font-size: 22px; margin-bottom: 16px; }
+  .page-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .page-header h1 { margin-bottom: 0; }
+  .auto-input-inner input { width: 140px; }
 }
 
 /* Info key-value table inside detail left column */

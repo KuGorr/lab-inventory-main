@@ -43,6 +43,7 @@ export default function AssetDetails() {
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/assets`);
 
+    ws.onerror = () => {};
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
         loadAsset();

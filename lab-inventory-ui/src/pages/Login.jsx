@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 
@@ -7,6 +7,21 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  // Theme toggle — mirrors Layout logic so the preference persists across pages
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark"
+  );
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") root.classList.add("light-theme");
+    else root.classList.remove("light-theme");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   const submit = async (e) => {
     e.preventDefault();
@@ -36,6 +51,10 @@ export default function Login() {
 
   return (
     <div className="login-page">
+      <button className="login-theme-toggle" onClick={toggleTheme}>
+        {theme === "dark" ? "☀️ Jasny motyw" : "🌙 Ciemny motyw"}
+      </button>
+
       <div className="login-card">
         <div className="login-brand">Lab Inventory</div>
         <h2>Logowanie</h2>

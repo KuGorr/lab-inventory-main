@@ -43,7 +43,7 @@ const AutoInput = memo(function AutoInput({
 
   return (
     <div className="auto-input-wrapper">
-      <div className="auto-input-inner">
+      <div className={`auto-input-inner${value ? " has-value" : ""}`}>
         <input
           ref={inputRef}
           placeholder={label}
@@ -89,30 +89,33 @@ const AutoInput = memo(function AutoInput({
   );
 });
 
+const EMPTY_FILTERS = {
+  tag: "", item_name: "", oem: "", chipset: "", type: "",
+  platform: "", socket: "", generation: "", memory_size: "",
+  memory_type: "", location: "", container: "",
+};
+
+const readSession = (key, fallback) => {
+  try {
+    const v = sessionStorage.getItem(key);
+    return v !== null ? JSON.parse(v) : fallback;
+  } catch { return fallback; }
+};
+
 // ---------------------------
 // GŁÓWNY KOMPONENT
 // ---------------------------
 export default function Assets() {
   const [assets, setAssets] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(() => readSession("af_search", ""));
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [filters, setFilters] = useState(() => readSession("af_filters", EMPTY_FILTERS));
+  const [statusFilter, setStatusFilter] = useState(() => readSession("af_status", "all"));
 
-  const [filters, setFilters] = useState({
-    tag: "",
-    item_name: "",
-    oem: "",
-    chipset: "",
-    type: "",
-    platform: "",
-    socket: "",
-    generation: "",
-    memory_size: "",
-    memory_type: "",
-    location: "",
-    container: "",
-  });
-
-  const [statusFilter, setStatusFilter] = useState("all");
+  // Persist filter state across navigation
+  useEffect(() => { sessionStorage.setItem("af_filters", JSON.stringify(filters)); }, [filters]);
+  useEffect(() => { sessionStorage.setItem("af_search", JSON.stringify(search)); }, [search]);
+  useEffect(() => { sessionStorage.setItem("af_status", JSON.stringify(statusFilter)); }, [statusFilter]);
 
   // -----------------------------
   // Load data
@@ -131,6 +134,7 @@ export default function Assets() {
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/assets`);
 
+    ws.onerror = () => {};
     ws.onmessage = (event) => {
       if (event.data === "assets_updated") {
         loadAssets();
@@ -272,20 +276,7 @@ export default function Assets() {
         <button
           className="btn-clear-filters"
           onClick={() => {
-            setFilters({
-              tag: "",
-              item_name: "",
-              oem: "",
-              chipset: "",
-              type: "",
-              platform: "",
-              socket: "",
-              generation: "",
-              memory_size: "",
-              memory_type: "",
-              location: "",
-              container: "",
-            });
+            setFilters(EMPTY_FILTERS);
             setOpenDropdown(null);
           }}
         >

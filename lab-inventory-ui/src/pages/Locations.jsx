@@ -32,6 +32,7 @@ export default function Locations() {
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/locations`);
 
+    ws.onerror = () => {};
     ws.onmessage = (event) => {
       if (event.data === "locations_updated") {
         loadLocations();
