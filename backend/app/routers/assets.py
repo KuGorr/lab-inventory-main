@@ -146,7 +146,7 @@ def get_assets(db: Session = Depends(get_db)):
 async def create_asset(
     asset: schemas.AssetCreate,
     db: Session = Depends(get_db),
-    current_user: models.User = Depends(require_admin)
+    current_user: models.User = Depends(require_role("compat"))
 ):
     existing = db.query(models.Asset).filter(models.Asset.tag == asset.tag).first()
     if existing:

@@ -943,6 +943,112 @@ button.form-row {
 .table-wide { width: 100%; }
 
 
+/* ── Modal ────────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.modal-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 740px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px 16px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.modal-header h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 20px;
+}
+
+.modal-close {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  padding: 2px 8px;
+}
+.modal-close:hover {
+  color: var(--text-h);
+  background: var(--bg-hover);
+  box-shadow: none;
+}
+
+.modal-form {
+  padding: 20px 28px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Reset max-width inside modal so inputs fill their grid cell */
+.modal-form .form-row input,
+.modal-form .form-row textarea,
+.modal-form .form-row select {
+  max-width: none;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+
+.modal-tag-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.modal-tag-row input { flex: 1; }
+
+.modal-next-tag-btn {
+  white-space: nowrap;
+  font-size: 13px;
+  padding: 9px 14px;
+  flex-shrink: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 600px) {
+  .modal-grid { grid-template-columns: 1fr; }
+  .modal-card { max-height: 95vh; }
+  .modal-form { padding: 16px 18px 20px; }
+  .modal-header { padding: 18px 18px 14px; }
+}
+
+
 /* ── Custom scrollbar ─────────────────────────────────────── */
 ::-webkit-scrollbar { width: 7px; height: 7px; }
 ::-webkit-scrollbar-track { background: transparent; }

@@ -1,6 +1,7 @@
 import { useEffect, useState, memo, useRef, useCallback } from "react";
 import { API_BASE, WS_BASE } from "../api/axios";
 import { Link } from "react-router-dom";
+import CreateAssetModal from "../components/CreateAssetModal";
 
 // Memoized autocomplete input — stable ref prevents filter re-renders
 const AutoInput = memo(function AutoInput({
@@ -111,6 +112,10 @@ export default function Assets() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [filters, setFilters] = useState(() => readSession("af_filters", EMPTY_FILTERS));
   const [statusFilter, setStatusFilter] = useState(() => readSession("af_status", "all"));
+  const [showCreate, setShowCreate] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const canCreate = user.role === "compat" || user.role === "manager" || user.role === "admin";
 
   // Persist filter state across navigation
   useEffect(() => { sessionStorage.setItem("af_filters", JSON.stringify(filters)); }, [filters]);
@@ -238,7 +243,20 @@ export default function Assets() {
 
   return (
     <div className="page">
-      <h1>Assety</h1>
+      <div className="page-header">
+        <h1>Assety</h1>
+        {canCreate && (
+          <button onClick={() => setShowCreate(true)}>+ Nowy asset</button>
+        )}
+      </div>
+
+      {showCreate && (
+        <CreateAssetModal
+          assets={assets}
+          onClose={() => setShowCreate(false)}
+          onCreated={loadAssets}
+        />
+      )}
 
       <input
         type="text"
