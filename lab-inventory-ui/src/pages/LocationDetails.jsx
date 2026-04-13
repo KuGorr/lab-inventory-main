@@ -47,6 +47,7 @@ export default function LocationDetails() {
       {data.containers.length === 0 && <p>Brak kontenerów.</p>}
 
       {data.containers.length > 0 && (
+        <div className="table-scroll-wrap">
         <table>
           <thead>
             <tr>
@@ -63,6 +64,7 @@ export default function LocationDetails() {
             ))}
           </tbody>
         </table>
+        </div>
       )}
 
       <h2>Assety w tej lokalizacji</h2>
@@ -70,6 +72,7 @@ export default function LocationDetails() {
       {data.assets.length === 0 && <p>Brak assetów.</p>}
 
       {data.assets.length > 0 && (
+        <div className="table-scroll-wrap">
         <table>
           <thead>
             <tr>
@@ -86,6 +89,7 @@ export default function LocationDetails() {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

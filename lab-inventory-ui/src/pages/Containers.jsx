@@ -280,6 +280,7 @@ export default function Containers() {
       </div>
 
       {/* TABLE */}
+      <div className="table-scroll-wrap">
       <table>
         <thead>
           <tr>
@@ -326,6 +327,7 @@ export default function Containers() {
           })}
         </tbody>
       </table>
+      </div>
 
       {filtered.length === 0 && <p>Brak wyników.</p>}
     </div>

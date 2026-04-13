@@ -209,6 +209,7 @@ export default function AdminUsers() {
       {/* USER LIST */}
       <h2>Lista użytkowników</h2>
 
+      <div className="table-scroll-wrap">
       <table>
         <thead>
           <tr>
@@ -285,6 +286,7 @@ export default function AdminUsers() {
           ))}
         </tbody>
       </table>
+      </div>
 
       {filtered.length === 0 && <p>Brak wyników.</p>}
     </div>

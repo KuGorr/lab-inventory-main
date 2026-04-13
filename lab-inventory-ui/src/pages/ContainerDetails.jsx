@@ -174,6 +174,7 @@ export default function ContainerDetails() {
           {container.assets.length === 0 && <p>Brak assetów.</p>}
 
           {container.assets.length > 0 && (
+            <div className="table-scroll-wrap">
             <table>
               <thead>
                 <tr>
@@ -192,6 +193,7 @@ export default function ContainerDetails() {
                 ))}
               </tbody>
             </table>
+            </div>
           )}
         </div>
 

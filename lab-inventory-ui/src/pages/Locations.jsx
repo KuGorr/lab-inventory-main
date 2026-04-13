@@ -127,6 +127,7 @@ export default function Locations() {
 
       <h2>Lista lokalizacji</h2>
 
+      <div className="table-scroll-wrap">
       <table>
         <thead>
           <tr>
@@ -152,6 +153,7 @@ export default function Locations() {
           ))}
         </tbody>
       </table>
+      </div>
 
       {filtered.length === 0 && (
         <p>Brak wyników.</p>

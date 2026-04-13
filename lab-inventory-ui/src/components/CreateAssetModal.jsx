@@ -1,23 +1,43 @@
 import { useState } from "react";
 import { API_BASE } from "../api/axios";
 
-const NORMALIZE = (type) => (type === "Motherboard" ? "MOBO" : type);
+const NORMALIZE = (type) => (type === "Motherboard" ? "MBR" : type);
+
+const DRAFT_KEY = "create_asset_draft";
+
+const EMPTY_FORM = {
+  tag: "", name: "", type: "", platform: "",
+  manufacturer: "", model: "", socket: "", generation: "",
+  memory_size: "", memory_type: "",
+  cores: "", threads: "", base_clock: "", memory_clock: "", score: "",
+  status: "", comment: "",
+};
+
+const readDraft = () => {
+  try {
+    const v = localStorage.getItem(DRAFT_KEY);
+    return v ? { ...EMPTY_FORM, ...JSON.parse(v) } : EMPTY_FORM;
+  } catch { return EMPTY_FORM; }
+};
 
 export default function CreateAssetModal({ assets, onClose, onCreated }) {
   const token = localStorage.getItem("token");
 
-  const [form, setForm] = useState({
-    tag: "", name: "", type: "", platform: "",
-    manufacturer: "", model: "", socket: "", generation: "",
-    memory_size: "", memory_type: "",
-    cores: "", threads: "", base_clock: "", memory_clock: "", score: "",
-    status: "", comment: "",
-  });
-
+  const [form, setForm] = useState(readDraft);
+  const [hasDraft]      = useState(() => !!localStorage.getItem(DRAFT_KEY));
   const [error, setError]       = useState("");
   const [submitting, setSubmit] = useState(false);
 
-  const set = (field, value) => setForm((f) => ({ ...f, [field]: value }));
+  const set = (field, value) => setForm((f) => {
+    const next = { ...f, [field]: value };
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(next));
+    return next;
+  });
+
+  const clearDraft = () => {
+    localStorage.removeItem(DRAFT_KEY);
+    setForm(EMPTY_FORM);
+  };
 
   // Show auto-tag option only when type + Desktop platform both filled
   const showNextTag = form.type.trim() !== "" && form.platform === "Desktop";
@@ -79,6 +99,7 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
         return;
       }
 
+      localStorage.removeItem(DRAFT_KEY);
       onCreated();
       onClose();
     } catch {
@@ -87,11 +108,7 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
     }
   };
 
-  // Suggestions from existing data
-  const uniq = (fn) =>
-    [...new Set(assets.map(fn).filter(Boolean))].sort();
-
-  const names = uniq((a) => a.name);
+  const names = [...new Set(assets.map((a) => a.name).filter(Boolean))].sort();
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -104,6 +121,14 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
         </div>
 
         <form onSubmit={handleSubmit} className="modal-form">
+          {hasDraft && (
+            <div className="draft-notice">
+              Wczytano niezapisany szkic.{" "}
+              <button type="button" className="draft-clear" onClick={clearDraft}>
+                Wyczyść
+              </button>
+            </div>
+          )}
           {/* TAG — with optional auto-number */}
           <div className="form-row">
             <label>Tag *</label>

@@ -109,6 +109,10 @@ class AssetCreate(AssetBase):
     container_id: int | None = None
 
 
+class AssetUpdate(AssetBase):
+    pass
+
+
 class AssetRead(AssetBase):
     id: int
     location: Optional[LocationRead]

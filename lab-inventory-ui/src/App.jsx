@@ -4,7 +4,6 @@ import Assets from "./pages/Assets";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
 import AssetDetails from "./pages/AssetDetails";
-import MoveAsset from "./pages/MoveAsset";
 import Containers from "./pages/Containers";
 import ContainerDetails from "./pages/ContainerDetails";
 import MoveContainer from "./pages/MoveContainer";
@@ -29,7 +28,6 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Assets />} />
                 <Route path="/assets/:id" element={<AssetDetails />} />
-                <Route path="/assets/:id/move" element={<MoveAsset />} />
                 <Route path="/containers" element={<Containers />} />
                 <Route path="/containers/:id" element={<ContainerDetails />} />
                 <Route path="/containers/:id/move" element={<MoveContainer />} />

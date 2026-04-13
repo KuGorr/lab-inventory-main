@@ -16,7 +16,7 @@ const AutoInput = memo(function AutoInput({
   const value = filters[field];
   const inputRef = useRef(null);
 
-  const normalize = (v) => (v === "Motherboard" ? "MOBO" : v);
+  const normalize = (v) => (v === "Motherboard" ? "MBR" : v);
 
   const options = uniqueValues(field)
     .map(normalize)
@@ -168,7 +168,7 @@ export default function Assets() {
     const text = search.toLowerCase();
 
     return list.filter((a) => {
-      const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;
+      const typeNormalized = a.type === "Motherboard" ? "MBR" : a.type;
 
       const matchesSearch =
         a.tag?.toLowerCase().includes(text) ||
@@ -228,7 +228,7 @@ export default function Assets() {
         return a[field];
       })
       .filter(Boolean)
-      .map((v) => (v === "Motherboard" ? "MOBO" : v));
+      .map((v) => (v === "Motherboard" ? "MBR" : v));
 
     return [...new Set(values)].sort();
   };
@@ -369,6 +369,7 @@ export default function Assets() {
       </div>
 
       {/* TABELA */}
+      <div className="table-scroll-wrap">
       <table>
         <thead>
           <tr>
@@ -386,7 +387,7 @@ export default function Assets() {
 
         <tbody>
           {filtered.map((a) => {
-            const typeNormalized = a.type === "Motherboard" ? "MOBO" : a.type;
+            const typeNormalized = a.type === "Motherboard" ? "MBR" : a.type;
 
             const statusIcon =
               a.status === "available" ? "✅" :
@@ -429,6 +430,7 @@ export default function Assets() {
           })}
         </tbody>
       </table>
+      </div>
 
       {filtered.length === 0 && <p>Brak wyników.</p>}
     </div>

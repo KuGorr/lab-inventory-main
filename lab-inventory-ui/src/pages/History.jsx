@@ -97,6 +97,7 @@ export default function History() {
       </div>
 
       {/* TABELA */}
+      <div className="table-scroll-wrap">
       <table className="table-wide">
         <thead>
           <tr>
@@ -132,6 +133,7 @@ export default function History() {
           ))}
         </tbody>
       </table>
+      </div>
 
       {/* PAGINACJA */}
       <div className="pagination">

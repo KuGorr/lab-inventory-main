@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session, selectinload
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 
 from ..database import get_db
@@ -181,6 +181,46 @@ def get_asset(asset_id: int, db: Session = Depends(get_db)):
 
     return asset
 
+# ---------------------------------------------------------
+# GLOBALNA HISTORIA — ASSETY + KONTENERY
+# ---------------------------------------------------------
+
+@router.patch("/{asset_id}", response_model=schemas.AssetRead)
+async def update_asset(
+    asset_id: int,
+    data: schemas.AssetUpdate,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(require_role("compat"))
+):
+    asset = db.query(models.Asset).filter(models.Asset.id == asset_id).first()
+    if not asset:
+        raise HTTPException(status_code=404, detail="Asset not found")
+
+    changes = []
+    for field, new_value in data.dict(exclude_unset=True).items():
+        old_value = getattr(asset, field, None)
+        if old_value != new_value:
+            changes.append(f"{field}: {old_value!r} → {new_value!r}")
+        setattr(asset, field, new_value)
+
+    if changes:
+        history = models.AssetHistory(
+            asset_id=asset.id,
+            note="Edycja specyfikacji: " + ", ".join(changes),
+            moved_at=datetime.now(timezone.utc),
+            moved_by=current_user.username,
+        )
+        db.add(history)
+
+    db.commit()
+    db.refresh(asset)
+
+    await broadcast_assets_update()
+    if changes:
+        await broadcast_history_update()
+
+    return asset
+
 
 @router.get("/{asset_id}/history")
 def get_asset_history(
@@ -327,7 +367,7 @@ async def move_asset(
             old_location_name=old_location_name,
             new_location_name=new_location_name,
             note=req.note or "",
-            moved_at=datetime.utcnow(),
+            moved_at=datetime.now(timezone.utc),
             moved_by=current_user.username,
         )
 
@@ -354,7 +394,7 @@ async def move_asset(
             old_location_name=old_location_name,
             new_location_name=new_location_name,
             note=req.note or "",
-            moved_at=datetime.utcnow(),
+            moved_at=datetime.now(timezone.utc),
             moved_by=current_user.username,
         )
 
@@ -369,7 +409,11 @@ async def move_asset(
 
 
 @router.delete("/{asset_id}", response_model=dict)
-async def delete_asset(asset_id: int, db: Session = Depends(get_db)):
+async def delete_asset(
+    asset_id: int,
+    db: Session = Depends(get_db),
+    current_user: models.User = Depends(require_role("admin"))
+    ):
     asset = db.query(models.Asset).filter(models.Asset.id == asset_id).first()
     if not asset:
         raise HTTPException(status_code=404, detail="Asset not found")
