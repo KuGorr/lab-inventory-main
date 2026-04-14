@@ -6,7 +6,7 @@ import axios from "axios";
 //export const API_BASE = "http://localhost:8000";
 //export const WS_BASE  = "ws://localhost:8000";
 export const API_BASE = "http://10.19.145.15:8000";
-export const WS_BASE  = "ws://10.19.145.15:5173";
+export const WS_BASE  = "ws://10.19.145.15:8000";
 // ──────────────────────────────────────────────────────────────
 
 const api = axios.create({ baseURL: API_BASE });
