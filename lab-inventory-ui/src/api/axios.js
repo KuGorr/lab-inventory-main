@@ -3,8 +3,10 @@ import axios from "axios";
 // ── Server config ─────────────────────────────────────────────
 // DEV:  http://localhost:8000      ws://localhost:8000
 // PROD: http://10.19.148.12:8000   ws://10.19.148.12:8000
-export const API_BASE = "http://localhost:8000";
-export const WS_BASE  = "ws://localhost:8000";
+//export const API_BASE = "http://localhost:8000";
+//export const WS_BASE  = "ws://localhost:8000";
+export const API_BASE = "http://10.19.145.15:8000";
+export const WS_BASE  = "ws://10.19.145.15:5173";
 // ──────────────────────────────────────────────────────────────
 
 const api = axios.create({ baseURL: API_BASE });
