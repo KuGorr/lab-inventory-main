@@ -100,7 +100,9 @@ const readSession = (key, fallback) => {
   try {
     const v = sessionStorage.getItem(key);
     return v !== null ? JSON.parse(v) : fallback;
-  } catch { return fallback; }
+  } catch {
+    return fallback;
+  }
 };
 
 // ---------------------------
@@ -110,17 +112,49 @@ export default function Assets() {
   const [assets, setAssets] = useState([]);
   const [search, setSearch] = useState(() => readSession("af_search", ""));
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [filters, setFilters] = useState(() => readSession("af_filters", EMPTY_FILTERS));
-  const [statusFilter, setStatusFilter] = useState(() => readSession("af_status", "all"));
+  const [filters, setFilters] = useState(() =>
+    readSession("af_filters", EMPTY_FILTERS)
+  );
+  const [statusFilter, setStatusFilter] = useState(() =>
+    readSession("af_status", "all")
+  );
   const [showCreate, setShowCreate] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("user") || "{}");
-  const canCreate = user.role === "compat" || user.role === "manager" || user.role === "admin";
+  const canCreate =
+    user.role === "compat" || user.role === "manager" || user.role === "admin";
+
+  // 🔥 SORTOWANIE — STAN
+  const [sortConfig, setSortConfig] = useState({
+    key: null,
+    direction: "asc",
+  });
+
+  const requestSort = (key) => {
+    let direction = "asc";
+    if (sortConfig.key === key && sortConfig.direction === "asc") {
+      direction = "desc";
+    }
+    setSortConfig({ key, direction });
+  };
+
+  // Getter do zagnieżdżonych pól (location.code, container.code)
+  const getValue = (obj, path) => {
+    return path
+      .split(".")
+      .reduce((acc, part) => (acc && typeof acc === "object" ? acc[part] : undefined), obj);
+  };
 
   // Persist filter state across navigation
-  useEffect(() => { sessionStorage.setItem("af_filters", JSON.stringify(filters)); }, [filters]);
-  useEffect(() => { sessionStorage.setItem("af_search", JSON.stringify(search)); }, [search]);
-  useEffect(() => { sessionStorage.setItem("af_status", JSON.stringify(statusFilter)); }, [statusFilter]);
+  useEffect(() => {
+    sessionStorage.setItem("af_filters", JSON.stringify(filters));
+  }, [filters]);
+  useEffect(() => {
+    sessionStorage.setItem("af_search", JSON.stringify(search));
+  }, [search]);
+  useEffect(() => {
+    sessionStorage.setItem("af_status", JSON.stringify(statusFilter));
+  }, [statusFilter]);
 
   // -----------------------------
   // Load data
@@ -175,7 +209,9 @@ export default function Assets() {
         a.name?.toLowerCase().includes(text) ||
         typeNormalized.toLowerCase().includes(text) ||
         a.model?.toLowerCase().includes(text) ||
-        (a.manufacturer || a.producer || a.oem)?.toLowerCase().includes(text) ||
+        (a.manufacturer || a.producer || a.oem)?.toLowerCase().includes(
+          text
+        ) ||
         a.platform?.toLowerCase().includes(text) ||
         a.socket?.toLowerCase().includes(text) ||
         a.memory_type?.toLowerCase().includes(text) ||
@@ -188,27 +224,57 @@ export default function Assets() {
         if (!filters[key]) return true;
 
         const val =
-          key === "item_name"   ? a.name
-          : key === "chipset"   ? a.model
-          : key === "location"  ? a.location?.code
-          : key === "container" ? a.container?.code
-          : key === "oem"       ? (a.manufacturer || a.producer || a.oem)
-          : key === "type"      ? typeNormalized
-          : a[key];
+          key === "item_name"
+            ? a.name
+            : key === "chipset"
+            ? a.model
+            : key === "location"
+            ? a.location?.code
+            : key === "container"
+            ? a.container?.code
+            : key === "oem"
+            ? a.manufacturer || a.producer || a.oem
+            : key === "type"
+            ? typeNormalized
+            : a[key];
 
         return val?.toLowerCase().includes(filters[key].toLowerCase());
       });
 
       const matchesStatus =
-        statusFilter === "all"  ? true
-        : statusFilter === "none" ? !a.status
-        : a.status === statusFilter;
+        statusFilter === "all"
+          ? true
+          : statusFilter === "none"
+          ? !a.status
+          : a.status === statusFilter;
 
       return matchesSearch && matchesFilters && matchesStatus;
     });
   };
 
   const filtered = applyFilters(assets);
+
+  // 🔥 SORTOWANIE PO FILTRACH
+  const sorted = [...filtered].sort((a, b) => {
+    if (!sortConfig.key) return 0;
+
+    let rawA = getValue(a, sortConfig.key);
+    let rawB = getValue(b, sortConfig.key);
+
+    // 🔥 Specjalna obsługa OEM — sortowanie po tym samym co wyświetlanie
+    if (sortConfig.key === "oem") {
+      rawA = a.manufacturer || a.producer || a.oem || "";
+      rawB = b.manufacturer || b.producer || b.oem || "";
+    }
+
+    const valA = (rawA ?? "").toString().toLowerCase();
+    const valB = (rawB ?? "").toString().toLowerCase();
+
+    if (valA < valB) return sortConfig.direction === "asc" ? -1 : 1;
+    if (valA > valB) return sortConfig.direction === "asc" ? 1 : -1;
+    return 0;
+  });
+
 
   // -----------------------------
   // Autocomplete dropdown options
@@ -221,10 +287,10 @@ export default function Assets() {
     const values = subset
       .map((a) => {
         if (field === "item_name") return a.name;
-        if (field === "chipset")   return a.model;
-        if (field === "location")  return a.location?.code;
+        if (field === "chipset") return a.model;
+        if (field === "location") return a.location?.code;
         if (field === "container") return a.container?.code;
-        if (field === "oem")       return a.manufacturer || a.producer || a.oem;
+        if (field === "oem") return a.manufacturer || a.producer || a.oem;
         return a[field];
       })
       .filter(Boolean)
@@ -305,7 +371,9 @@ export default function Assets() {
         <div className="status-filter">
           <button
             onClick={() => setStatusFilter("all")}
-            className={`status-btn ${statusFilter === "all" ? "active active-all" : ""}`}
+            className={`status-btn ${
+              statusFilter === "all" ? "active active-all" : ""
+            }`}
             title="Wszystkie"
           >
             ⭐
@@ -315,7 +383,9 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "none" ? "all" : "none")
             }
-            className={`status-btn ${statusFilter === "none" ? "active active-none" : ""}`}
+            className={`status-btn ${
+              statusFilter === "none" ? "active active-none" : ""
+            }`}
             title="Brak statusu"
           >
             ◻️?
@@ -323,9 +393,15 @@ export default function Assets() {
 
           <button
             onClick={() =>
-              setStatusFilter(statusFilter === "available" ? "all" : "available")
+              setStatusFilter(
+                statusFilter === "available" ? "all" : "available"
+              )
             }
-            className={`status-btn ${statusFilter === "available" ? "active active-available" : ""}`}
+            className={`status-btn ${
+              statusFilter === "available"
+                ? "active active-available"
+                : ""
+            }`}
             title="Dostępny"
           >
             ✅
@@ -333,9 +409,15 @@ export default function Assets() {
 
           <button
             onClick={() =>
-              setStatusFilter(statusFilter === "borrowed" ? "all" : "borrowed")
+              setStatusFilter(
+                statusFilter === "borrowed" ? "all" : "borrowed"
+              )
             }
-            className={`status-btn ${statusFilter === "borrowed" ? "active active-borrowed" : ""}`}
+            className={`status-btn ${
+              statusFilter === "borrowed"
+                ? "active active-borrowed"
+                : ""
+            }`}
             title="Wypożyczony"
           >
             🔄
@@ -345,7 +427,11 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "broken" ? "all" : "broken")
             }
-            className={`status-btn ${statusFilter === "broken" ? "active active-broken" : ""}`}
+            className={`status-btn ${
+              statusFilter === "broken"
+                ? "active active-broken"
+                : ""
+            }`}
             title="Uszkodzony"
           >
             🗑️
@@ -355,7 +441,9 @@ export default function Assets() {
             onClick={() =>
               setStatusFilter(statusFilter === "lost" ? "all" : "lost")
             }
-            className={`status-btn ${statusFilter === "lost" ? "active active-lost" : ""}`}
+            className={`status-btn ${
+              statusFilter === "lost" ? "active active-lost" : ""
+            }`}
             title="Zagubiony"
           >
             ❓
@@ -370,66 +458,160 @@ export default function Assets() {
 
       {/* TABELA */}
       <div className="table-scroll-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th className="col-status">S</th>
-            <th className="col-tag">Tag</th>
-            <th className="col-name">Nazwa</th>
-            <th className="col-type">Typ</th>
-            <th className="col-model">Model</th>
-            <th className="col-oem">OEM</th>
-            <th className="col-location">Lokalizacja</th>
-            <th className="col-container">Kontener</th>
-            <th className="col-comment">Komentarz</th>
-          </tr>
-        </thead>
+        <table>
+          <thead>
+            <tr>
+              <th className="col-status">S</th>
 
-        <tbody>
-          {filtered.map((a) => {
-            const typeNormalized = a.type === "Motherboard" ? "MBR" : a.type;
+              <th
+                className="col-tag"
+                onClick={() => requestSort("tag")}
+              >
+                <div className="th-wrapper">
+                  <span>Tag</span>
+                  {sortConfig.key === "tag" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-            const statusIcon =
-              a.status === "available" ? "✅" :
-              a.status === "borrowed" ? "🔄" :
-              a.status === "broken" ? "🗑️" :
-              a.status === "lost" ? "❓" :
-              "◻️?";
+              <th
+                className="col-name"
+                onClick={() => requestSort("name")}
+              >
+                <div className="th-wrapper">
+                  <span>Nazwa</span>
+                  {sortConfig.key === "name" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-            return (
-              <tr key={a.id}>
-                <td className="status-icon-cell">
-                  {statusIcon}
-                </td>
+              <th className="col-type">
+                <div className="th-wrapper">
+                  <span>Typ</span>
+                </div>
+              </th>
 
-                <td className="col-tag td-ellipsis">
-                  <Link to={`/assets/${a.id}`}>{a.tag}</Link>
-                </td>
 
-                <td className="col-name">{a.name}</td>
+              <th
+                className="col-model"
+                onClick={() => requestSort("model")}
+              >
+                <div className="th-wrapper">
+                  <span>Model</span>
+                  {sortConfig.key === "model" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-                <td className="col-type td-ellipsis">
-                  {typeNormalized}
-                </td>
+              
+              <th
+                className="col-oem"
+                onClick={() => requestSort("oem")}
+              >
+                <div className="th-wrapper">
+                  <span>OEM</span>
+                  {sortConfig.key === "oem" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-                <td className="col-model">{a.model}</td>
 
-                <td className="col-oem td-ellipsis">
-                  {a.manufacturer || a.producer || a.oem || "-"}
-                </td>
+              <th
+                className="col-location"
+                onClick={() => requestSort("location.code")}
+              >
+                <div className="th-wrapper">
+                  <span>Lokalizacja</span>
+                  {sortConfig.key === "location.code" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-                <td className="col-location">{a.location?.code || "-"}</td>
+              <th
+                className="col-container"
+                onClick={() => requestSort("container.code")}
+              >
+                <div className="th-wrapper">
+                  <span>Kontener</span>
+                  {sortConfig.key === "container.code" && (
+                    <span className="th-arrow">
+                      {sortConfig.direction === "asc" ? "↓" : "↑"}
+                    </span>
+                  )}
+                </div>
+              </th>
 
-                <td className="col-container">{a.container?.code || "-"}</td>
+              <th className="col-comment">Komentarz</th>
+            </tr>
+          </thead>
 
-                <td className="col-comment">
-                  {a.comment?.trim() || "-"}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+          <tbody>
+            {sorted.map((a) => {
+              const typeNormalized =
+                a.type === "Motherboard" ? "MBR" : a.type;
+
+              const statusIcon =
+                a.status === "available"
+                  ? "✅"
+                  : a.status === "borrowed"
+                  ? "🔄"
+                  : a.status === "broken"
+                  ? "🗑️"
+                  : a.status === "lost"
+                  ? "❓"
+                  : "◻️?";
+
+              return (
+                <tr key={a.id}>
+                  <td className="status-icon-cell">{statusIcon}</td>
+
+                  <td className="col-tag td-ellipsis">
+                    <Link to={`/assets/${a.id}`}>{a.tag}</Link>
+                  </td>
+
+                  <td className="col-name">{a.name}</td>
+
+                  <td className="col-type td-ellipsis">
+                    {typeNormalized}
+                  </td>
+
+                  <td className="col-model">{a.model}</td>
+
+                  <td className="col-oem td-ellipsis">
+                    {a.manufacturer || a.producer || a.oem || "-"}
+                  </td>
+
+                  <td className="col-location">
+                    {a.location?.code || "-"}
+                  </td>
+
+                  <td className="col-container">
+                    {a.container?.code || "-"}
+                  </td>
+
+                  <td className="col-comment">
+                    {a.comment?.trim() || "-"}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
 
       {filtered.length === 0 && <p>Brak wyników.</p>}
