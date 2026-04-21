@@ -7,4 +7,4 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "run", "dev", "--", "--host", "--port", "5174"]
+CMD ["npm", "run", "dev", "--", "--host", "--port", "5173"]
