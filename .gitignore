@@ -27,7 +27,6 @@ dist-ssr
 *.sln
 *.sw?
 
-backend/app.db
 backend/backup_app.db
 
 # Python virtual environment
