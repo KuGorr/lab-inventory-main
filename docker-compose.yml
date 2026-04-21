@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: lab_inventory_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: labuser
+      POSTGRES_PASSWORD: labpass
+      POSTGRES_DB: labdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
