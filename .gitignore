@@ -34,6 +34,6 @@ backend/backup_app.db
 venv/
 
 
-docker-compose.yml
-Dockerfile
+
 axios.js
+prod_dump.sql

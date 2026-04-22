@@ -1,51 +1,49 @@
 version: "3.9"
 
 services:
-  postgres:
-    image: postgres:16
-    container_name: lab_inventory_postgres
-    restart: always
-    environment:
-      POSTGRES_USER: labuser
-      POSTGRES_PASSWORD: labpass
-      POSTGRES_DB: labdb
-    ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - labnet
-
   backend:
+    container_name: lab_inventory_backend_test
+    image: lab-inventory-main-backend-test
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: lab_inventory_backend
-    restart: always
-    environment:
-      DATABASE_URL: postgresql+psycopg2://labuser:labpass@postgres:5432/labdb
     ports:
       - "8001:8000"
-    depends_on:
-      - postgres
     networks:
-      - labnet
+      - lab_inventory_net_test
+    volumes:
+      - backend_data_test:/app
 
   frontend:
+    container_name: lab_inventory_frontend_test
+    image: lab-inventory-main-frontend-test
     build:
       context: ./lab-inventory-ui
       dockerfile: Dockerfile
-    container_name: lab_inventory_frontend
-    restart: always
     ports:
       - "5174:5173"
-    depends_on:
-      - backend
     networks:
-      - labnet
+      - lab_inventory_net_test
+    volumes:
+      - ./lab-inventory-ui:/app
 
-networks:
-  labnet:
+  db:
+    container_name: lab_inventory_db_test
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lab_inventory_test
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data_test:/var/lib/postgresql/data
+    networks:
+      - lab_inventory_net_test
 
 volumes:
-  postgres_data:
+  backend_data_test:
+  postgres_data_test:
+
+networks:
+  lab_inventory_net_test:
