@@ -1,15 +1,13 @@
 import axios from "axios";
 
-// ── Server config ─────────────────────────────────────────────
-// DEV:  http://localhost:8000      ws://localhost:8000
-// PROD: http://10.19.148.12:8000   ws://10.19.148.12:8000
-//export const API_BASE = "http://localhost:8000";
-//export const WS_BASE  = "ws://localhost:8000";
-export const API_BASE = "http://10.19.145.15:8000";
-export const WS_BASE  = "ws://10.19.145.15:8000";
-//export const API_BASE = "http://10.19.145.15:8001";
-//export const WS_BASE  = "ws://10.19.145.15:8001";
-// ──────────────────────────────────────────────────────────────
+// ── Server config (dynamic via .env) ─────────────────────────────
+// Vite automatycznie wstrzykuje zmienne zaczynające się od VITE_
+// do import.meta.env podczas builda.
+
+export const API_BASE = import.meta.env.VITE_API_URL;
+export const WS_BASE  = import.meta.env.VITE_WS_URL;
+
+// ────────────────────────────────────────────────────────────────
 
 const api = axios.create({ baseURL: API_BASE });
 
@@ -32,14 +30,12 @@ api.interceptors.response.use(
 
     const status = error.response.status;
 
-    // Token nieważny / sesja wygasła / backend reset
     if (status === 401 || status === 403) {
       console.warn("Sesja wygasła — wylogowuję użytkownika.");
 
       localStorage.removeItem("token");
       localStorage.removeItem("user");
 
-      // Przekierowanie na stronę logowania
       window.location.href = "/login";
     }
 
