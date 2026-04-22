@@ -1,51 +1,55 @@
 version: "3.9"
 
 services:
-  postgres:
-    image: postgres:16
-    container_name: lab_inventory_postgres
-    restart: always
+  backend:
+    container_name: lab_inventory_backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    networks:
+      - lab_inventory_net
+    volumes:
+      - backend_data:/app
+
+  frontend:
+    container_name: lab_inventory_frontend
+    build:
+      context: ./lab-inventory-ui
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    networks:
+      - lab_inventory_net
+    volumes:
+      - ./lab-inventory-ui:/app
+
+  db:
+    container_name: lab_inventory_db
+    image: postgres:15
     environment:
-      POSTGRES_USER: labuser
-      POSTGRES_PASSWORD: labpass
-      POSTGRES_DB: labdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lab_inventory
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - labnet
-
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: lab_inventory_backend
-    restart: always
-    environment:
-      DATABASE_URL: postgresql+psycopg2://labuser:labpass@postgres:5432/labdb
-    ports:
-      - "8000:8000"
-    depends_on:
-      - postgres
-    networks:
-      - labnet
-
-  frontend:
-    build:
-      context: ./lab-inventory-ui
-      dockerfile: Dockerfile
-    container_name: lab_inventory_frontend
-    restart: always
-    ports:
-      - "5173:5173"
-    depends_on:
-      - backend
-    networks:
-      - labnet
-
-networks:
-  labnet:
+      - lab_inventory_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
+  backend_data:
   postgres_data:
+
+networks:
+  lab_inventory_net:

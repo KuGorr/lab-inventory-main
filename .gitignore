@@ -37,3 +37,4 @@ venv/
 docker-compose.yml
 Dockerfile
 axios.js
+backups/*

@@ -9,8 +9,10 @@ load_dotenv()
 # Pobieramy URL bazy z .env
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
+print(">>> DATABASE_URL =", SQLALCHEMY_DATABASE_URL)  # DEBUG — zobaczymy co backend naprawdę widzi
+
 if not SQLALCHEMY_DATABASE_URL:
-    raise RuntimeError("DATABASE_URL is not set. Check backend/.env")
+    raise RuntimeError("DATABASE_URL is not set! Backend nie widzi .env")
 
 # Tworzymy silnik PostgreSQL
 engine = create_engine(
