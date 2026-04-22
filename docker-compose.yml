@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: labpass
       POSTGRES_DB: labdb
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -25,7 +25,7 @@ services:
     environment:
       DATABASE_URL: postgresql+psycopg2://labuser:labpass@postgres:5432/labdb
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       - postgres
     networks:
@@ -38,7 +38,7 @@ services:
     container_name: lab_inventory_frontend
     restart: always
     ports:
-      - "5173:5173"
+      - "5174:5173"
     depends_on:
       - backend
     networks:
