@@ -32,3 +32,8 @@ backend/backup_app.db
 # Python virtual environment
 .venv/
 venv/
+
+
+docker-compose.yml
+Dockerfile
+axios.js
