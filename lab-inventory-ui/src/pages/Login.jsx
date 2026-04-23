@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../api/axios";
 
 export default function Login() {
@@ -87,6 +87,13 @@ export default function Login() {
 
           <button type="submit">Zaloguj się</button>
         </form>
+
+        {/* 🔥 NOWE — link do resetu hasła */}
+        <div style={{ marginTop: "12px", textAlign: "center" }}>
+          <Link to="/reset-request" className="forgot-password-link">
+            Zapomniałeś hasła?
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -12,6 +12,9 @@ class UserBase(BaseModel):
     username: str
     role: str
 
+    # 🔥 NOWE — email użytkownika
+    email: Optional[str] = None
+
 
 class UserCreate(UserBase):
     password: str
