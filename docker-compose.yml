@@ -9,10 +9,10 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8001:8000"
+    env_file:
+      - ./backend/.env
     networks:
       - lab_inventory_net_test
-    volumes:
-      - backend_data_test:/app
 
   frontend:
     container_name: lab_inventory_frontend_test

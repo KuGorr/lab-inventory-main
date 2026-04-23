@@ -1,4 +1,4 @@
-print(">>> ŁADUJĘ NOWY SCHEMAS.PY <<<")
+print(">>> Nowy SCHEMAS.PY Na Test<<<")
 
 from pydantic import BaseModel
 from typing import Optional, List

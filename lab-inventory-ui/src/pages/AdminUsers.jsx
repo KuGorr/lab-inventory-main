@@ -8,6 +8,7 @@ export default function AdminUsers() {
 
   const [form, setForm] = useState({
     username: "",
+    email: "",
     password: "",
     role: "user",
   });
@@ -16,6 +17,8 @@ export default function AdminUsers() {
     userId: null,
     newPassword: "",
   });
+
+  const [editUser, setEditUser] = useState(null);
 
   const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -77,7 +80,7 @@ export default function AdminUsers() {
       return;
     }
 
-    setForm({ username: "", password: "", role: "user" });
+    setForm({ username: "", email: "", password: "", role: "user" });
     loadUsers();
   };
 
@@ -122,30 +125,49 @@ export default function AdminUsers() {
   };
 
   // ---------------------------------------
-  // CHANGE PASSWORD
+  // SAVE USER EDIT (MODAL)
   // ---------------------------------------
-  const changePassword = async () => {
-    if (!passwordChange.newPassword) {
-      setError("Hasło nie może być puste");
+  const saveUserEdit = async () => {
+    if (!editUser.username) {
+      setError("Login nie może być pusty");
       return;
     }
 
-    const res = await fetch(
-      `${API_BASE}/users/${passwordChange.userId}/password?new_password=${passwordChange.newPassword}`,
-      {
-        method: "PATCH",
-        headers: { Authorization: `Bearer ${token}` },
+    try {
+      // UPDATE EMAIL
+      await fetch(
+        `${API_BASE}/users/${editUser.id}/email?new_email=${editUser.email}`,
+        {
+          method: "PATCH",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      // UPDATE ROLE
+      await fetch(
+        `${API_BASE}/users/${editUser.id}/role?new_role=${editUser.role}`,
+        {
+          method: "PATCH",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      // UPDATE PASSWORD (optional)
+      if (editUser.newPassword) {
+        await fetch(
+          `${API_BASE}/users/${editUser.id}/password?new_password=${editUser.newPassword}`,
+          {
+            method: "PATCH",
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
       }
-    );
 
-    if (!res.ok) {
-      const data = await res.json();
-      setError(data.detail || "Nie udało się zmienić hasła");
-      return;
+      setEditUser(null);
+      loadUsers();
+    } catch (err) {
+      setError("Nie udało się zapisać zmian");
     }
-
-    setPasswordChange({ userId: null, newPassword: "" });
-    loadUsers();
   };
 
   // ---------------------------------------
@@ -187,6 +209,12 @@ export default function AdminUsers() {
         />
 
         <input
+          placeholder="Email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+        />
+
+        <input
           placeholder="Hasło"
           type="password"
           value={form.password}
@@ -210,85 +238,144 @@ export default function AdminUsers() {
       <h2>Lista użytkowników</h2>
 
       <div className="table-scroll-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Login</th>
-            <th>Rola</th>
-            <th>Akcje</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((u) => (
-            <tr key={u.id}>
-              <td>{u.id}</td>
-              <td>{u.username}</td>
-              <td>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Login</th>
+              <th>Email</th>
+              <th>Rola</th>
+              <th>Akcje</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((u) => (
+              <tr key={u.id}>
+                <td>{u.id}</td>
+                <td>{u.username}</td>
+                <td>{u.email || "-"}</td>
+                <td>
+                  <select
+                    value={u.role}
+                    onChange={(e) => changeRole(u.id, e.target.value)}
+                  >
+                    <option value="user">user</option>
+                    <option value="compat">compat</option>
+                    <option value="manager">manager</option>
+                    <option value="admin">admin</option>
+                  </select>
+                </td>
+                <td>
+                  <div className="btn-row">
+                    {/* EDIT BUTTON */}
+                    <button
+                      className="btn-info"
+                      onClick={() =>
+                        setEditUser({
+                          id: u.id,
+                          username: u.username,
+                          email: u.email || "",
+                          role: u.role,
+                          newPassword: "",
+                        })
+                      }
+                    >
+                      Edytuj
+                    </button>
+
+                    {/* DELETE USER */}
+                    <button
+                      className="btn-danger"
+                      onClick={() => deleteUser(u.id)}
+                    >
+                      Usuń
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {filtered.length === 0 && <p>Brak wyników.</p>}
+
+      {/* MODAL EDIT USER */}
+      {editUser && (
+        <div className="modal-overlay" onClick={() => setEditUser(null)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Edytuj użytkownika</h2>
+              <button
+                type="button"
+                className="modal-close"
+                onClick={() => setEditUser(null)}
+              >
+                ×
+              </button>
+            </div>
+
+            <div className="modal-form">
+              <div className="field">
+                <label>Login</label>
+                <input
+                  value={editUser.username}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, username: e.target.value })
+                  }
+                />
+              </div>
+
+              <div className="field">
+                <label>Email</label>
+                <input
+                  value={editUser.email}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, email: e.target.value })
+                  }
+                />
+              </div>
+
+              <div className="field">
+                <label>Rola</label>
                 <select
-                  value={u.role}
-                  onChange={(e) => changeRole(u.id, e.target.value)}
+                  value={editUser.role}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, role: e.target.value })
+                  }
                 >
                   <option value="user">user</option>
                   <option value="compat">compat</option>
                   <option value="manager">manager</option>
                   <option value="admin">admin</option>
                 </select>
-              </td>
-              <td>
-                <div className="btn-row">
-                  {/* CHANGE PASSWORD BUTTON */}
-                  {passwordChange.userId === u.id ? (
-                    <>
-                      <input
-                        type="password"
-                        placeholder="Nowe hasło"
-                        value={passwordChange.newPassword}
-                        onChange={(e) =>
-                          setPasswordChange({
-                            ...passwordChange,
-                            newPassword: e.target.value,
-                          })
-                        }
-                        style={{ width: "160px" }}
-                      />
-                      <button onClick={changePassword}>Zapisz</button>
-                      <button
-                        className="btn-secondary"
-                        onClick={() =>
-                          setPasswordChange({ userId: null, newPassword: "" })
-                        }
-                      >
-                        Anuluj
-                      </button>
-                    </>
-                  ) : (
-                    <button
-                      className="btn-info"
-                      onClick={() =>
-                        setPasswordChange({ userId: u.id, newPassword: "" })
-                      }
-                    >
-                      Zmień hasło
-                    </button>
-                  )}
+              </div>
 
-                  {/* DELETE USER */}
-                  <button
-                    className="btn-danger"
-                    onClick={() => deleteUser(u.id)}
-                  >
-                    Usuń
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      </div>
+              <div className="field">
+                <label>Nowe hasło (opcjonalnie)</label>
+                <input
+                  type="password"
+                  value={editUser.newPassword}
+                  onChange={(e) =>
+                    setEditUser({ ...editUser, newPassword: e.target.value })
+                  }
+                />
+              </div>
 
-      {filtered.length === 0 && <p>Brak wyników.</p>}
+              <div className="modal-actions">
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => setEditUser(null)}
+                >
+                  Anuluj
+                </button>
+                <button onClick={saveUserEdit}>Zapisz</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

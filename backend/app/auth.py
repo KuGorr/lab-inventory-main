@@ -1,30 +1,25 @@
 from datetime import datetime, timedelta
 from typing import Callable
+import os
 
-from fastapi import Depends, HTTPException, status, APIRouter
+from fastapi import Depends, HTTPException, status, APIRouter, Request
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import jwt, JWTError
 from sqlalchemy.orm import Session
+from pydantic import BaseModel
 
 from .database import get_db, SessionLocal
 from . import models
 from app.utils import hash_password, verify_password
+from app.utils.email_utils import send_reset_email
 
-
-# ============================================================
-# CONFIG
-# ============================================================
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
-SECRET_KEY = "twoj-sekret"  # TODO: zmień na bezpieczny
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
-
-# ============================================================
-# JWT TOKEN — ACCESS TOKEN
-# ============================================================
 
 def create_access_token(user: models.User) -> str:
     payload = {
@@ -35,21 +30,13 @@ def create_access_token(user: models.User) -> str:
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
 
-# ============================================================
-# JWT TOKEN — RESET TOKEN
-# ============================================================
-
 def create_reset_token(user_id: int) -> str:
     payload = {
         "sub": user_id,
-        "exp": datetime.utcnow() + timedelta(hours=1),
+        "exp": datetime.utcnow() + timedelta(hours=48),
     }
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
-
-# ============================================================
-# CURRENT USER
-# ============================================================
 
 def get_current_user(
     token: str = Depends(oauth2_scheme),
@@ -77,15 +64,7 @@ def get_current_user(
     return user
 
 
-# ============================================================
-# ROLE CHECKING
-# ============================================================
-
 def require_role(required: str) -> Callable:
-    """
-    Hierarchia ról:
-    user < compat < manager < admin
-    """
     def wrapper(current_user: models.User = Depends(get_current_user)) -> models.User:
         roles = ["user", "compat", "manager", "admin"]
 
@@ -115,16 +94,8 @@ def require_admin(current_user: models.User = Depends(get_current_user)) -> mode
     return current_user
 
 
-# ============================================================
-# ROUTER
-# ============================================================
-
 router = APIRouter(prefix="/auth", tags=["auth"])
 
-
-# ============================================================
-# LOGIN
-# ============================================================
 
 @router.post("/login")
 def login(
@@ -150,10 +121,6 @@ def login(
     }
 
 
-# ============================================================
-# DEFAULT ADMIN CREATION
-# ============================================================
-
 def create_default_admin() -> None:
     db = SessionLocal()
     try:
@@ -172,46 +139,41 @@ def create_default_admin() -> None:
         db.close()
 
 
-# ============================================================
-# 🔥 REQUEST PASSWORD RESET
-# ============================================================
+class PasswordResetRequest(BaseModel):
+    email: str
+
+
+class PasswordResetPayload(BaseModel):
+    token: str
+    new_password: str
+
 
 @router.post("/request-password-reset")
-def request_password_reset(email: str, db: Session = Depends(get_db)):
-    """
-    Użytkownik podaje email → generujemy token → zwracamy link resetujący.
-    (Email wyślemy później — teraz tylko mock)
-    """
+def request_password_reset(data: PasswordResetRequest, request: Request, db: Session = Depends(get_db)):
 
-    user = db.query(models.User).filter(models.User.email == email).first()
+    user = db.query(models.User).filter(models.User.email == data.email).first()
+
     if not user:
-        raise HTTPException(404, "Email not found")
+        return {"message": "If the email exists, a reset link has been sent."}
 
     token = create_reset_token(user.id)
 
-    reset_link = f"http://frontend/reset-password?token={token}"
+    frontend_base = os.getenv("FRONTEND_URL", "http://localhost:5173")
+    reset_link = f"{frontend_base}/reset-password?token={token}"
 
-    # MOCK — prawdziwy email dodamy później
-    print("====================================")
-    print("RESET PASSWORD LINK:")
-    print(reset_link)
-    print("====================================")
+    send_reset_email(user.email, reset_link)
 
-    return {"message": "Reset link generated", "reset_link": reset_link}
+    return {"message": "If the email exists, a reset link has been sent."}
 
-
-# ============================================================
-# 🔥 RESET PASSWORD
-# ============================================================
 
 @router.post("/reset-password")
-def reset_password(token: str, new_password: str, db: Session = Depends(get_db)):
-    """
-    Użytkownik wysyła token + nowe hasło.
-    Token zawiera user_id → ustawiamy nowe hasło.
-    """
+def reset_password(data: PasswordResetPayload, db: Session = Depends(get_db)):
+    print("RESET PASSWORD ENDPOINT HIT")
+    print("TOKEN RAW:", repr(data.token))
 
-    # 1. Dekodowanie tokenu
+    token = data.token
+    new_password = data.new_password
+
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         user_id = payload.get("sub")
@@ -220,16 +182,13 @@ def reset_password(token: str, new_password: str, db: Session = Depends(get_db))
     except JWTError:
         raise HTTPException(400, "Invalid or expired token")
 
-    # 2. Pobranie użytkownika
     user = db.query(models.User).filter(models.User.id == user_id).first()
     if not user:
         raise HTTPException(404, "User not found")
 
-    # 3. Walidacja hasła
     if not new_password or len(new_password) < 4:
         raise HTTPException(400, "Password too short")
 
-    # 4. Hashowanie nowego hasła (Argon2)
     user.password_hash = hash_password(new_password)
 
     db.commit()
