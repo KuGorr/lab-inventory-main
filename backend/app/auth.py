@@ -9,10 +9,10 @@ from jose.exceptions import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 
-from backend.app.database import get_db, SessionLocal
-from backend.app import models
-from backend.app.utils import hash_password, verify_password
-from backend.app.utils.email_utils import send_reset_email
+from app.database import get_db, SessionLocal
+from app import models
+from app.utils import hash_password, verify_password
+from app.utils.email_utils import send_reset_email
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")

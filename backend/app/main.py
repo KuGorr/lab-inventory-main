@@ -2,13 +2,13 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Importy routerów z katalogu routers/
-from backend.app.routers import assets, locations, containers, users, map, ws
+from app.routers import assets, locations, containers, users, map, ws
 
 # Import auth z backend/app/auth.py
-from backend.app import auth
+from app import auth
 
-from backend.app.database import Base, engine
-from backend.app.auth import create_default_admin
+from app.database import Base, engine
+from app.auth import create_default_admin
 
 # Tworzymy tabele, jeśli ich nie ma
 Base.metadata.create_all(bind=engine)
