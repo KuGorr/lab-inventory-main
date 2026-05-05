@@ -13,8 +13,6 @@ services:
       - "8000:8000"
     networks:
       - lab_inventory_net
-    volumes:
-      - backend_data:/app
 
   frontend:
     container_name: lab_inventory_frontend
@@ -25,8 +23,6 @@ services:
       - "5173:5173"
     networks:
       - lab_inventory_net
-    volumes:
-      - ./lab-inventory-ui:/app
 
   db:
     container_name: lab_inventory_db
@@ -48,7 +44,6 @@ services:
       retries: 10
 
 volumes:
-  backend_data:
   postgres_data:
 
 networks:

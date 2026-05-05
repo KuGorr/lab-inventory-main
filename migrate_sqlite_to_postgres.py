@@ -3,11 +3,11 @@ import sqlite3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.models import (
+from backend.app.models import (
     User, Location, Container, ContainerHistory,
     Asset, AssetHistory, AssetMovement
 )
-from app.database import Base
+from backend.app.database import Base
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -16,7 +16,7 @@ load_dotenv()
 # CONFIG
 # -----------------------------
 
-SQLITE_PATH = "/app/app.db"   # <-- poprawiona ścieżka
+SQLITE_PATH = "backend/app.db"
 POSTGRES_URL = os.getenv("DATABASE_URL")
 
 if not POSTGRES_URL:
@@ -43,6 +43,7 @@ pg_session = PGSession()
 # -----------------------------
 
 Base.metadata.create_all(bind=pg_engine)
+
 print(">>> PostgreSQL tables created.")
 
 # -----------------------------

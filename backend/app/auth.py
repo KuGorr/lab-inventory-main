@@ -5,13 +5,14 @@ import os
 from fastapi import Depends, HTTPException, status, APIRouter, Request
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from jose import jwt, JWTError
+from jose.exceptions import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 
-from .database import get_db, SessionLocal
-from . import models
-from app.utils import hash_password, verify_password
-from app.utils.email_utils import send_reset_email
+from backend.app.database import get_db, SessionLocal
+from backend.app import models
+from backend.app.utils import hash_password, verify_password
+from backend.app.utils.email_utils import send_reset_email
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
@@ -19,6 +20,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+if not SECRET_KEY:
+    raise RuntimeError("SECRET_KEY is not set in backend/.env")
 
 
 def create_access_token(user: models.User) -> str:
@@ -32,7 +36,7 @@ def create_access_token(user: models.User) -> str:
 
 def create_reset_token(email: str):
     payload = {
-        "sub": email,  # 🔥 KLUCZOWA ZMIANA
+        "sub": email,
         "exp": datetime.utcnow() + timedelta(hours=48)
     }
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
@@ -153,11 +157,9 @@ def request_password_reset(data: PasswordResetRequest, request: Request, db: Ses
 
     user = db.query(models.User).filter(models.User.email == data.email).first()
 
-    # Zawsze zwracamy tę samą odpowiedź (bez ujawniania czy email istnieje)
     if not user:
         return {"message": "If the email exists, a reset link has been sent."}
 
-    # 🔥 KLUCZOWA ZMIANA — token zawiera EMAIL, nie ID
     token = create_reset_token(user.email)
 
     frontend_base = os.getenv("FRONTEND_URL", "http://localhost:5173")
@@ -168,38 +170,30 @@ def request_password_reset(data: PasswordResetRequest, request: Request, db: Ses
     return {"message": "If the email exists, a reset link has been sent."}
 
 
-
 @router.post("/reset-password")
 def reset_password(data: PasswordResetPayload, db: Session = Depends(get_db)):
-    print("RESET PASSWORD ENDPOINT HIT")
-    print("TOKEN RAW:", repr(data.token))
 
     token = data.token
     new_password = data.new_password
 
-    # Dekodowanie tokena
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        email = payload.get("sub")  # 🔥 TERAZ SUB = EMAIL
+        email = payload.get("sub")
         if not email:
             raise HTTPException(400, "Invalid token payload")
-    except jwt.ExpiredSignatureError:
+    except ExpiredSignatureError:
         raise HTTPException(400, "Token expired")
-    except jwt.InvalidTokenError:
+    except JWTError:
         raise HTTPException(400, "Invalid or expired token")
 
-    # 🔥 KLUCZOWA ZMIANA — szukamy użytkownika po EMAILU, nie po ID
     user = db.query(models.User).filter(models.User.email == email).first()
     if not user:
         raise HTTPException(404, "User not found")
 
-    # Walidacja hasła
     if not new_password or len(new_password) < 4:
         raise HTTPException(400, "Password too short")
 
-    # Ustawiamy nowe hasło
     user.password_hash = hash_password(new_password)
     db.commit()
 
     return {"message": "Password has been reset successfully"}
-

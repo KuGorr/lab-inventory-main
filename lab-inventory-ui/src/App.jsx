@@ -15,9 +15,17 @@ import AdminUserCreate from "./pages/AdminUserCreate";
 import AdminUserEdit from "./pages/AdminUserEdit";
 import History from "./pages/History";
 
+// 🔥 NOWE — importy stron resetu hasła
+import ResetRequest from "./pages/ResetRequest";
+import ResetPassword from "./pages/ResetPassword";
+
 export default function App() {
   return (
     <Routes>
+      {/* 🔥 NOWE — reset hasła dostępny bez logowania */}
+      <Route path="/reset-request" element={<ResetRequest />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+
       <Route path="/login" element={<Login />} />
 
       <Route
@@ -31,7 +39,14 @@ export default function App() {
                 <Route path="/containers" element={<Containers />} />
                 <Route path="/containers/:id" element={<ContainerDetails />} />
                 <Route path="/containers/:id/move" element={<MoveContainer />} />
-                <Route path="/admin/users" element={<RequireAdmin> <AdminUsers /> </RequireAdmin>}/>
+                <Route
+                  path="/admin/users"
+                  element={
+                    <RequireAdmin>
+                      <AdminUsers />
+                    </RequireAdmin>
+                  }
+                />
                 <Route path="/locations" element={<Locations />} />
                 <Route path="/locations/:id" element={<LocationDetails />} />
                 <Route path="/admin/users/create" element={<AdminUserCreate />} />

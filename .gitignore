@@ -42,3 +42,10 @@ dist-ssr
 axios.js
 backups/*
 prod_dump.sql
+backup_postgres.sh
+backend/app/routers/auth.py
+
+backend/.env
+lab-inventory-ui/.env
+
+
