@@ -2,48 +2,49 @@ version: "3.9"
 
 services:
   backend:
-    container_name: lab_inventory_backend_test
-    image: lab-inventory-main-backend-test
+    container_name: lab_inventory_backend
     build:
       context: ./backend
       dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
-      - "8001:8000"
-    env_file:
-      - ./backend/.env
+      - "8000:8000"
     networks:
-      - lab_inventory_net_test
+      - lab_inventory_net
 
   frontend:
-    container_name: lab_inventory_frontend_test
-    image: lab-inventory-main-frontend-test
+    container_name: lab_inventory_frontend
     build:
       context: ./lab-inventory-ui
       dockerfile: Dockerfile
     ports:
-      - "5174:5173"
+      - "5173:5173"
     networks:
-      - lab_inventory_net_test
-    volumes:
-      - ./lab-inventory-ui:/app
+      - lab_inventory_net
 
   db:
-    container_name: lab_inventory_db_test
+    container_name: lab_inventory_db
     image: postgres:15
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: lab_inventory_test
+      POSTGRES_DB: lab_inventory
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
-      - postgres_data_test:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     networks:
-      - lab_inventory_net_test
+      - lab_inventory_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
-  backend_data_test:
-  postgres_data_test:
+  postgres_data:
 
 networks:
-  lab_inventory_net_test:
+  lab_inventory_net:
