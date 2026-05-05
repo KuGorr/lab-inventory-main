@@ -1,5 +1,15 @@
+# Python virtual environments
 .venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite / DB files
 .db
+backend/backup_app.db
 
 # Logs
 logs
@@ -10,6 +20,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node / frontend build
 node_modules
 dist
 dist-ssr
@@ -27,13 +38,7 @@ dist-ssr
 *.sln
 *.sw?
 
-backend/backup_app.db
-
-# Python virtual environment
-.venv/
-venv/
-
-
+# Project-specific ignores
 axios.js
 backups/*
 prod_dump.sql

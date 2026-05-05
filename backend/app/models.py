@@ -14,6 +14,9 @@ class User(Base):
     username = Column(String, unique=True, index=True, nullable=False)
     password_hash = Column(String, nullable=False)
 
+    # 🔥 NOWE — email do resetu hasła
+    email = Column(String, unique=True, index=True, nullable=True)
+
     is_admin = Column(Boolean, default=False)
     role = Column(String, default="user")  # user, compat, manager, admin
 
@@ -47,13 +50,11 @@ class Container(Base):
     comment = Column(String, nullable=True)
     location_id = Column(Integer, ForeignKey("locations.id"))
 
-    # 🔥 NOWE
     status = Column(String, nullable=True)
 
     location = relationship("Location", back_populates="containers")
     assets = relationship("Asset", back_populates="container")
     history = relationship("ContainerHistory", backref="container")
-
 
 
 # -----------------------------
@@ -104,7 +105,6 @@ class Asset(Base):
     memory_type = Column(String, nullable=True)
     score = Column(String, nullable=True)
 
-    # 🔥 NOWE
     status = Column(String, nullable=True)
 
     location_id = Column(Integer, ForeignKey("locations.id"), nullable=True)
@@ -140,7 +140,7 @@ class AssetHistory(Base):
 
 
 # -----------------------------
-# ASSET MOVEMENT (opcjonalne)
+# ASSET MOVEMENT
 # -----------------------------
 
 class AssetMovement(Base):

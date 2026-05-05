@@ -29,8 +29,15 @@ def create_user(data: schemas.UserCreate, db: Session = Depends(get_db), user=De
     if existing:
         raise HTTPException(400, "User already exists")
 
+    # email must be unique if provided
+    if data.email:
+        email_exists = db.query(models.User).filter(models.User.email == data.email).first()
+        if email_exists:
+            raise HTTPException(400, "Email already in use")
+
     new_user = models.User(
         username=data.username,
+        email=data.email,
         password_hash=hash_password(data.password),
         role=data.role,
         is_admin=(data.role == "admin")
@@ -93,7 +100,7 @@ def update_user_role(
 @router.patch("/{user_id}/password")
 def change_user_password(
     user_id: int,
-    new_password: str,   # <── PRZYJMUJEMY QUERY PARAM
+    new_password: str,
     db: Session = Depends(get_db),
     user=Depends(require_role("admin"))
 ):
@@ -112,3 +119,34 @@ def change_user_password(
 
     db.commit()
     return {"status": "password_changed", "user_id": user_id}
+
+
+# ============================================================
+# UPDATE USER EMAIL (ADMIN ONLY)
+# ============================================================
+
+@router.patch("/{user_id}/email", response_model=schemas.UserRead)
+def update_user_email(
+    user_id: int,
+    new_email: str,
+    db: Session = Depends(get_db),
+    user=Depends(require_role("admin"))
+):
+
+    if not new_email or "@" not in new_email:
+        raise HTTPException(400, "Invalid email")
+
+    u = db.query(models.User).filter(models.User.id == user_id).first()
+    if not u:
+        raise HTTPException(404, "User not found")
+
+    # check if email already used
+    existing = db.query(models.User).filter(models.User.email == new_email).first()
+    if existing and existing.id != user_id:
+        raise HTTPException(400, "Email already in use")
+
+    u.email = new_email
+
+    db.commit()
+    db.refresh(u)
+    return u

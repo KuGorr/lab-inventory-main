@@ -1,4 +1,4 @@
-print(">>> ŁADUJĘ NOWY SCHEMAS.PY <<<")
+print(">>> Nowy SCHEMAS.PY Na Test<<<")
 
 from pydantic import BaseModel
 from typing import Optional, List
@@ -11,6 +11,9 @@ from datetime import datetime
 class UserBase(BaseModel):
     username: str
     role: str
+
+    # 🔥 NOWE — email użytkownika
+    email: Optional[str] = None
 
 
 class UserCreate(UserBase):
