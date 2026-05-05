@@ -30,10 +30,10 @@ def create_access_token(user: models.User) -> str:
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
 
-def create_reset_token(user_id: int) -> str:
+def create_reset_token(email: str):
     payload = {
-        "sub": user_id,
-        "exp": datetime.utcnow() + timedelta(hours=48),
+        "sub": email,  # 🔥 KLUCZOWA ZMIANA
+        "exp": datetime.utcnow() + timedelta(hours=48)
     }
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
@@ -153,10 +153,12 @@ def request_password_reset(data: PasswordResetRequest, request: Request, db: Ses
 
     user = db.query(models.User).filter(models.User.email == data.email).first()
 
+    # Zawsze zwracamy tę samą odpowiedź (bez ujawniania czy email istnieje)
     if not user:
         return {"message": "If the email exists, a reset link has been sent."}
 
-    token = create_reset_token(user.id)
+    # 🔥 KLUCZOWA ZMIANA — token zawiera EMAIL, nie ID
+    token = create_reset_token(user.email)
 
     frontend_base = os.getenv("FRONTEND_URL", "http://localhost:5173")
     reset_link = f"{frontend_base}/reset-password?token={token}"
@@ -164,6 +166,7 @@ def request_password_reset(data: PasswordResetRequest, request: Request, db: Ses
     send_reset_email(user.email, reset_link)
 
     return {"message": "If the email exists, a reset link has been sent."}
+
 
 
 @router.post("/reset-password")
@@ -174,23 +177,29 @@ def reset_password(data: PasswordResetPayload, db: Session = Depends(get_db)):
     token = data.token
     new_password = data.new_password
 
+    # Dekodowanie tokena
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        user_id = payload.get("sub")
-        if not user_id:
-            raise HTTPException(400, "Invalid token")
-    except JWTError:
+        email = payload.get("sub")  # 🔥 TERAZ SUB = EMAIL
+        if not email:
+            raise HTTPException(400, "Invalid token payload")
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(400, "Token expired")
+    except jwt.InvalidTokenError:
         raise HTTPException(400, "Invalid or expired token")
 
-    user = db.query(models.User).filter(models.User.id == user_id).first()
+    # 🔥 KLUCZOWA ZMIANA — szukamy użytkownika po EMAILU, nie po ID
+    user = db.query(models.User).filter(models.User.email == email).first()
     if not user:
         raise HTTPException(404, "User not found")
 
+    # Walidacja hasła
     if not new_password or len(new_password) < 4:
         raise HTTPException(400, "Password too short")
 
+    # Ustawiamy nowe hasło
     user.password_hash = hash_password(new_password)
-
     db.commit()
 
     return {"message": "Password has been reset successfully"}
+
