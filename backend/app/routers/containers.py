@@ -60,7 +60,7 @@ async def create_container(container: schemas.ContainerCreate, db: Session = Dep
         description=container.description,
         comment=container.comment,
         location_id=container.location_id,
-        status=None  # 🔥 domyślnie brak statusu
+        status=None
     )
     db.add(cont)
     db.commit()
@@ -124,7 +124,7 @@ async def update_container_comment(
 
 
 # -----------------------------
-# 🔥 NOWE: UPDATE STATUS (compat+)
+# 🔥 UPDATE STATUS (compat+)
 # -----------------------------
 @router.post(
     "/{container_id}/status",
@@ -152,6 +152,40 @@ async def update_container_status(
     await broadcast_containers_update()
 
     return {"status": "ok", "new_status": new_status}
+
+
+# -----------------------------
+# 🔥 NEW: UPDATE CONTAINER CODE (manager+)
+# -----------------------------
+@router.patch(
+    "/{container_id}/code",
+    dependencies=[Depends(require_role("manager"))]
+)
+async def update_container_code(
+    container_id: int,
+    data: dict,
+    db: Session = Depends(get_db)
+):
+    cont = db.query(models.Container).filter(models.Container.id == container_id).first()
+    if not cont:
+        raise HTTPException(status_code=404, detail="Container not found")
+
+    new_code = data.get("code")
+    if not new_code:
+        raise HTTPException(status_code=400, detail="Missing new code")
+
+    # Check if code already exists
+    existing = db.query(models.Container).filter(models.Container.code == new_code).first()
+    if existing:
+        raise HTTPException(status_code=400, detail="Container with this code already exists")
+
+    cont.code = new_code
+    db.commit()
+
+    await broadcast_containers_update()
+    await broadcast_history_update()
+
+    return {"status": "ok", "new_code": new_code}
 
 
 # -----------------------------
@@ -301,7 +335,7 @@ def get_container(container_id: int, db: Session = Depends(get_db)):
         "code": container.code,
         "description": container.description,
         "comment": container.comment,
-        "status": container.status,  # 🔥 dodane
+        "status": container.status,
         "location": container.location,
         "assets": assets
     }

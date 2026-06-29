@@ -32,7 +32,6 @@ export default function Layout({ children }) {
       return next;
     });
 
-  // Close sidebar after navigation on small screens
   const handleNavClick = () => {
     if (window.innerWidth <= 960) {
       setSidebarOpen(false);
@@ -48,7 +47,6 @@ export default function Layout({ children }) {
 
   return (
     <div className="app-shell">
-      {/* Backdrop — small screens only (CSS hides it on desktop) */}
       {sidebarOpen && (
         <div className="sidebar-backdrop" onClick={toggleSidebar} />
       )}
@@ -60,6 +58,9 @@ export default function Layout({ children }) {
         <Link to="/containers" onClick={handleNavClick}>Kontenery</Link>
         <Link to="/locations" onClick={handleNavClick}>Lokalizacje</Link>
         <Link to="/history" onClick={handleNavClick}>Historia</Link>
+
+        {/* NOWA ZAKŁADKA */}
+        <Link to="/export" onClick={handleNavClick}>Eksport CSV</Link>
 
         {user.role === "admin" && (
           <Link to="/admin/users" onClick={handleNavClick}>Panel administratora</Link>
@@ -75,7 +76,6 @@ export default function Layout({ children }) {
         </div>
       </aside>
 
-      {/* Edge tab — slides with sidebar border (hidden on small screens via CSS) */}
       <button
         className={`sidebar-edge-btn${sidebarOpen ? "" : " sidebar--closed"}`}
         onClick={toggleSidebar}

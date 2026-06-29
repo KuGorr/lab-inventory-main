@@ -19,7 +19,9 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
+# 7 dni (możesz zmienić np. na 30 dni)
+ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
 
 if not SECRET_KEY:
     raise RuntimeError("SECRET_KEY is not set in backend/.env")
@@ -47,6 +49,12 @@ def get_current_user(
     db: Session = Depends(get_db),
 ) -> models.User:
 
+    expired_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Token expired",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -58,6 +66,10 @@ def get_current_user(
         username: str | None = payload.get("sub")
         if username is None:
             raise credentials_exception
+
+    except ExpiredSignatureError:
+        raise expired_exception
+
     except JWTError:
         raise credentials_exception
 

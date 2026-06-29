@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Importy routerów z katalogu routers/
-from app.routers import assets, locations, containers, users, map, ws
+from app.routers import assets, locations, containers, users, map, ws, export
 
 # Import auth z backend/app/auth.py
 from app import auth
@@ -32,6 +32,9 @@ app.include_router(locations.router)
 app.include_router(containers.router)
 app.include_router(users.router)
 app.include_router(map.router)
+
+# 🔥 NOWY ROUTER — eksport CSV
+app.include_router(export.router)
 
 # WEBSOCKETY
 app.include_router(ws.router)

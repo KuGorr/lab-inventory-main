@@ -19,10 +19,13 @@ import History from "./pages/History";
 import ResetRequest from "./pages/ResetRequest";
 import ResetPassword from "./pages/ResetPassword";
 
+// 🔥 NOWE — import eksportu CSV
+import Export from "./pages/Export";
+
 export default function App() {
   return (
     <Routes>
-      {/* 🔥 NOWE — reset hasła dostępny bez logowania */}
+      {/* 🔥 reset hasła dostępny bez logowania */}
       <Route path="/reset-request" element={<ResetRequest />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
@@ -39,6 +42,10 @@ export default function App() {
                 <Route path="/containers" element={<Containers />} />
                 <Route path="/containers/:id" element={<ContainerDetails />} />
                 <Route path="/containers/:id/move" element={<MoveContainer />} />
+
+                {/* 🔥 NOWA STRONA */}
+                <Route path="/export" element={<Export />} />
+
                 <Route
                   path="/admin/users"
                   element={
