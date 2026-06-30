@@ -16,6 +16,15 @@ export default function ContainerDetails() {
   const user  = JSON.parse(localStorage.getItem("user") || "{}");
   const token = localStorage.getItem("token");
 
+  // MODAL MOVE STATE
+  const [showMove, setShowMove] = useState(false);
+  const [moveTarget, setMoveTarget] = useState("");
+  const [moveNote, setMoveNote] = useState("");
+  const [moveError, setMoveError] = useState("");
+
+  const [locations, setLocations] = useState([]);
+  const [containers, setContainers] = useState([]);
+
   const loadContainer = useCallback(() => {
     fetch(`${API_BASE}/containers/${id}`)
       .then((res) => {
@@ -40,7 +49,7 @@ export default function ContainerDetails() {
     loadHistory(1);
   }, [loadContainer, loadHistory]);
 
-  // Reload if another user edits this container while it's open
+  // WS auto-refresh
   useEffect(() => {
     const ws = new WebSocket(`${WS_BASE}/ws/containers`);
 
@@ -55,17 +64,21 @@ export default function ContainerDetails() {
     return () => ws.close();
   }, [loadContainer, loadHistory, historyPage]);
 
+  // Load locations/containers when modal opens
+  useEffect(() => {
+    if (!showMove) return;
+    fetch(`${API_BASE}/locations/`).then((r) => r.json()).then(setLocations);
+    fetch(`${API_BASE}/containers/`).then((r) => r.json()).then(setContainers);
+  }, [showMove]);
+
   if (!container) return <div>Ładowanie...</div>;
 
-  // compat and above can edit status/comment and move containers
   const canEdit =
     user.role === "compat" ||
     user.role === "manager" ||
     user.role === "admin";
 
-  // -----------------------------
-  // Delete container
-  // -----------------------------
+  // DELETE
   const deleteContainer = async () => {
     if (!window.confirm("Czy na pewno chcesz usunąć ten kontener?")) return;
 
@@ -83,9 +96,7 @@ export default function ContainerDetails() {
     navigate("/containers");
   };
 
-  // -----------------------------
-  // Save comment
-  // -----------------------------
+  // COMMENT
   const saveComment = async () => {
     await fetch(`${API_BASE}/containers/${id}/comment`, {
       method: "POST",
@@ -97,9 +108,7 @@ export default function ContainerDetails() {
     });
   };
 
-  // -----------------------------
-  // Update status
-  // -----------------------------
+  // STATUS
   const updateStatus = async (newStatus) => {
     const backendValue = newStatus === "none" ? null : newStatus;
 
@@ -113,6 +122,34 @@ export default function ContainerDetails() {
     });
 
     setContainer({ ...container, status: backendValue });
+  };
+
+  // MOVE CONTAINER (modal)
+  const submitMove = async (e) => {
+    e.preventDefault();
+    setMoveError("");
+
+    const res = await fetch(`${API_BASE}/containers/${id}/move`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ target: moveTarget, note: moveNote }),
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      setMoveError(data.detail || "Błąd przenoszenia kontenera");
+      return;
+    }
+
+    setShowMove(false);
+    setMoveTarget("");
+    setMoveNote("");
+
+    loadContainer();
+    loadHistory(1);
   };
 
   return (
@@ -158,9 +195,7 @@ export default function ContainerDetails() {
 
           <div className="btn-row">
             {canEdit && (
-              <Link to={`/containers/${id}/move`}>
-                <button>Przenieś kontener</button>
-              </Link>
+              <button onClick={() => setShowMove(true)}>Przenieś kontener</button>
             )}
             {user.role === "admin" && (
               <button onClick={deleteContainer} className="btn-danger">
@@ -175,24 +210,24 @@ export default function ContainerDetails() {
 
           {container.assets.length > 0 && (
             <div className="table-scroll-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Tag</th>
-                  <th>Nazwa</th>
-                  <th>Typ</th>
-                </tr>
-              </thead>
-              <tbody>
-                {container.assets.map((a) => (
-                  <tr key={a.id}>
-                    <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
-                    <td>{a.name}</td>
-                    <td>{a.type}</td>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tag</th>
+                    <th>Nazwa</th>
+                    <th>Typ</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {container.assets.map((a) => (
+                    <tr key={a.id}>
+                      <td><Link to={`/assets/${a.id}`}>{a.tag}</Link></td>
+                      <td>{a.name}</td>
+                      <td>{a.type}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           )}
         </div>
@@ -236,6 +271,65 @@ export default function ContainerDetails() {
           </div>
         </div>
       </div>
+
+      {/* MODAL MOVE */}
+      {showMove && (
+        <div className="modal-overlay" onClick={() => setShowMove(false)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Przenieś kontener</h2>
+              <button type="button" className="modal-close" onClick={() => setShowMove(false)}>×</button>
+            </div>
+
+            <form onSubmit={submitMove} className="modal-form">
+              <table className="info-table move-modal-current">
+                <tbody>
+                  <tr>
+                    <td>Aktualna lokalizacja:</td>
+                    <td>{container.location ? container.location.code : "-"}</td>
+                  </tr>
+                  <tr>
+                    <td>Liczba assetów:</td>
+                    <td>{container.assets.length}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div className="form-row">
+                <label>Nowa lokalizacja:</label>
+                <input
+                  list="move-targets"
+                  value={moveTarget}
+                  onChange={(e) => setMoveTarget(e.target.value)}
+                  placeholder="np. 9.3"
+                  required
+                />
+                <datalist id="move-targets">
+                  {locations.map((loc) => (
+                    <option key={loc.id} value={loc.code}>{loc.code} — {loc.description}</option>
+                  ))}
+                </datalist>
+              </div>
+
+              <div className="form-row">
+                <label>Notatka:</label>
+                <textarea
+                  value={moveNote}
+                  onChange={(e) => setMoveNote(e.target.value)}
+                  rows={2}
+                />
+              </div>
+
+              {moveError && <div className="msg-error">{moveError}</div>}
+
+              <div className="modal-actions">
+                <button type="button" className="btn-secondary" onClick={() => setShowMove(false)}>Anuluj</button>
+                <button type="submit">Przenieś</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
