@@ -184,9 +184,45 @@ export default function AdminUsers() {
     return <div className="page">Brak dostępu.</div>;
   }
 
+  // ---------------------------------------
+  // RESET STATUS BUTTONS
+  // ---------------------------------------
+  const resetAssetsStatus = async () => {
+    if (!window.confirm("Czy na pewno zresetować status assetów?")) return;
+
+    await fetch(`${API_BASE}/admin/reset-assets-status`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    alert("Status assetów został zresetowany.");
+  };
+
+  const resetContainersStatus = async () => {
+    if (!window.confirm("Czy na pewno zresetować status kontenerów?")) return;
+
+    await fetch(`${API_BASE}/admin/reset-containers-status`, {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    alert("Status kontenerów został zresetowany.");
+  };
+
   return (
     <div className="page">
       <h1>Panel administratora — użytkownicy</h1>
+
+      {/* RESET BUTTONS */}
+      <div className="btn-row" style={{ marginBottom: "20px" }}>
+        <button className="btn-info" onClick={resetAssetsStatus}>
+          Resetuj status assetów
+        </button>
+
+        <button className="btn-danger" onClick={resetContainersStatus}>
+          Resetuj status kontenerów
+        </button>
+      </div>
 
       {error && <p className="msg-error">{error}</p>}
 
