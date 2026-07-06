@@ -10,7 +10,7 @@ def reset_assets_status(db: Session = Depends(get_db)):
     updated = (
         db.query(Asset)
         .filter(Asset.status == "available")
-        .update({Asset.status: "none"})
+        .update({Asset.status: None})
     )
     db.commit()
     return {"updated": updated}
@@ -20,7 +20,7 @@ def reset_containers_status(db: Session = Depends(get_db)):
     updated = (
         db.query(Container)
         .filter(Container.status == "available")
-        .update({Container.status: "none"})
+        .update({Container.status: None})
     )
     db.commit()
     return {"updated": updated}
