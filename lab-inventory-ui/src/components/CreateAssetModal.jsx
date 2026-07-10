@@ -28,6 +28,8 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
   const [error, setError]       = useState("");
   const [submitting, setSubmit] = useState(false);
 
+  const [searching, setSearching] = useState(false);
+
   const set = (field, value) => setForm((f) => {
     const next = { ...f, [field]: value };
     localStorage.setItem(DRAFT_KEY, JSON.stringify(next));
@@ -39,28 +41,113 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
     setForm(EMPTY_FORM);
   };
 
-  // Show auto-tag option only when type + Desktop platform both filled
-  const showNextTag = form.type.trim() !== "" && form.platform === "Desktop";
+  // 🔥 Auto‑tag działa zawsze — niezależnie od platformy
+  const showNextTag = form.type.trim() !== "";
 
   const applyNextTag = () => {
-    const prefix = NORMALIZE(form.type.trim());
-    const tag_prefix = prefix + "-";
+    const rawType = form.type.trim();
+    const prefix = NORMALIZE(rawType).toUpperCase();
 
-    const nums = assets
-      .filter((a) => {
-        const aType = NORMALIZE(a.type || "");
-        return (
-          aType.toLowerCase() === prefix.toLowerCase() &&
-          a.platform === "Desktop"
-        );
+    const numbers = assets
+      .filter((a) => NORMALIZE(a.type || "").toUpperCase() === prefix)
+      .map((a) => (a.tag || "").toUpperCase())
+      .map((t) => {
+        // CPU: CPU-001 (numerowane), CPU-CLL-xxx (ignorowane)
+        if (prefix === "CPU") {
+          const m = t.match(/^CPU-(\d{1,3})$/i);
+          return m ? parseInt(m[1], 10) : null;
+        }
+
+        // GPU: GPU-001 (numerowane), GPU-CLL-xxx (ignorowane)
+        if (prefix === "GPU") {
+          const m = t.match(/^GPU-(\d{1,3})$/i);
+          return m ? parseInt(m[1], 10) : null;
+        }
+
+        // MBR: MBR-001 (numerowane), MBR-CLL-xxx (ignorowane)
+        if (prefix === "MBR") {
+          const m = t.match(/^MBR-(\d{1,3})$/i);
+          return m ? parseInt(m[1], 10) : null;
+        }
+
+        return null;
       })
-      .map((a) => a.tag || "")
-      .filter((t) => t.toUpperCase().startsWith(tag_prefix.toUpperCase()))
-      .map((t) => parseInt(t.slice(tag_prefix.length), 10))
-      .filter((n) => !isNaN(n));
+      .filter((n) => n !== null);
 
-    const next = nums.length ? Math.max(...nums) + 1 : 1;
+    const next = numbers.length ? Math.max(...numbers) + 1 : 1;
+
+    // GPU + MBR mają format z zerami
+    if (prefix === "GPU" || prefix === "MBR") {
+      const padded = String(next).padStart(3, "0");
+      set("tag", `${prefix}-${padded}`);
+      return;
+    }
+
+    // CPU ma format bez zer
     set("tag", `${prefix}-${next}`);
+  };
+
+
+
+
+  // 🔍 WYSZUKIWANIE ASSETU W BAZIE I AUTOFILL
+  const searchAssetInDatabase = async () => {
+    if (!form.name.trim()) return;
+
+    setSearching(true);
+    setError("");
+
+    try {
+      const res = await fetch(
+        `${API_BASE}/assets/search-by-name?name=${encodeURIComponent(form.name)}`
+      );
+
+      const data = await res.json();
+
+      if (!data.found) {
+        setError("Nie znaleziono podobnego assetu w bazie.");
+        setSearching(false);
+        return;
+      }
+
+      const a = data.asset;
+
+      // 🔥 AUTOMATYCZNE UZUPEŁNIANIE PÓL — zgodne z tabelą PostgreSQL
+      setForm((f) => {
+        const next = {
+          ...f,
+
+          model: a.model || "",
+          manufacturer: a.manufacturer || "",
+          type: a.type || "",
+          platform: a.platform || "",
+
+          base_clock: a.base_clock || "",
+          memory_clock: a.memory_clock || "",
+
+          memory_size: a.memory_size || "",
+          memory_type: a.memory_type || "",
+
+          cores: a.cores || "",
+          threads: a.threads || "",
+          socket: a.socket || "",
+          generation: a.generation || "",
+
+          score: a.score || "",
+
+          // komentarz NIE jest kopiowany
+          comment: f.comment,
+        };
+
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(next));
+        return next;
+      });
+
+    } catch (err) {
+      setError("Błąd wyszukiwania assetu.");
+    }
+
+    setSearching(false);
   };
 
   const handleSubmit = async (e) => {
@@ -129,6 +216,7 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
               </button>
             </div>
           )}
+
           {/* TAG — with optional auto-number */}
           <div className="form-row">
             <label>Tag *</label>
@@ -144,7 +232,6 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
                   type="button"
                   className="btn-secondary modal-next-tag-btn"
                   onClick={applyNextTag}
-                  title="Wypełnij kolejnym numerem dla tego typu i platformy Desktop"
                 >
                   Użyj następnego numeru
                 </button>
@@ -153,15 +240,33 @@ export default function CreateAssetModal({ assets, onClose, onCreated }) {
           </div>
 
           <div className="modal-grid">
+
+            {/* 🔍 Nazwa + wyszukiwanie */}
             <div className="form-row">
               <label>Nazwa</label>
-              <input
-                value={form.name}
-                onChange={(e) => set("name", e.target.value)}
-                list="cam-names"
-              />
+
+              <div className="modal-name-row">
+                <input
+                  value={form.name}
+                  onChange={(e) => set("name", e.target.value)}
+                  placeholder="np. MSI GeForce RTX 3070 Ti VENTUS 3X OC"
+                  list="cam-names"
+                />
+
+                <button
+                  type="button"
+                  className="btn-secondary modal-search-btn"
+                  disabled={!form.name.trim() || searching}
+                  onClick={searchAssetInDatabase}
+                >
+                  {searching ? "..." : "🔍"}
+                </button>
+              </div>
+
               <datalist id="cam-names">
-                {names.map((n) => <option key={n} value={n} />)}
+                {names.map((n) => (
+                  <option key={n} value={n} />
+                ))}
               </datalist>
             </div>
 

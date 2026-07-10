@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session, selectinload
 from datetime import datetime, timezone
 from typing import Optional
+from sqlalchemy import or_
 
 from ..database import get_db
 from app import models, schemas
@@ -140,6 +141,53 @@ def get_assets(db: Session = Depends(get_db)):
 
 
 # ---------------------------------------------------------
+# 🔥 NOWE: GET /assets/search-by-name — wyszukiwanie assetu po nazwie / modelu
+# ---------------------------------------------------------
+@router.get("/search-by-name")
+def search_asset_by_name(name: str, db: Session = Depends(get_db)):
+    asset = (
+        db.query(models.Asset)
+        .filter(
+            or_(
+                models.Asset.name.ilike(f"%{name}%"),
+                models.Asset.model.ilike(f"%{name}%")
+            )
+        )
+        .first()
+    )
+
+    if not asset:
+        return {"found": False}
+
+    return {
+        "found": True,
+        "asset": {
+            "name": asset.name,
+            "model": asset.model,
+            "manufacturer": asset.manufacturer,
+            "type": asset.type,
+            "platform": asset.platform,
+
+            "base_clock": asset.base_clock,
+            "memory_clock": asset.memory_clock,
+
+            "memory_size": asset.memory_size,
+            "memory_type": asset.memory_type,
+
+            "cores": asset.cores,
+            "threads": asset.threads,
+            "socket": asset.socket,
+            "generation": asset.generation,
+
+            "score": asset.score,
+
+            # komentarza NIE kopiujemy
+        }
+    }
+
+
+
+# ---------------------------------------------------------
 # POST /assets — tworzenie assetu
 # ---------------------------------------------------------
 @router.post("/", response_model=schemas.AssetRead)
@@ -180,6 +228,7 @@ def get_asset(asset_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Asset not found")
 
     return asset
+
 
 # ---------------------------------------------------------
 # GLOBALNA HISTORIA — ASSETY + KONTENERY
