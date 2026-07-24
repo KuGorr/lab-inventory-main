@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, Query
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
+from sqlalchemy import or_
 from io import StringIO
 import csv
 
@@ -17,43 +18,43 @@ def export_assets_csv(
 ):
     query = db.query(models.Asset)
 
-    # Filtr statusów
     if status:
-        query = query.filter(models.Asset.status.in_(status))
+        expanded = set(status)
+
+        # 🔥 Jeśli użytkownik wybiera "none", to łapiemy:
+        # - "none" (reset)
+        # - "unknown" (stare dane)
+        # - NULL (inwentaryzacja)
+        if "none" in status:
+            query = query.filter(
+                or_(
+                    models.Asset.status == "none",
+                    models.Asset.status == "unknown",
+                    models.Asset.status.is_(None)
+                )
+            )
+        else:
+            query = query.filter(models.Asset.status.in_(expanded))
 
     assets = query.all()
 
-    # Kolumny z tabeli assets
     columns = [c.name for c in models.Asset.__table__.columns]
-
-    # Dodatkowe kolumny relacyjne
     extra_columns = ["location_code", "container_code"]
 
     output = StringIO()
     writer = csv.writer(output)
 
-    # Nagłówki
     writer.writerow(columns + extra_columns)
 
     for asset in assets:
         row = []
 
-        # Kolumny z tabeli
         for col in columns:
             value = getattr(asset, col, "")
             row.append(value if value is not None else "")
 
-        # Lokalizacja
-        if asset.location and asset.location.code:
-            row.append(asset.location.code)
-        else:
-            row.append("")
-
-        # Kontener
-        if asset.container and asset.container.code:
-            row.append(asset.container.code)
-        else:
-            row.append("")
+        row.append(asset.location.code if asset.location else "")
+        row.append(asset.container.code if asset.container else "")
 
         writer.writerow(row)
 
