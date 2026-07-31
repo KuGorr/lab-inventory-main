@@ -19,22 +19,20 @@ def export_assets_csv(
     query = db.query(models.Asset)
 
     if status:
-        expanded = set(status)
+        conditions = []
 
-        # 🔥 Jeśli użytkownik wybiera "none", to łapiemy:
-        # - "none" (reset)
-        # - "unknown" (stare dane)
-        # - NULL (inwentaryzacja)
-        if "none" in status:
-            query = query.filter(
-                or_(
-                    models.Asset.status == "none",
-                    models.Asset.status == "unknown",
-                    models.Asset.status.is_(None)
-                )
-            )
-        else:
-            query = query.filter(models.Asset.status.in_(expanded))
+        for s in status:
+            # 🔥 none + unknown = jedna grupa
+            if s in ("none", "unknown"):
+                conditions.append(models.Asset.status.is_(None))
+                conditions.append(models.Asset.status == "none")
+                conditions.append(models.Asset.status == "unknown")
+            else:
+                # 🔥 normalne statusy
+                conditions.append(models.Asset.status == s)
+
+        # 🔥 jeden wspólny OR dla wszystkich wybranych statusów
+        query = query.filter(or_(*conditions))
 
     assets = query.all()
 
